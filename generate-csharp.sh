@@ -13,9 +13,9 @@ if [ ! -f "api-docs-$VERSION.json" ]; then
   exit 1
 fi
 
-rm -rf libsimsage-$VERSION/csharp
-mkdir -p libsimsage-$VERSION/csharp
-cd libsimsage-$VERSION/csharp
+rm -rf lib/csharp
+mkdir -p lib/csharp
+cd lib/csharp
 cp ../../openapi-generator-cli-7.0.1.jar .
 cp ../../api-docs-$VERSION.json ./api-docs.json
 

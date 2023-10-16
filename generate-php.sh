@@ -13,9 +13,9 @@ if [ ! -f "api-docs-$VERSION.json" ]; then
   exit 1
 fi
 
-rm -rf libsimsage-$VERSION/php
-mkdir -p libsimsage-$VERSION/php
-cd libsimsage-$VERSION/php
+rm -rf lib/php
+mkdir -p lib/php
+cd lib/php
 cp ../../openapi-generator-cli-7.0.1.jar .
 cp ../../api-docs-$VERSION.json ./api-docs.json
 

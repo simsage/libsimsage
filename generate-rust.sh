@@ -13,9 +13,9 @@ if [ ! -f "api-docs-$VERSION.json" ]; then
   exit 1
 fi
 
-rm -rf libsimsage-$VERSION/rust
-mkdir -p libsimsage-$VERSION/rust
-cd libsimsage-$VERSION/rust
+rm -rf lib/rust
+mkdir -p lib/rust
+cd lib/rust
 cp ../../openapi-generator-cli-7.0.1.jar .
 cp ../../api-docs-$VERSION.json ./api-docs.json
 

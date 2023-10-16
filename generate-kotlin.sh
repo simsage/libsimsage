@@ -13,9 +13,9 @@ if [ ! -f "api-docs-$VERSION.json" ]; then
   exit 1
 fi
 
-rm -rf libsimsage-$VERSION/kotlin
-mkdir -p libsimsage-$VERSION/kotlin
-cd libsimsage-$VERSION/kotlin
+rm -rf lib/kotlin
+mkdir -p lib/kotlin
+cd lib/kotlin
 cp ../../openapi-generator-cli-7.0.1.jar .
 cp ../../api-docs-$VERSION.json ./api-docs.json
 

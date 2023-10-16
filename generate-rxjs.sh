@@ -13,9 +13,9 @@ if [ ! -f "api-docs-$VERSION.json" ]; then
   exit 1
 fi
 
-rm -rf libsimsage-$VERSION/rxjs
-mkdir -p libsimsage-$VERSION/rxjs
-cd libsimsage-$VERSION/rxjs
+rm -rf lib/rxjs
+mkdir -p lib/rxjs
+cd lib/rxjs
 cp ../../openapi-generator-cli-7.0.1.jar .
 cp ../../api-docs-$VERSION.json ./api-docs.json
 
