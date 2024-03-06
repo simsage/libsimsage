@@ -75,8 +75,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not create backup. |  -  |
 | **200** | create backup OK response |  -  |
+| **500** | could not create backup. |  -  |
 
 <a id="deleteBackup"></a>
 # **deleteBackup**
@@ -209,8 +209,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | get backup response. |  -  |
 | **500** | could not get backup. |  -  |
+| **200** | get backup response. |  -  |
 
 <a id="getBackupList"></a>
 # **getBackupList**
@@ -339,6 +339,6 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not restore backup. |  -  |
 | **200** | restore backup OK response |  -  |
+| **500** | could not restore backup. |  -  |
 

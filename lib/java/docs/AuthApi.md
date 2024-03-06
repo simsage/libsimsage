@@ -18,6 +18,7 @@ All URIs are relative to *https://test.simsage.ai*
 | [**saveGroup**](AuthApi.md#saveGroup) | **PUT** /api/auth/group | Save Group |
 | [**signIn**](AuthApi.md#signIn) | **POST** /api/auth/sign-in | Sign In |
 | [**signInAdminUsingJWTMsal**](AuthApi.md#signInAdminUsingJWTMsal) | **GET** /api/auth/admin/authenticate/msal | JWT MSal Sign In |
+| [**signInAdminUsingSessionId**](AuthApi.md#signInAdminUsingSessionId) | **GET** /api/auth/admin/authenticate/session-id | session-id Sign-in |
 | [**signInDmsUsingJWTMsal**](AuthApi.md#signInDmsUsingJWTMsal) | **GET** /api/auth/dms/authenticate/msal/{organisationId} | JWT MSal Sign In |
 | [**signInEvolveUsingJWTMsal**](AuthApi.md#signInEvolveUsingJWTMsal) | **GET** /api/auth/evolve/authenticate/msal/{organisationId} | JWT MSal Sign In |
 | [**signInSearchUsingJWTMsal**](AuthApi.md#signInSearchUsingJWTMsal) | **GET** /api/auth/search/authenticate/msal/{organisationId} | JWT MSal Sign In |
@@ -91,8 +92,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | delete group OK response |  -  |
 | **500** | could not delete group |  -  |
+| **200** | delete group OK response |  -  |
 
 <a id="deleteOrganisation"></a>
 # **deleteOrganisation**
@@ -286,8 +287,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not create a one-time token. |  -  |
 | **200** | get the one-time token as a string. |  -  |
+| **500** | could not create a one-time token. |  -  |
 
 <a id="getUserOrganisationList"></a>
 # **getUserOrganisationList**
@@ -554,8 +555,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not get role list. |  -  |
 | **200** | project-type list response |  -  |
+| **500** | could not get role list. |  -  |
 
 <a id="removeUserFromOrganisation"></a>
 # **removeUserFromOrganisation**
@@ -684,8 +685,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not reset-password |  -  |
 | **200** | an reset password OK response |  -  |
+| **500** | could not reset-password |  -  |
 
 <a id="resetPasswordRequest"></a>
 # **resetPasswordRequest**
@@ -747,8 +748,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | an email reset OK response |  -  |
 | **500** | could not start password-reset |  -  |
+| **200** | an email reset OK response |  -  |
 
 <a id="saveGroup"></a>
 # **saveGroup**
@@ -941,6 +942,69 @@ No authorization required
 | **200** | a sign-in admin response |  -  |
 | **500** | could not sign-in |  -  |
 
+<a id="signInAdminUsingSessionId"></a>
+# **signInAdminUsingSessionId**
+> SignInAdmin signInAdminUsingSessionId(sessionId)
+
+session-id Sign-in
+
+Sign-in a user using an existing session-id.
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.AuthApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://test.simsage.ai");
+
+    AuthApi apiInstance = new AuthApi(defaultClient);
+    String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
+    try {
+      SignInAdmin result = apiInstance.signInAdminUsingSessionId(sessionId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AuthApi#signInAdminUsingSessionId");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **sessionId** | **String**| a valid SimSage Session id. | |
+
+### Return type
+
+[**SignInAdmin**](SignInAdmin.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **500** | could not sign-in |  -  |
+| **200** | a sign-in response |  -  |
+
 <a id="signInDmsUsingJWTMsal"></a>
 # **signInDmsUsingJWTMsal**
 > SignInDmsCmd signInDmsUsingJWTMsal(jwt, organisationId)
@@ -1003,8 +1067,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | a sign-in dms response |  -  |
 | **500** | could not sign-in |  -  |
+| **200** | a sign-in dms response |  -  |
 
 <a id="signInEvolveUsingJWTMsal"></a>
 # **signInEvolveUsingJWTMsal**
@@ -1012,7 +1076,7 @@ No authorization required
 
 JWT MSal Sign In
 
-Sign-in an Evolve user using an Msal JWT.
+Sign-in an Evolve user using an Msal JWT...
 
 ### Example
 ```java
@@ -1198,8 +1262,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | a sign-out OK response |  -  |
 | **500** | could not sign-out |  -  |
+| **200** | a sign-out OK response |  -  |
 
 <a id="updateOrganisation"></a>
 # **updateOrganisation**
@@ -1263,8 +1327,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | save organisation response |  -  |
 | **500** | could not save organisation |  -  |
+| **200** | save organisation response |  -  |
 
 <a id="updateUser"></a>
 # **updateUser**
@@ -1389,6 +1453,6 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not get version |  -  |
 | **200** | the version response |  -  |
+| **500** | could not get version |  -  |
 

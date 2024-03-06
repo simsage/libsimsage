@@ -9,7 +9,7 @@ info:
     name: Custom License
     url: https://simsage.ai/
   title: SimSage REST API
-  version: 7.11.4
+  version: 7.13.31
 servers:
 - description: SimSage API
   url: https://test.simsage.ai
@@ -61,6 +61,12 @@ paths:
           type: string
         style: simple
       responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: failed
         "200":
           content:
             application/json:
@@ -69,12 +75,6 @@ paths:
                   $ref: '#/components/schemas/CMCommandQueueItem'
                 type: array
           description: response
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: failed
       summary: SimSage status
       tags:
       - stats
@@ -108,18 +108,18 @@ paths:
               $ref: '#/components/schemas/CMTextToSearchPaginated'
         required: true
       responses:
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: fail response
         "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/CMTextToSearchPaginatedReturn'
           description: response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: fail response
       summary: Text to Search mappings
       tags:
       - semantic
@@ -168,18 +168,18 @@ paths:
               $ref: '#/components/schemas/CMTextToSearchEdit'
         required: true
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: OK response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: fail response
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: OK response
       summary: Save a text-to-search item
       tags:
       - semantic
@@ -300,18 +300,18 @@ paths:
               $ref: '#/components/schemas/CMSemanticsPaginated'
         required: true
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CMSemanticsPaginatedResult'
-          description: response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: fail response
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CMSemanticsPaginatedResult'
+          description: response
       summary: Semantics Paginated
       tags:
       - language
@@ -360,18 +360,18 @@ paths:
               $ref: '#/components/schemas/CMSynonym'
         required: true
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: OK response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: fail response
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: OK response
       summary: Save Synonym
       tags:
       - language
@@ -420,18 +420,18 @@ paths:
               $ref: '#/components/schemas/CMSynSet'
         required: true
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: OK response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: fail response
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: OK response
       summary: Save SynSet
       tags:
       - language
@@ -480,18 +480,18 @@ paths:
               $ref: '#/components/schemas/CMSemanticModelEdit'
         required: true
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: OK response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: fail response
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: OK response
       summary: Save Semantic
       tags:
       - language
@@ -524,18 +524,18 @@ paths:
               $ref: '#/components/schemas/CMOptimizeIndex'
         required: true
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: OK response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: fail response
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: OK response
       summary: Optimize Indexes
       tags:
       - language
@@ -622,18 +622,18 @@ paths:
           type: string
         style: simple
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: OK response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: fail response
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: OK response
       summary: Add all default SynSets
       tags:
       - language
@@ -666,18 +666,18 @@ paths:
               $ref: '#/components/schemas/CMCategorization'
         required: true
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: OK response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: fail response
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: OK response
       summary: save categorization
       tags:
       - language
@@ -710,18 +710,18 @@ paths:
               $ref: '#/components/schemas/CMKnowledgeBase'
         required: true
       responses:
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: could not save knowledge-base.
         "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/KnowledgeBase'
           description: save knowledge-base response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: could not save knowledge-base.
       summary: Save Knowledge-base
       tags:
       - knowledgebase
@@ -773,18 +773,18 @@ paths:
               $ref: '#/components/schemas/CMDeleteDocument'
         required: true
       responses:
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: could not remove external-crawler document.
         "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: remove external-crawler document OK response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: could not remove external-crawler document.
       summary: Remove an External Document
       tags:
       - crawler
@@ -896,18 +896,18 @@ paths:
           type: string
         style: simple
       responses:
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: could not create a one-time token.
         "200":
           content:
             application/json:
               schema:
                 type: string
           description: get the one-time token as a string.
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: could not create a one-time token.
       summary: Get a one-time token.
       tags:
       - auth
@@ -931,18 +931,18 @@ paths:
               $ref: '#/components/schemas/CMOrganisation'
         required: true
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CMOrganisation'
-          description: save organisation response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: could not save organisation
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CMOrganisation'
+          description: save organisation response
       summary: Save Organisation
       tags:
       - auth
@@ -1439,12 +1439,6 @@ paths:
           type: integer
         style: simple
       responses:
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: could not get parquet download.
         "200":
           content:
             application/octet-stream:
@@ -1452,6 +1446,12 @@ paths:
                 format: byte
                 type: string
           description: parquet download response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: could not get parquet download.
       summary: Download Parquet File
       tags:
       - document
@@ -1484,18 +1484,18 @@ paths:
               $ref: '#/components/schemas/CMInventorizeParameters'
         required: true
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: document inventory process OK result
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: could not start inventory process.
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: document inventory process OK result
       summary: Document Inventory
       tags:
       - document
@@ -1529,18 +1529,18 @@ paths:
               $ref: '#/components/schemas/CMInventorizeParameters'
         required: true
       responses:
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: could not start inventorize.
         "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: start inventorize indexes OK response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: could not start inventorize.
       summary: Index Inventory
       tags:
       - document
@@ -1604,18 +1604,18 @@ paths:
             schema:
               $ref: '#/components/schemas/uploadDocument_request'
       responses:
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: fail response
         "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/CMDocumentFolder'
           description: response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: fail response
       summary: Upload a Document
       tags:
       - dms
@@ -1649,18 +1649,18 @@ paths:
               $ref: '#/components/schemas/CMDocumentSubscription'
         required: true
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CMSubscriptions'
-          description: response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: fail response
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CMSubscriptions'
+          description: response
       summary: Save Subscription
       tags:
       - dms
@@ -1693,18 +1693,18 @@ paths:
               $ref: '#/components/schemas/CMAddSourceFolder'
         required: true
       responses:
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: fail response
         "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/CMDocumentFolder'
           description: response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: fail response
       summary: Add a new source-folder
       tags:
       - dms
@@ -1737,6 +1737,12 @@ paths:
               $ref: '#/components/schemas/CMSavedSearch'
         required: true
       responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: fail response
         "200":
           content:
             application/json:
@@ -1745,12 +1751,6 @@ paths:
                   $ref: '#/components/schemas/CMSavedSearch'
                 type: array
           description: response
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: fail response
       summary: Save Search
       tags:
       - dms
@@ -1818,12 +1818,6 @@ paths:
               $ref: '#/components/schemas/CMDocumentNote'
         required: true
       responses:
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: fail response
         "200":
           content:
             application/json:
@@ -1832,6 +1826,12 @@ paths:
                   $ref: '#/components/schemas/CMDocumentNote'
                 type: array
           description: response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: fail response
       summary: Save Note
       tags:
       - dms
@@ -1910,18 +1910,18 @@ paths:
               $ref: '#/components/schemas/CMDocumentHashTag'
         required: true
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: OK response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: fail response
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: OK response
       summary: Save HashTag set for a document
       tags:
       - dms
@@ -1954,18 +1954,18 @@ paths:
               $ref: '#/components/schemas/CMAddFolder'
         required: true
       responses:
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: fail response
         "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/CMDocumentFolder'
           description: response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: fail response
       summary: Add a new folder
       tags:
       - dms
@@ -1998,6 +1998,12 @@ paths:
               $ref: '#/components/schemas/CMDocumentBookmark'
         required: true
       responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: fail response
         "200":
           content:
             application/json:
@@ -2006,12 +2012,6 @@ paths:
                   $ref: '#/components/schemas/DocumentBookmark'
                 type: array
           description: response
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: fail response
       summary: Save Bookmark
       tags:
       - dms
@@ -2045,18 +2045,18 @@ paths:
               $ref: '#/components/schemas/CMUpdateACLs'
         required: true
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: OK response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: fail response
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: OK response
       summary: Update an item's ACLs
       tags:
       - dms
@@ -2188,18 +2188,18 @@ paths:
               $ref: '#/components/schemas/CMUpdateRedactions'
         required: true
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                type: string
-          description: Update Redactions OK response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: could not update redactionst.
+        "200":
+          content:
+            application/json:
+              schema:
+                type: string
+          description: Update Redactions OK response
       summary: Update document redactions
       tags:
       - dataproject
@@ -2223,18 +2223,18 @@ paths:
               $ref: '#/components/schemas/CMUpdateDocumentStatus'
         required: true
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                type: string
-          description: Update Document Status OK response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: Could not update document status.
+        "200":
+          content:
+            application/json:
+              schema:
+                type: string
+          description: Update Document Status OK response
       summary: Update document status
       tags:
       - dataproject
@@ -2286,12 +2286,6 @@ paths:
               $ref: '#/components/schemas/CMSlicedDocumentRequest'
         required: true
       responses:
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: could not retrieve document list.
         "200":
           content:
             application/json:
@@ -2299,6 +2293,12 @@ paths:
                 $ref: '#/components/schemas/CMSlicedDocumentListAndTotals'
           description: Paged list of documents for the passed in slice and filters
             as well as totals
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: could not retrieve document list.
       summary: Document list for given slice and filters
       tags:
       - dataproject
@@ -2322,18 +2322,18 @@ paths:
               $ref: '#/components/schemas/CMSetSliceDefinitions'
         required: true
       responses:
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: Could not set Slice configuration.
         "200":
           content:
             application/json:
               schema:
                 type: string
           description: Set Slice config OK response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: Could not set Slice configuration.
       summary: Set Slice configuration
       tags:
       - dataproject
@@ -2492,18 +2492,18 @@ paths:
               $ref: '#/components/schemas/CMRedactionDetails'
         required: true
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ReturnedDocument'
-          description: Wrapper containing the document binary
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: could not retrieve redacted document.
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReturnedDocument'
+          description: Wrapper containing the document binary
       summary: Get Redacted Document
       tags:
       - dataproject
@@ -2555,12 +2555,6 @@ paths:
               $ref: '#/components/schemas/CMNextDocument'
         required: true
       responses:
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: could not retrieve document list.
         "200":
           content:
             application/json:
@@ -2568,6 +2562,12 @@ paths:
                 $ref: '#/components/schemas/CMSlicedDocumentListAndTotals'
           description: Paged list of documents for the passed in slice and filters
             as well as totals
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: could not retrieve document list.
       summary: Document list for given slice and filters
       tags:
       - dataproject
@@ -2591,6 +2591,12 @@ paths:
               $ref: '#/components/schemas/CMCommentFilter'
         required: true
       responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: Could not get comments.
         "200":
           content:
             application/json:
@@ -2599,12 +2605,6 @@ paths:
                   $ref: '#/components/schemas/CMRecordedComment'
                 type: array
           description: Create Comment Status OK response
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: Could not get comments.
       summary: Retrieve Comments
       tags:
       - dataproject
@@ -2628,6 +2628,12 @@ paths:
               $ref: '#/components/schemas/CMDocumentsByToken'
         required: true
       responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: could not retrieve document list.
         "200":
           content:
             application/json:
@@ -2635,12 +2641,6 @@ paths:
                 $ref: '#/components/schemas/CMPagedProjectDocuments'
           description: returns paged list of documents for the given set of query
             tokens
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: could not retrieve document list.
       summary: Returns document list for tokens
       tags:
       - dataproject
@@ -2664,18 +2664,18 @@ paths:
               $ref: '#/components/schemas/CMNewComment'
         required: true
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                type: string
-          description: Create Comment Status OK response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: Could not add comment.
+        "200":
+          content:
+            application/json:
+              schema:
+                type: string
+          description: Create Comment Status OK response
       summary: Create Comment
       tags:
       - dataproject
@@ -2699,18 +2699,18 @@ paths:
               $ref: '#/components/schemas/CMClaimDocument'
         required: true
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ReturnedDocument'
-          description: Wrapper containing the document binary
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: could not retrieve redacted document.
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReturnedDocument'
+          description: Wrapper containing the document binary
       summary: Claim sliced document
       tags:
       - dataproject
@@ -2823,18 +2823,18 @@ paths:
               $ref: '#/components/schemas/CMStartCrawler'
         required: true
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: start processing all OK response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: could not start processing files.
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: start processing all OK response
       summary: Process all files of crawler/source
       tags:
       - crawler
@@ -2906,18 +2906,18 @@ paths:
               $ref: '#/components/schemas/CMUploadDocument'
         required: true
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: upload external-crawler document OK response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: could not start external crawler.
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: upload external-crawler document OK response
       summary: Upload External Document
       tags:
       - crawler
@@ -2957,10 +2957,10 @@ paths:
       summary: Upload External Image
       tags:
       - crawler
-  /api/crawler/external/document/un-changed:
+  /api/crawler/external/document/recordfailure:
     post:
-      description: An external crawler document marks a document as not having changed.
-      operationId: crawlerExternalDocumentUnChanged
+      description: An external crawler document wants to upload a document to SimSage.
+      operationId: crawlerExternalDocumentFailed
       parameters:
       - explode: false
         in: header
@@ -2975,22 +2975,22 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CMDocumentUnChanged'
+              $ref: '#/components/schemas/CMFailedSourceDocument'
         required: true
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: mark external-crawler document unchanged OK response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
-          description: could not mark external-document as unchanged.
-      summary: Mark External Document Unchanged
+          description: could not start external crawler.
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: upload external-crawler document OK response
+      summary: Upload External Document
       tags:
       - crawler
   /api/crawler/external/crawler:
@@ -3051,19 +3051,127 @@ paths:
               $ref: '#/components/schemas/CMExternalCrawlerStart'
         required: true
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: external-crawler start OK response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: could not start external crawler.
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: external-crawler start OK response
       summary: Start External Crawler
+      tags:
+      - crawler
+  /api/crawler/external/crawler/rename-folder:
+    post:
+      description: An external crawler renames a document folder.
+      operationId: crawlerRenameFolder
+      parameters:
+      - explode: false
+        in: header
+        name: API-Version
+        required: false
+        schema:
+          enum:
+          - "1"
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CMExternalCrawlerRenameFolder'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: rename document folder update OK response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: could not rename document folder.
+      summary: Rename document folder
+      tags:
+      - crawler
+  /api/crawler/external/crawler/mark-file-as-seen:
+    post:
+      description: An external crawler marks a file as seen.
+      operationId: markFileAsSeen
+      parameters:
+      - explode: false
+        in: header
+        name: API-Version
+        required: false
+        schema:
+          enum:
+          - "1"
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CMExternalCrawlerMarkFileAsSeen'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: mark file as seen OK response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: could not mark file as seen.
+      summary: Mark file as seen
+      tags:
+      - crawler
+  /api/crawler/external/crawler/log:
+    post:
+      description: An external crawler sends a log entry to SimSage.
+      operationId: receiveExternalLogEntry
+      parameters:
+      - explode: false
+        in: header
+        name: API-Version
+        required: false
+        schema:
+          enum:
+          - "1"
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CMExternalLogEntry'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CMSource'
+          description: OK
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: could not get write log-entry / log-entry invalid.
+      summary: External Crawler log-entry
       tags:
       - crawler
   /api/crawler/external/crawler/finish:
@@ -3088,19 +3196,127 @@ paths:
               $ref: '#/components/schemas/CMExternalCrawlerStop'
         required: true
       responses:
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: could not stop external crawler.
         "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: external-crawler stop OK response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: could not stop external crawler.
       summary: Stop External Crawler
+      tags:
+      - crawler
+  /api/crawler/external/crawler/delta-token:
+    post:
+      description: An external crawler updates a delta-token.
+      operationId: crawlerUpdateDeltaToken
+      parameters:
+      - explode: false
+        in: header
+        name: API-Version
+        required: false
+        schema:
+          enum:
+          - "1"
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CMExternalCrawlerSetDeltaToken'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: source delta-token update OK response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: could not update source delta-token.
+      summary: Update delta token
+      tags:
+      - crawler
+  /api/crawler/external/crawler/delete-url:
+    post:
+      description: An external crawler removes a document.
+      operationId: crawlerDeleteUrl
+      parameters:
+      - explode: false
+        in: header
+        name: API-Version
+        required: false
+        schema:
+          enum:
+          - "1"
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CMExternalCrawlerDeleteUrl'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: delete document update OK response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: could not delete document.
+      summary: Delete document
+      tags:
+      - crawler
+  /api/crawler/external/crawler/delete-folder:
+    post:
+      description: An external crawler removes a document folder.
+      operationId: crawlerDeleteFolder
+      parameters:
+      - explode: false
+        in: header
+        name: API-Version
+        required: false
+        schema:
+          enum:
+          - "1"
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CMExternalCrawlerDeleteFolder'
+        required: true
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: could not delete document folder.
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: delete document folder update OK response
+      summary: Delete document folder
       tags:
       - crawler
   /api/crawler/crawler:
@@ -3195,18 +3411,18 @@ paths:
           type: string
         style: simple
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CMSource'
-          description: reset delta response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: could not reset source delta-token.
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CMSource'
+          description: reset delta response
       summary: Reset Source delta-token
       tags:
       - crawler
@@ -3231,18 +3447,18 @@ paths:
               $ref: '#/components/schemas/CMRestoreFromText'
         required: true
       responses:
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: could not restore backup.
         "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: restore backup OK response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: could not restore backup.
       summary: restore backup
       tags:
       - backup
@@ -3279,18 +3495,18 @@ paths:
           type: string
         style: simple
       responses:
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: could not create backup.
         "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: create backup OK response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: could not create backup.
       summary: create backup
       tags:
       - backup
@@ -3331,18 +3547,18 @@ paths:
               $ref: '#/components/schemas/CMUserPasswordReset'
         required: true
       responses:
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: could not reset-password
         "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: an reset password OK response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: could not reset-password
       summary: Perform a password-reset request.
       tags:
       - auth
@@ -3357,18 +3573,18 @@ paths:
               $ref: '#/components/schemas/CMPasswordResetRequest'
         required: true
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: an email reset OK response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: could not start password-reset
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: an email reset OK response
       summary: Password Reset Request
       tags:
       - auth
@@ -3392,7 +3608,7 @@ paths:
       summary: Version
       tags:
       - stats
-  /api/stats/system-logs/{organisationId}/{year}/{month}/{day}/{hour}/{hours}:
+  /api/stats/system-logs/{organisationId}/{service}/{numLines}:
     get:
       description: return SimSage System-logs
       operationId: systemLogs
@@ -3405,46 +3621,18 @@ paths:
         schema:
           type: string
         style: simple
-      - description: the year to get the log for
+      - description: the service to get the log for
         explode: false
         in: path
-        name: year
+        name: service
         required: true
         schema:
-          format: int32
-          type: integer
+          type: string
         style: simple
-      - description: the month to get the log for
+      - description: the maximum number of lines to return if > 0
         explode: false
         in: path
-        name: month
-        required: true
-        schema:
-          format: int32
-          type: integer
-        style: simple
-      - description: the day to get the log for
-        explode: false
-        in: path
-        name: day
-        required: true
-        schema:
-          format: int32
-          type: integer
-        style: simple
-      - description: the hour to get the log for
-        explode: false
-        in: path
-        name: hour
-        required: true
-        schema:
-          format: int32
-          type: integer
-        style: simple
-      - description: the number of hours to get the logs for starting at hour
-        explode: false
-        in: path
-        name: hours
+        name: numLines
         required: true
         schema:
           format: int32
@@ -3542,25 +3730,25 @@ paths:
           type: string
         style: simple
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CMReturnStatistics'
-          description: response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: failed
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CMReturnStatistics'
+          description: response
       summary: Get usage Statistics
       tags:
       - stats
   /api/stats/reports/{organisationId}/{kbId}:
     get:
       description: return a list of optimization reports
-      operationId: getIndexOptimzationReports
+      operationId: getIndexOptimizationReports
       parameters:
       - description: a valid session-guid id.
         explode: false
@@ -3587,6 +3775,12 @@ paths:
           type: string
         style: simple
       responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: failed
         "200":
           content:
             application/json:
@@ -3595,19 +3789,13 @@ paths:
                   $ref: '#/components/schemas/OptimizeIndexesGetReportsCmd'
                 type: array
           description: response
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: failed
       summary: get optimization report list
       tags:
       - stats
   /api/stats/report/{organisationId}/{kbId}/{id}:
     get:
       description: return an optimization report
-      operationId: getIndexOptimzationReport
+      operationId: getIndexOptimizationReport
       parameters:
       - description: a valid session-guid id.
         explode: false
@@ -3739,73 +3927,19 @@ paths:
           type: string
         style: simple
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: OK response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: fail response
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: OK response
       summary: Tune Graph
-      tags:
-      - language
-  /api/language/truncate-slow-indexes/{organisationId}/{kbId}:
-    get:
-      description: "Force slow-index truncation for a the given knowledge-base, now."
-      operationId: truncateSlowIndexes
-      parameters:
-      - description: the organisation's id (a guid)
-        explode: false
-        in: path
-        name: organisationId
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: the knowledge-bases' id (a guid)
-        explode: false
-        in: path
-        name: kbId
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: a valid SimSage Session id.
-        explode: false
-        in: header
-        name: session-id
-        required: true
-        schema:
-          type: string
-        style: simple
-      - explode: false
-        in: header
-        name: API-Version
-        required: false
-        schema:
-          enum:
-          - "1"
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: OK response
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: fail response
-      summary: Truncate slow Indexes
       tags:
       - language
   /api/language/redact/{organisationId}/{kbId}/{url}/{entityCsv}/{wordCsv}/{allowWordsCsv}:
@@ -3872,6 +4006,12 @@ paths:
           type: string
         style: simple
       responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: fail response
         "200":
           content:
             application/pdf:
@@ -3879,12 +4019,6 @@ paths:
                 format: byte
                 type: string
           description: OK response
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: fail response
       summary: Redact Document
       tags:
       - language
@@ -3945,18 +4079,18 @@ paths:
           type: string
         style: simple
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CMCategorizationPaginatedList'
-          description: response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: fail response
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CMCategorizationPaginatedList'
+          description: response
       summary: categorization list
       tags:
       - language
@@ -4038,18 +4172,18 @@ paths:
           type: string
         style: simple
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: delete knowledge-base OK response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: could not delete knowledge-base.
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: delete knowledge-base OK response
       summary: Delete Knowledge-base
       tags:
       - knowledgebase
@@ -4091,18 +4225,18 @@ paths:
           type: string
         style: simple
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CMKnowledgeBase'
-          description: get knowledge-base response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: could not get knowledge-base.
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CMKnowledgeBase'
+          description: get knowledge-base response
       summary: Get Knowledge-base
       tags:
       - knowledgebase
@@ -4278,12 +4412,6 @@ paths:
           type: integer
         style: simple
       responses:
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: could not get document statistics.
         "200":
           content:
             application/json:
@@ -4292,6 +4420,12 @@ paths:
                   $ref: '#/components/schemas/CMDocumentTypeFrequency'
                 type: array
           description: document statistic response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: could not get document statistics.
       summary: Document Frequency Statistics
       tags:
       - document
@@ -4486,18 +4620,18 @@ paths:
           type: string
         style: simple
       responses:
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: could not get document.
         "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/CMDocument'
           description: document object response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: could not get document.
       summary: get Document
       tags:
       - document
@@ -4548,18 +4682,18 @@ paths:
           type: string
         style: simple
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CMSubscriptions'
-          description: response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: fail response
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CMSubscriptions'
+          description: response
       summary: Get Subscriptions
       tags:
       - dms
@@ -4612,18 +4746,18 @@ paths:
           type: string
         style: simple
       responses:
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: fail response
         "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/CMDocumentFolder'
           description: response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: fail response
       summary: Remove source-folder
       tags:
       - dms
@@ -4674,18 +4808,18 @@ paths:
           type: string
         style: simple
       responses:
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: fail response
         "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/CMDocumentFolder'
           description: response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: fail response
       summary: Get source-folder
       tags:
       - dms
@@ -4745,6 +4879,12 @@ paths:
           type: string
         style: simple
       responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: fail response
         "200":
           content:
             application/json:
@@ -4753,12 +4893,6 @@ paths:
                   $ref: '#/components/schemas/CMSavedSearch'
                 type: array
           description: response
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: fail response
       summary: User's saved searches
       tags:
       - dms
@@ -4884,18 +5018,18 @@ paths:
           type: string
         style: simple
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: OK response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: fail response
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: OK response
       summary: delete all Notes
       tags:
       - dms
@@ -4945,12 +5079,6 @@ paths:
           type: string
         style: simple
       responses:
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: fail response
         "200":
           content:
             application/json:
@@ -4959,6 +5087,12 @@ paths:
                   $ref: '#/components/schemas/CMDocumentNote'
                 type: array
           description: response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: fail response
       summary: Get Notes
       tags:
       - dms
@@ -5100,18 +5234,18 @@ paths:
           type: string
         style: simple
       responses:
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: fail response
         "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/CMDocumentFolder'
           description: response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: fail response
       summary: Get Folder Content
       tags:
       - dms
@@ -5162,18 +5296,18 @@ paths:
           type: string
         style: simple
       responses:
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: fail response
         "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/CMDocumentFolder'
           description: response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: fail response
       summary: Filter Folders
       tags:
       - dms
@@ -5216,18 +5350,18 @@ paths:
           type: integer
         style: simple
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CMDocument'
-          description: response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: fail response
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CMDocument'
+          description: response
       summary: Get Document
       tags:
       - dms
@@ -5279,6 +5413,12 @@ paths:
           type: string
         style: simple
       responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: fail response
         "200":
           content:
             application/json:
@@ -5287,12 +5427,6 @@ paths:
                   $ref: '#/components/schemas/DocumentDeleted'
                 type: array
           description: response
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: fail response
       summary: Deleted records with optional filter
       tags:
       - dms
@@ -5335,18 +5469,18 @@ paths:
           type: string
         style: simple
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CMDUserDashboard'
-          description: response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: fail response
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CMDUserDashboard'
+          description: response
       summary: User Dashboard
       tags:
       - dms
@@ -5397,12 +5531,6 @@ paths:
           type: string
         style: simple
       responses:
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: fail response
         "200":
           content:
             application/json:
@@ -5411,6 +5539,12 @@ paths:
                   $ref: '#/components/schemas/CMDocumentBookmark'
                 type: array
           description: response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: fail response
       summary: Get Bookmarks
       tags:
       - dms
@@ -5462,12 +5596,6 @@ paths:
           type: integer
         style: simple
       responses:
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: fail response
         "200":
           content:
             application/octet-stream:
@@ -5475,6 +5603,12 @@ paths:
                 format: byte
                 type: string
           description: document binary response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: fail response
       summary: Get Binary Document
       tags:
       - dms
@@ -5516,12 +5650,6 @@ paths:
           type: string
         style: simple
       responses:
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: fail response
         "200":
           content:
             application/octet-stream:
@@ -5529,6 +5657,12 @@ paths:
                 format: byte
                 type: string
           description: document binary response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: fail response
       summary: Binary
       tags:
       - dms
@@ -5590,12 +5724,6 @@ paths:
           type: string
         style: simple
       responses:
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: fail response
         "200":
           content:
             application/json:
@@ -5604,6 +5732,12 @@ paths:
                   $ref: '#/components/schemas/CMDocumentAudit'
                 type: array
           description: response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: fail response
       summary: Audit records for a month
       tags:
       - dms
@@ -5673,12 +5807,6 @@ paths:
           type: string
         style: simple
       responses:
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: fail response
         "200":
           content:
             application/json:
@@ -5687,6 +5815,12 @@ paths:
                   $ref: '#/components/schemas/CMDocumentAudit'
                 type: array
           description: response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: fail response
       summary: Audit records for a document for a month
       tags:
       - dms
@@ -5851,53 +5985,6 @@ paths:
               schema:
                 type: object
           description: OK
-      tags:
-      - discovery
-  /api/discovery/pdf/latest/{organisationId}/{kbId}/{url}:
-    get:
-      description: Get the original for a document if available by url (latest version)
-      operationId: pdfBinary
-      parameters:
-      - description: a valid SimSage Session id.
-        explode: false
-        in: header
-        name: session-id
-        required: false
-        schema:
-          type: string
-        style: simple
-      - description: the organisation (its guid id)
-        explode: false
-        in: path
-        name: organisationId
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: the knowledge-base (its guid id)
-        explode: false
-        in: path
-        name: kbId
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: a base64 encoded url
-        explode: false
-        in: path
-        name: url
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            '*/*':
-              schema:
-                type: object
-          description: OK
-      summary: Binary
       tags:
       - discovery
   /api/discovery/growth/{organisationId}/{kbId}:
@@ -6119,6 +6206,52 @@ paths:
       summary: storage
       tags:
       - discovery
+  /api/dataproject/searchresultreview/{organisationId}/{projectId}:
+    get:
+      description: Get the summary information for the search results of a given project
+        by task id
+      operationId: getSearchResultSummaryForReview
+      parameters:
+      - description: the organisation (its guid id)
+        explode: false
+        in: path
+        name: organisationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: the id of the task
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: a valid SimSage Session id.
+        explode: false
+        in: header
+        name: session-id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CMSearchResultSummary'
+          description: search result summary response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: could not get search result summary.
+      summary: get Search Result Summary
+      tags:
+      - dataproject
   /api/dataproject/searchresult/{organisationId}/{taskId}:
     get:
       description: Get the summary information for the search results of a given project
@@ -6195,6 +6328,12 @@ paths:
           type: string
         style: simple
       responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: could not retrieve project slice.
         "200":
           content:
             application/json:
@@ -6203,12 +6342,6 @@ paths:
                   $ref: '#/components/schemas/CMProjectSliceTask'
                 type: array
           description: Project slice data
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: could not retrieve project slice.
       summary: get project slice
       tags:
       - dataproject
@@ -6251,6 +6384,52 @@ paths:
       summary: get Project Types
       tags:
       - dataproject
+  /api/dataproject/projectreview/{organisationId}/{projectId}:
+    get:
+      description: Get the project review data of the project for the given project
+        id
+      operationId: getProjectReview
+      parameters:
+      - description: the organisation (its guid id)
+        explode: false
+        in: path
+        name: organisationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: the id of the task
+        explode: false
+        in: path
+        name: projectId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: a valid SimSage Session id.
+        explode: false
+        in: header
+        name: session-id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CMProjectReview'
+          description: project review response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: could not get project review.
+      summary: get Project Definition
+      tags:
+      - dataproject
   /api/dataproject/projectdefinition/{organisationId}/{taskId}:
     get:
       description: Get the project definition of the project for the given task id
@@ -6281,19 +6460,66 @@ paths:
           type: string
         style: simple
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CMProjectDefinitionTask'
-          description: project definition response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: could not get project definition.
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CMProjectDefinitionTask'
+          description: project definition response
       summary: get Project Definition
+      tags:
+      - dataproject
+  /api/dataproject/pdf/latest/{organisationId}/{kbId}/{url}:
+    get:
+      description: Get the original for a document if available by url (latest version)
+      operationId: pdfBinary
+      parameters:
+      - description: a valid SimSage Session id.
+        explode: false
+        in: header
+        name: session-id
+        required: false
+        schema:
+          type: string
+        style: simple
+      - description: the organisation (its guid id)
+        explode: false
+        in: path
+        name: organisationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: the knowledge-base (its guid id)
+        explode: false
+        in: path
+        name: kbId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: a base64 encoded url
+        explode: false
+        in: path
+        name: url
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                type: object
+          description: OK
+      summary: Binary
       tags:
       - dataproject
   /api/dataproject/docredactioninfo/{organisationId}/{sliceId}/{documentKey}:
@@ -6418,6 +6644,112 @@ paths:
       summary: Version
       tags:
       - crawler
+  /api/crawler/sdc_schema:
+    get:
+      operationId: sdcSchema
+      responses:
+        "200":
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                type: object
+          description: OK
+      tags:
+      - crawler
+  /api/crawler/processor_schema:
+    get:
+      operationId: processor_schema
+      responses:
+        "200":
+          content:
+            application/json;charset=UTF-8:
+              schema:
+                type: object
+          description: OK
+      tags:
+      - crawler
+  /api/crawler/faileddocs/{organisationId}/{kbId}/{sourceId}/{page}/{pageSize}:
+    get:
+      description: Get a list of failed documents for a source.
+      operationId: getFailedDocuments
+      parameters:
+      - description: a valid SimSage Session id.
+        explode: false
+        in: header
+        name: session-id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: the organisation's id (a guid)
+        explode: false
+        in: path
+        name: organisationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: the knowledge-base's id (a guid)
+        explode: false
+        in: path
+        name: kbId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: the source  id (a number)
+        explode: false
+        in: path
+        name: sourceId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: the page number for the list
+        explode: false
+        in: path
+        name: page
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: simple
+      - description: the page size for the list
+        explode: false
+        in: path
+        name: pageSize
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: simple
+      - explode: false
+        in: header
+        name: API-Version
+        required: false
+        schema:
+          enum:
+          - "1"
+          type: string
+        style: simple
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: could not get source list.
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/CMSource'
+                type: array
+          description: source list response
+      summary: Get source List
+      tags:
+      - crawler
   /api/crawler/dropbox-oidc-code/{oidcKey}:
     get:
       description: used for OIDC systems to receive codes
@@ -6441,14 +6773,14 @@ paths:
           type: object
         style: form
       responses:
-        "401":
-          content:
-            text/html: {}
-          description: something went wrong with the OIDC request set-up.
         "200":
           content:
             text/html: {}
           description: OK response
+        "401":
+          content:
+            text/html: {}
+          description: something went wrong with the OIDC request set-up.
       summary: OIDC code receiver
       tags:
       - crawler
@@ -6556,18 +6888,18 @@ paths:
           type: string
         style: simple
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: remove a source OK response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: could not remove source.
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: remove a source OK response
       summary: Delete source
       tags:
       - crawler
@@ -6618,18 +6950,18 @@ paths:
           type: string
         style: simple
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CMSource'
-          description: the source
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: could not get source.
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CMSource'
+          description: the source
       summary: Get source
       tags:
       - crawler
@@ -6702,18 +7034,18 @@ paths:
       description: Get the version of SimSage Conversion Services.
       operationId: version_7
       responses:
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: could not get version
         "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/SignInCmd'
           description: the version response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: could not get version
       summary: Get Version
       tags:
       - conversion
@@ -6722,18 +7054,18 @@ paths:
       description: Get the version of SimSage speech-to-text system.
       operationId: sttVersion
       responses:
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: could not get version
         "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/SignInCmd'
           description: the version response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: could not get version
       summary: Get speech-to-text Version
       tags:
       - conversion
@@ -6742,18 +7074,18 @@ paths:
       description: Get the version of SimSage preview-generator.
       operationId: previewVersion
       responses:
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: could not get version
         "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/SignInCmd'
           description: the version response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: could not get version
       summary: Get preview-generator Version
       tags:
       - conversion
@@ -6788,18 +7120,18 @@ paths:
           type: integer
         style: simple
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Backup'
-          description: get backup response.
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: could not get backup.
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Backup'
+          description: get backup response.
       summary: get backup
       tags:
       - backup
@@ -6847,18 +7179,18 @@ paths:
       description: Get the version of SimSage Auth Services.
       operationId: version_8
       responses:
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: could not get version
         "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/SignInCmd'
           description: the version response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: could not get version
       summary: Get Version
       tags:
       - auth
@@ -7024,12 +7356,6 @@ paths:
           type: string
         style: simple
       responses:
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: could not get role list.
         "200":
           content:
             application/json:
@@ -7038,6 +7364,12 @@ paths:
                   type: string
                 type: array
           description: project-type list response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: could not get role list.
       summary: Get users application roles
       tags:
       - auth
@@ -7080,7 +7412,7 @@ paths:
       - auth
   /api/auth/evolve/authenticate/msal/{organisationId}:
     get:
-      description: Sign-in an Evolve user using an Msal JWT.
+      description: Sign-in an Evolve user using an Msal JWT...
       operationId: signInEvolveUsingJWTMsal
       parameters:
       - description: a valid JWT token.
@@ -7137,19 +7469,48 @@ paths:
           type: string
         style: simple
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/SignInDmsCmd'
-          description: a sign-in dms response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: could not sign-in
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SignInDmsCmd'
+          description: a sign-in dms response
       summary: JWT MSal Sign In
+      tags:
+      - auth
+  /api/auth/admin/authenticate/session-id:
+    get:
+      description: Sign-in a user using an existing session-id.
+      operationId: signInAdminUsingSessionId
+      parameters:
+      - description: a valid SimSage Session id.
+        explode: false
+        in: header
+        name: session-id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: could not sign-in
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SignInAdmin'
+          description: a sign-in response
+      summary: session-id Sign-in
       tags:
       - auth
   /api/auth/admin/authenticate/msal:
@@ -7229,18 +7590,18 @@ paths:
           type: string
         style: simple
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: OK response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: fail response
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: OK response
       summary: Delete text-to-search
       tags:
       - semantic
@@ -7292,18 +7653,18 @@ paths:
           type: string
         style: simple
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: OK response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: fail response
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: OK response
       summary: Delete Synonym
       tags:
       - language
@@ -7354,18 +7715,18 @@ paths:
           type: string
         style: simple
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: OK response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: fail response
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: OK response
       summary: Delete SynSet
       tags:
       - language
@@ -7427,18 +7788,18 @@ paths:
           type: string
         style: simple
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: OK response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: fail response
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: OK response
       summary: Delete Semantic
       tags:
       - language
@@ -7481,18 +7842,18 @@ paths:
           type: string
         style: simple
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: OK response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: fail response
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: OK response
       summary: Delete All Synonyms
       tags:
       - language
@@ -7543,18 +7904,18 @@ paths:
           type: string
         style: simple
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: OK response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: fail response
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: OK response
       summary: remove categorization
       tags:
       - language
@@ -7614,18 +7975,18 @@ paths:
           type: string
         style: simple
       responses:
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: could not remove document.
         "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: remove document OK response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: could not remove document.
       summary: Remove Document
       tags:
       - document
@@ -7695,6 +8056,12 @@ paths:
           type: string
         style: simple
       responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: fail response
         "200":
           content:
             application/json:
@@ -7703,12 +8070,6 @@ paths:
                   $ref: '#/components/schemas/DocumentDeleted'
                 type: array
           description: response
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: fail response
       summary: un-delete a record
       tags:
       - dms
@@ -7768,18 +8129,18 @@ paths:
           type: string
         style: simple
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CMSubscriptions'
-          description: response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: fail response
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CMSubscriptions'
+          description: response
       summary: Delete a Subscription
       tags:
       - dms
@@ -7847,6 +8208,12 @@ paths:
           type: string
         style: simple
       responses:
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: fail response
         "200":
           content:
             application/json:
@@ -7855,12 +8222,6 @@ paths:
                   $ref: '#/components/schemas/CMSavedSearch'
                 type: array
           description: response
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: fail response
       summary: Delete a Saved Search
       tags:
       - dms
@@ -7920,12 +8281,6 @@ paths:
           type: string
         style: simple
       responses:
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: fail response
         "200":
           content:
             application/json:
@@ -7934,6 +8289,12 @@ paths:
                   $ref: '#/components/schemas/CMDocumentNote'
                 type: array
           description: response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: fail response
       summary: Delete a Note
       tags:
       - dms
@@ -8064,18 +8425,18 @@ paths:
           type: string
         style: simple
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: OK response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: fail response
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: OK response
       summary: Force-release a lock
       tags:
       - dms
@@ -8151,18 +8512,18 @@ paths:
           type: string
         style: simple
       responses:
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: fail response
         "200":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/CMDocumentFolder'
           description: response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: fail response
       summary: Delete a document or a folder
       tags:
       - dms
@@ -8221,12 +8582,6 @@ paths:
           type: string
         style: simple
       responses:
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: fail response
         "200":
           content:
             application/json:
@@ -8235,6 +8590,12 @@ paths:
                   $ref: '#/components/schemas/CMDocumentBookmark'
                 type: array
           description: response
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: fail response
       summary: Delete a Bookmark
       tags:
       - dms
@@ -8401,18 +8762,18 @@ paths:
           type: string
         style: simple
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: a sign-out OK response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: could not sign-out
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: a sign-out OK response
       summary: Sign Out
       tags:
       - auth
@@ -8528,45 +8889,23 @@ paths:
           type: string
         style: simple
       responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/JsonMessage'
-          description: delete group OK response
         "500":
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/JsonMessage'
           description: could not delete group
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsonMessage'
+          description: delete group OK response
       summary: Delete Group
       tags:
       - auth
 components:
   schemas:
-    CMCommandQueueItem:
-      description: a progress/status item from the async command queue
-      example:
-        jobId: jobId
-        expiry: 0
-        key: key
-      properties:
-        jobId:
-          description: "the job-id, primary key"
-          type: string
-        key:
-          description: the name of the lock
-          type: string
-        expiry:
-          description: when this lock will expire as a Unix date-time
-          format: int64
-          type: integer
-      required:
-      - expiry
-      - jobId
-      - key
-      type: object
     JsonMessage:
       description: A generic SimSage message class used throughout the system.  This
         class can be used to either send a success message (information) or an error
@@ -8601,6 +8940,28 @@ components:
       - information
       - time
       - version
+      type: object
+    CMCommandQueueItem:
+      description: a progress/status item from the async command queue
+      example:
+        jobId: jobId
+        expiry: 0
+        key: key
+      properties:
+        jobId:
+          description: "the job-id, primary key"
+          type: string
+        key:
+          description: the name of the lock
+          type: string
+        expiry:
+          description: when this lock will expire as a Unix date-time
+          format: int64
+          type: integer
+      required:
+      - expiry
+      - jobId
+      - key
       type: object
     CMTextToSearchPaginated:
       description: A text-to-search pagination object.
@@ -9251,6 +9612,7 @@ components:
         enabled: true
         capacityWarnings: true
         name: name
+        projectKb: true
         operatorEnabled: true
         email: email
         indexSchedule: indexSchedule
@@ -9285,6 +9647,8 @@ components:
         lastIndexOptimizationTime:
           format: int64
           type: integer
+        projectKb:
+          type: boolean
       required:
       - analyticsWindowInMonths
       - capacityWarnings
@@ -9298,6 +9662,7 @@ components:
       - name
       - operatorEnabled
       - organisationId
+      - projectKb
       - securityId
       type: object
     CMRedaction:
@@ -9519,6 +9884,7 @@ components:
           - userIdList
           name: Domain Users
         id: id
+        jwtMatchNameValueCSV: jwtMatchNameValueCSV
         email: email
       properties:
         id:
@@ -9548,11 +9914,16 @@ components:
           items:
             $ref: '#/components/schemas/CMGroup'
           type: array
+        jwtMatchNameValueCSV:
+          description: "an optional set of csv separated name1=value1,name2=value2\
+            \ for JWT matching"
+          type: string
       required:
       - email
       - firstName
       - groupList
       - id
+      - jwtMatchNameValueCSV
       - operatorKBList
       - password
       - roles
@@ -9728,6 +10099,7 @@ components:
         useQuestionAnsweringAi: false
         maxWordDistance: 20
         query: most recent similar PDF files for annual reports
+        wordSynSet: test -> 0
         numResults: 1
         pageSize: 10
         kbList:
@@ -9850,6 +10222,14 @@ components:
           description: use ChatGPT or equivalent to answer queries
           example: false
           type: boolean
+        wordSynSet:
+          additionalProperties:
+            description: selected syn-sets for words
+            format: int32
+            type: integer
+          description: selected syn-sets for words
+          example: test -> 0
+          type: object
       required:
       - clientId
       - filter
@@ -9870,6 +10250,7 @@ components:
       - sourceId
       - spellingSuggest
       - useQuestionAnsweringAi
+      - wordSynSet
       type: object
     CMClientQueryResult:
       description: A SimSage return search-result message for Q&A and semantic-search
@@ -9888,25 +10269,27 @@ components:
           wordCloudCsvList: "[\"finance,money,cashier,teller,industry\",\"tree,river,nature,water\"\
             ]"
           word: bank
-        assignedOperatorId: 00000000-0000-0000-0000-000000000001
         hasResult: true
         spellingCorrection: spellingCorrection
+        documentTypeToCounts:
+          key: 5
         shardSizeList:
         - 1
         - 3
         - 2
-        operatorName: John
+        sourceIdToCounts:
+          key: 5
         savedSearchList:
         - kbId: kbId
           organisationId: organisationId
-          top: 5
-          created: 5
+          top: 7
+          created: 2
           text: what is SimSage?
           userId: "1234"
         - kbId: kbId
           organisationId: organisationId
-          top: 5
-          created: 5
+          top: 7
+          created: 2
           text: what is SimSage?
           userId: "1234"
         knowEmail: true
@@ -10059,14 +10442,6 @@ components:
       properties:
         messageType:
           type: string
-        assignedOperatorId:
-          description: A unique id for this operator's session.
-          example: 00000000-0000-0000-0000-000000000001
-          type: string
-        operatorName:
-          description: the name of the operator for clients
-          example: John
-          type: string
         organisationId:
           description: the organisation (its guid id).
           example: 00000000-0000-0000-0000-000000000001
@@ -10169,6 +10544,24 @@ components:
             search-results?
           example: false
           type: boolean
+        sourceIdToCounts:
+          additionalProperties:
+            description: a map of sourceId -> number of documents found inside this
+              source
+            format: int32
+            type: integer
+          description: a map of sourceId -> number of documents found inside this
+            source
+          type: object
+        documentTypeToCounts:
+          additionalProperties:
+            description: a map of document-type -> number of documents found of this
+              type
+            format: int32
+            type: integer
+          description: a map of document-type -> number of documents found of this
+            type
+          type: object
         savedSearchList:
           description: a list of previous searches if applicable
           items:
@@ -10178,16 +10571,15 @@ components:
           description: an optional summarization of the search results
           type: string
       required:
-      - assignedOperatorId
       - categoryList
       - customRender
+      - documentTypeToCounts
       - hasResult
       - imageList
       - kbId
       - knowEmail
       - messageType
       - metadata
-      - operatorName
       - organisationId
       - qnaScore
       - querySummarization
@@ -10195,6 +10587,7 @@ components:
       - savedSearchList
       - semanticSet
       - shardSizeList
+      - sourceIdToCounts
       - spellingCorrection
       - synSetList
       - text
@@ -10281,8 +10674,8 @@ components:
       example:
         kbId: kbId
         organisationId: organisationId
-        top: 5
-        created: 5
+        top: 7
+        created: 2
         text: what is SimSage?
         userId: "1234"
       properties:
@@ -10643,7 +11036,7 @@ components:
     NameCounterLevel:
       example:
         name: name
-        count: 5
+        count: 1
       properties:
         name:
           type: string
@@ -10657,22 +11050,17 @@ components:
     SearchCategory:
       description: Search categories / metadata searching
       example:
-        categoryType: categoryType
-        sortDefault: sortDefault
         scType: SCT_PLAIN
         metadata: metadata
-        minValue: 6
-        sortAscText: sortAscText
-        sortDescText: sortDescText
+        minValue: 0
         displayName: displayName
-        maxValue: 1
-        sort: true
+        maxValue: 6
+        dataType: dataType
         items:
         - name: name
-          count: 5
+          count: 1
         - name: name
-          count: 5
-        order: 0
+          count: 1
       properties:
         scType:
           enum:
@@ -10680,23 +11068,12 @@ components:
           - SCT_TWO_LEVEL
           - SCT_NUMBER
           type: string
-        categoryType:
-          type: string
-        order:
-          format: int32
-          type: integer
-        sortDefault:
-          type: string
-        sortAscText:
-          type: string
-        sortDescText:
-          type: string
         metadata:
           type: string
         displayName:
           type: string
-        sort:
-          type: boolean
+        dataType:
+          type: string
         minValue:
           format: int64
           type: integer
@@ -10708,18 +11085,13 @@ components:
             $ref: '#/components/schemas/NameCounterLevel'
           type: array
       required:
-      - categoryType
+      - dataType
       - displayName
       - items
       - maxValue
       - metadata
       - minValue
-      - order
       - scType
-      - sort
-      - sortAscText
-      - sortDefault
-      - sortDescText
       type: object
     CMDocumentQuestionAndAnswer:
       description: A basic document question/answer pair for AI
@@ -13219,6 +13591,7 @@ components:
           key: sourceMap
         allDocs: 5
         completed: 2
+        quarantined: 7
         userMap:
           key: userMap
       properties:
@@ -13228,6 +13601,9 @@ components:
           format: int64
           type: integer
         completed:
+          format: int64
+          type: integer
+        quarantined:
           format: int64
           type: integer
         sourceMap:
@@ -13242,6 +13618,7 @@ components:
       - allDocs
       - completed
       - pagedResults
+      - quarantined
       - sourceMap
       - userMap
       type: object
@@ -13931,6 +14308,7 @@ components:
         sliceId: sliceId
         created: 2000-01-23T04:56:07.000+00:00
         documentKey: documentKey
+        isAuditEvent: true
         comment: comment
         commentLevel: commentLevel
         projectId: projectId
@@ -13951,11 +14329,14 @@ components:
           type: string
         user:
           type: string
+        isAuditEvent:
+          type: boolean
       required:
       - comment
       - commentLevel
       - created
       - documentKey
+      - isAuditEvent
       - projectId
       - sliceId
       - user
@@ -13998,6 +14379,7 @@ components:
         total: 0
         results:
         - extension: extension
+          displayType: displayType
           size: 6
           documentKey: documentKey
           confidence: 5
@@ -14007,6 +14389,7 @@ components:
           projectId: projectId
           folderId: folderId
         - extension: extension
+          displayType: displayType
           size: 6
           documentKey: documentKey
           confidence: 5
@@ -14030,6 +14413,7 @@ components:
     CMProjectDocument:
       example:
         extension: extension
+        displayType: displayType
         size: 6
         documentKey: documentKey
         confidence: 5
@@ -14060,9 +14444,12 @@ components:
         confidence:
           format: int32
           type: integer
+        displayType:
+          type: string
       required:
       - confidence
       - count
+      - displayType
       - documentKey
       - extension
       - folderId
@@ -14076,6 +14463,7 @@ components:
         organisationId: organisationId
         sliceId: sliceId
         documentKey: documentKey
+        isAuditEvent: true
         comment: comment
         commentLevel: commentLevel
         projectId: projectId
@@ -14092,10 +14480,13 @@ components:
           type: string
         comment:
           type: string
+        isAuditEvent:
+          type: boolean
       required:
       - comment
       - commentLevel
       - documentKey
+      - isAuditEvent
       - organisationId
       - projectId
       - sliceId
@@ -14187,10 +14578,8 @@ components:
         \ DropBox, Box, iManage, and others."
       example:
         sourceId: 1
-        autoOptimize: false
         edgeDeviceId: edgeDeviceId
         numTotalDocuments: 0
-        documentSimilarityThreshold: 0.9
         organisationId: organisationId
         numErrors: 5
         acls:
@@ -14202,26 +14591,41 @@ components:
           acl: e.g. "example@simsage.co.uk" or "domain users"
           isUser: true
           user: true
-        crawlerType: "one of \"rss\",\"external\",\"web\",\"discourse\",\"file\",\"\
-          database\",\"onedrive\",\"exchange365\",\"sharepoint365\",\"imanage\",\"\
-          box\",\"dropbox\",\"wordpress\",\"gdrive\",\"nfs\",\"restfull\""
+        transmitExternalLogs: false
         useSTT: true
         enablePreview: true
-        numResults: 6
         numParsedDocuments: 0
+        deltaIndicator: "12345"
         processingLevel: "one of: CONVERT, PARSE, INDEX"
-        versioned: true
-        busy: true
-        startTime: 2
         enableDocumentSimilarity: true
-        filesPerSecond: 0.0
         specificJson: "{}"
-        kbId: kbId
         maxItems: 0
-        isBusy: true
         numIndexedDocuments: 0
         storeBinary: true
         isExternal: false
+        numFinishedDocuments: 0
+        deleteFiles: true
+        allowAnonymous: false
+        external: true
+        name: web crawler
+        numConvertedDocuments: 0
+        crawling: true
+        nodeId: 0
+        isCrawling: false
+        useOCR: true
+        autoOptimize: false
+        documentSimilarityThreshold: 0.9
+        crawlerType: "one of \"rss\",\"external\",\"web\",\"discourse\",\"file\",\"\
+          database\",\"onedrive\",\"exchange365\",\"sharepoint365\",\"imanage\",\"\
+          box\",\"dropbox\",\"wordpress\",\"gdrive\",\"nfs\",\"restfull\""
+        numResults: 6
+        versioned: true
+        busy: true
+        numTotalErroredDocuments: 0
+        startTime: 2
+        filesPerSecond: 0.0
+        kbId: kbId
+        isBusy: true
         errorThreshold: 5
         qaMatchStrength: 0.8008282
         sessionId: sessionId
@@ -14229,22 +14633,13 @@ components:
         useDefaultRelationships: true
         writeToCassandra: true
         numCrawledDocuments: 0
-        numFinishedDocuments: 0
         schedule: "eg. If we want this crawler to be active every Monday from midnight\
           \ to 1am, and Tuesday from 5pm to 6pm (GMT), we'd use: \"mon-00,tue-17\""
-        deleteFiles: true
-        allowAnonymous: false
-        external: true
+        numErroredDocuments: 0
         customRender: false
         numFragments: 1
-        name: web crawler
-        numConvertedDocuments: 0
         endTime: 7
-        crawling: true
         processorConfig: "{}"
-        nodeId: 0
-        isCrawling: false
-        useOCR: true
       properties:
         sourceId:
           description: "the source-id, primary key of the source"
@@ -14310,9 +14705,8 @@ components:
           example: true
           type: boolean
         filesPerSecond:
-          description: Any value greater than 0.0 (can be fractional) indicates SimSage
-            should limit how many requests it makes from the remote entity we're integrating
-            with.
+          description: Any value greater than 0 will cause the crawler to sleep for
+            as many milliseconds between file uploads.
           example: 0.0
           format: float
           type: number
@@ -14416,8 +14810,19 @@ components:
           example: 0
           format: int32
           type: integer
+        numErroredDocuments:
+          description: the number of errored documents by SimSage thus-far.
+          example: 0
+          format: int32
+          type: integer
         numTotalDocuments:
           description: the total number of documents for this source in SimSage.
+          example: 0
+          format: int32
+          type: integer
+        numTotalErroredDocuments:
+          description: the total number of documents for this source marked as errored
+            in SimSage.
           example: 0
           format: int32
           type: integer
@@ -14481,6 +14886,14 @@ components:
           description: enable Speech-to-text processing for files in this source?
           example: true
           type: boolean
+        deltaIndicator:
+          description: A saved value indicating last crawler state
+          example: "12345"
+          type: string
+        transmitExternalLogs:
+          description: enabling sending of logs to SimSage for external crawlers
+          example: false
+          type: boolean
         external:
           type: boolean
           writeOnly: true
@@ -14497,6 +14910,7 @@ components:
       - crawlerType
       - customRender
       - deleteFiles
+      - deltaIndicator
       - documentSimilarityThreshold
       - edgeDeviceId
       - enableDocumentSimilarity
@@ -14514,6 +14928,7 @@ components:
       - nodeId
       - numConvertedDocuments
       - numCrawledDocuments
+      - numErroredDocuments
       - numErrors
       - numFinishedDocuments
       - numFragments
@@ -14521,6 +14936,7 @@ components:
       - numParsedDocuments
       - numResults
       - numTotalDocuments
+      - numTotalErroredDocuments
       - organisationId
       - processingLevel
       - processorConfig
@@ -14531,6 +14947,7 @@ components:
       - specificJson
       - startTime
       - storeBinary
+      - transmitExternalLogs
       - useDefaultRelationships
       - useOCR
       - useSTT
@@ -14555,28 +14972,18 @@ components:
         puid: fmt/123
         text: text
         categories:
-        - sortDefault: "one of: asc, desc"
+        - extMetadata: a name
           metadata: price
-          sortAscText: Lowest to highest price
-          sortDescText: Highest to lowest price
+          dataType: "one of: string, long"
           display: The price of the item
-          sort: false
-          key: "one of: select if true,star rating,number range,monetary x 100 range,monetary\
-            \ range,csv string,category,url-image,base64-image,binary-blob-image"
           stringValueList: "pants,shorts"
           numberValueList: "1.0"
-          order: 0
-        - sortDefault: "one of: asc, desc"
+        - extMetadata: a name
           metadata: price
-          sortAscText: Lowest to highest price
-          sortDescText: Highest to lowest price
+          dataType: "one of: string, long"
           display: The price of the item
-          sort: false
-          key: "one of: select if true,star rating,number range,monetary x 100 range,monetary\
-            \ range,csv string,category,url-image,base64-image,binary-blob-image"
           stringValueList: "pants,shorts"
           numberValueList: "1.0"
-          order: 0
         kbId: kbId
         author: John Manyberries
         created: 6
@@ -14587,7 +14994,7 @@ components:
         encrypted: true
         changeHash: 098f6bcd4621d373cade4e832627b4f6
         lastModified: 1
-        runId: runId
+        runId: 5
       properties:
         objectType:
           description: "the type of this class, just in case this object is encrypted"
@@ -14681,7 +15088,7 @@ components:
           description: A list of special SimSage metadata categories for matching
             this document with.  Can be empty.
           items:
-            $ref: '#/components/schemas/MDCategory'
+            $ref: '#/components/schemas/MDMetadataMapping'
           type: array
         size:
           description: The size of this document (the original) in bytes
@@ -14703,9 +15110,10 @@ components:
           format: int32
           type: integer
         runId:
-          description: the id (a guid) of the current 'go through the source once'.  This
-            is a unique per-run identifier.
-          type: string
+          description: the id (a unix timestamp) of the current 'go through the source
+            once'.  This is a unique per-run identifier.
+          format: int64
+          type: integer
       required:
       - acls
       - author
@@ -14733,32 +15141,29 @@ components:
       - title
       - url
       type: object
-    MDCategory:
-      description: A SimSage category is a metadata description in SimSage.  This
-        object represents a single piece of categorical data that is uploaded to SimSage
-        from external sources as part of a CMDocumentUpload request.
+    MDMetadataMapping:
+      description: A SimSage metadata-mapping.  This object represents a map of metadata
+        between an external source and SimSage.
       example:
-        sortDefault: "one of: asc, desc"
+        extMetadata: a name
         metadata: price
-        sortAscText: Lowest to highest price
-        sortDescText: Highest to lowest price
+        dataType: "one of: string, long"
         display: The price of the item
-        sort: false
-        key: "one of: select if true,star rating,number range,monetary x 100 range,monetary\
-          \ range,csv string,category,url-image,base64-image,binary-blob-image"
         stringValueList: "pants,shorts"
         numberValueList: "1.0"
-        order: 0
       properties:
-        key:
-          description: The SimSage type of category
-          example: "one of: select if true,star rating,number range,monetary x 100\
-            \ range,monetary range,csv string,category,url-image,base64-image,binary-blob-image"
+        dataType:
+          description: The SimSage data-type of the item
+          example: "one of: string, long"
           type: string
         display:
           description: A friendly display name for any UI component rendering this
             component
           example: The price of the item
+          type: string
+        extMetadata:
+          description: the external metadata item being mapped
+          example: a name
           type: string
         metadata:
           description: The metadata-name inside SimSage for this item.  Only a..z
@@ -14776,40 +15181,12 @@ components:
             \ \"belongs to\""
           example: "1.0"
           type: string
-        sort:
-          description: Is this category to be sort-able in the UI?
-          example: false
-          type: boolean
-        order:
-          description: What order does this item have in the UI display?
-          example: 0
-          format: int32
-          type: integer
-        sortDefault:
-          description: "Is this item THE default sort item in the UI, and if so, is\
-            \ it ascending (asc) or descending (desc).  Not the default sort if empty."
-          example: "one of: asc, desc"
-          type: string
-        sortAscText:
-          description: "If sortable, what label should the UI display for ascending\
-            \ sort?"
-          example: Lowest to highest price
-          type: string
-        sortDescText:
-          description: "If sortable, what label should the UI display for descending\
-            \ sort?"
-          example: Highest to lowest price
-          type: string
       required:
+      - dataType
       - display
-      - key
+      - extMetadata
       - metadata
       - numberValueList
-      - order
-      - sort
-      - sortAscText
-      - sortDefault
-      - sortDescText
       - stringValueList
       type: object
     CMUploadImage:
@@ -14887,47 +15264,74 @@ components:
       - sourceId
       - url
       type: object
-    CMDocumentUnChanged:
-      description: An external document representation object.
+    CMFailedSourceDocument:
+      description: Description of an external document upload failure.
       example:
         kbId: kbId
         sourceId: 1
         organisationId: organisationId
-        runId: runId
-        url: document-1
+        encrypted: true
+        seed: 0
+        sourceSystemId: https://sharepoint/demo/document.doc
+        webUrl: https://sharepoint/demo/document.doc
+        errorMessage: "1"
+        runId: 1234567
         sid: sid
       properties:
         organisationId:
-          description: the organisation (its guid id) this document should go into.
+          description: the main organisation (its guid id) for this source/crawler
           type: string
         kbId:
-          description: the knowledge-base (its guid id) this document should go into.
+          description: the knowledge-base id (its guid id) for this source/crawler
           type: string
+        sourceId:
+          description: "the source-id, primary key of the source"
+          example: 1
+          format: int32
+          type: integer
+        sourceSystemId:
+          description: "the unique id of the document in the source system, mostly\
+            \ same as web url"
+          example: https://sharepoint/demo/document.doc
+          type: string
+        webUrl:
+          description: "the web url to access the document, can be different from\
+            \ url"
+          example: https://sharepoint/demo/document.doc
+          type: string
+        runId:
+          description: the timestamp of the crawler run adding the exception
+          example: 1234567
+          format: int64
+          type: integer
+        errorMessage:
+          description: the error message added by the system
+          example: "1"
+          type: string
+        encrypted:
+          description: Do we need to add transport encryption
+          example: true
+          type: boolean
+        seed:
+          description: The seed used if encrypted
+          example: 0
+          format: int32
+          type: integer
         sid:
           description: the security-id (a guid) of the knowledge-base.  This is effectively
             the shared secret between SimSage and the external-crawler system.
           type: string
-        sourceId:
-          description: the source-id of this crawler (ie. the crawler's id) this document
-            came from.
-          example: 1
-          format: int32
-          type: integer
-        url:
-          description: A unique URL for this document.
-          example: document-1
-          type: string
-        runId:
-          description: the id (a guid) of the current 'go through the source once'.  This
-            is a unique per-run identifier.
-          type: string
       required:
+      - encrypted
+      - errorMessage
       - kbId
       - organisationId
       - runId
+      - seed
       - sid
       - sourceId
-      - url
+      - sourceSystemId
+      - webUrl
       type: object
     CMExternalCrawler:
       description: request access to the given crawler by id.
@@ -14985,7 +15389,7 @@ components:
         organisationId: organisationId
         encrypted: true
         seed: 0
-        runId: runId
+        runId: 0
         objectType: CMExternalCrawlerStartStop
         sid: sid
       properties:
@@ -15009,9 +15413,10 @@ components:
           format: int32
           type: integer
         runId:
-          description: the id (a guid) of the current 'go through the source once'.  This
-            is a unique per-run identifier.
-          type: string
+          description: the id (a unix timestamp) of the current 'go through the source
+            once'.  This is a unique per-run identifier.
+          format: int64
+          type: integer
         encrypted:
           description: Do we need to add transport encryption
           example: true
@@ -15031,6 +15436,321 @@ components:
       - sid
       - sourceId
       type: object
+    CMExternalCrawlerRenameFolder:
+      description: An external image representation object.
+      example:
+        kbId: kbId
+        sourceId: 1
+        organisationId: organisationId
+        acls: "users:RW,administrator:RWD"
+        encrypted: true
+        seed: 0
+        oldFolderNameUrl: oldFolderNameUrl
+        newFolderNameUrl: newFolderNameUrl
+        objectType: CMExternalCrawlerRenameFolder
+        sid: sid
+      properties:
+        objectType:
+          description: "the type of this class, just in case this object is encrypted"
+          example: CMExternalCrawlerRenameFolder
+          type: string
+        organisationId:
+          description: the main organisation (its guid id) for this source/crawler
+          type: string
+        kbId:
+          description: "the knowledge-base id of this context item, a guid-string"
+          type: string
+        sid:
+          description: the security id (a guid) for this request.  This is effectively
+            the shared secret between SimSage and the external-crawler system.
+          type: string
+        sourceId:
+          description: the source-id of this crawler (ie. the crawler's id)
+          example: 1
+          format: int32
+          type: integer
+        oldFolderNameUrl:
+          description: the current document-folder name
+          type: string
+        newFolderNameUrl:
+          description: the new document-folder name
+          type: string
+        acls:
+          description: A list of security permission for the new document-folder.  Can
+            be empty (ie. no security applied).
+          example: "users:RW,administrator:RWD"
+          type: string
+        encrypted:
+          description: Do we need to add transport encryption
+          example: true
+          type: boolean
+        seed:
+          description: The seed used if encrypted
+          example: 0
+          format: int32
+          type: integer
+      required:
+      - acls
+      - encrypted
+      - kbId
+      - newFolderNameUrl
+      - objectType
+      - oldFolderNameUrl
+      - organisationId
+      - seed
+      - sid
+      - sourceId
+      type: object
+    Asset:
+      description: the asset that was seen
+      example:
+        template: template
+        metadata:
+          key: metadata
+        parentUrl: parentUrl
+        acls:
+        - access: access
+          displayName: displayName
+          name: name
+          membershipList:
+          - membershipList
+          - membershipList
+          isUser: true
+          user: true
+        - access: access
+          displayName: displayName
+          name: name
+          membershipList:
+          - membershipList
+          - membershipList
+          isUser: true
+          user: true
+        data: data
+        author: author
+        created: 6
+        binarySize: 0
+        mimeType: mimeType
+        title: title
+        url: url
+        lastModified: 1
+        previewImage: previewImage
+      properties:
+        url:
+          type: string
+        parentUrl:
+          type: string
+        mimeType:
+          type: string
+        acls:
+          items:
+            $ref: '#/components/schemas/AssetACL'
+          type: array
+        title:
+          type: string
+        author:
+          type: string
+        binarySize:
+          format: int64
+          type: integer
+        template:
+          type: string
+        created:
+          format: int64
+          type: integer
+        lastModified:
+          format: int64
+          type: integer
+        metadata:
+          additionalProperties:
+            type: string
+          type: object
+        data:
+          format: byte
+          type: string
+        previewImage:
+          format: byte
+          type: string
+      required:
+      - acls
+      - author
+      - binarySize
+      - created
+      - lastModified
+      - metadata
+      - mimeType
+      - parentUrl
+      - template
+      - title
+      - url
+      type: object
+    AssetACL:
+      example:
+        access: access
+        displayName: displayName
+        name: name
+        membershipList:
+        - membershipList
+        - membershipList
+        isUser: true
+        user: true
+      properties:
+        name:
+          type: string
+        displayName:
+          type: string
+        access:
+          type: string
+        isUser:
+          type: boolean
+        membershipList:
+          items:
+            type: string
+          type: array
+        user:
+          type: boolean
+          writeOnly: true
+      required:
+      - access
+      - displayName
+      - isUser
+      - membershipList
+      - name
+      type: object
+    CMExternalCrawlerMarkFileAsSeen:
+      description: An mark-file-as-seen object.
+      example:
+        kbId: kbId
+        sourceId: 1
+        organisationId: organisationId
+        encrypted: true
+        seed: 0
+        asset:
+          template: template
+          metadata:
+            key: metadata
+          parentUrl: parentUrl
+          acls:
+          - access: access
+            displayName: displayName
+            name: name
+            membershipList:
+            - membershipList
+            - membershipList
+            isUser: true
+            user: true
+          - access: access
+            displayName: displayName
+            name: name
+            membershipList:
+            - membershipList
+            - membershipList
+            isUser: true
+            user: true
+          data: data
+          author: author
+          created: 6
+          binarySize: 0
+          mimeType: mimeType
+          title: title
+          url: url
+          lastModified: 1
+          previewImage: previewImage
+        objectType: CMExternalCrawlerRenameFolder
+        sid: sid
+      properties:
+        objectType:
+          description: "the type of this class, just in case this object is encrypted"
+          example: CMExternalCrawlerRenameFolder
+          type: string
+        organisationId:
+          description: the main organisation (its guid id) for this source/crawler
+          type: string
+        kbId:
+          description: "the knowledge-base id of this context item, a guid-string"
+          type: string
+        sid:
+          description: the security id (a guid) for this request.  This is effectively
+            the shared secret between SimSage and the external-crawler system.
+          type: string
+        sourceId:
+          description: the source-id of this crawler (ie. the crawler's id)
+          example: 1
+          format: int32
+          type: integer
+        asset:
+          $ref: '#/components/schemas/Asset'
+        encrypted:
+          description: Do we need to add transport encryption
+          example: true
+          type: boolean
+        seed:
+          description: The seed used if encrypted
+          example: 0
+          format: int32
+          type: integer
+      required:
+      - asset
+      - encrypted
+      - kbId
+      - objectType
+      - organisationId
+      - seed
+      - sid
+      - sourceId
+      type: object
+    CMExternalLogEntry:
+      description: write a log entry for the given source.
+      example:
+        kbId: kbId
+        sourceId: 1
+        organisationId: organisationId
+        encrypted: true
+        seed: 0
+        logEntry: logEntry
+        objectType: CMExternalLogEntry
+        sid: sid
+      properties:
+        objectType:
+          description: "the type of this class, just in case this object is encrypted"
+          example: CMExternalLogEntry
+          type: string
+        organisationId:
+          description: the main organisation (its guid id) for this source/crawler
+          type: string
+        kbId:
+          description: "the knowledge-base id of this context item, a guid-string"
+          type: string
+        sid:
+          description: the security id (a guid) for this request.  This is effectively
+            the shared secret between SimSage and the external-crawler system.
+          type: string
+        sourceId:
+          description: the source-id of this crawler (ie. the crawler's id)
+          example: 1
+          format: int32
+          type: integer
+        logEntry:
+          description: the log entry to write to SimSage from the external crawler.
+          type: string
+        encrypted:
+          description: Do we need to add transport encryption
+          example: true
+          type: boolean
+        seed:
+          description: The seed used if encrypted
+          example: 0
+          format: int32
+          type: integer
+      required:
+      - encrypted
+      - kbId
+      - logEntry
+      - objectType
+      - organisationId
+      - seed
+      - sid
+      - sourceId
+      type: object
     CMExternalCrawlerStop:
       description: Stop parameters.
       example:
@@ -15040,7 +15760,8 @@ components:
         numErrors: 0
         encrypted: true
         seed: 0
-        runId: runId
+        numFilesSeen: 0
+        runId: 0
         objectType: CMExternalCrawlerStartStop
         sid: sid
       properties:
@@ -15068,10 +15789,16 @@ components:
           example: 0
           format: int32
           type: integer
+        numFilesSeen:
+          description: the number of files seen during the run of this crawler
+          example: 0
+          format: int64
+          type: integer
         runId:
-          description: the id (a guid) of the current 'go through the source once'.  This
-            is a unique per-run identifier.
-          type: string
+          description: the id (a unix timestamp) of the current 'go through the source
+            once'.  This is a unique per-run identifier.
+          format: int64
+          type: integer
         encrypted:
           description: Do we need to add transport encryption
           example: true
@@ -15085,9 +15812,169 @@ components:
       - encrypted
       - kbId
       - numErrors
+      - numFilesSeen
       - objectType
       - organisationId
       - runId
+      - seed
+      - sid
+      - sourceId
+      type: object
+    CMExternalCrawlerSetDeltaToken:
+      description: An external image representation object.
+      example:
+        kbId: kbId
+        sourceId: 1
+        organisationId: organisationId
+        encrypted: true
+        seed: 0
+        deltaToken: deltaToken
+        objectType: CMExternalCrawlerSetDeltaToken
+        sid: sid
+      properties:
+        objectType:
+          description: "the type of this class, just in case this object is encrypted"
+          example: CMExternalCrawlerSetDeltaToken
+          type: string
+        organisationId:
+          description: the main organisation (its guid id) for this source/crawler
+          type: string
+        kbId:
+          description: "the knowledge-base id of this context item, a guid-string"
+          type: string
+        sid:
+          description: the security id (a guid) for this request.  This is effectively
+            the shared secret between SimSage and the external-crawler system.
+          type: string
+        sourceId:
+          description: the source-id of this crawler (ie. the crawler's id)
+          example: 1
+          format: int32
+          type: integer
+        deltaToken:
+          description: the delta-token to set.
+          type: string
+        encrypted:
+          description: Do we need to add transport encryption
+          example: true
+          type: boolean
+        seed:
+          description: The seed used if encrypted
+          example: 0
+          format: int32
+          type: integer
+      required:
+      - deltaToken
+      - encrypted
+      - kbId
+      - objectType
+      - organisationId
+      - seed
+      - sid
+      - sourceId
+      type: object
+    CMExternalCrawlerDeleteUrl:
+      description: An external image representation object.
+      example:
+        kbId: kbId
+        sourceId: 1
+        organisationId: organisationId
+        encrypted: true
+        seed: 0
+        url: url
+        objectType: CMExternalCrawlerDeleteUrl
+        sid: sid
+      properties:
+        objectType:
+          description: "the type of this class, just in case this object is encrypted"
+          example: CMExternalCrawlerDeleteUrl
+          type: string
+        organisationId:
+          description: the main organisation (its guid id) for this source/crawler
+          type: string
+        kbId:
+          description: "the knowledge-base id of this context item, a guid-string"
+          type: string
+        sid:
+          description: the security id (a guid) for this request.  This is effectively
+            the shared secret between SimSage and the external-crawler system.
+          type: string
+        sourceId:
+          description: the source-id of this crawler (ie. the crawler's id)
+          example: 1
+          format: int32
+          type: integer
+        url:
+          description: the document to delete
+          type: string
+        encrypted:
+          description: Do we need to add transport encryption
+          example: true
+          type: boolean
+        seed:
+          description: The seed used if encrypted
+          example: 0
+          format: int32
+          type: integer
+      required:
+      - encrypted
+      - kbId
+      - objectType
+      - organisationId
+      - seed
+      - sid
+      - sourceId
+      - url
+      type: object
+    CMExternalCrawlerDeleteFolder:
+      description: An external image representation object.
+      example:
+        kbId: kbId
+        sourceId: 1
+        folderUrl: folderUrl
+        organisationId: organisationId
+        encrypted: true
+        seed: 0
+        objectType: CMExternalCrawlerDeleteFolder
+        sid: sid
+      properties:
+        objectType:
+          description: "the type of this class, just in case this object is encrypted"
+          example: CMExternalCrawlerDeleteFolder
+          type: string
+        organisationId:
+          description: the main organisation (its guid id) for this source/crawler
+          type: string
+        kbId:
+          description: "the knowledge-base id of this context item, a guid-string"
+          type: string
+        sid:
+          description: the security id (a guid) for this request.  This is effectively
+            the shared secret between SimSage and the external-crawler system.
+          type: string
+        sourceId:
+          description: the source-id of this crawler (ie. the crawler's id)
+          example: 1
+          format: int32
+          type: integer
+        folderUrl:
+          description: the document-folder to delete
+          type: string
+        encrypted:
+          description: Do we need to add transport encryption
+          example: true
+          type: boolean
+        seed:
+          description: The seed used if encrypted
+          example: 0
+          format: int32
+          type: integer
+      required:
+      - encrypted
+      - folderUrl
+      - kbId
+      - objectType
+      - organisationId
       - seed
       - sid
       - sourceId
@@ -15246,6 +16133,7 @@ components:
             - userIdList
             name: Domain Users
           id: id
+          jwtMatchNameValueCSV: jwtMatchNameValueCSV
           email: example@simsage.co.uk
         version: 7.5.9
         organisationList:
@@ -15324,6 +16212,7 @@ components:
           - userIdList
           name: Domain Users
         id: id
+        jwtMatchNameValueCSV: jwtMatchNameValueCSV
         email: example@simsage.co.uk
       properties:
         id:
@@ -15356,11 +16245,16 @@ components:
           items:
             $ref: '#/components/schemas/CMGroup'
           type: array
+        jwtMatchNameValueCSV:
+          description: "an optional set of csv separated name1=value1,name2=value2\
+            \ for JWT matching"
+          type: string
       required:
       - email
       - firstName
       - groupList
       - id
+      - jwtMatchNameValueCSV
       - operatorKBList
       - roles
       - surname
@@ -15415,14 +16309,20 @@ components:
     CMPasswordResetRequest:
       description: the password request object
       example:
+        resetUrl: https://your.simsage.ai/admin/reset-password
         email: example@simsage.co.uk
       properties:
         email:
           description: email address of the user wishing to reset their password.
           example: example@simsage.co.uk
           type: string
+        resetUrl:
+          description: the callback url for the password.
+          example: https://your.simsage.ai/admin/reset-password
+          type: string
       required:
       - email
+      - resetUrl
       type: object
     CMVersion:
       description: "A generic version object.  Returns the version of whatever service\
@@ -15757,103 +16657,73 @@ components:
         kbList:
         - sourceList:
           - sourceId: 1
-            clientId: clientId
-            redirectUrl: redirectUrl
             sourceType: "one of: rss,external,web,discourse,file,database,onedrive,exchange365,sharepoint365,imanage,box,dropbox,wordpress,gdrive,nfs,restfull"
             customRender: false
-            domainType: "one of: ad,aad,simsage"
             name: web source
           - sourceId: 1
-            clientId: clientId
-            redirectUrl: redirectUrl
             sourceType: "one of: rss,external,web,discourse,file,database,onedrive,exchange365,sharepoint365,imanage,box,dropbox,wordpress,gdrive,nfs,restfull"
             customRender: false
-            domainType: "one of: ad,aad,simsage"
             name: web source
           name: My little Pony knowledge-base
           categoryList:
-          - categoryType: categoryType
-            sortDefault: sortDefault
-            scType: SCT_PLAIN
+          - scType: SCT_PLAIN
             metadata: metadata
-            minValue: 6
-            sortAscText: sortAscText
-            sortDescText: sortDescText
+            minValue: 0
             displayName: displayName
-            maxValue: 1
-            sort: true
+            maxValue: 6
+            dataType: dataType
             items:
             - name: name
-              count: 5
+              count: 1
             - name: name
-              count: 5
-            order: 0
-          - categoryType: categoryType
-            sortDefault: sortDefault
-            scType: SCT_PLAIN
+              count: 1
+          - scType: SCT_PLAIN
             metadata: metadata
-            minValue: 6
-            sortAscText: sortAscText
-            sortDescText: sortDescText
+            minValue: 0
             displayName: displayName
-            maxValue: 1
-            sort: true
+            maxValue: 6
+            dataType: dataType
             items:
             - name: name
-              count: 5
+              count: 1
             - name: name
-              count: 5
-            order: 0
+              count: 1
+          projectKb: true
           id: id
         - sourceList:
           - sourceId: 1
-            clientId: clientId
-            redirectUrl: redirectUrl
             sourceType: "one of: rss,external,web,discourse,file,database,onedrive,exchange365,sharepoint365,imanage,box,dropbox,wordpress,gdrive,nfs,restfull"
             customRender: false
-            domainType: "one of: ad,aad,simsage"
             name: web source
           - sourceId: 1
-            clientId: clientId
-            redirectUrl: redirectUrl
             sourceType: "one of: rss,external,web,discourse,file,database,onedrive,exchange365,sharepoint365,imanage,box,dropbox,wordpress,gdrive,nfs,restfull"
             customRender: false
-            domainType: "one of: ad,aad,simsage"
             name: web source
           name: My little Pony knowledge-base
           categoryList:
-          - categoryType: categoryType
-            sortDefault: sortDefault
-            scType: SCT_PLAIN
+          - scType: SCT_PLAIN
             metadata: metadata
-            minValue: 6
-            sortAscText: sortAscText
-            sortDescText: sortDescText
+            minValue: 0
             displayName: displayName
-            maxValue: 1
-            sort: true
+            maxValue: 6
+            dataType: dataType
             items:
             - name: name
-              count: 5
+              count: 1
             - name: name
-              count: 5
-            order: 0
-          - categoryType: categoryType
-            sortDefault: sortDefault
-            scType: SCT_PLAIN
+              count: 1
+          - scType: SCT_PLAIN
             metadata: metadata
-            minValue: 6
-            sortAscText: sortAscText
-            sortDescText: sortDescText
+            minValue: 0
             displayName: displayName
-            maxValue: 1
-            sort: true
+            maxValue: 6
+            dataType: dataType
             items:
             - name: name
-              count: 5
+              count: 1
             - name: name
-              count: 5
-            order: 0
+              count: 1
+          projectKb: true
           id: id
       properties:
         organisationId:
@@ -15877,53 +16747,38 @@ components:
       example:
         sourceList:
         - sourceId: 1
-          clientId: clientId
-          redirectUrl: redirectUrl
           sourceType: "one of: rss,external,web,discourse,file,database,onedrive,exchange365,sharepoint365,imanage,box,dropbox,wordpress,gdrive,nfs,restfull"
           customRender: false
-          domainType: "one of: ad,aad,simsage"
           name: web source
         - sourceId: 1
-          clientId: clientId
-          redirectUrl: redirectUrl
           sourceType: "one of: rss,external,web,discourse,file,database,onedrive,exchange365,sharepoint365,imanage,box,dropbox,wordpress,gdrive,nfs,restfull"
           customRender: false
-          domainType: "one of: ad,aad,simsage"
           name: web source
         name: My little Pony knowledge-base
         categoryList:
-        - categoryType: categoryType
-          sortDefault: sortDefault
-          scType: SCT_PLAIN
+        - scType: SCT_PLAIN
           metadata: metadata
-          minValue: 6
-          sortAscText: sortAscText
-          sortDescText: sortDescText
+          minValue: 0
           displayName: displayName
-          maxValue: 1
-          sort: true
+          maxValue: 6
+          dataType: dataType
           items:
           - name: name
-            count: 5
+            count: 1
           - name: name
-            count: 5
-          order: 0
-        - categoryType: categoryType
-          sortDefault: sortDefault
-          scType: SCT_PLAIN
+            count: 1
+        - scType: SCT_PLAIN
           metadata: metadata
-          minValue: 6
-          sortAscText: sortAscText
-          sortDescText: sortDescText
+          minValue: 0
           displayName: displayName
-          maxValue: 1
-          sort: true
+          maxValue: 6
+          dataType: dataType
           items:
           - name: name
-            count: 5
+            count: 1
           - name: name
-            count: 5
-          order: 0
+            count: 1
+        projectKb: true
         id: id
       properties:
         name:
@@ -15944,10 +16799,15 @@ components:
           items:
             $ref: '#/components/schemas/CMSourceBaseInfo'
           type: array
+        projectKb:
+          description: Flag to indicate whether this knowledge-base was created for
+            an 'Automate' data project
+          type: boolean
       required:
       - categoryList
       - id
       - name
+      - projectKb
       - sourceList
       type: object
     CMSourceBaseInfo:
@@ -15958,11 +16818,8 @@ components:
         \ is contained inside a CMKnowledgeBaseInfo object."
       example:
         sourceId: 1
-        clientId: clientId
-        redirectUrl: redirectUrl
         sourceType: "one of: rss,external,web,discourse,file,database,onedrive,exchange365,sharepoint365,imanage,box,dropbox,wordpress,gdrive,nfs,restfull"
         customRender: false
-        domainType: "one of: ad,aad,simsage"
         name: web source
       properties:
         name:
@@ -15983,24 +16840,9 @@ components:
             search-results?
           example: false
           type: boolean
-        domainType:
-          description: "the domain security type (if applicable) of this source (can\
-            \ be empty).  Types: 'ad' classical Microsoft Active Directory, 'aad'\
-            \ Azure Active Directory, 'simsage' SimSage platform user accounts"
-          example: "one of: ad,aad,simsage"
-          type: string
-        clientId:
-          description: a Microsoft client-id for Azure Domain access
-          type: string
-        redirectUrl:
-          description: a Microsoft redirect-url for Azure Domain access
-          type: string
       required:
-      - clientId
       - customRender
-      - domainType
       - name
-      - redirectUrl
       - sourceId
       - sourceType
       type: object
@@ -16897,6 +17739,7 @@ components:
             - userIdList
             name: Domain Users
           id: id
+          jwtMatchNameValueCSV: jwtMatchNameValueCSV
           email: example@simsage.co.uk
         - firstName: John
           operatorKBList:
@@ -16924,6 +17767,7 @@ components:
             - userIdList
             name: Domain Users
           id: id
+          jwtMatchNameValueCSV: jwtMatchNameValueCSV
           email: example@simsage.co.uk
         folderRoot:
           sourceId: 1
@@ -17107,38 +17951,28 @@ components:
             lastModified: 1
             numWords: 2
         categoryList:
-        - categoryType: categoryType
-          sortDefault: sortDefault
-          scType: SCT_PLAIN
+        - scType: SCT_PLAIN
           metadata: metadata
-          minValue: 6
-          sortAscText: sortAscText
-          sortDescText: sortDescText
+          minValue: 0
           displayName: displayName
-          maxValue: 1
-          sort: true
+          maxValue: 6
+          dataType: dataType
           items:
           - name: name
-            count: 5
+            count: 1
           - name: name
-            count: 5
-          order: 0
-        - categoryType: categoryType
-          sortDefault: sortDefault
-          scType: SCT_PLAIN
+            count: 1
+        - scType: SCT_PLAIN
           metadata: metadata
-          minValue: 6
-          sortAscText: sortAscText
-          sortDescText: sortDescText
+          minValue: 0
           displayName: displayName
-          maxValue: 1
-          sort: true
+          maxValue: 6
+          dataType: dataType
           items:
           - name: name
-            count: 5
+            count: 1
           - name: name
-            count: 5
-          order: 0
+            count: 1
         groupList:
         - organisationId: 00000000-0000-0000-0000-000000000001
           userIdList:
@@ -17154,14 +17988,14 @@ components:
         savedSearchList:
         - kbId: kbId
           organisationId: organisationId
-          top: 5
-          created: 5
+          top: 7
+          created: 2
           text: what is SimSage?
           userId: "1234"
         - kbId: kbId
           organisationId: organisationId
-          top: 5
-          created: 5
+          top: 7
+          created: 2
           text: what is SimSage?
           userId: "1234"
         bookmarkList:
@@ -17795,6 +18629,97 @@ components:
       - key
       - type
       type: object
+    CMProjectReview:
+      example:
+        projectDefinition:
+          semanticTerms:
+          - search: true
+            redact: true
+            caption: caption
+            searchDisabled: true
+            redactionDisabled: true
+            key: key
+          - search: true
+            redact: true
+            caption: caption
+            searchDisabled: true
+            redactionDisabled: true
+            key: key
+          organisationId: organisationId
+          validationResult:
+            key: true
+          keyedSearchTerms:
+          - search: true
+            rowRequired: true
+            redact: true
+            searchDisabled: true
+            redactionDisabled: true
+            value: value
+            subTerms:
+            - type: type
+              value: value
+              key: key
+            - type: type
+              value: value
+              key: key
+            key: key
+          - search: true
+            rowRequired: true
+            redact: true
+            searchDisabled: true
+            redactionDisabled: true
+            value: value
+            subTerms:
+            - type: type
+              value: value
+              key: key
+            - type: type
+              value: value
+              key: key
+            key: key
+          projectFrame:
+            narrative: narrative
+            projectType: projectType
+            title: title
+          filters:
+            knowledgeBase: knowledgeBase
+            sources:
+            - sources
+            - sources
+            filetypes:
+            - filetypes
+            - filetypes
+          projectId: projectId
+          taskId: taskId
+        taskInfo:
+          organisationId: organisationId
+          sliceId: sliceId
+          potentialUsers: potentialUsers
+          excludedUsers: excludedUsers
+          potentialGroups: potentialGroups
+          crawlerKbId: crawlerKbId
+          projectType: projectType
+          sourceKbId: sourceKbId
+          projectNarrative: projectNarrative
+          taskType: taskType
+          dateCreated: 2000-01-23T04:56:07.000+00:00
+          processId: processId
+          processName: processName
+          dateCompleted: 2000-01-23T04:56:07.000+00:00
+          taskName: taskName
+          projectId: projectId
+          assignedUser: assignedUser
+          taskId: taskId
+          projectTitle: projectTitle
+      properties:
+        projectDefinition:
+          $ref: '#/components/schemas/CMProjectDefinition'
+        taskInfo:
+          $ref: '#/components/schemas/CMTaskInfo'
+      required:
+      - projectDefinition
+      - taskInfo
+      type: object
     CMProjectDefinitionTask:
       example:
         taskInfo:
@@ -18305,6 +19230,7 @@ components:
             - userIdList
             name: name
           id: id
+          jwtMatchNameValueCSV: jwtMatchNameValueCSV
           confirmed: true
           email: email
           passwordHash: passwordHash
@@ -18395,6 +19321,7 @@ components:
           - userIdList
           name: name
         id: id
+        jwtMatchNameValueCSV: jwtMatchNameValueCSV
         confirmed: true
         email: email
         passwordHash: passwordHash
@@ -18423,12 +19350,15 @@ components:
           items:
             $ref: '#/components/schemas/Group'
           type: array
+        jwtMatchNameValueCSV:
+          type: string
       required:
       - confirmed
       - email
       - firstName
       - groupList
       - id
+      - jwtMatchNameValueCSV
       - operatorKBList
       - passwordHash
       - roles
@@ -18524,6 +19454,7 @@ components:
             - userIdList
             name: Domain Users
           id: id
+          jwtMatchNameValueCSV: jwtMatchNameValueCSV
           email: example@simsage.co.uk
         - firstName: John
           operatorKBList:
@@ -18551,6 +19482,7 @@ components:
             - userIdList
             name: Domain Users
           id: id
+          jwtMatchNameValueCSV: jwtMatchNameValueCSV
           email: example@simsage.co.uk
         groupList:
         - organisationId: 00000000-0000-0000-0000-000000000001
@@ -18645,6 +19577,7 @@ components:
             - userIdList
             name: name
           id: id
+          jwtMatchNameValueCSV: jwtMatchNameValueCSV
           confirmed: true
           email: email
           passwordHash: passwordHash
@@ -18733,6 +19666,7 @@ components:
         - roles
         - roles
         returnResult: true
+        sharedSecretSalt: sharedSecretSalt
         returnAddress: returnAddress
         timeOut: 0
         organisationList:
@@ -18794,6 +19728,7 @@ components:
             - userIdList
             name: name
           id: id
+          jwtMatchNameValueCSV: jwtMatchNameValueCSV
           confirmed: true
           email: email
           passwordHash: passwordHash
@@ -18835,6 +19770,8 @@ components:
           items:
             $ref: '#/components/schemas/Organisation'
           type: array
+        sharedSecretSalt:
+          type: string
         returnResult:
           type: boolean
           writeOnly: true
@@ -18851,6 +19788,7 @@ components:
       - returnAddress
       - roles
       - session
+      - sharedSecretSalt
       - timeOut
       - user
       type: object

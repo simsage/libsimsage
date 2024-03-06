@@ -20,6 +20,7 @@
 |**capacityWarnings** | **Boolean** |  |  |
 |**indexSchedule** | **String** |  |  |
 |**lastIndexOptimizationTime** | **Long** |  |  |
+|**projectKb** | **Boolean** |  |  |
 
 
 

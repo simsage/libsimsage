@@ -147,8 +147,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | get knowledge-base response |  -  |
 | **500** | could not get knowledge-base. |  -  |
+| **200** | get knowledge-base response |  -  |
 
 <a id="getKnowledgeBases"></a>
 # **getKnowledgeBases**
@@ -413,8 +413,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | delete knowledge-base OK response |  -  |
 | **500** | could not delete knowledge-base. |  -  |
+| **200** | delete knowledge-base OK response |  -  |
 
 <a id="updateKnowledgeBase"></a>
 # **updateKnowledgeBase**
@@ -480,8 +480,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not save knowledge-base. |  -  |
 | **200** | save knowledge-base response |  -  |
+| **500** | could not save knowledge-base. |  -  |
 
 <a id="version3"></a>
 # **version3**

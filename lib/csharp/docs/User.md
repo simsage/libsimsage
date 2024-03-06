@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **Roles** | [**List&lt;UserRole&gt;**](UserRole.md) |  | 
 **OperatorKBList** | [**List&lt;OperatorKnowledgeBase&gt;**](OperatorKnowledgeBase.md) |  | 
 **GroupList** | [**List&lt;Group&gt;**](Group.md) |  | 
+**JwtMatchNameValueCSV** | **string** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

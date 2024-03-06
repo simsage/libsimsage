@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **CapacityWarnings** | **bool** |  | 
 **IndexSchedule** | **string** |  | 
 **LastIndexOptimizationTime** | **long** |  | 
+**ProjectKb** | **bool** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -16,6 +16,7 @@
 |**folderId** | **String** |  |  |
 |**count** | **Long** |  |  |
 |**confidence** | **Integer** |  |  |
+|**displayType** | **String** |  |  |
 
 
 

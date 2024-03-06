@@ -12,7 +12,6 @@ All URIs are relative to *https://test.simsage.ai*
 | [**GetGdprDocument**](DiscoveryApi.md#getgdprdocument) | **GET** /api/discovery/gdprdocument/{organisationId}/{kbId}/{projectId}/{url} |  |
 | [**GetPagedProjectDocuments**](DiscoveryApi.md#getpagedprojectdocuments) | **GET** /api/discovery/projectdocument/{organisationId}/{kbId}/{projectId}/{page}/{pageSize}/{textFilter}/{typeFilter}/{statusFilter}/{sortColumn}/{sortDirection} |  |
 | [**GrowthPerMonth**](DiscoveryApi.md#growthpermonth) | **GET** /api/discovery/growth/{organisationId}/{kbId} | growth |
-| [**PdfBinary**](DiscoveryApi.md#pdfbinary) | **GET** /api/discovery/pdf/latest/{organisationId}/{kbId}/{url} | Binary |
 | [**Setdocumentredactions**](DiscoveryApi.md#setdocumentredactions) | **PUT** /api/discovery/updategdprdocument |  |
 | [**StorageBySource**](DiscoveryApi.md#storagebysource) | **GET** /api/discovery/storage/{organisationId}/{kbId} | storage |
 | [**SummaryByDocumentType**](DiscoveryApi.md#summarybydocumenttype) | **GET** /api/discovery/doctypesummary/{organisationId}/{kbId} | storage |
@@ -766,103 +765,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json;charset=UTF-8
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="pdfbinary"></a>
-# **PdfBinary**
-> Object PdfBinary (string organisationId, string kbId, string url, string? sessionId = null)
-
-Binary
-
-Get the original for a document if available by url (latest version)
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
-
-namespace Example
-{
-    public class PdfBinaryExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
-            var apiInstance = new DiscoveryApi(config);
-            var organisationId = "organisationId_example";  // string | the organisation (its guid id)
-            var kbId = "kbId_example";  // string | the knowledge-base (its guid id)
-            var url = "url_example";  // string | a base64 encoded url
-            var sessionId = "sessionId_example";  // string? | a valid SimSage Session id. (optional) 
-
-            try
-            {
-                // Binary
-                Object result = apiInstance.PdfBinary(organisationId, kbId, url, sessionId);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling DiscoveryApi.PdfBinary: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the PdfBinaryWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Binary
-    ApiResponse<Object> response = apiInstance.PdfBinaryWithHttpInfo(organisationId, kbId, url, sessionId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DiscoveryApi.PdfBinaryWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **organisationId** | **string** | the organisation (its guid id) |  |
-| **kbId** | **string** | the knowledge-base (its guid id) |  |
-| **url** | **string** | a base64 encoded url |  |
-| **sessionId** | **string?** | a valid SimSage Session id. | [optional]  |
-
-### Return type
-
-**Object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
 
 
 ### HTTP response details

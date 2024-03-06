@@ -4,16 +4,16 @@ All URIs are relative to *https://test.simsage.ai*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**GetIndexOptimzationReport**](StatsApi.md#getindexoptimzationreport) | **GET** /api/stats/report/{organisationId}/{kbId}/{id} | get an optimization report |
-| [**GetIndexOptimzationReports**](StatsApi.md#getindexoptimzationreports) | **GET** /api/stats/reports/{organisationId}/{kbId} | get optimization report list |
+| [**GetIndexOptimizationReport**](StatsApi.md#getindexoptimizationreport) | **GET** /api/stats/report/{organisationId}/{kbId}/{id} | get an optimization report |
+| [**GetIndexOptimizationReports**](StatsApi.md#getindexoptimizationreports) | **GET** /api/stats/reports/{organisationId}/{kbId} | get optimization report list |
 | [**GetStats**](StatsApi.md#getstats) | **GET** /api/stats/stats/{organisationId}/{kbId}/{year}/{month}/{top} | Get usage Statistics |
 | [**SimSageStatus**](StatsApi.md#simsagestatus) | **PUT** /api/stats/status/{organisationId} | SimSage status |
-| [**SystemLogs**](StatsApi.md#systemlogs) | **GET** /api/stats/system-logs/{organisationId}/{year}/{month}/{day}/{hour}/{hours} | System Logs |
+| [**SystemLogs**](StatsApi.md#systemlogs) | **GET** /api/stats/system-logs/{organisationId}/{service}/{numLines} | System Logs |
 | [**Version**](StatsApi.md#version) | **GET** /api/stats/version | Version |
 
-<a id="getindexoptimzationreport"></a>
-# **GetIndexOptimzationReport**
-> List&lt;OptimizeIndexesGetReportCmd&gt; GetIndexOptimzationReport (string sessionId, string organisationId, string kbId, long id)
+<a id="getindexoptimizationreport"></a>
+# **GetIndexOptimizationReport**
+> List&lt;OptimizeIndexesGetReportCmd&gt; GetIndexOptimizationReport (string sessionId, string organisationId, string kbId, long id)
 
 get an optimization report
 
@@ -29,7 +29,7 @@ using Org.OpenAPITools.Model;
 
 namespace Example
 {
-    public class GetIndexOptimzationReportExample
+    public class GetIndexOptimizationReportExample
     {
         public static void Main()
         {
@@ -44,12 +44,12 @@ namespace Example
             try
             {
                 // get an optimization report
-                List<OptimizeIndexesGetReportCmd> result = apiInstance.GetIndexOptimzationReport(sessionId, organisationId, kbId, id);
+                List<OptimizeIndexesGetReportCmd> result = apiInstance.GetIndexOptimizationReport(sessionId, organisationId, kbId, id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling StatsApi.GetIndexOptimzationReport: " + e.Message);
+                Debug.Print("Exception when calling StatsApi.GetIndexOptimizationReport: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -58,21 +58,21 @@ namespace Example
 }
 ```
 
-#### Using the GetIndexOptimzationReportWithHttpInfo variant
+#### Using the GetIndexOptimizationReportWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // get an optimization report
-    ApiResponse<List<OptimizeIndexesGetReportCmd>> response = apiInstance.GetIndexOptimzationReportWithHttpInfo(sessionId, organisationId, kbId, id);
+    ApiResponse<List<OptimizeIndexesGetReportCmd>> response = apiInstance.GetIndexOptimizationReportWithHttpInfo(sessionId, organisationId, kbId, id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling StatsApi.GetIndexOptimzationReportWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling StatsApi.GetIndexOptimizationReportWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -109,9 +109,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="getindexoptimzationreports"></a>
-# **GetIndexOptimzationReports**
-> List&lt;OptimizeIndexesGetReportsCmd&gt; GetIndexOptimzationReports (string sessionId, string organisationId, string kbId)
+<a id="getindexoptimizationreports"></a>
+# **GetIndexOptimizationReports**
+> List&lt;OptimizeIndexesGetReportsCmd&gt; GetIndexOptimizationReports (string sessionId, string organisationId, string kbId)
 
 get optimization report list
 
@@ -127,7 +127,7 @@ using Org.OpenAPITools.Model;
 
 namespace Example
 {
-    public class GetIndexOptimzationReportsExample
+    public class GetIndexOptimizationReportsExample
     {
         public static void Main()
         {
@@ -141,12 +141,12 @@ namespace Example
             try
             {
                 // get optimization report list
-                List<OptimizeIndexesGetReportsCmd> result = apiInstance.GetIndexOptimzationReports(sessionId, organisationId, kbId);
+                List<OptimizeIndexesGetReportsCmd> result = apiInstance.GetIndexOptimizationReports(sessionId, organisationId, kbId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling StatsApi.GetIndexOptimzationReports: " + e.Message);
+                Debug.Print("Exception when calling StatsApi.GetIndexOptimizationReports: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -155,21 +155,21 @@ namespace Example
 }
 ```
 
-#### Using the GetIndexOptimzationReportsWithHttpInfo variant
+#### Using the GetIndexOptimizationReportsWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
     // get optimization report list
-    ApiResponse<List<OptimizeIndexesGetReportsCmd>> response = apiInstance.GetIndexOptimzationReportsWithHttpInfo(sessionId, organisationId, kbId);
+    ApiResponse<List<OptimizeIndexesGetReportsCmd>> response = apiInstance.GetIndexOptimizationReportsWithHttpInfo(sessionId, organisationId, kbId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling StatsApi.GetIndexOptimzationReportsWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling StatsApi.GetIndexOptimizationReportsWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -200,8 +200,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | response |  -  |
 | **500** | failed |  -  |
+| **200** | response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -304,8 +304,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | response |  -  |
 | **500** | failed |  -  |
+| **200** | response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -398,14 +398,14 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | response |  -  |
 | **500** | failed |  -  |
+| **200** | response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="systemlogs"></a>
 # **SystemLogs**
-> List&lt;CMLoggerEntry&gt; SystemLogs (string organisationId, int year, int month, int day, int hour, int hours, string sessionId)
+> List&lt;CMLoggerEntry&gt; SystemLogs (string organisationId, string service, int numLines, string sessionId)
 
 System Logs
 
@@ -429,17 +429,14 @@ namespace Example
             config.BasePath = "https://test.simsage.ai";
             var apiInstance = new StatsApi(config);
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
-            var year = 56;  // int | the year to get the log for
-            var month = 56;  // int | the month to get the log for
-            var day = 56;  // int | the day to get the log for
-            var hour = 56;  // int | the hour to get the log for
-            var hours = 56;  // int | the number of hours to get the logs for starting at hour
+            var service = "service_example";  // string | the service to get the log for
+            var numLines = 56;  // int | the maximum number of lines to return if > 0
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
 
             try
             {
                 // System Logs
-                List<CMLoggerEntry> result = apiInstance.SystemLogs(organisationId, year, month, day, hour, hours, sessionId);
+                List<CMLoggerEntry> result = apiInstance.SystemLogs(organisationId, service, numLines, sessionId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -460,7 +457,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // System Logs
-    ApiResponse<List<CMLoggerEntry>> response = apiInstance.SystemLogsWithHttpInfo(organisationId, year, month, day, hour, hours, sessionId);
+    ApiResponse<List<CMLoggerEntry>> response = apiInstance.SystemLogsWithHttpInfo(organisationId, service, numLines, sessionId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -478,11 +475,8 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **organisationId** | **string** | the organisation (its guid id) |  |
-| **year** | **int** | the year to get the log for |  |
-| **month** | **int** | the month to get the log for |  |
-| **day** | **int** | the day to get the log for |  |
-| **hour** | **int** | the hour to get the log for |  |
-| **hours** | **int** | the number of hours to get the logs for starting at hour |  |
+| **service** | **string** | the service to get the log for |  |
+| **numLines** | **int** | the maximum number of lines to return if &gt; 0 |  |
 | **sessionId** | **string** | a valid SimSage Session id. |  |
 
 ### Return type

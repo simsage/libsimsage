@@ -13,9 +13,12 @@ All URIs are relative to *https://test.simsage.ai*
 | [**filteredComments**](DataprojectApi.md#filteredComments) | **POST** /api/dataproject/filteredcomments | Retrieve Comments |
 | [**getDocumentRedactionInfo**](DataprojectApi.md#getDocumentRedactionInfo) | **GET** /api/dataproject/docredactioninfo/{organisationId}/{sliceId}/{documentKey} | Get Document Redaction info |
 | [**getProjectDefinition**](DataprojectApi.md#getProjectDefinition) | **GET** /api/dataproject/projectdefinition/{organisationId}/{taskId} | get Project Definition |
+| [**getProjectReview**](DataprojectApi.md#getProjectReview) | **GET** /api/dataproject/projectreview/{organisationId}/{projectId} | get Project Definition |
 | [**getProjectSlice**](DataprojectApi.md#getProjectSlice) | **GET** /api/dataproject/projectslice/{organisationId}/{taskId} | get project slice |
 | [**getSearchResultSummary**](DataprojectApi.md#getSearchResultSummary) | **GET** /api/dataproject/searchresult/{organisationId}/{taskId} | get Search Result Summary |
+| [**getSearchResultSummaryForReview**](DataprojectApi.md#getSearchResultSummaryForReview) | **GET** /api/dataproject/searchresultreview/{organisationId}/{projectId} | get Search Result Summary |
 | [**nextDocument**](DataprojectApi.md#nextDocument) | **POST** /api/dataproject/nextdocument | Document list for given slice and filters |
+| [**pdfBinary**](DataprojectApi.md#pdfBinary) | **GET** /api/dataproject/pdf/latest/{organisationId}/{kbId}/{url} | Binary |
 | [**projectTypes**](DataprojectApi.md#projectTypes) | **GET** /api/dataproject/projects/{organisationId} | get Project Types |
 | [**reassignSliceDocument**](DataprojectApi.md#reassignSliceDocument) | **POST** /api/dataproject/reassignslicedoc |  |
 | [**redactedDocument**](DataprojectApi.md#redactedDocument) | **POST** /api/dataproject/redacteddocument | Get Redacted Document |
@@ -91,8 +94,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Create Comment Status OK response |  -  |
 | **500** | Could not add comment. |  -  |
+| **200** | Create Comment Status OK response |  -  |
 
 <a id="allTasks"></a>
 # **allTasks**
@@ -286,8 +289,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Wrapper containing the document binary |  -  |
 | **500** | could not retrieve redacted document. |  -  |
+| **200** | Wrapper containing the document binary |  -  |
 
 <a id="crawlerStatus"></a>
 # **crawlerStatus**
@@ -418,8 +421,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | returns paged list of documents for the given set of query tokens |  -  |
 | **500** | could not retrieve document list. |  -  |
+| **200** | returns paged list of documents for the given set of query tokens |  -  |
 
 <a id="filteredComments"></a>
 # **filteredComments**
@@ -483,8 +486,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Create Comment Status OK response |  -  |
 | **500** | Could not get comments. |  -  |
+| **200** | Create Comment Status OK response |  -  |
 
 <a id="getDocumentRedactionInfo"></a>
 # **getDocumentRedactionInfo**
@@ -619,8 +622,75 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | project definition response |  -  |
 | **500** | could not get project definition. |  -  |
+| **200** | project definition response |  -  |
+
+<a id="getProjectReview"></a>
+# **getProjectReview**
+> CMProjectReview getProjectReview(organisationId, projectId, sessionId)
+
+get Project Definition
+
+Get the project review data of the project for the given project id
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.DataprojectApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://test.simsage.ai");
+
+    DataprojectApi apiInstance = new DataprojectApi(defaultClient);
+    String organisationId = "organisationId_example"; // String | the organisation (its guid id)
+    String projectId = "projectId_example"; // String | the id of the task
+    String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
+    try {
+      CMProjectReview result = apiInstance.getProjectReview(organisationId, projectId, sessionId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DataprojectApi#getProjectReview");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **organisationId** | **String**| the organisation (its guid id) | |
+| **projectId** | **String**| the id of the task | |
+| **sessionId** | **String**| a valid SimSage Session id. | |
+
+### Return type
+
+[**CMProjectReview**](CMProjectReview.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | project review response |  -  |
+| **500** | could not get project review. |  -  |
 
 <a id="getProjectSlice"></a>
 # **getProjectSlice**
@@ -686,8 +756,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Project slice data |  -  |
 | **500** | could not retrieve project slice. |  -  |
+| **200** | Project slice data |  -  |
 
 <a id="getSearchResultSummary"></a>
 # **getSearchResultSummary**
@@ -756,6 +826,73 @@ No authorization required
 | **500** | could not get search result summary. |  -  |
 | **200** | search result summary response |  -  |
 
+<a id="getSearchResultSummaryForReview"></a>
+# **getSearchResultSummaryForReview**
+> CMSearchResultSummary getSearchResultSummaryForReview(organisationId, projectId, sessionId)
+
+get Search Result Summary
+
+Get the summary information for the search results of a given project by task id
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.DataprojectApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://test.simsage.ai");
+
+    DataprojectApi apiInstance = new DataprojectApi(defaultClient);
+    String organisationId = "organisationId_example"; // String | the organisation (its guid id)
+    String projectId = "projectId_example"; // String | the id of the task
+    String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
+    try {
+      CMSearchResultSummary result = apiInstance.getSearchResultSummaryForReview(organisationId, projectId, sessionId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DataprojectApi#getSearchResultSummaryForReview");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **organisationId** | **String**| the organisation (its guid id) | |
+| **projectId** | **String**| the id of the task | |
+| **sessionId** | **String**| a valid SimSage Session id. | |
+
+### Return type
+
+[**CMSearchResultSummary**](CMSearchResultSummary.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | search result summary response |  -  |
+| **500** | could not get search result summary. |  -  |
+
 <a id="nextDocument"></a>
 # **nextDocument**
 > CMSlicedDocumentListAndTotals nextDocument(sessionId, cmNextDocument)
@@ -818,8 +955,76 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not retrieve document list. |  -  |
 | **200** | Paged list of documents for the passed in slice and filters as well as totals |  -  |
+| **500** | could not retrieve document list. |  -  |
+
+<a id="pdfBinary"></a>
+# **pdfBinary**
+> Object pdfBinary(organisationId, kbId, url, sessionId)
+
+Binary
+
+Get the original for a document if available by url (latest version)
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.DataprojectApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://test.simsage.ai");
+
+    DataprojectApi apiInstance = new DataprojectApi(defaultClient);
+    String organisationId = "organisationId_example"; // String | the organisation (its guid id)
+    String kbId = "kbId_example"; // String | the knowledge-base (its guid id)
+    String url = "url_example"; // String | a base64 encoded url
+    String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
+    try {
+      Object result = apiInstance.pdfBinary(organisationId, kbId, url, sessionId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DataprojectApi#pdfBinary");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **organisationId** | **String**| the organisation (its guid id) | |
+| **kbId** | **String**| the knowledge-base (its guid id) | |
+| **url** | **String**| a base64 encoded url | |
+| **sessionId** | **String**| a valid SimSage Session id. | [optional] |
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
 
 <a id="projectTypes"></a>
 # **projectTypes**
@@ -1010,8 +1215,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Wrapper containing the document binary |  -  |
 | **500** | could not retrieve redacted document. |  -  |
+| **200** | Wrapper containing the document binary |  -  |
 
 <a id="removeSliceDocument"></a>
 # **removeSliceDocument**
@@ -1267,8 +1472,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | Could not set Slice configuration. |  -  |
 | **200** | Set Slice config OK response |  -  |
+| **500** | Could not set Slice configuration. |  -  |
 
 <a id="slicedDocuments"></a>
 # **slicedDocuments**
@@ -1332,8 +1537,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not retrieve document list. |  -  |
 | **200** | Paged list of documents for the passed in slice and filters as well as totals |  -  |
+| **500** | could not retrieve document list. |  -  |
 
 <a id="startProject"></a>
 # **startProject**
@@ -1459,8 +1664,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Update Document Status OK response |  -  |
 | **500** | Could not update document status. |  -  |
+| **200** | Update Document Status OK response |  -  |
 
 <a id="updateRedactions"></a>
 # **updateRedactions**
@@ -1524,6 +1729,6 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Update Redactions OK response |  -  |
 | **500** | could not update redactionst. |  -  |
+| **200** | Update Redactions OK response |  -  |
 

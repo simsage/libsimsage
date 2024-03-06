@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **Roles** | **string** | the roles to be associated with this user | 
 **OperatorKBList** | **string** | the operator-id and knowledge-base id to be associated with this user.  This user is to be an operator if set. | 
 **GroupList** | [**List&lt;CMGroup&gt;**](CMGroup.md) | a list of groups this user is part of (can be empty) | 
+**JwtMatchNameValueCSV** | **string** | an optional set of csv separated name1&#x3D;value1,name2&#x3D;value2 for JWT matching | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -1,8 +1,8 @@
 # openapi-java-client
 
 SimSage REST API
-- API version: 7.11.4
-  - Build date: 2023-10-16T13:18:33.437170740+01:00[Europe/London]
+- API version: 7.13.31
+  - Build date: 2024-03-06T16:03:21.377776023Z[Europe/London]
 
 SimSage REST API
 
@@ -41,7 +41,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>org.openapitools</groupId>
   <artifactId>openapi-java-client</artifactId>
-  <version>7.11.4</version>
+  <version>7.13.31</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -57,7 +57,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "org.openapitools:openapi-java-client:7.11.4"
+     implementation "org.openapitools:openapi-java-client:7.13.31"
   }
 ```
 
@@ -71,7 +71,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/openapi-java-client-7.11.4.jar`
+* `target/openapi-java-client-7.13.31.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -131,6 +131,7 @@ Class | Method | HTTP request | Description
 *AuthApi* | [**saveGroup**](docs/AuthApi.md#saveGroup) | **PUT** /api/auth/group | Save Group
 *AuthApi* | [**signIn**](docs/AuthApi.md#signIn) | **POST** /api/auth/sign-in | Sign In
 *AuthApi* | [**signInAdminUsingJWTMsal**](docs/AuthApi.md#signInAdminUsingJWTMsal) | **GET** /api/auth/admin/authenticate/msal | JWT MSal Sign In
+*AuthApi* | [**signInAdminUsingSessionId**](docs/AuthApi.md#signInAdminUsingSessionId) | **GET** /api/auth/admin/authenticate/session-id | session-id Sign-in
 *AuthApi* | [**signInDmsUsingJWTMsal**](docs/AuthApi.md#signInDmsUsingJWTMsal) | **GET** /api/auth/dms/authenticate/msal/{organisationId} | JWT MSal Sign In
 *AuthApi* | [**signInEvolveUsingJWTMsal**](docs/AuthApi.md#signInEvolveUsingJWTMsal) | **GET** /api/auth/evolve/authenticate/msal/{organisationId} | JWT MSal Sign In
 *AuthApi* | [**signInSearchUsingJWTMsal**](docs/AuthApi.md#signInSearchUsingJWTMsal) | **GET** /api/auth/search/authenticate/msal/{organisationId} | JWT MSal Sign In
@@ -146,10 +147,14 @@ Class | Method | HTTP request | Description
 *ConversionApi* | [**previewVersion**](docs/ConversionApi.md#previewVersion) | **GET** /api/conversion/preview-generator/version | Get preview-generator Version
 *ConversionApi* | [**sttVersion**](docs/ConversionApi.md#sttVersion) | **GET** /api/conversion/stt/version | Get speech-to-text Version
 *ConversionApi* | [**version7**](docs/ConversionApi.md#version7) | **GET** /api/conversion/version | Get Version
+*CrawlerApi* | [**crawlerDeleteFolder**](docs/CrawlerApi.md#crawlerDeleteFolder) | **POST** /api/crawler/external/crawler/delete-folder | Delete document folder
+*CrawlerApi* | [**crawlerDeleteUrl**](docs/CrawlerApi.md#crawlerDeleteUrl) | **POST** /api/crawler/external/crawler/delete-url | Delete document
 *CrawlerApi* | [**crawlerExternalDocumentDelete**](docs/CrawlerApi.md#crawlerExternalDocumentDelete) | **PUT** /api/crawler/external/document/delete | Remove an External Document
-*CrawlerApi* | [**crawlerExternalDocumentUnChanged**](docs/CrawlerApi.md#crawlerExternalDocumentUnChanged) | **POST** /api/crawler/external/document/un-changed | Mark External Document Unchanged
+*CrawlerApi* | [**crawlerExternalDocumentFailed**](docs/CrawlerApi.md#crawlerExternalDocumentFailed) | **POST** /api/crawler/external/document/recordfailure | Upload External Document
 *CrawlerApi* | [**crawlerExternalDocumentUpload**](docs/CrawlerApi.md#crawlerExternalDocumentUpload) | **POST** /api/crawler/external/document/upload | Upload External Document
 *CrawlerApi* | [**crawlerExternalImageUpload**](docs/CrawlerApi.md#crawlerExternalImageUpload) | **POST** /api/crawler/external/document/upload/image | Upload External Image
+*CrawlerApi* | [**crawlerRenameFolder**](docs/CrawlerApi.md#crawlerRenameFolder) | **POST** /api/crawler/external/crawler/rename-folder | Rename document folder
+*CrawlerApi* | [**crawlerUpdateDeltaToken**](docs/CrawlerApi.md#crawlerUpdateDeltaToken) | **POST** /api/crawler/external/crawler/delta-token | Update delta token
 *CrawlerApi* | [**delete**](docs/CrawlerApi.md#delete) | **DELETE** /api/crawler/crawler/{organisationId}/{kbId}/{sourceId} | Delete source
 *CrawlerApi* | [**deleteDocuments**](docs/CrawlerApi.md#deleteDocuments) | **DELETE** /api/crawler/crawler/document/{organisationId}/{kbId}/{sourceId} | Delete source&#39;s documents
 *CrawlerApi* | [**encryptedCommunications**](docs/CrawlerApi.md#encryptedCommunications) | **POST** /api/crawler/external/secure/{seed} | Secure Communication
@@ -157,10 +162,15 @@ Class | Method | HTTP request | Description
 *CrawlerApi* | [**externalCrawlerFinished**](docs/CrawlerApi.md#externalCrawlerFinished) | **POST** /api/crawler/external/crawler/finish | Stop External Crawler
 *CrawlerApi* | [**externalCrawlerStart**](docs/CrawlerApi.md#externalCrawlerStart) | **POST** /api/crawler/external/crawler/start | Start External Crawler
 *CrawlerApi* | [**getCrawler**](docs/CrawlerApi.md#getCrawler) | **GET** /api/crawler/crawler/{organisationId}/{kbId}/{sourceId} | Get source
+*CrawlerApi* | [**getFailedDocuments**](docs/CrawlerApi.md#getFailedDocuments) | **GET** /api/crawler/faileddocs/{organisationId}/{kbId}/{sourceId}/{page}/{pageSize} | Get source List
 *CrawlerApi* | [**getSourceList**](docs/CrawlerApi.md#getSourceList) | **GET** /api/crawler/crawlers/{organisationId}/{kbId} | Get source List
+*CrawlerApi* | [**markFileAsSeen**](docs/CrawlerApi.md#markFileAsSeen) | **POST** /api/crawler/external/crawler/mark-file-as-seen | Mark file as seen
 *CrawlerApi* | [**oidcCode**](docs/CrawlerApi.md#oidcCode) | **GET** /api/crawler/dropbox-oidc-code/{oidcKey} | OIDC code receiver
 *CrawlerApi* | [**processAllFiles**](docs/CrawlerApi.md#processAllFiles) | **POST** /api/crawler/process-all-files | Process all files of crawler/source
+*CrawlerApi* | [**processorSchema**](docs/CrawlerApi.md#processorSchema) | **GET** /api/crawler/processor_schema | 
+*CrawlerApi* | [**receiveExternalLogEntry**](docs/CrawlerApi.md#receiveExternalLogEntry) | **POST** /api/crawler/external/crawler/log | External Crawler log-entry
 *CrawlerApi* | [**resetSourceDelta**](docs/CrawlerApi.md#resetSourceDelta) | **POST** /api/crawler/crawler/reset-delta/{organisationId}/{kbId}/{sourceId} | Reset Source delta-token
+*CrawlerApi* | [**sdcSchema**](docs/CrawlerApi.md#sdcSchema) | **GET** /api/crawler/sdc_schema | 
 *CrawlerApi* | [**startCrawler**](docs/CrawlerApi.md#startCrawler) | **POST** /api/crawler/start | Start crawler
 *CrawlerApi* | [**testCrawler**](docs/CrawlerApi.md#testCrawler) | **GET** /api/crawler/crawler/test/{organisationId}/{kbId}/{sourceId} | Test Crawler
 *CrawlerApi* | [**updateCrawler**](docs/CrawlerApi.md#updateCrawler) | **POST** /api/crawler/crawler | Update Source
@@ -174,9 +184,12 @@ Class | Method | HTTP request | Description
 *DataprojectApi* | [**filteredComments**](docs/DataprojectApi.md#filteredComments) | **POST** /api/dataproject/filteredcomments | Retrieve Comments
 *DataprojectApi* | [**getDocumentRedactionInfo**](docs/DataprojectApi.md#getDocumentRedactionInfo) | **GET** /api/dataproject/docredactioninfo/{organisationId}/{sliceId}/{documentKey} | Get Document Redaction info
 *DataprojectApi* | [**getProjectDefinition**](docs/DataprojectApi.md#getProjectDefinition) | **GET** /api/dataproject/projectdefinition/{organisationId}/{taskId} | get Project Definition
+*DataprojectApi* | [**getProjectReview**](docs/DataprojectApi.md#getProjectReview) | **GET** /api/dataproject/projectreview/{organisationId}/{projectId} | get Project Definition
 *DataprojectApi* | [**getProjectSlice**](docs/DataprojectApi.md#getProjectSlice) | **GET** /api/dataproject/projectslice/{organisationId}/{taskId} | get project slice
 *DataprojectApi* | [**getSearchResultSummary**](docs/DataprojectApi.md#getSearchResultSummary) | **GET** /api/dataproject/searchresult/{organisationId}/{taskId} | get Search Result Summary
+*DataprojectApi* | [**getSearchResultSummaryForReview**](docs/DataprojectApi.md#getSearchResultSummaryForReview) | **GET** /api/dataproject/searchresultreview/{organisationId}/{projectId} | get Search Result Summary
 *DataprojectApi* | [**nextDocument**](docs/DataprojectApi.md#nextDocument) | **POST** /api/dataproject/nextdocument | Document list for given slice and filters
+*DataprojectApi* | [**pdfBinary**](docs/DataprojectApi.md#pdfBinary) | **GET** /api/dataproject/pdf/latest/{organisationId}/{kbId}/{url} | Binary
 *DataprojectApi* | [**projectTypes**](docs/DataprojectApi.md#projectTypes) | **GET** /api/dataproject/projects/{organisationId} | get Project Types
 *DataprojectApi* | [**reassignSliceDocument**](docs/DataprojectApi.md#reassignSliceDocument) | **POST** /api/dataproject/reassignslicedoc | 
 *DataprojectApi* | [**redactedDocument**](docs/DataprojectApi.md#redactedDocument) | **POST** /api/dataproject/redacteddocument | Get Redacted Document
@@ -196,7 +209,6 @@ Class | Method | HTTP request | Description
 *DiscoveryApi* | [**getGdprDocument**](docs/DiscoveryApi.md#getGdprDocument) | **GET** /api/discovery/gdprdocument/{organisationId}/{kbId}/{projectId}/{url} | 
 *DiscoveryApi* | [**getPagedProjectDocuments**](docs/DiscoveryApi.md#getPagedProjectDocuments) | **GET** /api/discovery/projectdocument/{organisationId}/{kbId}/{projectId}/{page}/{pageSize}/{textFilter}/{typeFilter}/{statusFilter}/{sortColumn}/{sortDirection} | 
 *DiscoveryApi* | [**growthPerMonth**](docs/DiscoveryApi.md#growthPerMonth) | **GET** /api/discovery/growth/{organisationId}/{kbId} | growth
-*DiscoveryApi* | [**pdfBinary**](docs/DiscoveryApi.md#pdfBinary) | **GET** /api/discovery/pdf/latest/{organisationId}/{kbId}/{url} | Binary
 *DiscoveryApi* | [**setdocumentredactions**](docs/DiscoveryApi.md#setdocumentredactions) | **PUT** /api/discovery/updategdprdocument | 
 *DiscoveryApi* | [**storageBySource**](docs/DiscoveryApi.md#storageBySource) | **GET** /api/discovery/storage/{organisationId}/{kbId} | storage
 *DiscoveryApi* | [**summaryByDocumentType**](docs/DiscoveryApi.md#summaryByDocumentType) | **GET** /api/discovery/doctypesummary/{organisationId}/{kbId} | storage
@@ -278,7 +290,6 @@ Class | Method | HTTP request | Description
 *LanguageApi* | [**saveSemantic**](docs/LanguageApi.md#saveSemantic) | **PUT** /api/language/save-semantic/{organisationId}/{kbId} | Save Semantic
 *LanguageApi* | [**saveSynSet**](docs/LanguageApi.md#saveSynSet) | **PUT** /api/language/save-syn-set/{organisationId}/{kbId} | Save SynSet
 *LanguageApi* | [**saveSynonym**](docs/LanguageApi.md#saveSynonym) | **PUT** /api/language/save-synonym/{organisationId}/{kbId} | Save Synonym
-*LanguageApi* | [**truncateSlowIndexes**](docs/LanguageApi.md#truncateSlowIndexes) | **GET** /api/language/truncate-slow-indexes/{organisationId}/{kbId} | Truncate slow Indexes
 *LanguageApi* | [**tuneLanguageGraph**](docs/LanguageApi.md#tuneLanguageGraph) | **GET** /api/language/tune-graph/{organisationId}/{kbId} | Tune Graph
 *LanguageApi* | [**version2**](docs/LanguageApi.md#version2) | **GET** /api/language/version | Version
 *SemanticApi* | [**deleteTextToSearch**](docs/SemanticApi.md#deleteTextToSearch) | **DELETE** /api/semantic/text-to-search/{organisationId}/{kbId}/{word} | Delete text-to-search
@@ -289,16 +300,18 @@ Class | Method | HTTP request | Description
 *SemanticApi* | [**shortSummary**](docs/SemanticApi.md#shortSummary) | **POST** /api/semantic/short-summary | Short summary
 *SemanticApi* | [**tryTextToSearchConversion**](docs/SemanticApi.md#tryTextToSearchConversion) | **PUT** /api/semantic/text-to-search-try | try converting text-to-search
 *SemanticApi* | [**version1**](docs/SemanticApi.md#version1) | **GET** /api/semantic/version | Version
-*StatsApi* | [**getIndexOptimzationReport**](docs/StatsApi.md#getIndexOptimzationReport) | **GET** /api/stats/report/{organisationId}/{kbId}/{id} | get an optimization report
-*StatsApi* | [**getIndexOptimzationReports**](docs/StatsApi.md#getIndexOptimzationReports) | **GET** /api/stats/reports/{organisationId}/{kbId} | get optimization report list
+*StatsApi* | [**getIndexOptimizationReport**](docs/StatsApi.md#getIndexOptimizationReport) | **GET** /api/stats/report/{organisationId}/{kbId}/{id} | get an optimization report
+*StatsApi* | [**getIndexOptimizationReports**](docs/StatsApi.md#getIndexOptimizationReports) | **GET** /api/stats/reports/{organisationId}/{kbId} | get optimization report list
 *StatsApi* | [**getStats**](docs/StatsApi.md#getStats) | **GET** /api/stats/stats/{organisationId}/{kbId}/{year}/{month}/{top} | Get usage Statistics
 *StatsApi* | [**simSageStatus**](docs/StatsApi.md#simSageStatus) | **PUT** /api/stats/status/{organisationId} | SimSage status
-*StatsApi* | [**systemLogs**](docs/StatsApi.md#systemLogs) | **GET** /api/stats/system-logs/{organisationId}/{year}/{month}/{day}/{hour}/{hours} | System Logs
+*StatsApi* | [**systemLogs**](docs/StatsApi.md#systemLogs) | **GET** /api/stats/system-logs/{organisationId}/{service}/{numLines} | System Logs
 *StatsApi* | [**version**](docs/StatsApi.md#version) | **GET** /api/stats/version | Version
 
 
 ## Documentation for Models
 
+ - [Asset](docs/Asset.md)
+ - [AssetACL](docs/AssetACL.md)
  - [Backup](docs/Backup.md)
  - [CMAddFolder](docs/CMAddFolder.md)
  - [CMAddSourceFolder](docs/CMAddSourceFolder.md)
@@ -331,13 +344,19 @@ Class | Method | HTTP request | Description
  - [CMDocumentRelationship](docs/CMDocumentRelationship.md)
  - [CMDocumentSubscription](docs/CMDocumentSubscription.md)
  - [CMDocumentTypeFrequency](docs/CMDocumentTypeFrequency.md)
- - [CMDocumentUnChanged](docs/CMDocumentUnChanged.md)
  - [CMDocumentVersion](docs/CMDocumentVersion.md)
  - [CMDocumentsByToken](docs/CMDocumentsByToken.md)
  - [CMExportRedactedDocument](docs/CMExportRedactedDocument.md)
  - [CMExternalCrawler](docs/CMExternalCrawler.md)
+ - [CMExternalCrawlerDeleteFolder](docs/CMExternalCrawlerDeleteFolder.md)
+ - [CMExternalCrawlerDeleteUrl](docs/CMExternalCrawlerDeleteUrl.md)
+ - [CMExternalCrawlerMarkFileAsSeen](docs/CMExternalCrawlerMarkFileAsSeen.md)
+ - [CMExternalCrawlerRenameFolder](docs/CMExternalCrawlerRenameFolder.md)
+ - [CMExternalCrawlerSetDeltaToken](docs/CMExternalCrawlerSetDeltaToken.md)
  - [CMExternalCrawlerStart](docs/CMExternalCrawlerStart.md)
  - [CMExternalCrawlerStop](docs/CMExternalCrawlerStop.md)
+ - [CMExternalLogEntry](docs/CMExternalLogEntry.md)
+ - [CMFailedSourceDocument](docs/CMFailedSourceDocument.md)
  - [CMFilter](docs/CMFilter.md)
  - [CMGdprSearchDetails](docs/CMGdprSearchDetails.md)
  - [CMGetHtml](docs/CMGetHtml.md)
@@ -368,6 +387,7 @@ Class | Method | HTTP request | Description
  - [CMProjectDocument](docs/CMProjectDocument.md)
  - [CMProjectFrame](docs/CMProjectFrame.md)
  - [CMProjectInfo](docs/CMProjectInfo.md)
+ - [CMProjectReview](docs/CMProjectReview.md)
  - [CMProjectSlice](docs/CMProjectSlice.md)
  - [CMProjectSliceTask](docs/CMProjectSliceTask.md)
  - [CMQueryFocussedSummarization](docs/CMQueryFocussedSummarization.md)
@@ -457,7 +477,7 @@ Class | Method | HTTP request | Description
  - [JsonMessage](docs/JsonMessage.md)
  - [KnowledgeBase](docs/KnowledgeBase.md)
  - [LocatedRedaction](docs/LocatedRedaction.md)
- - [MDCategory](docs/MDCategory.md)
+ - [MDMetadataMapping](docs/MDMetadataMapping.md)
  - [NameCounterLevel](docs/NameCounterLevel.md)
  - [OperatorKnowledgeBase](docs/OperatorKnowledgeBase.md)
  - [OptimizeIndexesGetReportCmd](docs/OptimizeIndexesGetReportCmd.md)

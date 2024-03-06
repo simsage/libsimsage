@@ -82,8 +82,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK response |  -  |
 | **500** | fail response |  -  |
+| **200** | OK response |  -  |
 
 <a id="documentQuestionAndAnswer"></a>
 # **documentQuestionAndAnswer**
@@ -214,8 +214,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | fail response |  -  |
 | **200** | response |  -  |
+| **500** | fail response |  -  |
 
 <a id="restfulClientQuery"></a>
 # **restfulClientQuery**
@@ -348,8 +348,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK response |  -  |
 | **500** | fail response |  -  |
+| **200** | OK response |  -  |
 
 <a id="shortSummary"></a>
 # **shortSummary**

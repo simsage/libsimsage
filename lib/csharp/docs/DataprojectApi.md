@@ -13,9 +13,12 @@ All URIs are relative to *https://test.simsage.ai*
 | [**FilteredComments**](DataprojectApi.md#filteredcomments) | **POST** /api/dataproject/filteredcomments | Retrieve Comments |
 | [**GetDocumentRedactionInfo**](DataprojectApi.md#getdocumentredactioninfo) | **GET** /api/dataproject/docredactioninfo/{organisationId}/{sliceId}/{documentKey} | Get Document Redaction info |
 | [**GetProjectDefinition**](DataprojectApi.md#getprojectdefinition) | **GET** /api/dataproject/projectdefinition/{organisationId}/{taskId} | get Project Definition |
+| [**GetProjectReview**](DataprojectApi.md#getprojectreview) | **GET** /api/dataproject/projectreview/{organisationId}/{projectId} | get Project Definition |
 | [**GetProjectSlice**](DataprojectApi.md#getprojectslice) | **GET** /api/dataproject/projectslice/{organisationId}/{taskId} | get project slice |
 | [**GetSearchResultSummary**](DataprojectApi.md#getsearchresultsummary) | **GET** /api/dataproject/searchresult/{organisationId}/{taskId} | get Search Result Summary |
+| [**GetSearchResultSummaryForReview**](DataprojectApi.md#getsearchresultsummaryforreview) | **GET** /api/dataproject/searchresultreview/{organisationId}/{projectId} | get Search Result Summary |
 | [**NextDocument**](DataprojectApi.md#nextdocument) | **POST** /api/dataproject/nextdocument | Document list for given slice and filters |
+| [**PdfBinary**](DataprojectApi.md#pdfbinary) | **GET** /api/dataproject/pdf/latest/{organisationId}/{kbId}/{url} | Binary |
 | [**ProjectTypes**](DataprojectApi.md#projecttypes) | **GET** /api/dataproject/projects/{organisationId} | get Project Types |
 | [**ReassignSliceDocument**](DataprojectApi.md#reassignslicedocument) | **POST** /api/dataproject/reassignslicedoc |  |
 | [**RedactedDocument**](DataprojectApi.md#redacteddocument) | **POST** /api/dataproject/redacteddocument | Get Redacted Document |
@@ -117,8 +120,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Create Comment Status OK response |  -  |
 | **500** | Could not add comment. |  -  |
+| **200** | Create Comment Status OK response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -399,8 +402,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Wrapper containing the document binary |  -  |
 | **500** | could not retrieve redacted document. |  -  |
+| **200** | Wrapper containing the document binary |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -589,8 +592,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | returns paged list of documents for the given set of query tokens |  -  |
 | **500** | could not retrieve document list. |  -  |
+| **200** | returns paged list of documents for the given set of query tokens |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -683,8 +686,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Create Comment Status OK response |  -  |
 | **500** | Could not get comments. |  -  |
+| **200** | Create Comment Status OK response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -877,8 +880,104 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | project definition response |  -  |
 | **500** | could not get project definition. |  -  |
+| **200** | project definition response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="getprojectreview"></a>
+# **GetProjectReview**
+> CMProjectReview GetProjectReview (string organisationId, string projectId, string sessionId)
+
+get Project Definition
+
+Get the project review data of the project for the given project id
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
+
+namespace Example
+{
+    public class GetProjectReviewExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://test.simsage.ai";
+            var apiInstance = new DataprojectApi(config);
+            var organisationId = "organisationId_example";  // string | the organisation (its guid id)
+            var projectId = "projectId_example";  // string | the id of the task
+            var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
+
+            try
+            {
+                // get Project Definition
+                CMProjectReview result = apiInstance.GetProjectReview(organisationId, projectId, sessionId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DataprojectApi.GetProjectReview: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetProjectReviewWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // get Project Definition
+    ApiResponse<CMProjectReview> response = apiInstance.GetProjectReviewWithHttpInfo(organisationId, projectId, sessionId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling DataprojectApi.GetProjectReviewWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organisationId** | **string** | the organisation (its guid id) |  |
+| **projectId** | **string** | the id of the task |  |
+| **sessionId** | **string** | a valid SimSage Session id. |  |
+
+### Return type
+
+[**CMProjectReview**](CMProjectReview.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | project review response |  -  |
+| **500** | could not get project review. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -973,8 +1072,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Project slice data |  -  |
 | **500** | could not retrieve project slice. |  -  |
+| **200** | Project slice data |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1074,6 +1173,102 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="getsearchresultsummaryforreview"></a>
+# **GetSearchResultSummaryForReview**
+> CMSearchResultSummary GetSearchResultSummaryForReview (string organisationId, string projectId, string sessionId)
+
+get Search Result Summary
+
+Get the summary information for the search results of a given project by task id
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
+
+namespace Example
+{
+    public class GetSearchResultSummaryForReviewExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://test.simsage.ai";
+            var apiInstance = new DataprojectApi(config);
+            var organisationId = "organisationId_example";  // string | the organisation (its guid id)
+            var projectId = "projectId_example";  // string | the id of the task
+            var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
+
+            try
+            {
+                // get Search Result Summary
+                CMSearchResultSummary result = apiInstance.GetSearchResultSummaryForReview(organisationId, projectId, sessionId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DataprojectApi.GetSearchResultSummaryForReview: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetSearchResultSummaryForReviewWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // get Search Result Summary
+    ApiResponse<CMSearchResultSummary> response = apiInstance.GetSearchResultSummaryForReviewWithHttpInfo(organisationId, projectId, sessionId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling DataprojectApi.GetSearchResultSummaryForReviewWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organisationId** | **string** | the organisation (its guid id) |  |
+| **projectId** | **string** | the id of the task |  |
+| **sessionId** | **string** | a valid SimSage Session id. |  |
+
+### Return type
+
+[**CMSearchResultSummary**](CMSearchResultSummary.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | search result summary response |  -  |
+| **500** | could not get search result summary. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="nextdocument"></a>
 # **NextDocument**
 > CMSlicedDocumentListAndTotals NextDocument (string sessionId, CMNextDocument cMNextDocument)
@@ -1163,8 +1358,105 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not retrieve document list. |  -  |
 | **200** | Paged list of documents for the passed in slice and filters as well as totals |  -  |
+| **500** | could not retrieve document list. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="pdfbinary"></a>
+# **PdfBinary**
+> Object PdfBinary (string organisationId, string kbId, string url, string? sessionId = null)
+
+Binary
+
+Get the original for a document if available by url (latest version)
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
+
+namespace Example
+{
+    public class PdfBinaryExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://test.simsage.ai";
+            var apiInstance = new DataprojectApi(config);
+            var organisationId = "organisationId_example";  // string | the organisation (its guid id)
+            var kbId = "kbId_example";  // string | the knowledge-base (its guid id)
+            var url = "url_example";  // string | a base64 encoded url
+            var sessionId = "sessionId_example";  // string? | a valid SimSage Session id. (optional) 
+
+            try
+            {
+                // Binary
+                Object result = apiInstance.PdfBinary(organisationId, kbId, url, sessionId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling DataprojectApi.PdfBinary: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the PdfBinaryWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Binary
+    ApiResponse<Object> response = apiInstance.PdfBinaryWithHttpInfo(organisationId, kbId, url, sessionId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling DataprojectApi.PdfBinaryWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organisationId** | **string** | the organisation (its guid id) |  |
+| **kbId** | **string** | the knowledge-base (its guid id) |  |
+| **url** | **string** | a base64 encoded url |  |
+| **sessionId** | **string?** | a valid SimSage Session id. | [optional]  |
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1440,8 +1732,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Wrapper containing the document binary |  -  |
 | **500** | could not retrieve redacted document. |  -  |
+| **200** | Wrapper containing the document binary |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1811,8 +2103,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | Could not set Slice configuration. |  -  |
 | **200** | Set Slice config OK response |  -  |
+| **500** | Could not set Slice configuration. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1905,8 +2197,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not retrieve document list. |  -  |
 | **200** | Paged list of documents for the passed in slice and filters as well as totals |  -  |
+| **500** | could not retrieve document list. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2088,8 +2380,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Update Document Status OK response |  -  |
 | **500** | Could not update document status. |  -  |
+| **200** | Update Document Status OK response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2182,8 +2474,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Update Redactions OK response |  -  |
 | **500** | could not update redactionst. |  -  |
+| **200** | Update Redactions OK response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

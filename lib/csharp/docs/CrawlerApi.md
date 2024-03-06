@@ -4,10 +4,14 @@ All URIs are relative to *https://test.simsage.ai*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
+| [**CrawlerDeleteFolder**](CrawlerApi.md#crawlerdeletefolder) | **POST** /api/crawler/external/crawler/delete-folder | Delete document folder |
+| [**CrawlerDeleteUrl**](CrawlerApi.md#crawlerdeleteurl) | **POST** /api/crawler/external/crawler/delete-url | Delete document |
 | [**CrawlerExternalDocumentDelete**](CrawlerApi.md#crawlerexternaldocumentdelete) | **PUT** /api/crawler/external/document/delete | Remove an External Document |
-| [**CrawlerExternalDocumentUnChanged**](CrawlerApi.md#crawlerexternaldocumentunchanged) | **POST** /api/crawler/external/document/un-changed | Mark External Document Unchanged |
+| [**CrawlerExternalDocumentFailed**](CrawlerApi.md#crawlerexternaldocumentfailed) | **POST** /api/crawler/external/document/recordfailure | Upload External Document |
 | [**CrawlerExternalDocumentUpload**](CrawlerApi.md#crawlerexternaldocumentupload) | **POST** /api/crawler/external/document/upload | Upload External Document |
 | [**CrawlerExternalImageUpload**](CrawlerApi.md#crawlerexternalimageupload) | **POST** /api/crawler/external/document/upload/image | Upload External Image |
+| [**CrawlerRenameFolder**](CrawlerApi.md#crawlerrenamefolder) | **POST** /api/crawler/external/crawler/rename-folder | Rename document folder |
+| [**CrawlerUpdateDeltaToken**](CrawlerApi.md#crawlerupdatedeltatoken) | **POST** /api/crawler/external/crawler/delta-token | Update delta token |
 | [**Delete**](CrawlerApi.md#delete) | **DELETE** /api/crawler/crawler/{organisationId}/{kbId}/{sourceId} | Delete source |
 | [**DeleteDocuments**](CrawlerApi.md#deletedocuments) | **DELETE** /api/crawler/crawler/document/{organisationId}/{kbId}/{sourceId} | Delete source&#39;s documents |
 | [**EncryptedCommunications**](CrawlerApi.md#encryptedcommunications) | **POST** /api/crawler/external/secure/{seed} | Secure Communication |
@@ -15,14 +19,207 @@ All URIs are relative to *https://test.simsage.ai*
 | [**ExternalCrawlerFinished**](CrawlerApi.md#externalcrawlerfinished) | **POST** /api/crawler/external/crawler/finish | Stop External Crawler |
 | [**ExternalCrawlerStart**](CrawlerApi.md#externalcrawlerstart) | **POST** /api/crawler/external/crawler/start | Start External Crawler |
 | [**GetCrawler**](CrawlerApi.md#getcrawler) | **GET** /api/crawler/crawler/{organisationId}/{kbId}/{sourceId} | Get source |
+| [**GetFailedDocuments**](CrawlerApi.md#getfaileddocuments) | **GET** /api/crawler/faileddocs/{organisationId}/{kbId}/{sourceId}/{page}/{pageSize} | Get source List |
 | [**GetSourceList**](CrawlerApi.md#getsourcelist) | **GET** /api/crawler/crawlers/{organisationId}/{kbId} | Get source List |
+| [**MarkFileAsSeen**](CrawlerApi.md#markfileasseen) | **POST** /api/crawler/external/crawler/mark-file-as-seen | Mark file as seen |
 | [**OidcCode**](CrawlerApi.md#oidccode) | **GET** /api/crawler/dropbox-oidc-code/{oidcKey} | OIDC code receiver |
 | [**ProcessAllFiles**](CrawlerApi.md#processallfiles) | **POST** /api/crawler/process-all-files | Process all files of crawler/source |
+| [**ProcessorSchema**](CrawlerApi.md#processorschema) | **GET** /api/crawler/processor_schema |  |
+| [**ReceiveExternalLogEntry**](CrawlerApi.md#receiveexternallogentry) | **POST** /api/crawler/external/crawler/log | External Crawler log-entry |
 | [**ResetSourceDelta**](CrawlerApi.md#resetsourcedelta) | **POST** /api/crawler/crawler/reset-delta/{organisationId}/{kbId}/{sourceId} | Reset Source delta-token |
+| [**SdcSchema**](CrawlerApi.md#sdcschema) | **GET** /api/crawler/sdc_schema |  |
 | [**StartCrawler**](CrawlerApi.md#startcrawler) | **POST** /api/crawler/start | Start crawler |
 | [**TestCrawler**](CrawlerApi.md#testcrawler) | **GET** /api/crawler/crawler/test/{organisationId}/{kbId}/{sourceId} | Test Crawler |
 | [**UpdateCrawler**](CrawlerApi.md#updatecrawler) | **POST** /api/crawler/crawler | Update Source |
 | [**Version6**](CrawlerApi.md#version6) | **GET** /api/crawler/version | Version |
+
+<a id="crawlerdeletefolder"></a>
+# **CrawlerDeleteFolder**
+> JsonMessage CrawlerDeleteFolder (CMExternalCrawlerDeleteFolder cMExternalCrawlerDeleteFolder, string? aPIVersion = null)
+
+Delete document folder
+
+An external crawler removes a document folder.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
+
+namespace Example
+{
+    public class CrawlerDeleteFolderExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://test.simsage.ai";
+            var apiInstance = new CrawlerApi(config);
+            var cMExternalCrawlerDeleteFolder = new CMExternalCrawlerDeleteFolder(); // CMExternalCrawlerDeleteFolder | 
+            var aPIVersion = "1";  // string? |  (optional) 
+
+            try
+            {
+                // Delete document folder
+                JsonMessage result = apiInstance.CrawlerDeleteFolder(cMExternalCrawlerDeleteFolder, aPIVersion);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling CrawlerApi.CrawlerDeleteFolder: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the CrawlerDeleteFolderWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete document folder
+    ApiResponse<JsonMessage> response = apiInstance.CrawlerDeleteFolderWithHttpInfo(cMExternalCrawlerDeleteFolder, aPIVersion);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling CrawlerApi.CrawlerDeleteFolderWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **cMExternalCrawlerDeleteFolder** | [**CMExternalCrawlerDeleteFolder**](CMExternalCrawlerDeleteFolder.md) |  |  |
+| **aPIVersion** | **string?** |  | [optional]  |
+
+### Return type
+
+[**JsonMessage**](JsonMessage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **500** | could not delete document folder. |  -  |
+| **200** | delete document folder update OK response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="crawlerdeleteurl"></a>
+# **CrawlerDeleteUrl**
+> JsonMessage CrawlerDeleteUrl (CMExternalCrawlerDeleteUrl cMExternalCrawlerDeleteUrl, string? aPIVersion = null)
+
+Delete document
+
+An external crawler removes a document.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
+
+namespace Example
+{
+    public class CrawlerDeleteUrlExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://test.simsage.ai";
+            var apiInstance = new CrawlerApi(config);
+            var cMExternalCrawlerDeleteUrl = new CMExternalCrawlerDeleteUrl(); // CMExternalCrawlerDeleteUrl | 
+            var aPIVersion = "1";  // string? |  (optional) 
+
+            try
+            {
+                // Delete document
+                JsonMessage result = apiInstance.CrawlerDeleteUrl(cMExternalCrawlerDeleteUrl, aPIVersion);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling CrawlerApi.CrawlerDeleteUrl: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the CrawlerDeleteUrlWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete document
+    ApiResponse<JsonMessage> response = apiInstance.CrawlerDeleteUrlWithHttpInfo(cMExternalCrawlerDeleteUrl, aPIVersion);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling CrawlerApi.CrawlerDeleteUrlWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **cMExternalCrawlerDeleteUrl** | [**CMExternalCrawlerDeleteUrl**](CMExternalCrawlerDeleteUrl.md) |  |  |
+| **aPIVersion** | **string?** |  | [optional]  |
+
+### Return type
+
+[**JsonMessage**](JsonMessage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | delete document update OK response |  -  |
+| **500** | could not delete document. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="crawlerexternaldocumentdelete"></a>
 # **CrawlerExternalDocumentDelete**
@@ -113,18 +310,18 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not remove external-crawler document. |  -  |
 | **200** | remove external-crawler document OK response |  -  |
+| **500** | could not remove external-crawler document. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="crawlerexternaldocumentunchanged"></a>
-# **CrawlerExternalDocumentUnChanged**
-> JsonMessage CrawlerExternalDocumentUnChanged (CMDocumentUnChanged cMDocumentUnChanged, string? aPIVersion = null)
+<a id="crawlerexternaldocumentfailed"></a>
+# **CrawlerExternalDocumentFailed**
+> JsonMessage CrawlerExternalDocumentFailed (CMFailedSourceDocument cMFailedSourceDocument, string? aPIVersion = null)
 
-Mark External Document Unchanged
+Upload External Document
 
-An external crawler document marks a document as not having changed.
+An external crawler document wants to upload a document to SimSage.
 
 ### Example
 ```csharp
@@ -136,25 +333,25 @@ using Org.OpenAPITools.Model;
 
 namespace Example
 {
-    public class CrawlerExternalDocumentUnChangedExample
+    public class CrawlerExternalDocumentFailedExample
     {
         public static void Main()
         {
             Configuration config = new Configuration();
             config.BasePath = "https://test.simsage.ai";
             var apiInstance = new CrawlerApi(config);
-            var cMDocumentUnChanged = new CMDocumentUnChanged(); // CMDocumentUnChanged | 
+            var cMFailedSourceDocument = new CMFailedSourceDocument(); // CMFailedSourceDocument | 
             var aPIVersion = "1";  // string? |  (optional) 
 
             try
             {
-                // Mark External Document Unchanged
-                JsonMessage result = apiInstance.CrawlerExternalDocumentUnChanged(cMDocumentUnChanged, aPIVersion);
+                // Upload External Document
+                JsonMessage result = apiInstance.CrawlerExternalDocumentFailed(cMFailedSourceDocument, aPIVersion);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CrawlerApi.CrawlerExternalDocumentUnChanged: " + e.Message);
+                Debug.Print("Exception when calling CrawlerApi.CrawlerExternalDocumentFailed: " + e.Message);
                 Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
@@ -163,21 +360,21 @@ namespace Example
 }
 ```
 
-#### Using the CrawlerExternalDocumentUnChangedWithHttpInfo variant
+#### Using the CrawlerExternalDocumentFailedWithHttpInfo variant
 This returns an ApiResponse object which contains the response data, status code and headers.
 
 ```csharp
 try
 {
-    // Mark External Document Unchanged
-    ApiResponse<JsonMessage> response = apiInstance.CrawlerExternalDocumentUnChangedWithHttpInfo(cMDocumentUnChanged, aPIVersion);
+    // Upload External Document
+    ApiResponse<JsonMessage> response = apiInstance.CrawlerExternalDocumentFailedWithHttpInfo(cMFailedSourceDocument, aPIVersion);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
-    Debug.Print("Exception when calling CrawlerApi.CrawlerExternalDocumentUnChangedWithHttpInfo: " + e.Message);
+    Debug.Print("Exception when calling CrawlerApi.CrawlerExternalDocumentFailedWithHttpInfo: " + e.Message);
     Debug.Print("Status Code: " + e.ErrorCode);
     Debug.Print(e.StackTrace);
 }
@@ -187,7 +384,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **cMDocumentUnChanged** | [**CMDocumentUnChanged**](CMDocumentUnChanged.md) |  |  |
+| **cMFailedSourceDocument** | [**CMFailedSourceDocument**](CMFailedSourceDocument.md) |  |  |
 | **aPIVersion** | **string?** |  | [optional]  |
 
 ### Return type
@@ -207,8 +404,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | mark external-crawler document unchanged OK response |  -  |
-| **500** | could not mark external-document as unchanged. |  -  |
+| **500** | could not start external crawler. |  -  |
+| **200** | upload external-crawler document OK response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -301,8 +498,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | upload external-crawler document OK response |  -  |
 | **500** | could not start external crawler. |  -  |
+| **200** | upload external-crawler document OK response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -397,6 +594,194 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | upload external-crawler document-image OK response |  -  |
 | **500** | could not upload external-crawler document image. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="crawlerrenamefolder"></a>
+# **CrawlerRenameFolder**
+> JsonMessage CrawlerRenameFolder (CMExternalCrawlerRenameFolder cMExternalCrawlerRenameFolder, string? aPIVersion = null)
+
+Rename document folder
+
+An external crawler renames a document folder.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
+
+namespace Example
+{
+    public class CrawlerRenameFolderExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://test.simsage.ai";
+            var apiInstance = new CrawlerApi(config);
+            var cMExternalCrawlerRenameFolder = new CMExternalCrawlerRenameFolder(); // CMExternalCrawlerRenameFolder | 
+            var aPIVersion = "1";  // string? |  (optional) 
+
+            try
+            {
+                // Rename document folder
+                JsonMessage result = apiInstance.CrawlerRenameFolder(cMExternalCrawlerRenameFolder, aPIVersion);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling CrawlerApi.CrawlerRenameFolder: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the CrawlerRenameFolderWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Rename document folder
+    ApiResponse<JsonMessage> response = apiInstance.CrawlerRenameFolderWithHttpInfo(cMExternalCrawlerRenameFolder, aPIVersion);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling CrawlerApi.CrawlerRenameFolderWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **cMExternalCrawlerRenameFolder** | [**CMExternalCrawlerRenameFolder**](CMExternalCrawlerRenameFolder.md) |  |  |
+| **aPIVersion** | **string?** |  | [optional]  |
+
+### Return type
+
+[**JsonMessage**](JsonMessage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | rename document folder update OK response |  -  |
+| **500** | could not rename document folder. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="crawlerupdatedeltatoken"></a>
+# **CrawlerUpdateDeltaToken**
+> JsonMessage CrawlerUpdateDeltaToken (CMExternalCrawlerSetDeltaToken cMExternalCrawlerSetDeltaToken, string? aPIVersion = null)
+
+Update delta token
+
+An external crawler updates a delta-token.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
+
+namespace Example
+{
+    public class CrawlerUpdateDeltaTokenExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://test.simsage.ai";
+            var apiInstance = new CrawlerApi(config);
+            var cMExternalCrawlerSetDeltaToken = new CMExternalCrawlerSetDeltaToken(); // CMExternalCrawlerSetDeltaToken | 
+            var aPIVersion = "1";  // string? |  (optional) 
+
+            try
+            {
+                // Update delta token
+                JsonMessage result = apiInstance.CrawlerUpdateDeltaToken(cMExternalCrawlerSetDeltaToken, aPIVersion);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling CrawlerApi.CrawlerUpdateDeltaToken: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the CrawlerUpdateDeltaTokenWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Update delta token
+    ApiResponse<JsonMessage> response = apiInstance.CrawlerUpdateDeltaTokenWithHttpInfo(cMExternalCrawlerSetDeltaToken, aPIVersion);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling CrawlerApi.CrawlerUpdateDeltaTokenWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **cMExternalCrawlerSetDeltaToken** | [**CMExternalCrawlerSetDeltaToken**](CMExternalCrawlerSetDeltaToken.md) |  |  |
+| **aPIVersion** | **string?** |  | [optional]  |
+
+### Return type
+
+[**JsonMessage**](JsonMessage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | source delta-token update OK response |  -  |
+| **500** | could not update source delta-token. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -495,8 +880,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | remove a source OK response |  -  |
 | **500** | could not remove source. |  -  |
+| **200** | remove a source OK response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -879,8 +1264,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not stop external crawler. |  -  |
 | **200** | external-crawler stop OK response |  -  |
+| **500** | could not stop external crawler. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -973,8 +1358,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | external-crawler start OK response |  -  |
 | **500** | could not start external crawler. |  -  |
+| **200** | external-crawler start OK response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1073,8 +1458,112 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | the source |  -  |
 | **500** | could not get source. |  -  |
+| **200** | the source |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="getfaileddocuments"></a>
+# **GetFailedDocuments**
+> List&lt;CMSource&gt; GetFailedDocuments (string sessionId, string organisationId, string kbId, string sourceId, int page, int pageSize, string? aPIVersion = null)
+
+Get source List
+
+Get a list of failed documents for a source.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
+
+namespace Example
+{
+    public class GetFailedDocumentsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://test.simsage.ai";
+            var apiInstance = new CrawlerApi(config);
+            var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
+            var organisationId = "organisationId_example";  // string | the organisation's id (a guid)
+            var kbId = "kbId_example";  // string | the knowledge-base's id (a guid)
+            var sourceId = "sourceId_example";  // string | the source  id (a number)
+            var page = 56;  // int | the page number for the list
+            var pageSize = 56;  // int | the page size for the list
+            var aPIVersion = "1";  // string? |  (optional) 
+
+            try
+            {
+                // Get source List
+                List<CMSource> result = apiInstance.GetFailedDocuments(sessionId, organisationId, kbId, sourceId, page, pageSize, aPIVersion);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling CrawlerApi.GetFailedDocuments: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetFailedDocumentsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get source List
+    ApiResponse<List<CMSource>> response = apiInstance.GetFailedDocumentsWithHttpInfo(sessionId, organisationId, kbId, sourceId, page, pageSize, aPIVersion);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling CrawlerApi.GetFailedDocumentsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **sessionId** | **string** | a valid SimSage Session id. |  |
+| **organisationId** | **string** | the organisation&#39;s id (a guid) |  |
+| **kbId** | **string** | the knowledge-base&#39;s id (a guid) |  |
+| **sourceId** | **string** | the source  id (a number) |  |
+| **page** | **int** | the page number for the list |  |
+| **pageSize** | **int** | the page size for the list |  |
+| **aPIVersion** | **string?** |  | [optional]  |
+
+### Return type
+
+[**List&lt;CMSource&gt;**](CMSource.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **500** | could not get source list. |  -  |
+| **200** | source list response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1176,6 +1665,100 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="markfileasseen"></a>
+# **MarkFileAsSeen**
+> JsonMessage MarkFileAsSeen (CMExternalCrawlerMarkFileAsSeen cMExternalCrawlerMarkFileAsSeen, string? aPIVersion = null)
+
+Mark file as seen
+
+An external crawler marks a file as seen.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
+
+namespace Example
+{
+    public class MarkFileAsSeenExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://test.simsage.ai";
+            var apiInstance = new CrawlerApi(config);
+            var cMExternalCrawlerMarkFileAsSeen = new CMExternalCrawlerMarkFileAsSeen(); // CMExternalCrawlerMarkFileAsSeen | 
+            var aPIVersion = "1";  // string? |  (optional) 
+
+            try
+            {
+                // Mark file as seen
+                JsonMessage result = apiInstance.MarkFileAsSeen(cMExternalCrawlerMarkFileAsSeen, aPIVersion);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling CrawlerApi.MarkFileAsSeen: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the MarkFileAsSeenWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Mark file as seen
+    ApiResponse<JsonMessage> response = apiInstance.MarkFileAsSeenWithHttpInfo(cMExternalCrawlerMarkFileAsSeen, aPIVersion);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling CrawlerApi.MarkFileAsSeenWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **cMExternalCrawlerMarkFileAsSeen** | [**CMExternalCrawlerMarkFileAsSeen**](CMExternalCrawlerMarkFileAsSeen.md) |  |  |
+| **aPIVersion** | **string?** |  | [optional]  |
+
+### Return type
+
+[**JsonMessage**](JsonMessage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | mark file as seen OK response |  -  |
+| **500** | could not mark file as seen. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="oidccode"></a>
 # **OidcCode**
 > void OidcCode (string oidcKey, Dictionary<string, string> allRequestParams)
@@ -1261,8 +1844,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **401** | something went wrong with the OIDC request set-up. |  -  |
 | **200** | OK response |  -  |
+| **401** | something went wrong with the OIDC request set-up. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1357,8 +1940,184 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | start processing all OK response |  -  |
 | **500** | could not start processing files. |  -  |
+| **200** | start processing all OK response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="processorschema"></a>
+# **ProcessorSchema**
+> Object ProcessorSchema ()
+
+
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
+
+namespace Example
+{
+    public class ProcessorSchemaExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://test.simsage.ai";
+            var apiInstance = new CrawlerApi(config);
+
+            try
+            {
+                Object result = apiInstance.ProcessorSchema();
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling CrawlerApi.ProcessorSchema: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ProcessorSchemaWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<Object> response = apiInstance.ProcessorSchemaWithHttpInfo();
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling CrawlerApi.ProcessorSchemaWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="receiveexternallogentry"></a>
+# **ReceiveExternalLogEntry**
+> CMSource ReceiveExternalLogEntry (CMExternalLogEntry cMExternalLogEntry, string? aPIVersion = null)
+
+External Crawler log-entry
+
+An external crawler sends a log entry to SimSage.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
+
+namespace Example
+{
+    public class ReceiveExternalLogEntryExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://test.simsage.ai";
+            var apiInstance = new CrawlerApi(config);
+            var cMExternalLogEntry = new CMExternalLogEntry(); // CMExternalLogEntry | 
+            var aPIVersion = "1";  // string? |  (optional) 
+
+            try
+            {
+                // External Crawler log-entry
+                CMSource result = apiInstance.ReceiveExternalLogEntry(cMExternalLogEntry, aPIVersion);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling CrawlerApi.ReceiveExternalLogEntry: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ReceiveExternalLogEntryWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // External Crawler log-entry
+    ApiResponse<CMSource> response = apiInstance.ReceiveExternalLogEntryWithHttpInfo(cMExternalLogEntry, aPIVersion);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling CrawlerApi.ReceiveExternalLogEntryWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **cMExternalLogEntry** | [**CMExternalLogEntry**](CMExternalLogEntry.md) |  |  |
+| **aPIVersion** | **string?** |  | [optional]  |
+
+### Return type
+
+[**CMSource**](CMSource.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **500** | could not get write log-entry / log-entry invalid. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1457,8 +2216,90 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | reset delta response |  -  |
 | **500** | could not reset source delta-token. |  -  |
+| **200** | reset delta response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="sdcschema"></a>
+# **SdcSchema**
+> Object SdcSchema ()
+
+
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
+
+namespace Example
+{
+    public class SdcSchemaExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://test.simsage.ai";
+            var apiInstance = new CrawlerApi(config);
+
+            try
+            {
+                Object result = apiInstance.SdcSchema();
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling CrawlerApi.SdcSchema: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the SdcSchemaWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<Object> response = apiInstance.SdcSchemaWithHttpInfo();
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling CrawlerApi.SdcSchemaWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

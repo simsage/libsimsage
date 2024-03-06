@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Id** | **string** | the knowledge-base id (its guid id) | 
 **CategoryList** | [**List&lt;SearchCategory&gt;**](SearchCategory.md) | a list of metadata-categories present in this source, names and values. | 
 **SourceList** | [**List&lt;CMSourceBaseInfo&gt;**](CMSourceBaseInfo.md) | the list of sources that are in this knowledge-base | 
+**ProjectKb** | **bool** | Flag to indicate whether this knowledge-base was created for an &#39;Automate&#39; data project | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

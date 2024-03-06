@@ -13,6 +13,7 @@
 |**documentKey** | **String** |  |  |
 |**commentLevel** | **String** |  |  |
 |**comment** | **String** |  |  |
+|**isAuditEvent** | **Boolean** |  |  |
 
 
 

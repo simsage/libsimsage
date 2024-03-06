@@ -16,6 +16,7 @@ An object used for updating a SimSage user.  This object can be used to update t
 |**roles** | **String** | the roles to be associated with this user |  |
 |**operatorKBList** | **String** | the operator-id and knowledge-base id to be associated with this user.  This user is to be an operator if set. |  |
 |**groupList** | [**List&lt;CMGroup&gt;**](CMGroup.md) | a list of groups this user is part of (can be empty) |  |
+|**jwtMatchNameValueCSV** | **String** | an optional set of csv separated name1&#x3D;value1,name2&#x3D;value2 for JWT matching |  |
 
 
 

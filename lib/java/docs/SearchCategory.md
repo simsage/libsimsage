@@ -9,14 +9,9 @@ Search categories / metadata searching
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**scType** | [**ScTypeEnum**](#ScTypeEnum) |  |  |
-|**categoryType** | **String** |  |  |
-|**order** | **Integer** |  |  |
-|**sortDefault** | **String** |  |  |
-|**sortAscText** | **String** |  |  |
-|**sortDescText** | **String** |  |  |
 |**metadata** | **String** |  |  |
 |**displayName** | **String** |  |  |
-|**sort** | **Boolean** |  |  |
+|**dataType** | **String** |  |  |
 |**minValue** | **Long** |  |  |
 |**maxValue** | **Long** |  |  |
 |**items** | [**List&lt;NameCounterLevel&gt;**](NameCounterLevel.md) |  |  |

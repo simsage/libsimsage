@@ -12,7 +12,6 @@ All URIs are relative to *https://test.simsage.ai*
 | [**getGdprDocument**](DiscoveryApi.md#getGdprDocument) | **GET** /api/discovery/gdprdocument/{organisationId}/{kbId}/{projectId}/{url} |  |
 | [**getPagedProjectDocuments**](DiscoveryApi.md#getPagedProjectDocuments) | **GET** /api/discovery/projectdocument/{organisationId}/{kbId}/{projectId}/{page}/{pageSize}/{textFilter}/{typeFilter}/{statusFilter}/{sortColumn}/{sortDirection} |  |
 | [**growthPerMonth**](DiscoveryApi.md#growthPerMonth) | **GET** /api/discovery/growth/{organisationId}/{kbId} | growth |
-| [**pdfBinary**](DiscoveryApi.md#pdfBinary) | **GET** /api/discovery/pdf/latest/{organisationId}/{kbId}/{url} | Binary |
 | [**setdocumentredactions**](DiscoveryApi.md#setdocumentredactions) | **PUT** /api/discovery/updategdprdocument |  |
 | [**storageBySource**](DiscoveryApi.md#storageBySource) | **GET** /api/discovery/storage/{organisationId}/{kbId} | storage |
 | [**summaryByDocumentType**](DiscoveryApi.md#summaryByDocumentType) | **GET** /api/discovery/doctypesummary/{organisationId}/{kbId} | storage |
@@ -552,74 +551,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json;charset=UTF-8
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-<a id="pdfBinary"></a>
-# **pdfBinary**
-> Object pdfBinary(organisationId, kbId, url, sessionId)
-
-Binary
-
-Get the original for a document if available by url (latest version)
-
-### Example
-```java
-// Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.DiscoveryApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
-
-    DiscoveryApi apiInstance = new DiscoveryApi(defaultClient);
-    String organisationId = "organisationId_example"; // String | the organisation (its guid id)
-    String kbId = "kbId_example"; // String | the knowledge-base (its guid id)
-    String url = "url_example"; // String | a base64 encoded url
-    String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
-    try {
-      Object result = apiInstance.pdfBinary(organisationId, kbId, url, sessionId);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling DiscoveryApi#pdfBinary");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **organisationId** | **String**| the organisation (its guid id) | |
-| **kbId** | **String**| the knowledge-base (its guid id) | |
-| **url** | **String**| a base64 encoded url | |
-| **sessionId** | **String**| a valid SimSage Session id. | [optional] |
-
-### Return type
-
-**Object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
 
 ### HTTP response details
 | Status code | Description | Response headers |

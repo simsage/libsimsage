@@ -4,17 +4,17 @@ All URIs are relative to *https://test.simsage.ai*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**getIndexOptimzationReport**](StatsApi.md#getIndexOptimzationReport) | **GET** /api/stats/report/{organisationId}/{kbId}/{id} | get an optimization report |
-| [**getIndexOptimzationReports**](StatsApi.md#getIndexOptimzationReports) | **GET** /api/stats/reports/{organisationId}/{kbId} | get optimization report list |
+| [**getIndexOptimizationReport**](StatsApi.md#getIndexOptimizationReport) | **GET** /api/stats/report/{organisationId}/{kbId}/{id} | get an optimization report |
+| [**getIndexOptimizationReports**](StatsApi.md#getIndexOptimizationReports) | **GET** /api/stats/reports/{organisationId}/{kbId} | get optimization report list |
 | [**getStats**](StatsApi.md#getStats) | **GET** /api/stats/stats/{organisationId}/{kbId}/{year}/{month}/{top} | Get usage Statistics |
 | [**simSageStatus**](StatsApi.md#simSageStatus) | **PUT** /api/stats/status/{organisationId} | SimSage status |
-| [**systemLogs**](StatsApi.md#systemLogs) | **GET** /api/stats/system-logs/{organisationId}/{year}/{month}/{day}/{hour}/{hours} | System Logs |
+| [**systemLogs**](StatsApi.md#systemLogs) | **GET** /api/stats/system-logs/{organisationId}/{service}/{numLines} | System Logs |
 | [**version**](StatsApi.md#version) | **GET** /api/stats/version | Version |
 
 
-<a id="getIndexOptimzationReport"></a>
-# **getIndexOptimzationReport**
-> List&lt;OptimizeIndexesGetReportCmd&gt; getIndexOptimzationReport(sessionId, organisationId, kbId, id)
+<a id="getIndexOptimizationReport"></a>
+# **getIndexOptimizationReport**
+> List&lt;OptimizeIndexesGetReportCmd&gt; getIndexOptimizationReport(sessionId, organisationId, kbId, id)
 
 get an optimization report
 
@@ -40,10 +40,10 @@ public class Example {
     String kbId = "kbId_example"; // String | the knowledge-base (its guid id)
     Long id = 56L; // Long | the id of the report
     try {
-      List<OptimizeIndexesGetReportCmd> result = apiInstance.getIndexOptimzationReport(sessionId, organisationId, kbId, id);
+      List<OptimizeIndexesGetReportCmd> result = apiInstance.getIndexOptimizationReport(sessionId, organisationId, kbId, id);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling StatsApi#getIndexOptimzationReport");
+      System.err.println("Exception when calling StatsApi#getIndexOptimizationReport");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -81,9 +81,9 @@ No authorization required
 | **200** | response |  -  |
 | **500** | failed |  -  |
 
-<a id="getIndexOptimzationReports"></a>
-# **getIndexOptimzationReports**
-> List&lt;OptimizeIndexesGetReportsCmd&gt; getIndexOptimzationReports(sessionId, organisationId, kbId)
+<a id="getIndexOptimizationReports"></a>
+# **getIndexOptimizationReports**
+> List&lt;OptimizeIndexesGetReportsCmd&gt; getIndexOptimizationReports(sessionId, organisationId, kbId)
 
 get optimization report list
 
@@ -108,10 +108,10 @@ public class Example {
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
     String kbId = "kbId_example"; // String | the knowledge-base (its guid id)
     try {
-      List<OptimizeIndexesGetReportsCmd> result = apiInstance.getIndexOptimzationReports(sessionId, organisationId, kbId);
+      List<OptimizeIndexesGetReportsCmd> result = apiInstance.getIndexOptimizationReports(sessionId, organisationId, kbId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling StatsApi#getIndexOptimzationReports");
+      System.err.println("Exception when calling StatsApi#getIndexOptimizationReports");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -145,8 +145,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | response |  -  |
 | **500** | failed |  -  |
+| **200** | response |  -  |
 
 <a id="getStats"></a>
 # **getStats**
@@ -220,8 +220,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | response |  -  |
 | **500** | failed |  -  |
+| **200** | response |  -  |
 
 <a id="simSageStatus"></a>
 # **simSageStatus**
@@ -285,12 +285,12 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | response |  -  |
 | **500** | failed |  -  |
+| **200** | response |  -  |
 
 <a id="systemLogs"></a>
 # **systemLogs**
-> List&lt;CMLoggerEntry&gt; systemLogs(organisationId, year, month, day, hour, hours, sessionId)
+> List&lt;CMLoggerEntry&gt; systemLogs(organisationId, service, numLines, sessionId)
 
 System Logs
 
@@ -312,14 +312,11 @@ public class Example {
 
     StatsApi apiInstance = new StatsApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
-    Integer year = 56; // Integer | the year to get the log for
-    Integer month = 56; // Integer | the month to get the log for
-    Integer day = 56; // Integer | the day to get the log for
-    Integer hour = 56; // Integer | the hour to get the log for
-    Integer hours = 56; // Integer | the number of hours to get the logs for starting at hour
+    String service = "service_example"; // String | the service to get the log for
+    Integer numLines = 56; // Integer | the maximum number of lines to return if > 0
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
     try {
-      List<CMLoggerEntry> result = apiInstance.systemLogs(organisationId, year, month, day, hour, hours, sessionId);
+      List<CMLoggerEntry> result = apiInstance.systemLogs(organisationId, service, numLines, sessionId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StatsApi#systemLogs");
@@ -337,11 +334,8 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organisationId** | **String**| the organisation (its guid id) | |
-| **year** | **Integer**| the year to get the log for | |
-| **month** | **Integer**| the month to get the log for | |
-| **day** | **Integer**| the day to get the log for | |
-| **hour** | **Integer**| the hour to get the log for | |
-| **hours** | **Integer**| the number of hours to get the logs for starting at hour | |
+| **service** | **String**| the service to get the log for | |
+| **numLines** | **Integer**| the maximum number of lines to return if &gt; 0 | |
 | **sessionId** | **String**| a valid SimSage Session id. | |
 
 ### Return type

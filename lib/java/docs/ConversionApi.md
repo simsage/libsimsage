@@ -65,8 +65,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not get version |  -  |
 | **200** | the version response |  -  |
+| **500** | could not get version |  -  |
 
 <a id="sttVersion"></a>
 # **sttVersion**
@@ -124,8 +124,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not get version |  -  |
 | **200** | the version response |  -  |
+| **500** | could not get version |  -  |
 
 <a id="version7"></a>
 # **version7**
@@ -183,6 +183,6 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not get version |  -  |
 | **200** | the version response |  -  |
+| **500** | could not get version |  -  |
 

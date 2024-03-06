@@ -9,8 +9,6 @@ A SimSage return search-result message for Q&A and semantic-search queries.
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**messageType** | **String** |  |  |
-|**assignedOperatorId** | **String** | A unique id for this operator&#39;s session. |  |
-|**operatorName** | **String** | the name of the operator for clients |  |
 |**organisationId** | **String** | the organisation (its guid id). |  |
 |**kbId** | **String** | the knowledge-base id (its guid id) |  |
 |**text** | **String** | the text sent. |  |
@@ -28,6 +26,8 @@ A SimSage return search-result message for Q&A and semantic-search queries.
 |**categoryList** | [**List&lt;SearchCategory&gt;**](SearchCategory.md) | updated categories (if applicable) with updated counts |  |
 |**synSetList** | [**List&lt;CMSynSet&gt;**](CMSynSet.md) | A list of syn-sets used in the query |  |
 |**customRender** | **Boolean** | Does this source require custom render templates or use ordinary search-results? |  |
+|**sourceIdToCounts** | **Map&lt;String, Integer&gt;** | a map of sourceId -&gt; number of documents found inside this source |  |
+|**documentTypeToCounts** | **Map&lt;String, Integer&gt;** | a map of document-type -&gt; number of documents found of this type |  |
 |**savedSearchList** | [**List&lt;CMSavedSearch&gt;**](CMSavedSearch.md) | a list of previous searches if applicable |  |
 |**querySummarization** | **String** | an optional summarization of the search results |  |
 

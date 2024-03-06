@@ -16,6 +16,7 @@
 |**roles** | [**List&lt;UserRole&gt;**](UserRole.md) |  |  |
 |**operatorKBList** | [**List&lt;OperatorKnowledgeBase&gt;**](OperatorKnowledgeBase.md) |  |  |
 |**groupList** | [**List&lt;Group&gt;**](Group.md) |  |  |
+|**jwtMatchNameValueCSV** | **String** |  |  |
 
 
 

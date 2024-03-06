@@ -27,6 +27,7 @@ a client query object
 |**groupSimilarDocuments** | **Boolean** | should the search-engine group similar documents together |  |
 |**sortByAge** | **Boolean** | should the search-engine sort results by age |  |
 |**useQuestionAnsweringAi** | **Boolean** | use ChatGPT or equivalent to answer queries |  |
+|**wordSynSet** | **Map&lt;String, Integer&gt;** | selected syn-sets for words |  |
 
 
 

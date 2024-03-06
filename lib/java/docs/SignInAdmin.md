@@ -21,6 +21,7 @@
 |**user** | [**User**](User.md) |  |  |
 |**organisationId** | **String** |  |  |
 |**organisationList** | [**List&lt;Organisation&gt;**](Organisation.md) |  |  |
+|**sharedSecretSalt** | **String** |  |  |
 |**returnResult** | **Boolean** |  |  [optional] |
 
 

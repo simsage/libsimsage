@@ -15,6 +15,7 @@ A SimSage user object for editing and reviewing.
 |**roles** | [**List&lt;CMUserRole&gt;**](CMUserRole.md) | a list of SimSage roles associated with this user |  |
 |**operatorKBList** | [**List&lt;CMOperatorKnowledgeBase&gt;**](CMOperatorKnowledgeBase.md) | a list of knowledge-bases this user is an operator for |  |
 |**groupList** | [**List&lt;CMGroup&gt;**](CMGroup.md) | a list of security-groups this user is part of (can be empty) |  |
+|**jwtMatchNameValueCSV** | **String** | an optional set of csv separated name1&#x3D;value1,name2&#x3D;value2 for JWT matching |  |
 
 
 

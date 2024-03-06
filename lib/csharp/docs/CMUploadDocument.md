@@ -24,12 +24,12 @@ Name | Type | Description | Notes
 **Created** | **long** | a unix-timestamp of the creation date-time of this document | 
 **LastModified** | **long** | a unix-timestamp of the last-modified date-time of this document | 
 **Metadata** | **Dictionary&lt;string, string&gt;** | a series of name values for other metadata values found in the container of this document | 
-**Categories** | [**List&lt;MDCategory&gt;**](MDCategory.md) | A list of special SimSage metadata categories for matching this document with.  Can be empty. | 
+**Categories** | [**List&lt;MDMetadataMapping&gt;**](MDMetadataMapping.md) | A list of special SimSage metadata categories for matching this document with.  Can be empty. | 
 **Size** | **long** | The size of this document (the original) in bytes | 
 **Template** | **string** | A render template for this document.  This is only appropriate for Database and RESTful type sources. | 
 **Encrypted** | **bool** | Do we need to add transport encryption | 
 **Seed** | **int** | The seed used if encrypted | 
-**RunId** | **string** | the id (a guid) of the current &#39;go through the source once&#39;.  This is a unique per-run identifier. | 
+**RunId** | **long** | the id (a unix timestamp) of the current &#39;go through the source once&#39;.  This is a unique per-run identifier. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

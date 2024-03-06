@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **DocumentKey** | **string** |  | 
 **CommentLevel** | **string** |  | 
 **Comment** | **string** |  | 
+**IsAuditEvent** | **bool** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

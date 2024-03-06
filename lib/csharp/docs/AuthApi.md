@@ -18,6 +18,7 @@ All URIs are relative to *https://test.simsage.ai*
 | [**SaveGroup**](AuthApi.md#savegroup) | **PUT** /api/auth/group | Save Group |
 | [**SignIn**](AuthApi.md#signin) | **POST** /api/auth/sign-in | Sign In |
 | [**SignInAdminUsingJWTMsal**](AuthApi.md#signinadminusingjwtmsal) | **GET** /api/auth/admin/authenticate/msal | JWT MSal Sign In |
+| [**SignInAdminUsingSessionId**](AuthApi.md#signinadminusingsessionid) | **GET** /api/auth/admin/authenticate/session-id | session-id Sign-in |
 | [**SignInDmsUsingJWTMsal**](AuthApi.md#signindmsusingjwtmsal) | **GET** /api/auth/dms/authenticate/msal/{organisationId} | JWT MSal Sign In |
 | [**SignInEvolveUsingJWTMsal**](AuthApi.md#signinevolveusingjwtmsal) | **GET** /api/auth/evolve/authenticate/msal/{organisationId} | JWT MSal Sign In |
 | [**SignInSearchUsingJWTMsal**](AuthApi.md#signinsearchusingjwtmsal) | **GET** /api/auth/search/authenticate/msal/{organisationId} | JWT MSal Sign In |
@@ -117,8 +118,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | delete group OK response |  -  |
 | **500** | could not delete group |  -  |
+| **200** | delete group OK response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -399,8 +400,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not create a one-time token. |  -  |
 | **200** | get the one-time token as a string. |  -  |
+| **500** | could not create a one-time token. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -781,8 +782,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not get role list. |  -  |
 | **200** | project-type list response |  -  |
+| **500** | could not get role list. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -969,8 +970,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not reset-password |  -  |
 | **200** | an reset password OK response |  -  |
+| **500** | could not reset-password |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1061,8 +1062,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | an email reset OK response |  -  |
 | **500** | could not start password-reset |  -  |
+| **200** | an email reset OK response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1344,6 +1345,98 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="signinadminusingsessionid"></a>
+# **SignInAdminUsingSessionId**
+> SignInAdmin SignInAdminUsingSessionId (string sessionId)
+
+session-id Sign-in
+
+Sign-in a user using an existing session-id.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
+
+namespace Example
+{
+    public class SignInAdminUsingSessionIdExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://test.simsage.ai";
+            var apiInstance = new AuthApi(config);
+            var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
+
+            try
+            {
+                // session-id Sign-in
+                SignInAdmin result = apiInstance.SignInAdminUsingSessionId(sessionId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AuthApi.SignInAdminUsingSessionId: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the SignInAdminUsingSessionIdWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // session-id Sign-in
+    ApiResponse<SignInAdmin> response = apiInstance.SignInAdminUsingSessionIdWithHttpInfo(sessionId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling AuthApi.SignInAdminUsingSessionIdWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **sessionId** | **string** | a valid SimSage Session id. |  |
+
+### Return type
+
+[**SignInAdmin**](SignInAdmin.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **500** | could not sign-in |  -  |
+| **200** | a sign-in response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="signindmsusingjwtmsal"></a>
 # **SignInDmsUsingJWTMsal**
 > SignInDmsCmd SignInDmsUsingJWTMsal (string jwt, string organisationId)
@@ -1433,8 +1526,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | a sign-in dms response |  -  |
 | **500** | could not sign-in |  -  |
+| **200** | a sign-in dms response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1444,7 +1537,7 @@ No authorization required
 
 JWT MSal Sign In
 
-Sign-in an Evolve user using an Msal JWT.
+Sign-in an Evolve user using an Msal JWT...
 
 ### Example
 ```csharp
@@ -1715,8 +1808,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | a sign-out OK response |  -  |
 | **500** | could not sign-out |  -  |
+| **200** | a sign-out OK response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1809,8 +1902,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | save organisation response |  -  |
 | **500** | could not save organisation |  -  |
+| **200** | save organisation response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1990,8 +2083,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not get version |  -  |
 | **200** | the version response |  -  |
+| **500** | could not get version |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

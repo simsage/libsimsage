@@ -14,6 +14,7 @@
 |**commentLevel** | **String** |  |  |
 |**comment** | **String** |  |  |
 |**user** | **String** |  |  |
+|**isAuditEvent** | **Boolean** |  |  |
 
 
 

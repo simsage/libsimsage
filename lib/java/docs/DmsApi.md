@@ -107,8 +107,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | fail response |  -  |
 | **200** | response |  -  |
+| **500** | fail response |  -  |
 
 <a id="addSourceFolder"></a>
 # **addSourceFolder**
@@ -174,8 +174,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | fail response |  -  |
 | **200** | response |  -  |
+| **500** | fail response |  -  |
 
 <a id="deleteAllNotes"></a>
 # **deleteAllNotes**
@@ -245,8 +245,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK response |  -  |
 | **500** | fail response |  -  |
+| **200** | OK response |  -  |
 
 <a id="deleteBookmark"></a>
 # **deleteBookmark**
@@ -318,8 +318,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | fail response |  -  |
 | **200** | response |  -  |
+| **500** | fail response |  -  |
 
 <a id="deleteDocumentOrFolder"></a>
 # **deleteDocumentOrFolder**
@@ -395,8 +395,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | fail response |  -  |
 | **200** | response |  -  |
+| **500** | fail response |  -  |
 
 <a id="deleteNote"></a>
 # **deleteNote**
@@ -468,8 +468,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | fail response |  -  |
 | **200** | response |  -  |
+| **500** | fail response |  -  |
 
 <a id="deleteSourceFolder"></a>
 # **deleteSourceFolder**
@@ -539,8 +539,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | fail response |  -  |
 | **200** | response |  -  |
+| **500** | fail response |  -  |
 
 <a id="deleteSubscription"></a>
 # **deleteSubscription**
@@ -612,8 +612,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | response |  -  |
 | **500** | fail response |  -  |
+| **200** | response |  -  |
 
 <a id="deleteUserSearch"></a>
 # **deleteUserSearch**
@@ -687,8 +687,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | response |  -  |
 | **500** | fail response |  -  |
+| **200** | response |  -  |
 
 <a id="document1"></a>
 # **document1**
@@ -756,8 +756,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | response |  -  |
 | **500** | fail response |  -  |
+| **200** | response |  -  |
 
 <a id="documentBinary"></a>
 # **documentBinary**
@@ -820,13 +820,13 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/octet-stream
+ - **Accept**: application/octet-stream, application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | fail response |  -  |
 | **200** | document binary response |  -  |
+| **500** | fail response |  -  |
 
 <a id="documentVersion"></a>
 # **documentVersion**
@@ -891,13 +891,13 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/octet-stream
+ - **Accept**: application/octet-stream, application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | fail response |  -  |
 | **200** | document binary response |  -  |
+| **500** | fail response |  -  |
 
 <a id="filterFolders"></a>
 # **filterFolders**
@@ -967,8 +967,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | fail response |  -  |
 | **200** | response |  -  |
+| **500** | fail response |  -  |
 
 <a id="forceReleaseLock"></a>
 # **forceReleaseLock**
@@ -1040,8 +1040,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK response |  -  |
 | **500** | fail response |  -  |
+| **200** | OK response |  -  |
 
 <a id="getBookmarkList"></a>
 # **getBookmarkList**
@@ -1111,8 +1111,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | fail response |  -  |
 | **200** | response |  -  |
+| **500** | fail response |  -  |
 
 <a id="getDeletedDocuments"></a>
 # **getDeletedDocuments**
@@ -1182,8 +1182,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | response |  -  |
 | **500** | fail response |  -  |
+| **200** | response |  -  |
 
 <a id="getDocumentAudit"></a>
 # **getDocumentAudit**
@@ -1257,8 +1257,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | fail response |  -  |
 | **200** | response |  -  |
+| **500** | fail response |  -  |
 
 <a id="getFolder"></a>
 # **getFolder**
@@ -1334,8 +1334,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | fail response |  -  |
 | **200** | response |  -  |
+| **500** | fail response |  -  |
 
 <a id="getFullAudit"></a>
 # **getFullAudit**
@@ -1407,8 +1407,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | fail response |  -  |
 | **200** | response |  -  |
+| **500** | fail response |  -  |
 
 <a id="getLockedList"></a>
 # **getLockedList**
@@ -1549,8 +1549,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | fail response |  -  |
 | **200** | response |  -  |
+| **500** | fail response |  -  |
 
 <a id="getSavedSearches"></a>
 # **getSavedSearches**
@@ -1622,8 +1622,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | response |  -  |
 | **500** | fail response |  -  |
+| **200** | response |  -  |
 
 <a id="getSourceFolder"></a>
 # **getSourceFolder**
@@ -1693,8 +1693,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | fail response |  -  |
 | **200** | response |  -  |
+| **500** | fail response |  -  |
 
 <a id="getSubscriptionList"></a>
 # **getSubscriptionList**
@@ -1764,8 +1764,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | response |  -  |
 | **500** | fail response |  -  |
+| **200** | response |  -  |
 
 <a id="getUserDashboard"></a>
 # **getUserDashboard**
@@ -1833,8 +1833,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | response |  -  |
 | **500** | fail response |  -  |
+| **200** | response |  -  |
 
 <a id="getUserNotifications"></a>
 # **getUserNotifications**
@@ -2178,8 +2178,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | response |  -  |
 | **500** | fail response |  -  |
+| **200** | response |  -  |
 
 <a id="saveHashTags"></a>
 # **saveHashTags**
@@ -2245,8 +2245,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK response |  -  |
 | **500** | fail response |  -  |
+| **200** | OK response |  -  |
 
 <a id="saveNote"></a>
 # **saveNote**
@@ -2312,8 +2312,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | fail response |  -  |
 | **200** | response |  -  |
+| **500** | fail response |  -  |
 
 <a id="saveSearch"></a>
 # **saveSearch**
@@ -2379,8 +2379,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | response |  -  |
 | **500** | fail response |  -  |
+| **200** | response |  -  |
 
 <a id="saveSubscription"></a>
 # **saveSubscription**
@@ -2446,8 +2446,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | response |  -  |
 | **500** | fail response |  -  |
+| **200** | response |  -  |
 
 <a id="undeleteDocument"></a>
 # **undeleteDocument**
@@ -2521,8 +2521,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | response |  -  |
 | **500** | fail response |  -  |
+| **200** | response |  -  |
 
 <a id="updateACLs"></a>
 # **updateACLs**
@@ -2588,8 +2588,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK response |  -  |
 | **500** | fail response |  -  |
+| **200** | OK response |  -  |
 
 <a id="uploadDocument"></a>
 # **uploadDocument**
@@ -2663,6 +2663,6 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | fail response |  -  |
 | **200** | response |  -  |
+| **500** | fail response |  -  |
 

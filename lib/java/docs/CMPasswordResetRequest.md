@@ -9,6 +9,7 @@ the password request object
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**email** | **String** | email address of the user wishing to reset their password. |  |
+|**resetUrl** | **String** | the callback url for the password. |  |
 
 
 
