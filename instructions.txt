@@ -1,0 +1,26 @@
+## set SimSage version
+
+```
+sed -i 's#7.13.31#7.14.1#g' *.sh
+```
+
+## download latest json definition for version
+
+```
+https://test.simsage.ai/v3/api-docs
+```
+
+save as `api-docs-7.14.1.json`
+
+## generate latest versions
+
+```sh
+./generate-csharp.sh
+./generate-docs.sh
+./generate-java.sh
+./generate-kotlin.sh
+./generate-php.sh
+./generate-python.sh
+./generate-rust.sh
+./generate-rxjs.sh
+```
