@@ -19,7 +19,7 @@ cd lib/rust
 cp ../../openapi-generator-cli-7.0.1.jar .
 cp ../../api-docs-$VERSION.json ./api-docs.json
 
-java -jar openapi-generator-cli-7.0.1.jar generate -i api-docs.json --skip-validate-spec -g typescript-rxjs
+java -jar openapi-generator-cli-7.0.1.jar generate -i api-docs.json --skip-validate-spec -g rust
 
 rm -f api-docs.json
 rm -f openapi-generator-cli-7.0.1.jar
