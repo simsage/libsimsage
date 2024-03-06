@@ -384,7 +384,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, application/octet-stream
+- **Accept**: application/octet-stream, application/json
 
 <a name="documentVersion"></a>
 # **documentVersion**
@@ -415,7 +415,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, application/octet-stream
+- **Accept**: application/octet-stream, application/json
 
 <a name="filterFolders"></a>
 # **filterFolders**

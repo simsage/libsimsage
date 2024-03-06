@@ -13,9 +13,12 @@ Method | HTTP request | Description
 [**filtered_comments**](DataprojectApi.md#filtered_comments) | **POST** /api/dataproject/filteredcomments | Retrieve Comments
 [**get_document_redaction_info**](DataprojectApi.md#get_document_redaction_info) | **GET** /api/dataproject/docredactioninfo/{organisationId}/{sliceId}/{documentKey} | Get Document Redaction info
 [**get_project_definition**](DataprojectApi.md#get_project_definition) | **GET** /api/dataproject/projectdefinition/{organisationId}/{taskId} | get Project Definition
+[**get_project_review**](DataprojectApi.md#get_project_review) | **GET** /api/dataproject/projectreview/{organisationId}/{projectId} | get Project Definition
 [**get_project_slice**](DataprojectApi.md#get_project_slice) | **GET** /api/dataproject/projectslice/{organisationId}/{taskId} | get project slice
 [**get_search_result_summary**](DataprojectApi.md#get_search_result_summary) | **GET** /api/dataproject/searchresult/{organisationId}/{taskId} | get Search Result Summary
+[**get_search_result_summary_for_review**](DataprojectApi.md#get_search_result_summary_for_review) | **GET** /api/dataproject/searchresultreview/{organisationId}/{projectId} | get Search Result Summary
 [**next_document**](DataprojectApi.md#next_document) | **POST** /api/dataproject/nextdocument | Document list for given slice and filters
+[**pdf_binary**](DataprojectApi.md#pdf_binary) | **GET** /api/dataproject/pdf/latest/{organisationId}/{kbId}/{url} | Binary
 [**project_types**](DataprojectApi.md#project_types) | **GET** /api/dataproject/projects/{organisationId} | get Project Types
 [**reassign_slice_document**](DataprojectApi.md#reassign_slice_document) | **POST** /api/dataproject/reassignslicedoc | 
 [**redacted_document**](DataprojectApi.md#redacted_document) | **POST** /api/dataproject/redacteddocument | Get Redacted Document
@@ -94,8 +97,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Create Comment Status OK response |  -  |
 **500** | Could not add comment. |  -  |
+**200** | Create Comment Status OK response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -306,8 +309,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Wrapper containing the document binary |  -  |
 **500** | could not retrieve redacted document. |  -  |
+**200** | Wrapper containing the document binary |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -449,8 +452,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | returns paged list of documents for the given set of query tokens |  -  |
 **500** | could not retrieve document list. |  -  |
+**200** | returns paged list of documents for the given set of query tokens |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -520,8 +523,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Create Comment Status OK response |  -  |
 **500** | Could not get comments. |  -  |
+**200** | Create Comment Status OK response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -666,8 +669,80 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | project definition response |  -  |
 **500** | could not get project definition. |  -  |
+**200** | project definition response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_project_review**
+> CMProjectReview get_project_review(organisation_id, project_id, session_id)
+
+get Project Definition
+
+Get the project review data of the project for the given project id
+
+### Example
+
+```python
+import time
+import os
+import openapi_client
+from openapi_client.models.cm_project_review import CMProjectReview
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://test.simsage.ai
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "https://test.simsage.ai"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.DataprojectApi(api_client)
+    organisation_id = 'organisation_id_example' # str | the organisation (its guid id)
+    project_id = 'project_id_example' # str | the id of the task
+    session_id = 'session_id_example' # str | a valid SimSage Session id.
+
+    try:
+        # get Project Definition
+        api_response = api_instance.get_project_review(organisation_id, project_id, session_id)
+        print("The response of DataprojectApi->get_project_review:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling DataprojectApi->get_project_review: %s\n" % e)
+```
+
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organisation_id** | **str**| the organisation (its guid id) | 
+ **project_id** | **str**| the id of the task | 
+ **session_id** | **str**| a valid SimSage Session id. | 
+
+### Return type
+
+[**CMProjectReview**](CMProjectReview.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | project review response |  -  |
+**500** | could not get project review. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -738,8 +813,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Project slice data |  -  |
 **500** | could not retrieve project slice. |  -  |
+**200** | Project slice data |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -815,6 +890,78 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_search_result_summary_for_review**
+> CMSearchResultSummary get_search_result_summary_for_review(organisation_id, project_id, session_id)
+
+get Search Result Summary
+
+Get the summary information for the search results of a given project by task id
+
+### Example
+
+```python
+import time
+import os
+import openapi_client
+from openapi_client.models.cm_search_result_summary import CMSearchResultSummary
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://test.simsage.ai
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "https://test.simsage.ai"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.DataprojectApi(api_client)
+    organisation_id = 'organisation_id_example' # str | the organisation (its guid id)
+    project_id = 'project_id_example' # str | the id of the task
+    session_id = 'session_id_example' # str | a valid SimSage Session id.
+
+    try:
+        # get Search Result Summary
+        api_response = api_instance.get_search_result_summary_for_review(organisation_id, project_id, session_id)
+        print("The response of DataprojectApi->get_search_result_summary_for_review:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling DataprojectApi->get_search_result_summary_for_review: %s\n" % e)
+```
+
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organisation_id** | **str**| the organisation (its guid id) | 
+ **project_id** | **str**| the id of the task | 
+ **session_id** | **str**| a valid SimSage Session id. | 
+
+### Return type
+
+[**CMSearchResultSummary**](CMSearchResultSummary.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | search result summary response |  -  |
+**500** | could not get search result summary. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **next_document**
 > CMSlicedDocumentListAndTotals next_document(session_id, cm_next_document)
 
@@ -881,8 +1028,80 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**500** | could not retrieve document list. |  -  |
 **200** | Paged list of documents for the passed in slice and filters as well as totals |  -  |
+**500** | could not retrieve document list. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **pdf_binary**
+> object pdf_binary(organisation_id, kb_id, url, session_id=session_id)
+
+Binary
+
+Get the original for a document if available by url (latest version)
+
+### Example
+
+```python
+import time
+import os
+import openapi_client
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://test.simsage.ai
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "https://test.simsage.ai"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.DataprojectApi(api_client)
+    organisation_id = 'organisation_id_example' # str | the organisation (its guid id)
+    kb_id = 'kb_id_example' # str | the knowledge-base (its guid id)
+    url = 'url_example' # str | a base64 encoded url
+    session_id = 'session_id_example' # str | a valid SimSage Session id. (optional)
+
+    try:
+        # Binary
+        api_response = api_instance.pdf_binary(organisation_id, kb_id, url, session_id=session_id)
+        print("The response of DataprojectApi->pdf_binary:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling DataprojectApi->pdf_binary: %s\n" % e)
+```
+
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organisation_id** | **str**| the organisation (its guid id) | 
+ **kb_id** | **str**| the knowledge-base (its guid id) | 
+ **url** | **str**| a base64 encoded url | 
+ **session_id** | **str**| a valid SimSage Session id. | [optional] 
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1088,8 +1307,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Wrapper containing the document binary |  -  |
 **500** | could not retrieve redacted document. |  -  |
+**200** | Wrapper containing the document binary |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1364,8 +1583,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**500** | Could not set Slice configuration. |  -  |
 **200** | Set Slice config OK response |  -  |
+**500** | Could not set Slice configuration. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1435,8 +1654,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**500** | could not retrieve document list. |  -  |
 **200** | Paged list of documents for the passed in slice and filters as well as totals |  -  |
+**500** | could not retrieve document list. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1571,8 +1790,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Update Document Status OK response |  -  |
 **500** | Could not update document status. |  -  |
+**200** | Update Document Status OK response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1641,8 +1860,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Update Redactions OK response |  -  |
 **500** | could not update redactionst. |  -  |
+**200** | Update Redactions OK response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

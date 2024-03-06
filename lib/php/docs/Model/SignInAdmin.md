@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **user** | [**\OpenAPI\Client\Model\User**](User.md) |  |
 **organisation_id** | **string** |  |
 **organisation_list** | [**\OpenAPI\Client\Model\Organisation[]**](Organisation.md) |  |
+**shared_secret_salt** | **string** |  |
 **return_result** | **bool** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

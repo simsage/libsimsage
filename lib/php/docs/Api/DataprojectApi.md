@@ -13,9 +13,12 @@ All URIs are relative to https://test.simsage.ai, except if the operation define
 | [**filteredComments()**](DataprojectApi.md#filteredComments) | **POST** /api/dataproject/filteredcomments | Retrieve Comments |
 | [**getDocumentRedactionInfo()**](DataprojectApi.md#getDocumentRedactionInfo) | **GET** /api/dataproject/docredactioninfo/{organisationId}/{sliceId}/{documentKey} | Get Document Redaction info |
 | [**getProjectDefinition()**](DataprojectApi.md#getProjectDefinition) | **GET** /api/dataproject/projectdefinition/{organisationId}/{taskId} | get Project Definition |
+| [**getProjectReview()**](DataprojectApi.md#getProjectReview) | **GET** /api/dataproject/projectreview/{organisationId}/{projectId} | get Project Definition |
 | [**getProjectSlice()**](DataprojectApi.md#getProjectSlice) | **GET** /api/dataproject/projectslice/{organisationId}/{taskId} | get project slice |
 | [**getSearchResultSummary()**](DataprojectApi.md#getSearchResultSummary) | **GET** /api/dataproject/searchresult/{organisationId}/{taskId} | get Search Result Summary |
+| [**getSearchResultSummaryForReview()**](DataprojectApi.md#getSearchResultSummaryForReview) | **GET** /api/dataproject/searchresultreview/{organisationId}/{projectId} | get Search Result Summary |
 | [**nextDocument()**](DataprojectApi.md#nextDocument) | **POST** /api/dataproject/nextdocument | Document list for given slice and filters |
+| [**pdfBinary()**](DataprojectApi.md#pdfBinary) | **GET** /api/dataproject/pdf/latest/{organisationId}/{kbId}/{url} | Binary |
 | [**projectTypes()**](DataprojectApi.md#projectTypes) | **GET** /api/dataproject/projects/{organisationId} | get Project Types |
 | [**reassignSliceDocument()**](DataprojectApi.md#reassignSliceDocument) | **POST** /api/dataproject/reassignslicedoc |  |
 | [**redactedDocument()**](DataprojectApi.md#redactedDocument) | **POST** /api/dataproject/redacteddocument | Get Redacted Document |
@@ -559,6 +562,66 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getProjectReview()`
+
+```php
+getProjectReview($organisation_id, $project_id, $session_id): \OpenAPI\Client\Model\CMProjectReview
+```
+
+get Project Definition
+
+Get the project review data of the project for the given project id
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\DataprojectApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$organisation_id = 'organisation_id_example'; // string | the organisation (its guid id)
+$project_id = 'project_id_example'; // string | the id of the task
+$session_id = 'session_id_example'; // string | a valid SimSage Session id.
+
+try {
+    $result = $apiInstance->getProjectReview($organisation_id, $project_id, $session_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DataprojectApi->getProjectReview: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **organisation_id** | **string**| the organisation (its guid id) | |
+| **project_id** | **string**| the id of the task | |
+| **session_id** | **string**| a valid SimSage Session id. | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\CMProjectReview**](../Model/CMProjectReview.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `getProjectSlice()`
 
 ```php
@@ -679,6 +742,66 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getSearchResultSummaryForReview()`
+
+```php
+getSearchResultSummaryForReview($organisation_id, $project_id, $session_id): \OpenAPI\Client\Model\CMSearchResultSummary
+```
+
+get Search Result Summary
+
+Get the summary information for the search results of a given project by task id
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\DataprojectApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$organisation_id = 'organisation_id_example'; // string | the organisation (its guid id)
+$project_id = 'project_id_example'; // string | the id of the task
+$session_id = 'session_id_example'; // string | a valid SimSage Session id.
+
+try {
+    $result = $apiInstance->getSearchResultSummaryForReview($organisation_id, $project_id, $session_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DataprojectApi->getSearchResultSummaryForReview: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **organisation_id** | **string**| the organisation (its guid id) | |
+| **project_id** | **string**| the id of the task | |
+| **session_id** | **string**| a valid SimSage Session id. | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\CMSearchResultSummary**](../Model/CMSearchResultSummary.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `nextDocument()`
 
 ```php
@@ -732,6 +855,68 @@ No authorization required
 
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `pdfBinary()`
+
+```php
+pdfBinary($organisation_id, $kb_id, $url, $session_id): object
+```
+
+Binary
+
+Get the original for a document if available by url (latest version)
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\DataprojectApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$organisation_id = 'organisation_id_example'; // string | the organisation (its guid id)
+$kb_id = 'kb_id_example'; // string | the knowledge-base (its guid id)
+$url = 'url_example'; // string | a base64 encoded url
+$session_id = 'session_id_example'; // string | a valid SimSage Session id.
+
+try {
+    $result = $apiInstance->pdfBinary($organisation_id, $kb_id, $url, $session_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DataprojectApi->pdfBinary: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **organisation_id** | **string**| the organisation (its guid id) | |
+| **kb_id** | **string**| the knowledge-base (its guid id) | |
+| **url** | **string**| a base64 encoded url | |
+| **session_id** | **string**| a valid SimSage Session id. | [optional] |
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `*/*`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

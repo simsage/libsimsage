@@ -5,8 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **message_type** | **string** |  |
-**assigned_operator_id** | **string** | A unique id for this operator&#39;s session. |
-**operator_name** | **string** | the name of the operator for clients |
 **organisation_id** | **string** | the organisation (its guid id). |
 **kb_id** | **string** | the knowledge-base id (its guid id) |
 **text** | **string** | the text sent. |
@@ -24,6 +22,8 @@ Name | Type | Description | Notes
 **category_list** | [**\OpenAPI\Client\Model\SearchCategory[]**](SearchCategory.md) | updated categories (if applicable) with updated counts |
 **syn_set_list** | [**\OpenAPI\Client\Model\CMSynSet[]**](CMSynSet.md) | A list of syn-sets used in the query |
 **custom_render** | **bool** | Does this source require custom render templates or use ordinary search-results? |
+**source_id_to_counts** | **array<string,int>** | a map of sourceId -&gt; number of documents found inside this source |
+**document_type_to_counts** | **array<string,int>** | a map of document-type -&gt; number of documents found of this type |
 **saved_search_list** | [**\OpenAPI\Client\Model\CMSavedSearch[]**](CMSavedSearch.md) | a list of previous searches if applicable |
 **query_summarization** | **string** | an optional summarization of the search results |
 

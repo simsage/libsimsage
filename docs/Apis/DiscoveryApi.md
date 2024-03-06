@@ -12,7 +12,6 @@ All URIs are relative to *https://test.simsage.ai*
 | [**getGdprDocument**](DiscoveryApi.md#getGdprDocument) | **GET** /api/discovery/gdprdocument/{organisationId}/{kbId}/{projectId}/{url} |  |
 | [**getPagedProjectDocuments**](DiscoveryApi.md#getPagedProjectDocuments) | **GET** /api/discovery/projectdocument/{organisationId}/{kbId}/{projectId}/{page}/{pageSize}/{textFilter}/{typeFilter}/{statusFilter}/{sortColumn}/{sortDirection} |  |
 | [**growthPerMonth**](DiscoveryApi.md#growthPerMonth) | **GET** /api/discovery/growth/{organisationId}/{kbId} | growth |
-| [**pdfBinary**](DiscoveryApi.md#pdfBinary) | **GET** /api/discovery/pdf/latest/{organisationId}/{kbId}/{url} | Binary |
 | [**setdocumentredactions**](DiscoveryApi.md#setdocumentredactions) | **PUT** /api/discovery/updategdprdocument |  |
 | [**storageBySource**](DiscoveryApi.md#storageBySource) | **GET** /api/discovery/storage/{organisationId}/{kbId} | storage |
 | [**summaryByDocumentType**](DiscoveryApi.md#summaryByDocumentType) | **GET** /api/discovery/doctypesummary/{organisationId}/{kbId} | storage |
@@ -249,36 +248,6 @@ No authorization required
 
 - **Content-Type**: Not defined
 - **Accept**: application/json;charset=UTF-8
-
-<a name="pdfBinary"></a>
-# **pdfBinary**
-> Object pdfBinary(organisationId, kbId, url, session-id)
-
-Binary
-
-    Get the original for a document if available by url (latest version)
-
-### Parameters
-
-|Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **organisationId** | **String**| the organisation (its guid id) | [default to null] |
-| **kbId** | **String**| the knowledge-base (its guid id) | [default to null] |
-| **url** | **String**| a base64 encoded url | [default to null] |
-| **session-id** | **String**| a valid SimSage Session id. | [optional] [default to null] |
-
-### Return type
-
-**Object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: */*
 
 <a name="setdocumentredactions"></a>
 # **setdocumentredactions**

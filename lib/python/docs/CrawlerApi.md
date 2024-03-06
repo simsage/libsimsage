@@ -4,10 +4,14 @@ All URIs are relative to *https://test.simsage.ai*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**crawler_delete_folder**](CrawlerApi.md#crawler_delete_folder) | **POST** /api/crawler/external/crawler/delete-folder | Delete document folder
+[**crawler_delete_url**](CrawlerApi.md#crawler_delete_url) | **POST** /api/crawler/external/crawler/delete-url | Delete document
 [**crawler_external_document_delete**](CrawlerApi.md#crawler_external_document_delete) | **PUT** /api/crawler/external/document/delete | Remove an External Document
-[**crawler_external_document_un_changed**](CrawlerApi.md#crawler_external_document_un_changed) | **POST** /api/crawler/external/document/un-changed | Mark External Document Unchanged
+[**crawler_external_document_failed**](CrawlerApi.md#crawler_external_document_failed) | **POST** /api/crawler/external/document/recordfailure | Upload External Document
 [**crawler_external_document_upload**](CrawlerApi.md#crawler_external_document_upload) | **POST** /api/crawler/external/document/upload | Upload External Document
 [**crawler_external_image_upload**](CrawlerApi.md#crawler_external_image_upload) | **POST** /api/crawler/external/document/upload/image | Upload External Image
+[**crawler_rename_folder**](CrawlerApi.md#crawler_rename_folder) | **POST** /api/crawler/external/crawler/rename-folder | Rename document folder
+[**crawler_update_delta_token**](CrawlerApi.md#crawler_update_delta_token) | **POST** /api/crawler/external/crawler/delta-token | Update delta token
 [**delete**](CrawlerApi.md#delete) | **DELETE** /api/crawler/crawler/{organisationId}/{kbId}/{sourceId} | Delete source
 [**delete_documents**](CrawlerApi.md#delete_documents) | **DELETE** /api/crawler/crawler/document/{organisationId}/{kbId}/{sourceId} | Delete source&#39;s documents
 [**encrypted_communications**](CrawlerApi.md#encrypted_communications) | **POST** /api/crawler/external/secure/{seed} | Secure Communication
@@ -15,15 +19,162 @@ Method | HTTP request | Description
 [**external_crawler_finished**](CrawlerApi.md#external_crawler_finished) | **POST** /api/crawler/external/crawler/finish | Stop External Crawler
 [**external_crawler_start**](CrawlerApi.md#external_crawler_start) | **POST** /api/crawler/external/crawler/start | Start External Crawler
 [**get_crawler**](CrawlerApi.md#get_crawler) | **GET** /api/crawler/crawler/{organisationId}/{kbId}/{sourceId} | Get source
+[**get_failed_documents**](CrawlerApi.md#get_failed_documents) | **GET** /api/crawler/faileddocs/{organisationId}/{kbId}/{sourceId}/{page}/{pageSize} | Get source List
 [**get_source_list**](CrawlerApi.md#get_source_list) | **GET** /api/crawler/crawlers/{organisationId}/{kbId} | Get source List
+[**mark_file_as_seen**](CrawlerApi.md#mark_file_as_seen) | **POST** /api/crawler/external/crawler/mark-file-as-seen | Mark file as seen
 [**oidc_code**](CrawlerApi.md#oidc_code) | **GET** /api/crawler/dropbox-oidc-code/{oidcKey} | OIDC code receiver
 [**process_all_files**](CrawlerApi.md#process_all_files) | **POST** /api/crawler/process-all-files | Process all files of crawler/source
+[**processor_schema**](CrawlerApi.md#processor_schema) | **GET** /api/crawler/processor_schema | 
+[**receive_external_log_entry**](CrawlerApi.md#receive_external_log_entry) | **POST** /api/crawler/external/crawler/log | External Crawler log-entry
 [**reset_source_delta**](CrawlerApi.md#reset_source_delta) | **POST** /api/crawler/crawler/reset-delta/{organisationId}/{kbId}/{sourceId} | Reset Source delta-token
+[**sdc_schema**](CrawlerApi.md#sdc_schema) | **GET** /api/crawler/sdc_schema | 
 [**start_crawler**](CrawlerApi.md#start_crawler) | **POST** /api/crawler/start | Start crawler
 [**test_crawler**](CrawlerApi.md#test_crawler) | **GET** /api/crawler/crawler/test/{organisationId}/{kbId}/{sourceId} | Test Crawler
 [**update_crawler**](CrawlerApi.md#update_crawler) | **POST** /api/crawler/crawler | Update Source
 [**version6**](CrawlerApi.md#version6) | **GET** /api/crawler/version | Version
 
+
+# **crawler_delete_folder**
+> JsonMessage crawler_delete_folder(cm_external_crawler_delete_folder, api_version=api_version)
+
+Delete document folder
+
+An external crawler removes a document folder.
+
+### Example
+
+```python
+import time
+import os
+import openapi_client
+from openapi_client.models.cm_external_crawler_delete_folder import CMExternalCrawlerDeleteFolder
+from openapi_client.models.json_message import JsonMessage
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://test.simsage.ai
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "https://test.simsage.ai"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.CrawlerApi(api_client)
+    cm_external_crawler_delete_folder = openapi_client.CMExternalCrawlerDeleteFolder() # CMExternalCrawlerDeleteFolder | 
+    api_version = 'api_version_example' # str |  (optional)
+
+    try:
+        # Delete document folder
+        api_response = api_instance.crawler_delete_folder(cm_external_crawler_delete_folder, api_version=api_version)
+        print("The response of CrawlerApi->crawler_delete_folder:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CrawlerApi->crawler_delete_folder: %s\n" % e)
+```
+
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cm_external_crawler_delete_folder** | [**CMExternalCrawlerDeleteFolder**](CMExternalCrawlerDeleteFolder.md)|  | 
+ **api_version** | **str**|  | [optional] 
+
+### Return type
+
+[**JsonMessage**](JsonMessage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**500** | could not delete document folder. |  -  |
+**200** | delete document folder update OK response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **crawler_delete_url**
+> JsonMessage crawler_delete_url(cm_external_crawler_delete_url, api_version=api_version)
+
+Delete document
+
+An external crawler removes a document.
+
+### Example
+
+```python
+import time
+import os
+import openapi_client
+from openapi_client.models.cm_external_crawler_delete_url import CMExternalCrawlerDeleteUrl
+from openapi_client.models.json_message import JsonMessage
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://test.simsage.ai
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "https://test.simsage.ai"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.CrawlerApi(api_client)
+    cm_external_crawler_delete_url = openapi_client.CMExternalCrawlerDeleteUrl() # CMExternalCrawlerDeleteUrl | 
+    api_version = 'api_version_example' # str |  (optional)
+
+    try:
+        # Delete document
+        api_response = api_instance.crawler_delete_url(cm_external_crawler_delete_url, api_version=api_version)
+        print("The response of CrawlerApi->crawler_delete_url:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CrawlerApi->crawler_delete_url: %s\n" % e)
+```
+
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cm_external_crawler_delete_url** | [**CMExternalCrawlerDeleteUrl**](CMExternalCrawlerDeleteUrl.md)|  | 
+ **api_version** | **str**|  | [optional] 
+
+### Return type
+
+[**JsonMessage**](JsonMessage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | delete document update OK response |  -  |
+**500** | could not delete document. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **crawler_external_document_delete**
 > JsonMessage crawler_external_document_delete(cm_delete_document, api_version=api_version)
@@ -91,17 +242,17 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**500** | could not remove external-crawler document. |  -  |
 **200** | remove external-crawler document OK response |  -  |
+**500** | could not remove external-crawler document. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **crawler_external_document_un_changed**
-> JsonMessage crawler_external_document_un_changed(cm_document_un_changed, api_version=api_version)
+# **crawler_external_document_failed**
+> JsonMessage crawler_external_document_failed(cm_failed_source_document, api_version=api_version)
 
-Mark External Document Unchanged
+Upload External Document
 
-An external crawler document marks a document as not having changed.
+An external crawler document wants to upload a document to SimSage.
 
 ### Example
 
@@ -109,7 +260,7 @@ An external crawler document marks a document as not having changed.
 import time
 import os
 import openapi_client
-from openapi_client.models.cm_document_un_changed import CMDocumentUnChanged
+from openapi_client.models.cm_failed_source_document import CMFailedSourceDocument
 from openapi_client.models.json_message import JsonMessage
 from openapi_client.rest import ApiException
 from pprint import pprint
@@ -125,16 +276,16 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.CrawlerApi(api_client)
-    cm_document_un_changed = openapi_client.CMDocumentUnChanged() # CMDocumentUnChanged | 
+    cm_failed_source_document = openapi_client.CMFailedSourceDocument() # CMFailedSourceDocument | 
     api_version = 'api_version_example' # str |  (optional)
 
     try:
-        # Mark External Document Unchanged
-        api_response = api_instance.crawler_external_document_un_changed(cm_document_un_changed, api_version=api_version)
-        print("The response of CrawlerApi->crawler_external_document_un_changed:\n")
+        # Upload External Document
+        api_response = api_instance.crawler_external_document_failed(cm_failed_source_document, api_version=api_version)
+        print("The response of CrawlerApi->crawler_external_document_failed:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CrawlerApi->crawler_external_document_un_changed: %s\n" % e)
+        print("Exception when calling CrawlerApi->crawler_external_document_failed: %s\n" % e)
 ```
 
 
@@ -143,7 +294,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cm_document_un_changed** | [**CMDocumentUnChanged**](CMDocumentUnChanged.md)|  | 
+ **cm_failed_source_document** | [**CMFailedSourceDocument**](CMFailedSourceDocument.md)|  | 
  **api_version** | **str**|  | [optional] 
 
 ### Return type
@@ -162,8 +313,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | mark external-crawler document unchanged OK response |  -  |
-**500** | could not mark external-document as unchanged. |  -  |
+**500** | could not start external crawler. |  -  |
+**200** | upload external-crawler document OK response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -233,8 +384,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | upload external-crawler document OK response |  -  |
 **500** | could not start external crawler. |  -  |
+**200** | upload external-crawler document OK response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -309,6 +460,148 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **crawler_rename_folder**
+> JsonMessage crawler_rename_folder(cm_external_crawler_rename_folder, api_version=api_version)
+
+Rename document folder
+
+An external crawler renames a document folder.
+
+### Example
+
+```python
+import time
+import os
+import openapi_client
+from openapi_client.models.cm_external_crawler_rename_folder import CMExternalCrawlerRenameFolder
+from openapi_client.models.json_message import JsonMessage
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://test.simsage.ai
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "https://test.simsage.ai"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.CrawlerApi(api_client)
+    cm_external_crawler_rename_folder = openapi_client.CMExternalCrawlerRenameFolder() # CMExternalCrawlerRenameFolder | 
+    api_version = 'api_version_example' # str |  (optional)
+
+    try:
+        # Rename document folder
+        api_response = api_instance.crawler_rename_folder(cm_external_crawler_rename_folder, api_version=api_version)
+        print("The response of CrawlerApi->crawler_rename_folder:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CrawlerApi->crawler_rename_folder: %s\n" % e)
+```
+
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cm_external_crawler_rename_folder** | [**CMExternalCrawlerRenameFolder**](CMExternalCrawlerRenameFolder.md)|  | 
+ **api_version** | **str**|  | [optional] 
+
+### Return type
+
+[**JsonMessage**](JsonMessage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | rename document folder update OK response |  -  |
+**500** | could not rename document folder. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **crawler_update_delta_token**
+> JsonMessage crawler_update_delta_token(cm_external_crawler_set_delta_token, api_version=api_version)
+
+Update delta token
+
+An external crawler updates a delta-token.
+
+### Example
+
+```python
+import time
+import os
+import openapi_client
+from openapi_client.models.cm_external_crawler_set_delta_token import CMExternalCrawlerSetDeltaToken
+from openapi_client.models.json_message import JsonMessage
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://test.simsage.ai
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "https://test.simsage.ai"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.CrawlerApi(api_client)
+    cm_external_crawler_set_delta_token = openapi_client.CMExternalCrawlerSetDeltaToken() # CMExternalCrawlerSetDeltaToken | 
+    api_version = 'api_version_example' # str |  (optional)
+
+    try:
+        # Update delta token
+        api_response = api_instance.crawler_update_delta_token(cm_external_crawler_set_delta_token, api_version=api_version)
+        print("The response of CrawlerApi->crawler_update_delta_token:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CrawlerApi->crawler_update_delta_token: %s\n" % e)
+```
+
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cm_external_crawler_set_delta_token** | [**CMExternalCrawlerSetDeltaToken**](CMExternalCrawlerSetDeltaToken.md)|  | 
+ **api_version** | **str**|  | [optional] 
+
+### Return type
+
+[**JsonMessage**](JsonMessage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | source delta-token update OK response |  -  |
+**500** | could not update source delta-token. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **delete**
 > JsonMessage delete(organisation_id, kb_id, session_id, source_id, api_version=api_version)
 
@@ -380,8 +673,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | remove a source OK response |  -  |
 **500** | could not remove source. |  -  |
+**200** | remove a source OK response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -670,8 +963,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**500** | could not stop external crawler. |  -  |
 **200** | external-crawler stop OK response |  -  |
+**500** | could not stop external crawler. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -741,8 +1034,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | external-crawler start OK response |  -  |
 **500** | could not start external crawler. |  -  |
+**200** | external-crawler start OK response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -817,8 +1110,88 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | the source |  -  |
 **500** | could not get source. |  -  |
+**200** | the source |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_failed_documents**
+> List[CMSource] get_failed_documents(session_id, organisation_id, kb_id, source_id, page, page_size, api_version=api_version)
+
+Get source List
+
+Get a list of failed documents for a source.
+
+### Example
+
+```python
+import time
+import os
+import openapi_client
+from openapi_client.models.cm_source import CMSource
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://test.simsage.ai
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "https://test.simsage.ai"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.CrawlerApi(api_client)
+    session_id = 'session_id_example' # str | a valid SimSage Session id.
+    organisation_id = 'organisation_id_example' # str | the organisation's id (a guid)
+    kb_id = 'kb_id_example' # str | the knowledge-base's id (a guid)
+    source_id = 'source_id_example' # str | the source  id (a number)
+    page = 56 # int | the page number for the list
+    page_size = 56 # int | the page size for the list
+    api_version = 'api_version_example' # str |  (optional)
+
+    try:
+        # Get source List
+        api_response = api_instance.get_failed_documents(session_id, organisation_id, kb_id, source_id, page, page_size, api_version=api_version)
+        print("The response of CrawlerApi->get_failed_documents:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CrawlerApi->get_failed_documents: %s\n" % e)
+```
+
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **session_id** | **str**| a valid SimSage Session id. | 
+ **organisation_id** | **str**| the organisation&#39;s id (a guid) | 
+ **kb_id** | **str**| the knowledge-base&#39;s id (a guid) | 
+ **source_id** | **str**| the source  id (a number) | 
+ **page** | **int**| the page number for the list | 
+ **page_size** | **int**| the page size for the list | 
+ **api_version** | **str**|  | [optional] 
+
+### Return type
+
+[**List[CMSource]**](CMSource.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**500** | could not get source list. |  -  |
+**200** | source list response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -896,6 +1269,77 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **mark_file_as_seen**
+> JsonMessage mark_file_as_seen(cm_external_crawler_mark_file_as_seen, api_version=api_version)
+
+Mark file as seen
+
+An external crawler marks a file as seen.
+
+### Example
+
+```python
+import time
+import os
+import openapi_client
+from openapi_client.models.cm_external_crawler_mark_file_as_seen import CMExternalCrawlerMarkFileAsSeen
+from openapi_client.models.json_message import JsonMessage
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://test.simsage.ai
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "https://test.simsage.ai"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.CrawlerApi(api_client)
+    cm_external_crawler_mark_file_as_seen = openapi_client.CMExternalCrawlerMarkFileAsSeen() # CMExternalCrawlerMarkFileAsSeen | 
+    api_version = 'api_version_example' # str |  (optional)
+
+    try:
+        # Mark file as seen
+        api_response = api_instance.mark_file_as_seen(cm_external_crawler_mark_file_as_seen, api_version=api_version)
+        print("The response of CrawlerApi->mark_file_as_seen:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CrawlerApi->mark_file_as_seen: %s\n" % e)
+```
+
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cm_external_crawler_mark_file_as_seen** | [**CMExternalCrawlerMarkFileAsSeen**](CMExternalCrawlerMarkFileAsSeen.md)|  | 
+ **api_version** | **str**|  | [optional] 
+
+### Return type
+
+[**JsonMessage**](JsonMessage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | mark file as seen OK response |  -  |
+**500** | could not mark file as seen. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **oidc_code**
 > oidc_code(oidc_key, all_request_params)
 
@@ -958,8 +1402,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**401** | something went wrong with the OIDC request set-up. |  -  |
 **200** | OK response |  -  |
+**401** | something went wrong with the OIDC request set-up. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1031,8 +1475,138 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | start processing all OK response |  -  |
 **500** | could not start processing files. |  -  |
+**200** | start processing all OK response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **processor_schema**
+> object processor_schema()
+
+
+
+### Example
+
+```python
+import time
+import os
+import openapi_client
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://test.simsage.ai
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "https://test.simsage.ai"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.CrawlerApi(api_client)
+
+    try:
+        api_response = api_instance.processor_schema()
+        print("The response of CrawlerApi->processor_schema:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CrawlerApi->processor_schema: %s\n" % e)
+```
+
+
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json;charset=UTF-8
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **receive_external_log_entry**
+> CMSource receive_external_log_entry(cm_external_log_entry, api_version=api_version)
+
+External Crawler log-entry
+
+An external crawler sends a log entry to SimSage.
+
+### Example
+
+```python
+import time
+import os
+import openapi_client
+from openapi_client.models.cm_external_log_entry import CMExternalLogEntry
+from openapi_client.models.cm_source import CMSource
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://test.simsage.ai
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "https://test.simsage.ai"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.CrawlerApi(api_client)
+    cm_external_log_entry = openapi_client.CMExternalLogEntry() # CMExternalLogEntry | 
+    api_version = 'api_version_example' # str |  (optional)
+
+    try:
+        # External Crawler log-entry
+        api_response = api_instance.receive_external_log_entry(cm_external_log_entry, api_version=api_version)
+        print("The response of CrawlerApi->receive_external_log_entry:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CrawlerApi->receive_external_log_entry: %s\n" % e)
+```
+
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cm_external_log_entry** | [**CMExternalLogEntry**](CMExternalLogEntry.md)|  | 
+ **api_version** | **str**|  | [optional] 
+
+### Return type
+
+[**CMSource**](CMSource.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**500** | could not get write log-entry / log-entry invalid. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1107,8 +1681,67 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | reset delta response |  -  |
 **500** | could not reset source delta-token. |  -  |
+**200** | reset delta response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **sdc_schema**
+> object sdc_schema()
+
+
+
+### Example
+
+```python
+import time
+import os
+import openapi_client
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://test.simsage.ai
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "https://test.simsage.ai"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.CrawlerApi(api_client)
+
+    try:
+        api_response = api_instance.sdc_schema()
+        print("The response of CrawlerApi->sdc_schema:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CrawlerApi->sdc_schema: %s\n" % e)
+```
+
+
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json;charset=UTF-8
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

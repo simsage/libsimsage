@@ -22,6 +22,7 @@
 | **groupSimilarDocuments** | **Boolean** | should the search-engine group similar documents together | [default to null] |
 | **sortByAge** | **Boolean** | should the search-engine sort results by age | [default to null] |
 | **useQuestionAnsweringAi** | **Boolean** | use ChatGPT or equivalent to answer queries | [default to null] |
+| **wordSynSet** | **Map** | selected syn-sets for words | [default to null] |
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **roles** | [**List[CMUserRole]**](CMUserRole.md) | a list of SimSage roles associated with this user | 
 **operator_kb_list** | [**List[CMOperatorKnowledgeBase]**](CMOperatorKnowledgeBase.md) | a list of knowledge-bases this user is an operator for | 
 **group_list** | [**List[CMGroup]**](CMGroup.md) | a list of security-groups this user is part of (can be empty) | 
+**jwt_match_name_value_csv** | **str** | an optional set of csv separated name1&#x3D;value1,name2&#x3D;value2 for JWT matching | 
 
 ## Example
 

@@ -12,7 +12,6 @@ All URIs are relative to https://test.simsage.ai, except if the operation define
 | [**getGdprDocument()**](DiscoveryApi.md#getGdprDocument) | **GET** /api/discovery/gdprdocument/{organisationId}/{kbId}/{projectId}/{url} |  |
 | [**getPagedProjectDocuments()**](DiscoveryApi.md#getPagedProjectDocuments) | **GET** /api/discovery/projectdocument/{organisationId}/{kbId}/{projectId}/{page}/{pageSize}/{textFilter}/{typeFilter}/{statusFilter}/{sortColumn}/{sortDirection} |  |
 | [**growthPerMonth()**](DiscoveryApi.md#growthPerMonth) | **GET** /api/discovery/growth/{organisationId}/{kbId} | growth |
-| [**pdfBinary()**](DiscoveryApi.md#pdfBinary) | **GET** /api/discovery/pdf/latest/{organisationId}/{kbId}/{url} | Binary |
 | [**setdocumentredactions()**](DiscoveryApi.md#setdocumentredactions) | **PUT** /api/discovery/updategdprdocument |  |
 | [**storageBySource()**](DiscoveryApi.md#storageBySource) | **GET** /api/discovery/storage/{organisationId}/{kbId} | storage |
 | [**summaryByDocumentType()**](DiscoveryApi.md#summaryByDocumentType) | **GET** /api/discovery/doctypesummary/{organisationId}/{kbId} | storage |
@@ -505,68 +504,6 @@ No authorization required
 
 - **Content-Type**: Not defined
 - **Accept**: `application/json;charset=UTF-8`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `pdfBinary()`
-
-```php
-pdfBinary($organisation_id, $kb_id, $url, $session_id): object
-```
-
-Binary
-
-Get the original for a document if available by url (latest version)
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new OpenAPI\Client\Api\DiscoveryApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$organisation_id = 'organisation_id_example'; // string | the organisation (its guid id)
-$kb_id = 'kb_id_example'; // string | the knowledge-base (its guid id)
-$url = 'url_example'; // string | a base64 encoded url
-$session_id = 'session_id_example'; // string | a valid SimSage Session id.
-
-try {
-    $result = $apiInstance->pdfBinary($organisation_id, $kb_id, $url, $session_id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling DiscoveryApi->pdfBinary: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **organisation_id** | **string**| the organisation (its guid id) | |
-| **kb_id** | **string**| the knowledge-base (its guid id) | |
-| **url** | **string**| a base64 encoded url | |
-| **session_id** | **string**| a valid SimSage Session id. | [optional] |
-
-### Return type
-
-**object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `*/*`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

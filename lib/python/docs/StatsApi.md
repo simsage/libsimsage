@@ -4,16 +4,16 @@ All URIs are relative to *https://test.simsage.ai*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_index_optimzation_report**](StatsApi.md#get_index_optimzation_report) | **GET** /api/stats/report/{organisationId}/{kbId}/{id} | get an optimization report
-[**get_index_optimzation_reports**](StatsApi.md#get_index_optimzation_reports) | **GET** /api/stats/reports/{organisationId}/{kbId} | get optimization report list
+[**get_index_optimization_report**](StatsApi.md#get_index_optimization_report) | **GET** /api/stats/report/{organisationId}/{kbId}/{id} | get an optimization report
+[**get_index_optimization_reports**](StatsApi.md#get_index_optimization_reports) | **GET** /api/stats/reports/{organisationId}/{kbId} | get optimization report list
 [**get_stats**](StatsApi.md#get_stats) | **GET** /api/stats/stats/{organisationId}/{kbId}/{year}/{month}/{top} | Get usage Statistics
 [**sim_sage_status**](StatsApi.md#sim_sage_status) | **PUT** /api/stats/status/{organisationId} | SimSage status
-[**system_logs**](StatsApi.md#system_logs) | **GET** /api/stats/system-logs/{organisationId}/{year}/{month}/{day}/{hour}/{hours} | System Logs
+[**system_logs**](StatsApi.md#system_logs) | **GET** /api/stats/system-logs/{organisationId}/{service}/{numLines} | System Logs
 [**version**](StatsApi.md#version) | **GET** /api/stats/version | Version
 
 
-# **get_index_optimzation_report**
-> List[OptimizeIndexesGetReportCmd] get_index_optimzation_report(session_id, organisation_id, kb_id, id)
+# **get_index_optimization_report**
+> List[OptimizeIndexesGetReportCmd] get_index_optimization_report(session_id, organisation_id, kb_id, id)
 
 get an optimization report
 
@@ -47,11 +47,11 @@ with openapi_client.ApiClient(configuration) as api_client:
 
     try:
         # get an optimization report
-        api_response = api_instance.get_index_optimzation_report(session_id, organisation_id, kb_id, id)
-        print("The response of StatsApi->get_index_optimzation_report:\n")
+        api_response = api_instance.get_index_optimization_report(session_id, organisation_id, kb_id, id)
+        print("The response of StatsApi->get_index_optimization_report:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling StatsApi->get_index_optimzation_report: %s\n" % e)
+        print("Exception when calling StatsApi->get_index_optimization_report: %s\n" % e)
 ```
 
 
@@ -86,8 +86,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_index_optimzation_reports**
-> List[OptimizeIndexesGetReportsCmd] get_index_optimzation_reports(session_id, organisation_id, kb_id)
+# **get_index_optimization_reports**
+> List[OptimizeIndexesGetReportsCmd] get_index_optimization_reports(session_id, organisation_id, kb_id)
 
 get optimization report list
 
@@ -120,11 +120,11 @@ with openapi_client.ApiClient(configuration) as api_client:
 
     try:
         # get optimization report list
-        api_response = api_instance.get_index_optimzation_reports(session_id, organisation_id, kb_id)
-        print("The response of StatsApi->get_index_optimzation_reports:\n")
+        api_response = api_instance.get_index_optimization_reports(session_id, organisation_id, kb_id)
+        print("The response of StatsApi->get_index_optimization_reports:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling StatsApi->get_index_optimzation_reports: %s\n" % e)
+        print("Exception when calling StatsApi->get_index_optimization_reports: %s\n" % e)
 ```
 
 
@@ -153,8 +153,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | response |  -  |
 **500** | failed |  -  |
+**200** | response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -233,8 +233,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | response |  -  |
 **500** | failed |  -  |
+**200** | response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -303,13 +303,13 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | response |  -  |
 **500** | failed |  -  |
+**200** | response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **system_logs**
-> List[CMLoggerEntry] system_logs(organisation_id, year, month, day, hour, hours, session_id)
+> List[CMLoggerEntry] system_logs(organisation_id, service, num_lines, session_id)
 
 System Logs
 
@@ -337,16 +337,13 @@ with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.StatsApi(api_client)
     organisation_id = 'organisation_id_example' # str | the organisation (its guid id)
-    year = 56 # int | the year to get the log for
-    month = 56 # int | the month to get the log for
-    day = 56 # int | the day to get the log for
-    hour = 56 # int | the hour to get the log for
-    hours = 56 # int | the number of hours to get the logs for starting at hour
+    service = 'service_example' # str | the service to get the log for
+    num_lines = 56 # int | the maximum number of lines to return if > 0
     session_id = 'session_id_example' # str | a valid SimSage Session id.
 
     try:
         # System Logs
-        api_response = api_instance.system_logs(organisation_id, year, month, day, hour, hours, session_id)
+        api_response = api_instance.system_logs(organisation_id, service, num_lines, session_id)
         print("The response of StatsApi->system_logs:\n")
         pprint(api_response)
     except Exception as e:
@@ -360,11 +357,8 @@ with openapi_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organisation_id** | **str**| the organisation (its guid id) | 
- **year** | **int**| the year to get the log for | 
- **month** | **int**| the month to get the log for | 
- **day** | **int**| the day to get the log for | 
- **hour** | **int**| the hour to get the log for | 
- **hours** | **int**| the number of hours to get the logs for starting at hour | 
+ **service** | **str**| the service to get the log for | 
+ **num_lines** | **int**| the maximum number of lines to return if &gt; 0 | 
  **session_id** | **str**| a valid SimSage Session id. | 
 
 ### Return type

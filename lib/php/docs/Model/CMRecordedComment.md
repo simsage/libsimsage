@@ -11,5 +11,6 @@ Name | Type | Description | Notes
 **comment_level** | **string** |  |
 **comment** | **string** |  |
 **user** | **string** |  |
+**is_audit_event** | **bool** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

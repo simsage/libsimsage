@@ -18,6 +18,7 @@ All URIs are relative to *https://test.simsage.ai*
 | [**saveGroup**](AuthApi.md#saveGroup) | **PUT** /api/auth/group | Save Group |
 | [**signIn**](AuthApi.md#signIn) | **POST** /api/auth/sign-in | Sign In |
 | [**signInAdminUsingJWTMsal**](AuthApi.md#signInAdminUsingJWTMsal) | **GET** /api/auth/admin/authenticate/msal | JWT MSal Sign In |
+| [**signInAdminUsingSessionId**](AuthApi.md#signInAdminUsingSessionId) | **GET** /api/auth/admin/authenticate/session-id | session-id Sign-in |
 | [**signInDmsUsingJWTMsal**](AuthApi.md#signInDmsUsingJWTMsal) | **GET** /api/auth/dms/authenticate/msal/{organisationId} | JWT MSal Sign In |
 | [**signInEvolveUsingJWTMsal**](AuthApi.md#signInEvolveUsingJWTMsal) | **GET** /api/auth/evolve/authenticate/msal/{organisationId} | JWT MSal Sign In |
 | [**signInSearchUsingJWTMsal**](AuthApi.md#signInSearchUsingJWTMsal) | **GET** /api/auth/search/authenticate/msal/{organisationId} | JWT MSal Sign In |
@@ -421,6 +422,33 @@ No authorization required
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
+<a name="signInAdminUsingSessionId"></a>
+# **signInAdminUsingSessionId**
+> SignInAdmin signInAdminUsingSessionId(session-id)
+
+session-id Sign-in
+
+    Sign-in a user using an existing session-id.
+
+### Parameters
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **session-id** | **String**| a valid SimSage Session id. | [default to null] |
+
+### Return type
+
+[**SignInAdmin**](../Models/SignInAdmin.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
 <a name="signInDmsUsingJWTMsal"></a>
 # **signInDmsUsingJWTMsal**
 > SignInDmsCmd signInDmsUsingJWTMsal(jwt, organisationId)
@@ -455,7 +483,7 @@ No authorization required
 
 JWT MSal Sign In
 
-    Sign-in an Evolve user using an Msal JWT.
+    Sign-in an Evolve user using an Msal JWT...
 
 ### Parameters
 

@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **roles** | [**List[UserRole]**](UserRole.md) |  | 
 **operator_kb_list** | [**List[OperatorKnowledgeBase]**](OperatorKnowledgeBase.md) |  | 
 **group_list** | [**List[Group]**](Group.md) |  | 
+**jwt_match_name_value_csv** | **str** |  | 
 
 ## Example
 

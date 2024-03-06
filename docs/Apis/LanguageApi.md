@@ -20,7 +20,6 @@ All URIs are relative to *https://test.simsage.ai*
 | [**saveSemantic**](LanguageApi.md#saveSemantic) | **PUT** /api/language/save-semantic/{organisationId}/{kbId} | Save Semantic |
 | [**saveSynSet**](LanguageApi.md#saveSynSet) | **PUT** /api/language/save-syn-set/{organisationId}/{kbId} | Save SynSet |
 | [**saveSynonym**](LanguageApi.md#saveSynonym) | **PUT** /api/language/save-synonym/{organisationId}/{kbId} | Save Synonym |
-| [**truncateSlowIndexes**](LanguageApi.md#truncateSlowIndexes) | **GET** /api/language/truncate-slow-indexes/{organisationId}/{kbId} | Truncate slow Indexes |
 | [**tuneLanguageGraph**](LanguageApi.md#tuneLanguageGraph) | **GET** /api/language/tune-graph/{organisationId}/{kbId} | Tune Graph |
 | [**version2**](LanguageApi.md#version2) | **GET** /api/language/version | Version |
 
@@ -389,7 +388,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/pdf, application/json
+- **Accept**: application/json, application/pdf
 
 <a name="saveCategorization"></a>
 # **saveCategorization**
@@ -511,36 +510,6 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
-
-<a name="truncateSlowIndexes"></a>
-# **truncateSlowIndexes**
-> JsonMessage truncateSlowIndexes(organisationId, kbId, session-id, API-Version)
-
-Truncate slow Indexes
-
-    Force slow-index truncation for a the given knowledge-base, now.
-
-### Parameters
-
-|Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **organisationId** | **String**| the organisation&#39;s id (a guid) | [default to null] |
-| **kbId** | **String**| the knowledge-bases&#39; id (a guid) | [default to null] |
-| **session-id** | **String**| a valid SimSage Session id. | [default to null] |
-| **API-Version** | **String**|  | [optional] [default to null] [enum: 1] |
-
-### Return type
-
-[**JsonMessage**](../Models/JsonMessage.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
 - **Accept**: application/json
 
 <a name="tuneLanguageGraph"></a>

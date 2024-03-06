@@ -10,6 +10,7 @@
 | **roles** | [**List**](CMUserRole.md) | a list of SimSage roles associated with this user | [default to null] |
 | **operatorKBList** | [**List**](CMOperatorKnowledgeBase.md) | a list of knowledge-bases this user is an operator for | [default to null] |
 | **groupList** | [**List**](CMGroup.md) | a list of security-groups this user is part of (can be empty) | [default to null] |
+| **jwtMatchNameValueCSV** | **String** | an optional set of csv separated name1&#x3D;value1,name2&#x3D;value2 for JWT matching | [default to null] |
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

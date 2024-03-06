@@ -13,9 +13,12 @@ All URIs are relative to *https://test.simsage.ai*
 | [**filteredComments**](DataprojectApi.md#filteredComments) | **POST** /api/dataproject/filteredcomments | Retrieve Comments |
 | [**getDocumentRedactionInfo**](DataprojectApi.md#getDocumentRedactionInfo) | **GET** /api/dataproject/docredactioninfo/{organisationId}/{sliceId}/{documentKey} | Get Document Redaction info |
 | [**getProjectDefinition**](DataprojectApi.md#getProjectDefinition) | **GET** /api/dataproject/projectdefinition/{organisationId}/{taskId} | get Project Definition |
+| [**getProjectReview**](DataprojectApi.md#getProjectReview) | **GET** /api/dataproject/projectreview/{organisationId}/{projectId} | get Project Definition |
 | [**getProjectSlice**](DataprojectApi.md#getProjectSlice) | **GET** /api/dataproject/projectslice/{organisationId}/{taskId} | get project slice |
 | [**getSearchResultSummary**](DataprojectApi.md#getSearchResultSummary) | **GET** /api/dataproject/searchresult/{organisationId}/{taskId} | get Search Result Summary |
+| [**getSearchResultSummaryForReview**](DataprojectApi.md#getSearchResultSummaryForReview) | **GET** /api/dataproject/searchresultreview/{organisationId}/{projectId} | get Search Result Summary |
 | [**nextDocument**](DataprojectApi.md#nextDocument) | **POST** /api/dataproject/nextdocument | Document list for given slice and filters |
+| [**pdfBinary**](DataprojectApi.md#pdfBinary) | **GET** /api/dataproject/pdf/latest/{organisationId}/{kbId}/{url} | Binary |
 | [**projectTypes**](DataprojectApi.md#projectTypes) | **GET** /api/dataproject/projects/{organisationId} | get Project Types |
 | [**reassignSliceDocument**](DataprojectApi.md#reassignSliceDocument) | **POST** /api/dataproject/reassignslicedoc |  |
 | [**redactedDocument**](DataprojectApi.md#redactedDocument) | **POST** /api/dataproject/redacteddocument | Get Redacted Document |
@@ -285,6 +288,35 @@ No authorization required
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
+<a name="getProjectReview"></a>
+# **getProjectReview**
+> CMProjectReview getProjectReview(organisationId, projectId, session-id)
+
+get Project Definition
+
+    Get the project review data of the project for the given project id
+
+### Parameters
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **organisationId** | **String**| the organisation (its guid id) | [default to null] |
+| **projectId** | **String**| the id of the task | [default to null] |
+| **session-id** | **String**| a valid SimSage Session id. | [default to null] |
+
+### Return type
+
+[**CMProjectReview**](../Models/CMProjectReview.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
 <a name="getProjectSlice"></a>
 # **getProjectSlice**
 > List getProjectSlice(organisationId, taskId, session-id)
@@ -343,6 +375,35 @@ No authorization required
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
+<a name="getSearchResultSummaryForReview"></a>
+# **getSearchResultSummaryForReview**
+> CMSearchResultSummary getSearchResultSummaryForReview(organisationId, projectId, session-id)
+
+get Search Result Summary
+
+    Get the summary information for the search results of a given project by task id
+
+### Parameters
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **organisationId** | **String**| the organisation (its guid id) | [default to null] |
+| **projectId** | **String**| the id of the task | [default to null] |
+| **session-id** | **String**| a valid SimSage Session id. | [default to null] |
+
+### Return type
+
+[**CMSearchResultSummary**](../Models/CMSearchResultSummary.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
 <a name="nextDocument"></a>
 # **nextDocument**
 > CMSlicedDocumentListAndTotals nextDocument(session-id, CMNextDocument)
@@ -370,6 +431,36 @@ No authorization required
 
 - **Content-Type**: application/json
 - **Accept**: application/json
+
+<a name="pdfBinary"></a>
+# **pdfBinary**
+> Object pdfBinary(organisationId, kbId, url, session-id)
+
+Binary
+
+    Get the original for a document if available by url (latest version)
+
+### Parameters
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **organisationId** | **String**| the organisation (its guid id) | [default to null] |
+| **kbId** | **String**| the knowledge-base (its guid id) | [default to null] |
+| **url** | **String**| a base64 encoded url | [default to null] |
+| **session-id** | **String**| a valid SimSage Session id. | [optional] [default to null] |
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
 
 <a name="projectTypes"></a>
 # **projectTypes**

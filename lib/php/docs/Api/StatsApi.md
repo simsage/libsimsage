@@ -4,18 +4,18 @@ All URIs are relative to https://test.simsage.ai, except if the operation define
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getIndexOptimzationReport()**](StatsApi.md#getIndexOptimzationReport) | **GET** /api/stats/report/{organisationId}/{kbId}/{id} | get an optimization report |
-| [**getIndexOptimzationReports()**](StatsApi.md#getIndexOptimzationReports) | **GET** /api/stats/reports/{organisationId}/{kbId} | get optimization report list |
+| [**getIndexOptimizationReport()**](StatsApi.md#getIndexOptimizationReport) | **GET** /api/stats/report/{organisationId}/{kbId}/{id} | get an optimization report |
+| [**getIndexOptimizationReports()**](StatsApi.md#getIndexOptimizationReports) | **GET** /api/stats/reports/{organisationId}/{kbId} | get optimization report list |
 | [**getStats()**](StatsApi.md#getStats) | **GET** /api/stats/stats/{organisationId}/{kbId}/{year}/{month}/{top} | Get usage Statistics |
 | [**simSageStatus()**](StatsApi.md#simSageStatus) | **PUT** /api/stats/status/{organisationId} | SimSage status |
-| [**systemLogs()**](StatsApi.md#systemLogs) | **GET** /api/stats/system-logs/{organisationId}/{year}/{month}/{day}/{hour}/{hours} | System Logs |
+| [**systemLogs()**](StatsApi.md#systemLogs) | **GET** /api/stats/system-logs/{organisationId}/{service}/{numLines} | System Logs |
 | [**version()**](StatsApi.md#version) | **GET** /api/stats/version | Version |
 
 
-## `getIndexOptimzationReport()`
+## `getIndexOptimizationReport()`
 
 ```php
-getIndexOptimzationReport($session_id, $organisation_id, $kb_id, $id): \OpenAPI\Client\Model\OptimizeIndexesGetReportCmd[]
+getIndexOptimizationReport($session_id, $organisation_id, $kb_id, $id): \OpenAPI\Client\Model\OptimizeIndexesGetReportCmd[]
 ```
 
 get an optimization report
@@ -41,10 +41,10 @@ $kb_id = 'kb_id_example'; // string | the knowledge-base (its guid id)
 $id = 56; // int | the id of the report
 
 try {
-    $result = $apiInstance->getIndexOptimzationReport($session_id, $organisation_id, $kb_id, $id);
+    $result = $apiInstance->getIndexOptimizationReport($session_id, $organisation_id, $kb_id, $id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling StatsApi->getIndexOptimzationReport: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling StatsApi->getIndexOptimizationReport: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -74,10 +74,10 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getIndexOptimzationReports()`
+## `getIndexOptimizationReports()`
 
 ```php
-getIndexOptimzationReports($session_id, $organisation_id, $kb_id): \OpenAPI\Client\Model\OptimizeIndexesGetReportsCmd[]
+getIndexOptimizationReports($session_id, $organisation_id, $kb_id): \OpenAPI\Client\Model\OptimizeIndexesGetReportsCmd[]
 ```
 
 get optimization report list
@@ -102,10 +102,10 @@ $organisation_id = 'organisation_id_example'; // string | the organisation (its 
 $kb_id = 'kb_id_example'; // string | the knowledge-base (its guid id)
 
 try {
-    $result = $apiInstance->getIndexOptimzationReports($session_id, $organisation_id, $kb_id);
+    $result = $apiInstance->getIndexOptimizationReports($session_id, $organisation_id, $kb_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling StatsApi->getIndexOptimzationReports: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling StatsApi->getIndexOptimizationReports: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -263,7 +263,7 @@ No authorization required
 ## `systemLogs()`
 
 ```php
-systemLogs($organisation_id, $year, $month, $day, $hour, $hours, $session_id): \OpenAPI\Client\Model\CMLoggerEntry[]
+systemLogs($organisation_id, $service, $num_lines, $session_id): \OpenAPI\Client\Model\CMLoggerEntry[]
 ```
 
 System Logs
@@ -284,15 +284,12 @@ $apiInstance = new OpenAPI\Client\Api\StatsApi(
     new GuzzleHttp\Client()
 );
 $organisation_id = 'organisation_id_example'; // string | the organisation (its guid id)
-$year = 56; // int | the year to get the log for
-$month = 56; // int | the month to get the log for
-$day = 56; // int | the day to get the log for
-$hour = 56; // int | the hour to get the log for
-$hours = 56; // int | the number of hours to get the logs for starting at hour
+$service = 'service_example'; // string | the service to get the log for
+$num_lines = 56; // int | the maximum number of lines to return if > 0
 $session_id = 'session_id_example'; // string | a valid SimSage Session id.
 
 try {
-    $result = $apiInstance->systemLogs($organisation_id, $year, $month, $day, $hour, $hours, $session_id);
+    $result = $apiInstance->systemLogs($organisation_id, $service, $num_lines, $session_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StatsApi->systemLogs: ', $e->getMessage(), PHP_EOL;
@@ -304,11 +301,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **organisation_id** | **string**| the organisation (its guid id) | |
-| **year** | **int**| the year to get the log for | |
-| **month** | **int**| the month to get the log for | |
-| **day** | **int**| the day to get the log for | |
-| **hour** | **int**| the hour to get the log for | |
-| **hours** | **int**| the number of hours to get the logs for starting at hour | |
+| **service** | **string**| the service to get the log for | |
+| **num_lines** | **int**| the maximum number of lines to return if &gt; 0 | |
 | **session_id** | **string**| a valid SimSage Session id. | |
 
 ### Return type

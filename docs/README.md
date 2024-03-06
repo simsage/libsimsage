@@ -21,6 +21,7 @@ All URIs are relative to *https://test.simsage.ai*
 *AuthApi* | [**saveGroup**](Apis/AuthApi.md#savegroup) | **PUT** /api/auth/group | Save Group |
 *AuthApi* | [**signIn**](Apis/AuthApi.md#signin) | **POST** /api/auth/sign-in | Sign In |
 *AuthApi* | [**signInAdminUsingJWTMsal**](Apis/AuthApi.md#signinadminusingjwtmsal) | **GET** /api/auth/admin/authenticate/msal | JWT MSal Sign In |
+*AuthApi* | [**signInAdminUsingSessionId**](Apis/AuthApi.md#signinadminusingsessionid) | **GET** /api/auth/admin/authenticate/session-id | session-id Sign-in |
 *AuthApi* | [**signInDmsUsingJWTMsal**](Apis/AuthApi.md#signindmsusingjwtmsal) | **GET** /api/auth/dms/authenticate/msal/{organisationId} | JWT MSal Sign In |
 *AuthApi* | [**signInEvolveUsingJWTMsal**](Apis/AuthApi.md#signinevolveusingjwtmsal) | **GET** /api/auth/evolve/authenticate/msal/{organisationId} | JWT MSal Sign In |
 *AuthApi* | [**signInSearchUsingJWTMsal**](Apis/AuthApi.md#signinsearchusingjwtmsal) | **GET** /api/auth/search/authenticate/msal/{organisationId} | JWT MSal Sign In |
@@ -36,10 +37,14 @@ All URIs are relative to *https://test.simsage.ai*
 | *ConversionApi* | [**previewVersion**](Apis/ConversionApi.md#previewversion) | **GET** /api/conversion/preview-generator/version | Get preview-generator Version |
 *ConversionApi* | [**sttVersion**](Apis/ConversionApi.md#sttversion) | **GET** /api/conversion/stt/version | Get speech-to-text Version |
 *ConversionApi* | [**version7**](Apis/ConversionApi.md#version7) | **GET** /api/conversion/version | Get Version |
-| *CrawlerApi* | [**crawlerExternalDocumentDelete**](Apis/CrawlerApi.md#crawlerexternaldocumentdelete) | **PUT** /api/crawler/external/document/delete | Remove an External Document |
-*CrawlerApi* | [**crawlerExternalDocumentUnChanged**](Apis/CrawlerApi.md#crawlerexternaldocumentunchanged) | **POST** /api/crawler/external/document/un-changed | Mark External Document Unchanged |
+| *CrawlerApi* | [**crawlerDeleteFolder**](Apis/CrawlerApi.md#crawlerdeletefolder) | **POST** /api/crawler/external/crawler/delete-folder | Delete document folder |
+*CrawlerApi* | [**crawlerDeleteUrl**](Apis/CrawlerApi.md#crawlerdeleteurl) | **POST** /api/crawler/external/crawler/delete-url | Delete document |
+*CrawlerApi* | [**crawlerExternalDocumentDelete**](Apis/CrawlerApi.md#crawlerexternaldocumentdelete) | **PUT** /api/crawler/external/document/delete | Remove an External Document |
+*CrawlerApi* | [**crawlerExternalDocumentFailed**](Apis/CrawlerApi.md#crawlerexternaldocumentfailed) | **POST** /api/crawler/external/document/recordfailure | Upload External Document |
 *CrawlerApi* | [**crawlerExternalDocumentUpload**](Apis/CrawlerApi.md#crawlerexternaldocumentupload) | **POST** /api/crawler/external/document/upload | Upload External Document |
 *CrawlerApi* | [**crawlerExternalImageUpload**](Apis/CrawlerApi.md#crawlerexternalimageupload) | **POST** /api/crawler/external/document/upload/image | Upload External Image |
+*CrawlerApi* | [**crawlerRenameFolder**](Apis/CrawlerApi.md#crawlerrenamefolder) | **POST** /api/crawler/external/crawler/rename-folder | Rename document folder |
+*CrawlerApi* | [**crawlerUpdateDeltaToken**](Apis/CrawlerApi.md#crawlerupdatedeltatoken) | **POST** /api/crawler/external/crawler/delta-token | Update delta token |
 *CrawlerApi* | [**delete**](Apis/CrawlerApi.md#delete) | **DELETE** /api/crawler/crawler/{organisationId}/{kbId}/{sourceId} | Delete source |
 *CrawlerApi* | [**deleteDocuments**](Apis/CrawlerApi.md#deletedocuments) | **DELETE** /api/crawler/crawler/document/{organisationId}/{kbId}/{sourceId} | Delete source's documents |
 *CrawlerApi* | [**encryptedCommunications**](Apis/CrawlerApi.md#encryptedcommunications) | **POST** /api/crawler/external/secure/{seed} | Secure Communication |
@@ -47,10 +52,15 @@ All URIs are relative to *https://test.simsage.ai*
 *CrawlerApi* | [**externalCrawlerFinished**](Apis/CrawlerApi.md#externalcrawlerfinished) | **POST** /api/crawler/external/crawler/finish | Stop External Crawler |
 *CrawlerApi* | [**externalCrawlerStart**](Apis/CrawlerApi.md#externalcrawlerstart) | **POST** /api/crawler/external/crawler/start | Start External Crawler |
 *CrawlerApi* | [**getCrawler**](Apis/CrawlerApi.md#getcrawler) | **GET** /api/crawler/crawler/{organisationId}/{kbId}/{sourceId} | Get source |
+*CrawlerApi* | [**getFailedDocuments**](Apis/CrawlerApi.md#getfaileddocuments) | **GET** /api/crawler/faileddocs/{organisationId}/{kbId}/{sourceId}/{page}/{pageSize} | Get source List |
 *CrawlerApi* | [**getSourceList**](Apis/CrawlerApi.md#getsourcelist) | **GET** /api/crawler/crawlers/{organisationId}/{kbId} | Get source List |
+*CrawlerApi* | [**markFileAsSeen**](Apis/CrawlerApi.md#markfileasseen) | **POST** /api/crawler/external/crawler/mark-file-as-seen | Mark file as seen |
 *CrawlerApi* | [**oidcCode**](Apis/CrawlerApi.md#oidccode) | **GET** /api/crawler/dropbox-oidc-code/{oidcKey} | OIDC code receiver |
 *CrawlerApi* | [**processAllFiles**](Apis/CrawlerApi.md#processallfiles) | **POST** /api/crawler/process-all-files | Process all files of crawler/source |
+*CrawlerApi* | [**processorSchema**](Apis/CrawlerApi.md#processorschema) | **GET** /api/crawler/processor_schema |  |
+*CrawlerApi* | [**receiveExternalLogEntry**](Apis/CrawlerApi.md#receiveexternallogentry) | **POST** /api/crawler/external/crawler/log | External Crawler log-entry |
 *CrawlerApi* | [**resetSourceDelta**](Apis/CrawlerApi.md#resetsourcedelta) | **POST** /api/crawler/crawler/reset-delta/{organisationId}/{kbId}/{sourceId} | Reset Source delta-token |
+*CrawlerApi* | [**sdcSchema**](Apis/CrawlerApi.md#sdcschema) | **GET** /api/crawler/sdc_schema |  |
 *CrawlerApi* | [**startCrawler**](Apis/CrawlerApi.md#startcrawler) | **POST** /api/crawler/start | Start crawler |
 *CrawlerApi* | [**testCrawler**](Apis/CrawlerApi.md#testcrawler) | **GET** /api/crawler/crawler/test/{organisationId}/{kbId}/{sourceId} | Test Crawler |
 *CrawlerApi* | [**updateCrawler**](Apis/CrawlerApi.md#updatecrawler) | **POST** /api/crawler/crawler | Update Source |
@@ -64,9 +74,12 @@ All URIs are relative to *https://test.simsage.ai*
 *DataprojectApi* | [**filteredComments**](Apis/DataprojectApi.md#filteredcomments) | **POST** /api/dataproject/filteredcomments | Retrieve Comments |
 *DataprojectApi* | [**getDocumentRedactionInfo**](Apis/DataprojectApi.md#getdocumentredactioninfo) | **GET** /api/dataproject/docredactioninfo/{organisationId}/{sliceId}/{documentKey} | Get Document Redaction info |
 *DataprojectApi* | [**getProjectDefinition**](Apis/DataprojectApi.md#getprojectdefinition) | **GET** /api/dataproject/projectdefinition/{organisationId}/{taskId} | get Project Definition |
+*DataprojectApi* | [**getProjectReview**](Apis/DataprojectApi.md#getprojectreview) | **GET** /api/dataproject/projectreview/{organisationId}/{projectId} | get Project Definition |
 *DataprojectApi* | [**getProjectSlice**](Apis/DataprojectApi.md#getprojectslice) | **GET** /api/dataproject/projectslice/{organisationId}/{taskId} | get project slice |
 *DataprojectApi* | [**getSearchResultSummary**](Apis/DataprojectApi.md#getsearchresultsummary) | **GET** /api/dataproject/searchresult/{organisationId}/{taskId} | get Search Result Summary |
+*DataprojectApi* | [**getSearchResultSummaryForReview**](Apis/DataprojectApi.md#getsearchresultsummaryforreview) | **GET** /api/dataproject/searchresultreview/{organisationId}/{projectId} | get Search Result Summary |
 *DataprojectApi* | [**nextDocument**](Apis/DataprojectApi.md#nextdocument) | **POST** /api/dataproject/nextdocument | Document list for given slice and filters |
+*DataprojectApi* | [**pdfBinary**](Apis/DataprojectApi.md#pdfbinary) | **GET** /api/dataproject/pdf/latest/{organisationId}/{kbId}/{url} | Binary |
 *DataprojectApi* | [**projectTypes**](Apis/DataprojectApi.md#projecttypes) | **GET** /api/dataproject/projects/{organisationId} | get Project Types |
 *DataprojectApi* | [**reassignSliceDocument**](Apis/DataprojectApi.md#reassignslicedocument) | **POST** /api/dataproject/reassignslicedoc |  |
 *DataprojectApi* | [**redactedDocument**](Apis/DataprojectApi.md#redacteddocument) | **POST** /api/dataproject/redacteddocument | Get Redacted Document |
@@ -86,7 +99,6 @@ All URIs are relative to *https://test.simsage.ai*
 *DiscoveryApi* | [**getGdprDocument**](Apis/DiscoveryApi.md#getgdprdocument) | **GET** /api/discovery/gdprdocument/{organisationId}/{kbId}/{projectId}/{url} |  |
 *DiscoveryApi* | [**getPagedProjectDocuments**](Apis/DiscoveryApi.md#getpagedprojectdocuments) | **GET** /api/discovery/projectdocument/{organisationId}/{kbId}/{projectId}/{page}/{pageSize}/{textFilter}/{typeFilter}/{statusFilter}/{sortColumn}/{sortDirection} |  |
 *DiscoveryApi* | [**growthPerMonth**](Apis/DiscoveryApi.md#growthpermonth) | **GET** /api/discovery/growth/{organisationId}/{kbId} | growth |
-*DiscoveryApi* | [**pdfBinary**](Apis/DiscoveryApi.md#pdfbinary) | **GET** /api/discovery/pdf/latest/{organisationId}/{kbId}/{url} | Binary |
 *DiscoveryApi* | [**setdocumentredactions**](Apis/DiscoveryApi.md#setdocumentredactions) | **PUT** /api/discovery/updategdprdocument |  |
 *DiscoveryApi* | [**storageBySource**](Apis/DiscoveryApi.md#storagebysource) | **GET** /api/discovery/storage/{organisationId}/{kbId} | storage |
 *DiscoveryApi* | [**summaryByDocumentType**](Apis/DiscoveryApi.md#summarybydocumenttype) | **GET** /api/discovery/doctypesummary/{organisationId}/{kbId} | storage |
@@ -168,7 +180,6 @@ All URIs are relative to *https://test.simsage.ai*
 *LanguageApi* | [**saveSemantic**](Apis/LanguageApi.md#savesemantic) | **PUT** /api/language/save-semantic/{organisationId}/{kbId} | Save Semantic |
 *LanguageApi* | [**saveSynSet**](Apis/LanguageApi.md#savesynset) | **PUT** /api/language/save-syn-set/{organisationId}/{kbId} | Save SynSet |
 *LanguageApi* | [**saveSynonym**](Apis/LanguageApi.md#savesynonym) | **PUT** /api/language/save-synonym/{organisationId}/{kbId} | Save Synonym |
-*LanguageApi* | [**truncateSlowIndexes**](Apis/LanguageApi.md#truncateslowindexes) | **GET** /api/language/truncate-slow-indexes/{organisationId}/{kbId} | Truncate slow Indexes |
 *LanguageApi* | [**tuneLanguageGraph**](Apis/LanguageApi.md#tunelanguagegraph) | **GET** /api/language/tune-graph/{organisationId}/{kbId} | Tune Graph |
 *LanguageApi* | [**version2**](Apis/LanguageApi.md#version2) | **GET** /api/language/version | Version |
 | *SemanticApi* | [**deleteTextToSearch**](Apis/SemanticApi.md#deletetexttosearch) | **DELETE** /api/semantic/text-to-search/{organisationId}/{kbId}/{word} | Delete text-to-search |
@@ -179,17 +190,19 @@ All URIs are relative to *https://test.simsage.ai*
 *SemanticApi* | [**shortSummary**](Apis/SemanticApi.md#shortsummary) | **POST** /api/semantic/short-summary | Short summary |
 *SemanticApi* | [**tryTextToSearchConversion**](Apis/SemanticApi.md#trytexttosearchconversion) | **PUT** /api/semantic/text-to-search-try | try converting text-to-search |
 *SemanticApi* | [**version1**](Apis/SemanticApi.md#version1) | **GET** /api/semantic/version | Version |
-| *StatsApi* | [**getIndexOptimzationReport**](Apis/StatsApi.md#getindexoptimzationreport) | **GET** /api/stats/report/{organisationId}/{kbId}/{id} | get an optimization report |
-*StatsApi* | [**getIndexOptimzationReports**](Apis/StatsApi.md#getindexoptimzationreports) | **GET** /api/stats/reports/{organisationId}/{kbId} | get optimization report list |
+| *StatsApi* | [**getIndexOptimizationReport**](Apis/StatsApi.md#getindexoptimizationreport) | **GET** /api/stats/report/{organisationId}/{kbId}/{id} | get an optimization report |
+*StatsApi* | [**getIndexOptimizationReports**](Apis/StatsApi.md#getindexoptimizationreports) | **GET** /api/stats/reports/{organisationId}/{kbId} | get optimization report list |
 *StatsApi* | [**getStats**](Apis/StatsApi.md#getstats) | **GET** /api/stats/stats/{organisationId}/{kbId}/{year}/{month}/{top} | Get usage Statistics |
 *StatsApi* | [**simSageStatus**](Apis/StatsApi.md#simsagestatus) | **PUT** /api/stats/status/{organisationId} | SimSage status |
-*StatsApi* | [**systemLogs**](Apis/StatsApi.md#systemlogs) | **GET** /api/stats/system-logs/{organisationId}/{year}/{month}/{day}/{hour}/{hours} | System Logs |
+*StatsApi* | [**systemLogs**](Apis/StatsApi.md#systemlogs) | **GET** /api/stats/system-logs/{organisationId}/{service}/{numLines} | System Logs |
 *StatsApi* | [**version**](Apis/StatsApi.md#version) | **GET** /api/stats/version | Version |
 
 
 <a name="documentation-for-models"></a>
 ## Documentation for Models
 
+ - [Asset](./Models/Asset.md)
+ - [AssetACL](./Models/AssetACL.md)
  - [Backup](./Models/Backup.md)
  - [CMAddFolder](./Models/CMAddFolder.md)
  - [CMAddSourceFolder](./Models/CMAddSourceFolder.md)
@@ -222,13 +235,19 @@ All URIs are relative to *https://test.simsage.ai*
  - [CMDocumentRelationship](./Models/CMDocumentRelationship.md)
  - [CMDocumentSubscription](./Models/CMDocumentSubscription.md)
  - [CMDocumentTypeFrequency](./Models/CMDocumentTypeFrequency.md)
- - [CMDocumentUnChanged](./Models/CMDocumentUnChanged.md)
  - [CMDocumentVersion](./Models/CMDocumentVersion.md)
  - [CMDocumentsByToken](./Models/CMDocumentsByToken.md)
  - [CMExportRedactedDocument](./Models/CMExportRedactedDocument.md)
  - [CMExternalCrawler](./Models/CMExternalCrawler.md)
+ - [CMExternalCrawlerDeleteFolder](./Models/CMExternalCrawlerDeleteFolder.md)
+ - [CMExternalCrawlerDeleteUrl](./Models/CMExternalCrawlerDeleteUrl.md)
+ - [CMExternalCrawlerMarkFileAsSeen](./Models/CMExternalCrawlerMarkFileAsSeen.md)
+ - [CMExternalCrawlerRenameFolder](./Models/CMExternalCrawlerRenameFolder.md)
+ - [CMExternalCrawlerSetDeltaToken](./Models/CMExternalCrawlerSetDeltaToken.md)
  - [CMExternalCrawlerStart](./Models/CMExternalCrawlerStart.md)
  - [CMExternalCrawlerStop](./Models/CMExternalCrawlerStop.md)
+ - [CMExternalLogEntry](./Models/CMExternalLogEntry.md)
+ - [CMFailedSourceDocument](./Models/CMFailedSourceDocument.md)
  - [CMFilter](./Models/CMFilter.md)
  - [CMGdprSearchDetails](./Models/CMGdprSearchDetails.md)
  - [CMGetHtml](./Models/CMGetHtml.md)
@@ -259,6 +278,7 @@ All URIs are relative to *https://test.simsage.ai*
  - [CMProjectDocument](./Models/CMProjectDocument.md)
  - [CMProjectFrame](./Models/CMProjectFrame.md)
  - [CMProjectInfo](./Models/CMProjectInfo.md)
+ - [CMProjectReview](./Models/CMProjectReview.md)
  - [CMProjectSlice](./Models/CMProjectSlice.md)
  - [CMProjectSliceTask](./Models/CMProjectSliceTask.md)
  - [CMQueryFocussedSummarization](./Models/CMQueryFocussedSummarization.md)
@@ -348,7 +368,7 @@ All URIs are relative to *https://test.simsage.ai*
  - [JsonMessage](./Models/JsonMessage.md)
  - [KnowledgeBase](./Models/KnowledgeBase.md)
  - [LocatedRedaction](./Models/LocatedRedaction.md)
- - [MDCategory](./Models/MDCategory.md)
+ - [MDMetadataMapping](./Models/MDMetadataMapping.md)
  - [NameCounterLevel](./Models/NameCounterLevel.md)
  - [OperatorKnowledgeBase](./Models/OperatorKnowledgeBase.md)
  - [OptimizeIndexesGetReportCmd](./Models/OptimizeIndexesGetReportCmd.md)

@@ -11,6 +11,7 @@
 | **roles** | **String** | the roles to be associated with this user | [default to null] |
 | **operatorKBList** | **String** | the operator-id and knowledge-base id to be associated with this user.  This user is to be an operator if set. | [default to null] |
 | **groupList** | [**List**](CMGroup.md) | a list of groups this user is part of (can be empty) | [default to null] |
+| **jwtMatchNameValueCSV** | **String** | an optional set of csv separated name1&#x3D;value1,name2&#x3D;value2 for JWT matching | [default to null] |
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

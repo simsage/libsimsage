@@ -23,5 +23,6 @@ Name | Type | Description | Notes
 **group_similar_documents** | **bool** | should the search-engine group similar documents together |
 **sort_by_age** | **bool** | should the search-engine sort results by age |
 **use_question_answering_ai** | **bool** | use ChatGPT or equivalent to answer queries |
+**word_syn_set** | **array<string,int>** | selected syn-sets for words |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -12,7 +12,6 @@ Method | HTTP request | Description
 [**get_gdpr_document**](DiscoveryApi.md#get_gdpr_document) | **GET** /api/discovery/gdprdocument/{organisationId}/{kbId}/{projectId}/{url} | 
 [**get_paged_project_documents**](DiscoveryApi.md#get_paged_project_documents) | **GET** /api/discovery/projectdocument/{organisationId}/{kbId}/{projectId}/{page}/{pageSize}/{textFilter}/{typeFilter}/{statusFilter}/{sortColumn}/{sortDirection} | 
 [**growth_per_month**](DiscoveryApi.md#growth_per_month) | **GET** /api/discovery/growth/{organisationId}/{kbId} | growth
-[**pdf_binary**](DiscoveryApi.md#pdf_binary) | **GET** /api/discovery/pdf/latest/{organisationId}/{kbId}/{url} | Binary
 [**setdocumentredactions**](DiscoveryApi.md#setdocumentredactions) | **PUT** /api/discovery/updategdprdocument | 
 [**storage_by_source**](DiscoveryApi.md#storage_by_source) | **GET** /api/discovery/storage/{organisationId}/{kbId} | storage
 [**summary_by_document_type**](DiscoveryApi.md#summary_by_document_type) | **GET** /api/discovery/doctypesummary/{organisationId}/{kbId} | storage
@@ -579,78 +578,6 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json;charset=UTF-8
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **pdf_binary**
-> object pdf_binary(organisation_id, kb_id, url, session_id=session_id)
-
-Binary
-
-Get the original for a document if available by url (latest version)
-
-### Example
-
-```python
-import time
-import os
-import openapi_client
-from openapi_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://test.simsage.ai
-# See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
-)
-
-
-# Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = openapi_client.DiscoveryApi(api_client)
-    organisation_id = 'organisation_id_example' # str | the organisation (its guid id)
-    kb_id = 'kb_id_example' # str | the knowledge-base (its guid id)
-    url = 'url_example' # str | a base64 encoded url
-    session_id = 'session_id_example' # str | a valid SimSage Session id. (optional)
-
-    try:
-        # Binary
-        api_response = api_instance.pdf_binary(organisation_id, kb_id, url, session_id=session_id)
-        print("The response of DiscoveryApi->pdf_binary:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling DiscoveryApi->pdf_binary: %s\n" % e)
-```
-
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organisation_id** | **str**| the organisation (its guid id) | 
- **kb_id** | **str**| the knowledge-base (its guid id) | 
- **url** | **str**| a base64 encoded url | 
- **session_id** | **str**| a valid SimSage Session id. | [optional] 
-
-### Return type
-
-**object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
 
 ### HTTP response details
 | Status code | Description | Response headers |

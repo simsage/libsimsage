@@ -4,10 +4,14 @@ All URIs are relative to https://test.simsage.ai, except if the operation define
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+| [**crawlerDeleteFolder()**](CrawlerApi.md#crawlerDeleteFolder) | **POST** /api/crawler/external/crawler/delete-folder | Delete document folder |
+| [**crawlerDeleteUrl()**](CrawlerApi.md#crawlerDeleteUrl) | **POST** /api/crawler/external/crawler/delete-url | Delete document |
 | [**crawlerExternalDocumentDelete()**](CrawlerApi.md#crawlerExternalDocumentDelete) | **PUT** /api/crawler/external/document/delete | Remove an External Document |
-| [**crawlerExternalDocumentUnChanged()**](CrawlerApi.md#crawlerExternalDocumentUnChanged) | **POST** /api/crawler/external/document/un-changed | Mark External Document Unchanged |
+| [**crawlerExternalDocumentFailed()**](CrawlerApi.md#crawlerExternalDocumentFailed) | **POST** /api/crawler/external/document/recordfailure | Upload External Document |
 | [**crawlerExternalDocumentUpload()**](CrawlerApi.md#crawlerExternalDocumentUpload) | **POST** /api/crawler/external/document/upload | Upload External Document |
 | [**crawlerExternalImageUpload()**](CrawlerApi.md#crawlerExternalImageUpload) | **POST** /api/crawler/external/document/upload/image | Upload External Image |
+| [**crawlerRenameFolder()**](CrawlerApi.md#crawlerRenameFolder) | **POST** /api/crawler/external/crawler/rename-folder | Rename document folder |
+| [**crawlerUpdateDeltaToken()**](CrawlerApi.md#crawlerUpdateDeltaToken) | **POST** /api/crawler/external/crawler/delta-token | Update delta token |
 | [**delete()**](CrawlerApi.md#delete) | **DELETE** /api/crawler/crawler/{organisationId}/{kbId}/{sourceId} | Delete source |
 | [**deleteDocuments()**](CrawlerApi.md#deleteDocuments) | **DELETE** /api/crawler/crawler/document/{organisationId}/{kbId}/{sourceId} | Delete source&#39;s documents |
 | [**encryptedCommunications()**](CrawlerApi.md#encryptedCommunications) | **POST** /api/crawler/external/secure/{seed} | Secure Communication |
@@ -15,15 +19,136 @@ All URIs are relative to https://test.simsage.ai, except if the operation define
 | [**externalCrawlerFinished()**](CrawlerApi.md#externalCrawlerFinished) | **POST** /api/crawler/external/crawler/finish | Stop External Crawler |
 | [**externalCrawlerStart()**](CrawlerApi.md#externalCrawlerStart) | **POST** /api/crawler/external/crawler/start | Start External Crawler |
 | [**getCrawler()**](CrawlerApi.md#getCrawler) | **GET** /api/crawler/crawler/{organisationId}/{kbId}/{sourceId} | Get source |
+| [**getFailedDocuments()**](CrawlerApi.md#getFailedDocuments) | **GET** /api/crawler/faileddocs/{organisationId}/{kbId}/{sourceId}/{page}/{pageSize} | Get source List |
 | [**getSourceList()**](CrawlerApi.md#getSourceList) | **GET** /api/crawler/crawlers/{organisationId}/{kbId} | Get source List |
+| [**markFileAsSeen()**](CrawlerApi.md#markFileAsSeen) | **POST** /api/crawler/external/crawler/mark-file-as-seen | Mark file as seen |
 | [**oidcCode()**](CrawlerApi.md#oidcCode) | **GET** /api/crawler/dropbox-oidc-code/{oidcKey} | OIDC code receiver |
 | [**processAllFiles()**](CrawlerApi.md#processAllFiles) | **POST** /api/crawler/process-all-files | Process all files of crawler/source |
+| [**processorSchema()**](CrawlerApi.md#processorSchema) | **GET** /api/crawler/processor_schema |  |
+| [**receiveExternalLogEntry()**](CrawlerApi.md#receiveExternalLogEntry) | **POST** /api/crawler/external/crawler/log | External Crawler log-entry |
 | [**resetSourceDelta()**](CrawlerApi.md#resetSourceDelta) | **POST** /api/crawler/crawler/reset-delta/{organisationId}/{kbId}/{sourceId} | Reset Source delta-token |
+| [**sdcSchema()**](CrawlerApi.md#sdcSchema) | **GET** /api/crawler/sdc_schema |  |
 | [**startCrawler()**](CrawlerApi.md#startCrawler) | **POST** /api/crawler/start | Start crawler |
 | [**testCrawler()**](CrawlerApi.md#testCrawler) | **GET** /api/crawler/crawler/test/{organisationId}/{kbId}/{sourceId} | Test Crawler |
 | [**updateCrawler()**](CrawlerApi.md#updateCrawler) | **POST** /api/crawler/crawler | Update Source |
 | [**version6()**](CrawlerApi.md#version6) | **GET** /api/crawler/version | Version |
 
+
+## `crawlerDeleteFolder()`
+
+```php
+crawlerDeleteFolder($cm_external_crawler_delete_folder, $api_version): \OpenAPI\Client\Model\JsonMessage
+```
+
+Delete document folder
+
+An external crawler removes a document folder.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\CrawlerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$cm_external_crawler_delete_folder = new \OpenAPI\Client\Model\CMExternalCrawlerDeleteFolder(); // \OpenAPI\Client\Model\CMExternalCrawlerDeleteFolder
+$api_version = 'api_version_example'; // string
+
+try {
+    $result = $apiInstance->crawlerDeleteFolder($cm_external_crawler_delete_folder, $api_version);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CrawlerApi->crawlerDeleteFolder: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **cm_external_crawler_delete_folder** | [**\OpenAPI\Client\Model\CMExternalCrawlerDeleteFolder**](../Model/CMExternalCrawlerDeleteFolder.md)|  | |
+| **api_version** | **string**|  | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\JsonMessage**](../Model/JsonMessage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `crawlerDeleteUrl()`
+
+```php
+crawlerDeleteUrl($cm_external_crawler_delete_url, $api_version): \OpenAPI\Client\Model\JsonMessage
+```
+
+Delete document
+
+An external crawler removes a document.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\CrawlerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$cm_external_crawler_delete_url = new \OpenAPI\Client\Model\CMExternalCrawlerDeleteUrl(); // \OpenAPI\Client\Model\CMExternalCrawlerDeleteUrl
+$api_version = 'api_version_example'; // string
+
+try {
+    $result = $apiInstance->crawlerDeleteUrl($cm_external_crawler_delete_url, $api_version);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CrawlerApi->crawlerDeleteUrl: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **cm_external_crawler_delete_url** | [**\OpenAPI\Client\Model\CMExternalCrawlerDeleteUrl**](../Model/CMExternalCrawlerDeleteUrl.md)|  | |
+| **api_version** | **string**|  | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\JsonMessage**](../Model/JsonMessage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
 ## `crawlerExternalDocumentDelete()`
 
@@ -83,15 +208,15 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `crawlerExternalDocumentUnChanged()`
+## `crawlerExternalDocumentFailed()`
 
 ```php
-crawlerExternalDocumentUnChanged($cm_document_un_changed, $api_version): \OpenAPI\Client\Model\JsonMessage
+crawlerExternalDocumentFailed($cm_failed_source_document, $api_version): \OpenAPI\Client\Model\JsonMessage
 ```
 
-Mark External Document Unchanged
+Upload External Document
 
-An external crawler document marks a document as not having changed.
+An external crawler document wants to upload a document to SimSage.
 
 ### Example
 
@@ -106,14 +231,14 @@ $apiInstance = new OpenAPI\Client\Api\CrawlerApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$cm_document_un_changed = new \OpenAPI\Client\Model\CMDocumentUnChanged(); // \OpenAPI\Client\Model\CMDocumentUnChanged
+$cm_failed_source_document = new \OpenAPI\Client\Model\CMFailedSourceDocument(); // \OpenAPI\Client\Model\CMFailedSourceDocument
 $api_version = 'api_version_example'; // string
 
 try {
-    $result = $apiInstance->crawlerExternalDocumentUnChanged($cm_document_un_changed, $api_version);
+    $result = $apiInstance->crawlerExternalDocumentFailed($cm_failed_source_document, $api_version);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CrawlerApi->crawlerExternalDocumentUnChanged: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CrawlerApi->crawlerExternalDocumentFailed: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -121,7 +246,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **cm_document_un_changed** | [**\OpenAPI\Client\Model\CMDocumentUnChanged**](../Model/CMDocumentUnChanged.md)|  | |
+| **cm_failed_source_document** | [**\OpenAPI\Client\Model\CMFailedSourceDocument**](../Model/CMFailedSourceDocument.md)|  | |
 | **api_version** | **string**|  | [optional] |
 
 ### Return type
@@ -238,6 +363,122 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **cm_upload_image** | [**\OpenAPI\Client\Model\CMUploadImage**](../Model/CMUploadImage.md)|  | |
+| **api_version** | **string**|  | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\JsonMessage**](../Model/JsonMessage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `crawlerRenameFolder()`
+
+```php
+crawlerRenameFolder($cm_external_crawler_rename_folder, $api_version): \OpenAPI\Client\Model\JsonMessage
+```
+
+Rename document folder
+
+An external crawler renames a document folder.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\CrawlerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$cm_external_crawler_rename_folder = new \OpenAPI\Client\Model\CMExternalCrawlerRenameFolder(); // \OpenAPI\Client\Model\CMExternalCrawlerRenameFolder
+$api_version = 'api_version_example'; // string
+
+try {
+    $result = $apiInstance->crawlerRenameFolder($cm_external_crawler_rename_folder, $api_version);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CrawlerApi->crawlerRenameFolder: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **cm_external_crawler_rename_folder** | [**\OpenAPI\Client\Model\CMExternalCrawlerRenameFolder**](../Model/CMExternalCrawlerRenameFolder.md)|  | |
+| **api_version** | **string**|  | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\JsonMessage**](../Model/JsonMessage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `crawlerUpdateDeltaToken()`
+
+```php
+crawlerUpdateDeltaToken($cm_external_crawler_set_delta_token, $api_version): \OpenAPI\Client\Model\JsonMessage
+```
+
+Update delta token
+
+An external crawler updates a delta-token.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\CrawlerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$cm_external_crawler_set_delta_token = new \OpenAPI\Client\Model\CMExternalCrawlerSetDeltaToken(); // \OpenAPI\Client\Model\CMExternalCrawlerSetDeltaToken
+$api_version = 'api_version_example'; // string
+
+try {
+    $result = $apiInstance->crawlerUpdateDeltaToken($cm_external_crawler_set_delta_token, $api_version);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CrawlerApi->crawlerUpdateDeltaToken: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **cm_external_crawler_set_delta_token** | [**\OpenAPI\Client\Model\CMExternalCrawlerSetDeltaToken**](../Model/CMExternalCrawlerSetDeltaToken.md)|  | |
 | **api_version** | **string**|  | [optional] |
 
 ### Return type
@@ -683,6 +924,74 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getFailedDocuments()`
+
+```php
+getFailedDocuments($session_id, $organisation_id, $kb_id, $source_id, $page, $page_size, $api_version): \OpenAPI\Client\Model\CMSource[]
+```
+
+Get source List
+
+Get a list of failed documents for a source.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\CrawlerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$session_id = 'session_id_example'; // string | a valid SimSage Session id.
+$organisation_id = 'organisation_id_example'; // string | the organisation's id (a guid)
+$kb_id = 'kb_id_example'; // string | the knowledge-base's id (a guid)
+$source_id = 'source_id_example'; // string | the source  id (a number)
+$page = 56; // int | the page number for the list
+$page_size = 56; // int | the page size for the list
+$api_version = 'api_version_example'; // string
+
+try {
+    $result = $apiInstance->getFailedDocuments($session_id, $organisation_id, $kb_id, $source_id, $page, $page_size, $api_version);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CrawlerApi->getFailedDocuments: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **session_id** | **string**| a valid SimSage Session id. | |
+| **organisation_id** | **string**| the organisation&#39;s id (a guid) | |
+| **kb_id** | **string**| the knowledge-base&#39;s id (a guid) | |
+| **source_id** | **string**| the source  id (a number) | |
+| **page** | **int**| the page number for the list | |
+| **page_size** | **int**| the page size for the list | |
+| **api_version** | **string**|  | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\CMSource[]**](../Model/CMSource.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `getSourceList()`
 
 ```php
@@ -739,6 +1048,64 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `markFileAsSeen()`
+
+```php
+markFileAsSeen($cm_external_crawler_mark_file_as_seen, $api_version): \OpenAPI\Client\Model\JsonMessage
+```
+
+Mark file as seen
+
+An external crawler marks a file as seen.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\CrawlerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$cm_external_crawler_mark_file_as_seen = new \OpenAPI\Client\Model\CMExternalCrawlerMarkFileAsSeen(); // \OpenAPI\Client\Model\CMExternalCrawlerMarkFileAsSeen
+$api_version = 'api_version_example'; // string
+
+try {
+    $result = $apiInstance->markFileAsSeen($cm_external_crawler_mark_file_as_seen, $api_version);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CrawlerApi->markFileAsSeen: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **cm_external_crawler_mark_file_as_seen** | [**\OpenAPI\Client\Model\CMExternalCrawlerMarkFileAsSeen**](../Model/CMExternalCrawlerMarkFileAsSeen.md)|  | |
+| **api_version** | **string**|  | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\JsonMessage**](../Model/JsonMessage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
@@ -862,6 +1229,115 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `processorSchema()`
+
+```php
+processorSchema(): object
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\CrawlerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+
+try {
+    $result = $apiInstance->processorSchema();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CrawlerApi->processorSchema: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json;charset=UTF-8`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `receiveExternalLogEntry()`
+
+```php
+receiveExternalLogEntry($cm_external_log_entry, $api_version): \OpenAPI\Client\Model\CMSource
+```
+
+External Crawler log-entry
+
+An external crawler sends a log entry to SimSage.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\CrawlerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$cm_external_log_entry = new \OpenAPI\Client\Model\CMExternalLogEntry(); // \OpenAPI\Client\Model\CMExternalLogEntry
+$api_version = 'api_version_example'; // string
+
+try {
+    $result = $apiInstance->receiveExternalLogEntry($cm_external_log_entry, $api_version);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CrawlerApi->receiveExternalLogEntry: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **cm_external_log_entry** | [**\OpenAPI\Client\Model\CMExternalLogEntry**](../Model/CMExternalLogEntry.md)|  | |
+| **api_version** | **string**|  | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\CMSource**](../Model/CMSource.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `resetSourceDelta()`
 
 ```php
@@ -921,6 +1397,57 @@ No authorization required
 
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `sdcSchema()`
+
+```php
+sdcSchema(): object
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\CrawlerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+
+try {
+    $result = $apiInstance->sdcSchema();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CrawlerApi->sdcSchema: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json;charset=UTF-8`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

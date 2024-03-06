@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **document_key** | **str** |  | 
 **comment_level** | **str** |  | 
 **comment** | **str** |  | 
+**is_audit_event** | **bool** |  | 
 
 ## Example
 

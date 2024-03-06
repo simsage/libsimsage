@@ -6,6 +6,7 @@ the password request object
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **email** | **str** | email address of the user wishing to reset their password. | 
+**reset_url** | **str** | the callback url for the password. | 
 
 ## Example
 

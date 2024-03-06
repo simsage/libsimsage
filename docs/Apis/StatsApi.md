@@ -4,17 +4,17 @@ All URIs are relative to *https://test.simsage.ai*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**getIndexOptimzationReport**](StatsApi.md#getIndexOptimzationReport) | **GET** /api/stats/report/{organisationId}/{kbId}/{id} | get an optimization report |
-| [**getIndexOptimzationReports**](StatsApi.md#getIndexOptimzationReports) | **GET** /api/stats/reports/{organisationId}/{kbId} | get optimization report list |
+| [**getIndexOptimizationReport**](StatsApi.md#getIndexOptimizationReport) | **GET** /api/stats/report/{organisationId}/{kbId}/{id} | get an optimization report |
+| [**getIndexOptimizationReports**](StatsApi.md#getIndexOptimizationReports) | **GET** /api/stats/reports/{organisationId}/{kbId} | get optimization report list |
 | [**getStats**](StatsApi.md#getStats) | **GET** /api/stats/stats/{organisationId}/{kbId}/{year}/{month}/{top} | Get usage Statistics |
 | [**simSageStatus**](StatsApi.md#simSageStatus) | **PUT** /api/stats/status/{organisationId} | SimSage status |
-| [**systemLogs**](StatsApi.md#systemLogs) | **GET** /api/stats/system-logs/{organisationId}/{year}/{month}/{day}/{hour}/{hours} | System Logs |
+| [**systemLogs**](StatsApi.md#systemLogs) | **GET** /api/stats/system-logs/{organisationId}/{service}/{numLines} | System Logs |
 | [**version**](StatsApi.md#version) | **GET** /api/stats/version | Version |
 
 
-<a name="getIndexOptimzationReport"></a>
-# **getIndexOptimzationReport**
-> List getIndexOptimzationReport(session-id, organisationId, kbId, id)
+<a name="getIndexOptimizationReport"></a>
+# **getIndexOptimizationReport**
+> List getIndexOptimizationReport(session-id, organisationId, kbId, id)
 
 get an optimization report
 
@@ -42,9 +42,9 @@ No authorization required
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
-<a name="getIndexOptimzationReports"></a>
-# **getIndexOptimzationReports**
-> List getIndexOptimzationReports(session-id, organisationId, kbId)
+<a name="getIndexOptimizationReports"></a>
+# **getIndexOptimizationReports**
+> List getIndexOptimizationReports(session-id, organisationId, kbId)
 
 get optimization report list
 
@@ -134,7 +134,7 @@ No authorization required
 
 <a name="systemLogs"></a>
 # **systemLogs**
-> List systemLogs(organisationId, year, month, day, hour, hours, session-id)
+> List systemLogs(organisationId, service, numLines, session-id)
 
 System Logs
 
@@ -145,11 +145,8 @@ System Logs
 |Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organisationId** | **String**| the organisation (its guid id) | [default to null] |
-| **year** | **Integer**| the year to get the log for | [default to null] |
-| **month** | **Integer**| the month to get the log for | [default to null] |
-| **day** | **Integer**| the day to get the log for | [default to null] |
-| **hour** | **Integer**| the hour to get the log for | [default to null] |
-| **hours** | **Integer**| the number of hours to get the logs for starting at hour | [default to null] |
+| **service** | **String**| the service to get the log for | [default to null] |
+| **numLines** | **Integer**| the maximum number of lines to return if &gt; 0 | [default to null] |
 | **session-id** | **String**| a valid SimSage Session id. | [default to null] |
 
 ### Return type

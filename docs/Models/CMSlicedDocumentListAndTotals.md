@@ -6,6 +6,7 @@
 | **pagedResults** | [**CMPagedResultsCMSlicedDocument**](CMPagedResultsCMSlicedDocument.md) |  | [default to null] |
 | **allDocs** | **Long** |  | [default to null] |
 | **completed** | **Long** |  | [default to null] |
+| **quarantined** | **Long** |  | [default to null] |
 | **sourceMap** | **Map** |  | [default to null] |
 | **userMap** | **Map** |  | [default to null] |
 

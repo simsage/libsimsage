@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **capacity_warnings** | **bool** |  | 
 **index_schedule** | **str** |  | 
 **last_index_optimization_time** | **int** |  | 
+**project_kb** | **bool** |  | 
 
 ## Example
 

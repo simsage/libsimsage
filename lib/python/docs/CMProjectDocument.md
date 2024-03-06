@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **folder_id** | **str** |  | 
 **count** | **int** |  | 
 **confidence** | **int** |  | 
+**display_type** | **str** |  | 
 
 ## Example
 

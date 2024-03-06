@@ -18,6 +18,7 @@ All URIs are relative to https://test.simsage.ai, except if the operation define
 | [**saveGroup()**](AuthApi.md#saveGroup) | **PUT** /api/auth/group | Save Group |
 | [**signIn()**](AuthApi.md#signIn) | **POST** /api/auth/sign-in | Sign In |
 | [**signInAdminUsingJWTMsal()**](AuthApi.md#signInAdminUsingJWTMsal) | **GET** /api/auth/admin/authenticate/msal | JWT MSal Sign In |
+| [**signInAdminUsingSessionId()**](AuthApi.md#signInAdminUsingSessionId) | **GET** /api/auth/admin/authenticate/session-id | session-id Sign-in |
 | [**signInDmsUsingJWTMsal()**](AuthApi.md#signInDmsUsingJWTMsal) | **GET** /api/auth/dms/authenticate/msal/{organisationId} | JWT MSal Sign In |
 | [**signInEvolveUsingJWTMsal()**](AuthApi.md#signInEvolveUsingJWTMsal) | **GET** /api/auth/evolve/authenticate/msal/{organisationId} | JWT MSal Sign In |
 | [**signInSearchUsingJWTMsal()**](AuthApi.md#signInSearchUsingJWTMsal) | **GET** /api/auth/search/authenticate/msal/{organisationId} | JWT MSal Sign In |
@@ -843,6 +844,62 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `signInAdminUsingSessionId()`
+
+```php
+signInAdminUsingSessionId($session_id): \OpenAPI\Client\Model\SignInAdmin
+```
+
+session-id Sign-in
+
+Sign-in a user using an existing session-id.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\AuthApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$session_id = 'session_id_example'; // string | a valid SimSage Session id.
+
+try {
+    $result = $apiInstance->signInAdminUsingSessionId($session_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AuthApi->signInAdminUsingSessionId: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **session_id** | **string**| a valid SimSage Session id. | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\SignInAdmin**](../Model/SignInAdmin.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `signInDmsUsingJWTMsal()`
 
 ```php
@@ -909,7 +966,7 @@ signInEvolveUsingJWTMsal($jwt, $organisation_id): \OpenAPI\Client\Model\SignInDm
 
 JWT MSal Sign In
 
-Sign-in an Evolve user using an Msal JWT.
+Sign-in an Evolve user using an Msal JWT...
 
 ### Example
 

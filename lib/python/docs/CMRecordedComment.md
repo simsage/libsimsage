@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **comment_level** | **str** |  | 
 **comment** | **str** |  | 
 **user** | **str** |  | 
+**is_audit_event** | **bool** |  | 
 
 ## Example
 

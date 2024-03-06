@@ -6,8 +6,6 @@ A SimSage return search-result message for Q&A and semantic-search queries.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **message_type** | **str** |  | 
-**assigned_operator_id** | **str** | A unique id for this operator&#39;s session. | 
-**operator_name** | **str** | the name of the operator for clients | 
 **organisation_id** | **str** | the organisation (its guid id). | 
 **kb_id** | **str** | the knowledge-base id (its guid id) | 
 **text** | **str** | the text sent. | 
@@ -25,6 +23,8 @@ Name | Type | Description | Notes
 **category_list** | [**List[SearchCategory]**](SearchCategory.md) | updated categories (if applicable) with updated counts | 
 **syn_set_list** | [**List[CMSynSet]**](CMSynSet.md) | A list of syn-sets used in the query | 
 **custom_render** | **bool** | Does this source require custom render templates or use ordinary search-results? | 
+**source_id_to_counts** | **Dict[str, int]** | a map of sourceId -&gt; number of documents found inside this source | 
+**document_type_to_counts** | **Dict[str, int]** | a map of document-type -&gt; number of documents found of this type | 
 **saved_search_list** | [**List[CMSavedSearch]**](CMSavedSearch.md) | a list of previous searches if applicable | 
 **query_summarization** | **str** | an optional summarization of the search results | 
 

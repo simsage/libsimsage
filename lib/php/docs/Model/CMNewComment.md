@@ -10,5 +10,6 @@ Name | Type | Description | Notes
 **document_key** | **string** |  |
 **comment_level** | **string** |  |
 **comment** | **string** |  |
+**is_audit_event** | **bool** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

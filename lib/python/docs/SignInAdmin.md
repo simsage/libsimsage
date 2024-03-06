@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **user** | [**User**](User.md) |  | 
 **organisation_id** | **str** |  | 
 **organisation_list** | [**List[Organisation]**](Organisation.md) |  | 
+**shared_secret_salt** | **str** |  | 
 **return_result** | **bool** |  | [optional] 
 
 ## Example
