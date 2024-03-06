@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 **paged_results** | [**CMPagedResultsCMSlicedDocument**](CMPagedResultsCMSlicedDocument.md) |  | 
 **all_docs** | **int** |  | 
 **completed** | **int** |  | 
-**quarantined** | **int** |  | 
 **source_map** | **Dict[str, str]** |  | 
 **user_map** | **Dict[str, str]** |  | 
 

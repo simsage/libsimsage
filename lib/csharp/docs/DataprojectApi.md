@@ -1,6 +1,6 @@
 # Org.OpenAPITools.Api.DataprojectApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://demo.simsage.ai*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
@@ -54,7 +54,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://demo.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMNewComment = new CMNewComment(); // CMNewComment | 
@@ -148,7 +148,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://demo.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMQueueFilter = new CMQueueFilter(); // CMQueueFilter | 
@@ -242,7 +242,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://demo.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMChangeTaskPhase = new CMChangeTaskPhase(); // CMChangeTaskPhase | 
@@ -336,7 +336,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://demo.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMClaimDocument = new CMClaimDocument(); // CMClaimDocument | 
@@ -430,7 +430,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://demo.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
             var taskId = "taskId_example";  // string | the id of the task
@@ -498,8 +498,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not get crawler-status. |  -  |
 | **200** | crawler-status response |  -  |
+| **500** | could not get crawler-status. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -526,7 +526,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://demo.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMDocumentsByToken = new CMDocumentsByToken(); // CMDocumentsByToken | 
@@ -592,8 +592,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not retrieve document list. |  -  |
 | **200** | returns paged list of documents for the given set of query tokens |  -  |
+| **500** | could not retrieve document list. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -620,7 +620,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://demo.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMCommentFilter = new CMCommentFilter(); // CMCommentFilter | 
@@ -714,7 +714,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://demo.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
             var sliceId = "sliceId_example";  // string | the id of the slice
@@ -784,8 +784,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not retrieve redaction info. |  -  |
 | **200** | List of all identified potential Redaction locations for the document |  -  |
+| **500** | could not retrieve redaction info. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -812,7 +812,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://demo.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
             var taskId = "taskId_example";  // string | the id of the task
@@ -908,7 +908,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://demo.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
             var projectId = "projectId_example";  // string | the id of the task
@@ -1004,7 +1004,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://demo.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
             var taskId = "taskId_example";  // string | the id of the task
@@ -1072,8 +1072,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not retrieve project slice. |  -  |
 | **200** | Project slice data |  -  |
+| **500** | could not retrieve project slice. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1100,7 +1100,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://demo.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
             var taskId = "taskId_example";  // string | the id of the task
@@ -1196,7 +1196,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://demo.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
             var projectId = "projectId_example";  // string | the id of the task
@@ -1292,7 +1292,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://demo.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMNextDocument = new CMNextDocument(); // CMNextDocument | 
@@ -1386,7 +1386,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://demo.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
             var kbId = "kbId_example";  // string | the knowledge-base (its guid id)
@@ -1483,7 +1483,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://demo.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
@@ -1575,7 +1575,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://demo.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMReassignSliceDocument = new CMReassignSliceDocument(); // CMReassignSliceDocument | 
@@ -1666,7 +1666,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://demo.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMRedactionDetails = new CMRedactionDetails(); // CMRedactionDetails | 
@@ -1758,7 +1758,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://demo.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMRemoveSliceDocument = new CMRemoveSliceDocument(); // CMRemoveSliceDocument | 
@@ -1849,7 +1849,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://demo.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var organisationId = "organisationId_example";  // string | a valid SimSage Organisation id.
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
@@ -1943,7 +1943,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://demo.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMProjectDefinition = new CMProjectDefinition(); // CMProjectDefinition | 
@@ -2037,7 +2037,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://demo.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMSetSliceDefinitions = new CMSetSliceDefinitions(); // CMSetSliceDefinitions | 
@@ -2131,7 +2131,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://demo.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMSlicedDocumentRequest = new CMSlicedDocumentRequest(); // CMSlicedDocumentRequest | 
@@ -2223,7 +2223,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://demo.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMStartProject = new CMStartProject(); // CMStartProject | 
@@ -2314,7 +2314,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://demo.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMUpdateDocumentStatus = new CMUpdateDocumentStatus(); // CMUpdateDocumentStatus | 
@@ -2408,7 +2408,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://demo.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMUpdateRedactions = new CMUpdateRedactions(); // CMUpdateRedactions | 

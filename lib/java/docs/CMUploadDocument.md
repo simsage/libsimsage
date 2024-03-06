@@ -27,12 +27,12 @@ An external document representation object.
 |**created** | **Long** | a unix-timestamp of the creation date-time of this document |  |
 |**lastModified** | **Long** | a unix-timestamp of the last-modified date-time of this document |  |
 |**metadata** | **Map&lt;String, String&gt;** | a series of name values for other metadata values found in the container of this document |  |
-|**categories** | [**List&lt;MDMetadataMapping&gt;**](MDMetadataMapping.md) | A list of special SimSage metadata categories for matching this document with.  Can be empty. |  |
+|**categories** | [**List&lt;MDCategory&gt;**](MDCategory.md) | A list of special SimSage metadata categories for matching this document with.  Can be empty. |  |
 |**size** | **Long** | The size of this document (the original) in bytes |  |
 |**template** | **String** | A render template for this document.  This is only appropriate for Database and RESTful type sources. |  |
 |**encrypted** | **Boolean** | Do we need to add transport encryption |  |
 |**seed** | **Integer** | The seed used if encrypted |  |
-|**runId** | **Long** | the id (a unix timestamp) of the current &#39;go through the source once&#39;.  This is a unique per-run identifier. |  |
+|**runId** | **String** | the id (a guid) of the current &#39;go through the source once&#39;.  This is a unique per-run identifier. |  |
 
 
 

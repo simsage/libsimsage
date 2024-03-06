@@ -1,6 +1,6 @@
 # LanguageApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://demo.simsage.ai*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -20,6 +20,7 @@ All URIs are relative to *https://test.simsage.ai*
 | [**saveSemantic**](LanguageApi.md#saveSemantic) | **PUT** /api/language/save-semantic/{organisationId}/{kbId} | Save Semantic |
 | [**saveSynSet**](LanguageApi.md#saveSynSet) | **PUT** /api/language/save-syn-set/{organisationId}/{kbId} | Save SynSet |
 | [**saveSynonym**](LanguageApi.md#saveSynonym) | **PUT** /api/language/save-synonym/{organisationId}/{kbId} | Save Synonym |
+| [**truncateSlowIndexes**](LanguageApi.md#truncateSlowIndexes) | **GET** /api/language/truncate-slow-indexes/{organisationId}/{kbId} | Truncate slow Indexes |
 | [**tuneLanguageGraph**](LanguageApi.md#tuneLanguageGraph) | **GET** /api/language/tune-graph/{organisationId}/{kbId} | Tune Graph |
 | [**version2**](LanguageApi.md#version2) | **GET** /api/language/version | Version |
 
@@ -44,7 +45,7 @@ import org.openapitools.client.api.LanguageApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     LanguageApi apiInstance = new LanguageApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -113,7 +114,7 @@ import org.openapitools.client.api.LanguageApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     LanguageApi apiInstance = new LanguageApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -182,7 +183,7 @@ import org.openapitools.client.api.LanguageApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     LanguageApi apiInstance = new LanguageApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -253,7 +254,7 @@ import org.openapitools.client.api.LanguageApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     LanguageApi apiInstance = new LanguageApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -326,7 +327,7 @@ import org.openapitools.client.api.LanguageApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     LanguageApi apiInstance = new LanguageApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -397,7 +398,7 @@ import org.openapitools.client.api.LanguageApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     LanguageApi apiInstance = new LanguageApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -468,7 +469,7 @@ import org.openapitools.client.api.LanguageApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     LanguageApi apiInstance = new LanguageApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -535,7 +536,7 @@ import org.openapitools.client.api.LanguageApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     LanguageApi apiInstance = new LanguageApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -585,8 +586,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | fail response |  -  |
 | **200** | response |  -  |
+| **500** | fail response |  -  |
 
 <a id="getPaginated"></a>
 # **getPaginated**
@@ -608,7 +609,7 @@ import org.openapitools.client.api.LanguageApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     LanguageApi apiInstance = new LanguageApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -652,8 +653,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | response |  -  |
 | **500** | fail response |  -  |
+| **200** | response |  -  |
 
 <a id="getSemanticsPaginated"></a>
 # **getSemanticsPaginated**
@@ -675,7 +676,7 @@ import org.openapitools.client.api.LanguageApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     LanguageApi apiInstance = new LanguageApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -719,8 +720,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | fail response |  -  |
 | **200** | response |  -  |
+| **500** | fail response |  -  |
 
 <a id="optimizeIndexes"></a>
 # **optimizeIndexes**
@@ -742,7 +743,7 @@ import org.openapitools.client.api.LanguageApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     LanguageApi apiInstance = new LanguageApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -809,7 +810,7 @@ import org.openapitools.client.api.LanguageApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     LanguageApi apiInstance = new LanguageApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -884,7 +885,7 @@ import org.openapitools.client.api.LanguageApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     LanguageApi apiInstance = new LanguageApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -951,7 +952,7 @@ import org.openapitools.client.api.LanguageApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     LanguageApi apiInstance = new LanguageApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -1022,7 +1023,7 @@ import org.openapitools.client.api.LanguageApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     LanguageApi apiInstance = new LanguageApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -1093,7 +1094,7 @@ import org.openapitools.client.api.LanguageApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     LanguageApi apiInstance = new LanguageApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -1144,6 +1145,75 @@ No authorization required
 | **500** | fail response |  -  |
 | **200** | OK response |  -  |
 
+<a id="truncateSlowIndexes"></a>
+# **truncateSlowIndexes**
+> JsonMessage truncateSlowIndexes(organisationId, kbId, sessionId, apIVersion)
+
+Truncate slow Indexes
+
+Force slow-index truncation for a the given knowledge-base, now.
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.LanguageApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://demo.simsage.ai");
+
+    LanguageApi apiInstance = new LanguageApi(defaultClient);
+    String organisationId = "organisationId_example"; // String | the organisation's id (a guid)
+    String kbId = "kbId_example"; // String | the knowledge-bases' id (a guid)
+    String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
+    String apIVersion = "1"; // String | 
+    try {
+      JsonMessage result = apiInstance.truncateSlowIndexes(organisationId, kbId, sessionId, apIVersion);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling LanguageApi#truncateSlowIndexes");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **organisationId** | **String**| the organisation&#39;s id (a guid) | |
+| **kbId** | **String**| the knowledge-bases&#39; id (a guid) | |
+| **sessionId** | **String**| a valid SimSage Session id. | |
+| **apIVersion** | **String**|  | [optional] [enum: 1] |
+
+### Return type
+
+[**JsonMessage**](JsonMessage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **500** | fail response |  -  |
+| **200** | OK response |  -  |
+
 <a id="tuneLanguageGraph"></a>
 # **tuneLanguageGraph**
 > JsonMessage tuneLanguageGraph(organisationId, kbId, sessionId, apIVersion)
@@ -1164,7 +1234,7 @@ import org.openapitools.client.api.LanguageApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     LanguageApi apiInstance = new LanguageApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -1233,7 +1303,7 @@ import org.openapitools.client.api.LanguageApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     LanguageApi apiInstance = new LanguageApi(defaultClient);
     try {
@@ -1269,6 +1339,6 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | get the version response |  -  |
 | **500** | could not get version. |  -  |
+| **200** | get the version response |  -  |
 

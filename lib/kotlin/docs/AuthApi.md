@@ -1,6 +1,6 @@
 # AuthApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://demo.simsage.ai*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,7 +18,6 @@ Method | HTTP request | Description
 [**saveGroup**](AuthApi.md#saveGroup) | **PUT** /api/auth/group | Save Group
 [**signIn**](AuthApi.md#signIn) | **POST** /api/auth/sign-in | Sign In
 [**signInAdminUsingJWTMsal**](AuthApi.md#signInAdminUsingJWTMsal) | **GET** /api/auth/admin/authenticate/msal | JWT MSal Sign In
-[**signInAdminUsingSessionId**](AuthApi.md#signInAdminUsingSessionId) | **GET** /api/auth/admin/authenticate/session-id | session-id Sign-in
 [**signInDmsUsingJWTMsal**](AuthApi.md#signInDmsUsingJWTMsal) | **GET** /api/auth/dms/authenticate/msal/{organisationId} | JWT MSal Sign In
 [**signInEvolveUsingJWTMsal**](AuthApi.md#signInEvolveUsingJWTMsal) | **GET** /api/auth/evolve/authenticate/msal/{organisationId} | JWT MSal Sign In
 [**signInSearchUsingJWTMsal**](AuthApi.md#signInSearchUsingJWTMsal) | **GET** /api/auth/search/authenticate/msal/{organisationId} | JWT MSal Sign In
@@ -704,53 +703,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **jwt** | **kotlin.String**| a valid JWT token. |
-
-### Return type
-
-[**SignInAdmin**](SignInAdmin.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a id="signInAdminUsingSessionId"></a>
-# **signInAdminUsingSessionId**
-> SignInAdmin signInAdminUsingSessionId(sessionId)
-
-session-id Sign-in
-
-Sign-in a user using an existing session-id.
-
-### Example
-```kotlin
-// Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
-
-val apiInstance = AuthApi()
-val sessionId : kotlin.String = sessionId_example // kotlin.String | a valid SimSage Session id.
-try {
-    val result : SignInAdmin = apiInstance.signInAdminUsingSessionId(sessionId)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling AuthApi#signInAdminUsingSessionId")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling AuthApi#signInAdminUsingSessionId")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **sessionId** | **kotlin.String**| a valid SimSage Session id. |
 
 ### Return type
 

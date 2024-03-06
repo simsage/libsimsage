@@ -28,6 +28,8 @@ import com.squareup.moshi.JsonClass
  * A SimSage return search-result message for Q&A and semantic-search queries.
  *
  * @param messageType 
+ * @param assignedOperatorId A unique id for this operator's session.
+ * @param operatorName the name of the operator for clients
  * @param organisationId the organisation (its guid id).
  * @param kbId the knowledge-base id (its guid id)
  * @param text the text sent.
@@ -45,8 +47,6 @@ import com.squareup.moshi.JsonClass
  * @param categoryList updated categories (if applicable) with updated counts
  * @param synSetList A list of syn-sets used in the query
  * @param customRender Does this source require custom render templates or use ordinary search-results?
- * @param sourceIdToCounts a map of sourceId -> number of documents found inside this source
- * @param documentTypeToCounts a map of document-type -> number of documents found of this type
  * @param savedSearchList a list of previous searches if applicable
  * @param querySummarization an optional summarization of the search results
  */
@@ -56,6 +56,14 @@ data class CMClientQueryResult (
 
     @Json(name = "messageType")
     val messageType: kotlin.String,
+
+    /* A unique id for this operator's session. */
+    @Json(name = "assignedOperatorId")
+    val assignedOperatorId: kotlin.String,
+
+    /* the name of the operator for clients */
+    @Json(name = "operatorName")
+    val operatorName: kotlin.String,
 
     /* the organisation (its guid id). */
     @Json(name = "organisationId")
@@ -124,14 +132,6 @@ data class CMClientQueryResult (
     /* Does this source require custom render templates or use ordinary search-results? */
     @Json(name = "customRender")
     val customRender: kotlin.Boolean,
-
-    /* a map of sourceId -> number of documents found inside this source */
-    @Json(name = "sourceIdToCounts")
-    val sourceIdToCounts: kotlin.collections.Map<kotlin.String, kotlin.Int>,
-
-    /* a map of document-type -> number of documents found of this type */
-    @Json(name = "documentTypeToCounts")
-    val documentTypeToCounts: kotlin.collections.Map<kotlin.String, kotlin.Int>,
 
     /* a list of previous searches if applicable */
     @Json(name = "savedSearchList")

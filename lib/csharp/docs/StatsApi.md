@@ -1,6 +1,6 @@
 # Org.OpenAPITools.Api.StatsApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://demo.simsage.ai*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
@@ -8,7 +8,7 @@ All URIs are relative to *https://test.simsage.ai*
 | [**GetIndexOptimizationReports**](StatsApi.md#getindexoptimizationreports) | **GET** /api/stats/reports/{organisationId}/{kbId} | get optimization report list |
 | [**GetStats**](StatsApi.md#getstats) | **GET** /api/stats/stats/{organisationId}/{kbId}/{year}/{month}/{top} | Get usage Statistics |
 | [**SimSageStatus**](StatsApi.md#simsagestatus) | **PUT** /api/stats/status/{organisationId} | SimSage status |
-| [**SystemLogs**](StatsApi.md#systemlogs) | **GET** /api/stats/system-logs/{organisationId}/{service}/{numLines} | System Logs |
+| [**SystemLogs**](StatsApi.md#systemlogs) | **GET** /api/stats/system-logs/{organisationId}/{year}/{month}/{day}/{hour}/{hours} | System Logs |
 | [**Version**](StatsApi.md#version) | **GET** /api/stats/version | Version |
 
 <a id="getindexoptimizationreport"></a>
@@ -34,7 +34,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://demo.simsage.ai";
             var apiInstance = new StatsApi(config);
             var sessionId = "sessionId_example";  // string | a valid session-guid id.
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
@@ -104,8 +104,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | response |  -  |
 | **500** | failed |  -  |
+| **200** | response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -132,7 +132,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://demo.simsage.ai";
             var apiInstance = new StatsApi(config);
             var sessionId = "sessionId_example";  // string | a valid session-guid id.
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
@@ -200,8 +200,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | failed |  -  |
 | **200** | response |  -  |
+| **500** | failed |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -228,7 +228,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://demo.simsage.ai";
             var apiInstance = new StatsApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
@@ -304,8 +304,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | failed |  -  |
 | **200** | response |  -  |
+| **500** | failed |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -332,7 +332,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://demo.simsage.ai";
             var apiInstance = new StatsApi(config);
             var sessionId = "sessionId_example";  // string | a valid session-guid id.
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
@@ -405,7 +405,7 @@ No authorization required
 
 <a id="systemlogs"></a>
 # **SystemLogs**
-> List&lt;CMLoggerEntry&gt; SystemLogs (string organisationId, string service, int numLines, string sessionId)
+> List&lt;CMLoggerEntry&gt; SystemLogs (string organisationId, int year, int month, int day, int hour, int hours, string sessionId)
 
 System Logs
 
@@ -426,17 +426,20 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://demo.simsage.ai";
             var apiInstance = new StatsApi(config);
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
-            var service = "service_example";  // string | the service to get the log for
-            var numLines = 56;  // int | the maximum number of lines to return if > 0
+            var year = 56;  // int | the year to get the log for
+            var month = 56;  // int | the month to get the log for
+            var day = 56;  // int | the day to get the log for
+            var hour = 56;  // int | the hour to get the log for
+            var hours = 56;  // int | the number of hours to get the logs for starting at hour
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
 
             try
             {
                 // System Logs
-                List<CMLoggerEntry> result = apiInstance.SystemLogs(organisationId, service, numLines, sessionId);
+                List<CMLoggerEntry> result = apiInstance.SystemLogs(organisationId, year, month, day, hour, hours, sessionId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -457,7 +460,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // System Logs
-    ApiResponse<List<CMLoggerEntry>> response = apiInstance.SystemLogsWithHttpInfo(organisationId, service, numLines, sessionId);
+    ApiResponse<List<CMLoggerEntry>> response = apiInstance.SystemLogsWithHttpInfo(organisationId, year, month, day, hour, hours, sessionId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -475,8 +478,11 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **organisationId** | **string** | the organisation (its guid id) |  |
-| **service** | **string** | the service to get the log for |  |
-| **numLines** | **int** | the maximum number of lines to return if &gt; 0 |  |
+| **year** | **int** | the year to get the log for |  |
+| **month** | **int** | the month to get the log for |  |
+| **day** | **int** | the day to get the log for |  |
+| **hour** | **int** | the hour to get the log for |  |
+| **hours** | **int** | the number of hours to get the logs for starting at hour |  |
 | **sessionId** | **string** | a valid SimSage Session id. |  |
 
 ### Return type
@@ -524,7 +530,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://demo.simsage.ai";
             var apiInstance = new StatsApi(config);
 
             try
@@ -583,8 +589,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | get the version response |  -  |
 | **500** | could not get version. |  -  |
+| **200** | get the version response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

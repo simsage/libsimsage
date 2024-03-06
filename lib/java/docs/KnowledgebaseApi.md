@@ -1,6 +1,6 @@
 # KnowledgebaseApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://demo.simsage.ai*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -34,7 +34,7 @@ import org.openapitools.client.api.KnowledgebaseApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     KnowledgebaseApi apiInstance = new KnowledgebaseApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -78,8 +78,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | export knowledge-base OK response |  -  |
 | **500** | could not get search info. |  -  |
+| **200** | export knowledge-base OK response |  -  |
 
 <a id="getKnowledgeBase"></a>
 # **getKnowledgeBase**
@@ -101,7 +101,7 @@ import org.openapitools.client.api.KnowledgebaseApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     KnowledgebaseApi apiInstance = new KnowledgebaseApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -170,7 +170,7 @@ import org.openapitools.client.api.KnowledgebaseApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     KnowledgebaseApi apiInstance = new KnowledgebaseApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -235,7 +235,7 @@ import org.openapitools.client.api.KnowledgebaseApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     KnowledgebaseApi apiInstance = new KnowledgebaseApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -279,8 +279,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | get search info response |  -  |
 | **500** | could not get search info. |  -  |
+| **200** | get search info response |  -  |
 
 <a id="getSearchInfo2"></a>
 # **getSearchInfo2**
@@ -302,7 +302,7 @@ import org.openapitools.client.api.KnowledgebaseApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     KnowledgebaseApi apiInstance = new KnowledgebaseApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -344,8 +344,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | get search info response |  -  |
 | **500** | could not get search info. |  -  |
+| **200** | get search info response |  -  |
 
 <a id="removeKnowledgeBase"></a>
 # **removeKnowledgeBase**
@@ -367,7 +367,7 @@ import org.openapitools.client.api.KnowledgebaseApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     KnowledgebaseApi apiInstance = new KnowledgebaseApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -413,8 +413,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not delete knowledge-base. |  -  |
 | **200** | delete knowledge-base OK response |  -  |
+| **500** | could not delete knowledge-base. |  -  |
 
 <a id="updateKnowledgeBase"></a>
 # **updateKnowledgeBase**
@@ -436,7 +436,7 @@ import org.openapitools.client.api.KnowledgebaseApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     KnowledgebaseApi apiInstance = new KnowledgebaseApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -480,8 +480,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | save knowledge-base response |  -  |
 | **500** | could not save knowledge-base. |  -  |
+| **200** | save knowledge-base response |  -  |
 
 <a id="version3"></a>
 # **version3**
@@ -503,7 +503,7 @@ import org.openapitools.client.api.KnowledgebaseApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     KnowledgebaseApi apiInstance = new KnowledgebaseApi(defaultClient);
     try {
@@ -539,6 +539,6 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | get the version response |  -  |
 | **500** | could not get version. |  -  |
+| **200** | get the version response |  -  |
 

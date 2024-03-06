@@ -1,6 +1,6 @@
 # OpenAPI\Client\LanguageApi
 
-All URIs are relative to https://test.simsage.ai, except if the operation defines another base path.
+All URIs are relative to https://demo.simsage.ai, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -20,6 +20,7 @@ All URIs are relative to https://test.simsage.ai, except if the operation define
 | [**saveSemantic()**](LanguageApi.md#saveSemantic) | **PUT** /api/language/save-semantic/{organisationId}/{kbId} | Save Semantic |
 | [**saveSynSet()**](LanguageApi.md#saveSynSet) | **PUT** /api/language/save-syn-set/{organisationId}/{kbId} | Save SynSet |
 | [**saveSynonym()**](LanguageApi.md#saveSynonym) | **PUT** /api/language/save-synonym/{organisationId}/{kbId} | Save Synonym |
+| [**truncateSlowIndexes()**](LanguageApi.md#truncateSlowIndexes) | **GET** /api/language/truncate-slow-indexes/{organisationId}/{kbId} | Truncate slow Indexes |
 | [**tuneLanguageGraph()**](LanguageApi.md#tuneLanguageGraph) | **GET** /api/language/tune-graph/{organisationId}/{kbId} | Tune Graph |
 | [**version2()**](LanguageApi.md#version2) | **GET** /api/language/version | Version |
 
@@ -1026,6 +1027,68 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `truncateSlowIndexes()`
+
+```php
+truncateSlowIndexes($organisation_id, $kb_id, $session_id, $api_version): \OpenAPI\Client\Model\JsonMessage
+```
+
+Truncate slow Indexes
+
+Force slow-index truncation for a the given knowledge-base, now.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\LanguageApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$organisation_id = 'organisation_id_example'; // string | the organisation's id (a guid)
+$kb_id = 'kb_id_example'; // string | the knowledge-bases' id (a guid)
+$session_id = 'session_id_example'; // string | a valid SimSage Session id.
+$api_version = 'api_version_example'; // string
+
+try {
+    $result = $apiInstance->truncateSlowIndexes($organisation_id, $kb_id, $session_id, $api_version);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling LanguageApi->truncateSlowIndexes: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **organisation_id** | **string**| the organisation&#39;s id (a guid) | |
+| **kb_id** | **string**| the knowledge-bases&#39; id (a guid) | |
+| **session_id** | **string**| a valid SimSage Session id. | |
+| **api_version** | **string**|  | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\JsonMessage**](../Model/JsonMessage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

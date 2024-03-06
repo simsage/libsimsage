@@ -24,9 +24,14 @@ import com.squareup.moshi.JsonClass
  * Search categories / metadata searching
  *
  * @param scType 
+ * @param categoryType 
+ * @param order 
+ * @param sortDefault 
+ * @param sortAscText 
+ * @param sortDescText 
  * @param metadata 
  * @param displayName 
- * @param dataType 
+ * @param sort 
  * @param minValue 
  * @param maxValue 
  * @param items 
@@ -38,14 +43,29 @@ data class SearchCategory (
     @Json(name = "scType")
     val scType: SearchCategory.ScType,
 
+    @Json(name = "categoryType")
+    val categoryType: kotlin.String,
+
+    @Json(name = "order")
+    val order: kotlin.Int,
+
+    @Json(name = "sortDefault")
+    val sortDefault: kotlin.String,
+
+    @Json(name = "sortAscText")
+    val sortAscText: kotlin.String,
+
+    @Json(name = "sortDescText")
+    val sortDescText: kotlin.String,
+
     @Json(name = "metadata")
     val metadata: kotlin.String,
 
     @Json(name = "displayName")
     val displayName: kotlin.String,
 
-    @Json(name = "dataType")
-    val dataType: kotlin.String,
+    @Json(name = "sort")
+    val sort: kotlin.Boolean,
 
     @Json(name = "minValue")
     val minValue: kotlin.Long,

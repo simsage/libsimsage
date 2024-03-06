@@ -14,8 +14,6 @@ apis/SemanticApi.ts
 apis/StatsApi.ts
 apis/index.ts
 index.ts
-models/Asset.ts
-models/AssetACL.ts
 models/Backup.ts
 models/CMAddFolder.ts
 models/CMAddSourceFolder.ts
@@ -48,18 +46,17 @@ models/CMDocumentQuestionAndAnswer.ts
 models/CMDocumentRelationship.ts
 models/CMDocumentSubscription.ts
 models/CMDocumentTypeFrequency.ts
+models/CMDocumentUnChanged.ts
 models/CMDocumentVersion.ts
 models/CMDocumentsByToken.ts
 models/CMExportRedactedDocument.ts
 models/CMExternalCrawler.ts
 models/CMExternalCrawlerDeleteFolder.ts
 models/CMExternalCrawlerDeleteUrl.ts
-models/CMExternalCrawlerMarkFileAsSeen.ts
 models/CMExternalCrawlerRenameFolder.ts
 models/CMExternalCrawlerSetDeltaToken.ts
 models/CMExternalCrawlerStart.ts
 models/CMExternalCrawlerStop.ts
-models/CMExternalLogEntry.ts
 models/CMFailedSourceDocument.ts
 models/CMFilter.ts
 models/CMGdprSearchDetails.ts
@@ -181,7 +178,7 @@ models/Identifier.ts
 models/JsonMessage.ts
 models/KnowledgeBase.ts
 models/LocatedRedaction.ts
-models/MDMetadataMapping.ts
+models/MDCategory.ts
 models/NameCounterLevel.ts
 models/OperatorKnowledgeBase.ts
 models/OptimizeIndexesGetReportCmd.ts

@@ -1,6 +1,6 @@
 # CrawlerApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://demo.simsage.ai*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -8,6 +8,7 @@ All URIs are relative to *https://test.simsage.ai*
 | [**crawlerDeleteUrl**](CrawlerApi.md#crawlerDeleteUrl) | **POST** /api/crawler/external/crawler/delete-url | Delete document |
 | [**crawlerExternalDocumentDelete**](CrawlerApi.md#crawlerExternalDocumentDelete) | **PUT** /api/crawler/external/document/delete | Remove an External Document |
 | [**crawlerExternalDocumentFailed**](CrawlerApi.md#crawlerExternalDocumentFailed) | **POST** /api/crawler/external/document/recordfailure | Upload External Document |
+| [**crawlerExternalDocumentUnChanged**](CrawlerApi.md#crawlerExternalDocumentUnChanged) | **POST** /api/crawler/external/document/un-changed | Mark External Document Unchanged |
 | [**crawlerExternalDocumentUpload**](CrawlerApi.md#crawlerExternalDocumentUpload) | **POST** /api/crawler/external/document/upload | Upload External Document |
 | [**crawlerExternalImageUpload**](CrawlerApi.md#crawlerExternalImageUpload) | **POST** /api/crawler/external/document/upload/image | Upload External Image |
 | [**crawlerRenameFolder**](CrawlerApi.md#crawlerRenameFolder) | **POST** /api/crawler/external/crawler/rename-folder | Rename document folder |
@@ -21,13 +22,9 @@ All URIs are relative to *https://test.simsage.ai*
 | [**getCrawler**](CrawlerApi.md#getCrawler) | **GET** /api/crawler/crawler/{organisationId}/{kbId}/{sourceId} | Get source |
 | [**getFailedDocuments**](CrawlerApi.md#getFailedDocuments) | **GET** /api/crawler/faileddocs/{organisationId}/{kbId}/{sourceId}/{page}/{pageSize} | Get source List |
 | [**getSourceList**](CrawlerApi.md#getSourceList) | **GET** /api/crawler/crawlers/{organisationId}/{kbId} | Get source List |
-| [**markFileAsSeen**](CrawlerApi.md#markFileAsSeen) | **POST** /api/crawler/external/crawler/mark-file-as-seen | Mark file as seen |
 | [**oidcCode**](CrawlerApi.md#oidcCode) | **GET** /api/crawler/dropbox-oidc-code/{oidcKey} | OIDC code receiver |
 | [**processAllFiles**](CrawlerApi.md#processAllFiles) | **POST** /api/crawler/process-all-files | Process all files of crawler/source |
-| [**processorSchema**](CrawlerApi.md#processorSchema) | **GET** /api/crawler/processor_schema |  |
-| [**receiveExternalLogEntry**](CrawlerApi.md#receiveExternalLogEntry) | **POST** /api/crawler/external/crawler/log | External Crawler log-entry |
 | [**resetSourceDelta**](CrawlerApi.md#resetSourceDelta) | **POST** /api/crawler/crawler/reset-delta/{organisationId}/{kbId}/{sourceId} | Reset Source delta-token |
-| [**sdcSchema**](CrawlerApi.md#sdcSchema) | **GET** /api/crawler/sdc_schema |  |
 | [**startCrawler**](CrawlerApi.md#startCrawler) | **POST** /api/crawler/start | Start crawler |
 | [**testCrawler**](CrawlerApi.md#testCrawler) | **GET** /api/crawler/crawler/test/{organisationId}/{kbId}/{sourceId} | Test Crawler |
 | [**updateCrawler**](CrawlerApi.md#updateCrawler) | **POST** /api/crawler/crawler | Update Source |
@@ -131,6 +128,34 @@ Upload External Document
 |Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **CMFailedSourceDocument** | [**CMFailedSourceDocument**](../Models/CMFailedSourceDocument.md)|  | |
+| **API-Version** | **String**|  | [optional] [default to null] [enum: 1] |
+
+### Return type
+
+[**JsonMessage**](../Models/JsonMessage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+<a name="crawlerExternalDocumentUnChanged"></a>
+# **crawlerExternalDocumentUnChanged**
+> JsonMessage crawlerExternalDocumentUnChanged(CMDocumentUnChanged, API-Version)
+
+Mark External Document Unchanged
+
+    An external crawler document marks a document as not having changed.
+
+### Parameters
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **CMDocumentUnChanged** | [**CMDocumentUnChanged**](../Models/CMDocumentUnChanged.md)|  | |
 | **API-Version** | **String**|  | [optional] [default to null] [enum: 1] |
 
 ### Return type
@@ -527,34 +552,6 @@ No authorization required
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
-<a name="markFileAsSeen"></a>
-# **markFileAsSeen**
-> JsonMessage markFileAsSeen(CMExternalCrawlerMarkFileAsSeen, API-Version)
-
-Mark file as seen
-
-    An external crawler marks a file as seen.
-
-### Parameters
-
-|Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **CMExternalCrawlerMarkFileAsSeen** | [**CMExternalCrawlerMarkFileAsSeen**](../Models/CMExternalCrawlerMarkFileAsSeen.md)|  | |
-| **API-Version** | **String**|  | [optional] [default to null] [enum: 1] |
-
-### Return type
-
-[**JsonMessage**](../Models/JsonMessage.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
 <a name="oidcCode"></a>
 # **oidcCode**
 > oidcCode(oidcKey, allRequestParams)
@@ -612,56 +609,6 @@ No authorization required
 - **Content-Type**: application/json
 - **Accept**: application/json
 
-<a name="processorSchema"></a>
-# **processorSchema**
-> Object processorSchema()
-
-
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-**Object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json;charset=UTF-8
-
-<a name="receiveExternalLogEntry"></a>
-# **receiveExternalLogEntry**
-> CMSource receiveExternalLogEntry(CMExternalLogEntry, API-Version)
-
-External Crawler log-entry
-
-    An external crawler sends a log entry to SimSage.
-
-### Parameters
-
-|Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **CMExternalLogEntry** | [**CMExternalLogEntry**](../Models/CMExternalLogEntry.md)|  | |
-| **API-Version** | **String**|  | [optional] [default to null] [enum: 1] |
-
-### Return type
-
-[**CMSource**](../Models/CMSource.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
 <a name="resetSourceDelta"></a>
 # **resetSourceDelta**
 > CMSource resetSourceDelta(session-id, organisationId, kbId, sourceId, API-Version)
@@ -692,28 +639,6 @@ No authorization required
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
-
-<a name="sdcSchema"></a>
-# **sdcSchema**
-> Object sdcSchema()
-
-
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-**Object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json;charset=UTF-8
 
 <a name="startCrawler"></a>
 # **startCrawler**

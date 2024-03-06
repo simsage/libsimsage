@@ -1,6 +1,6 @@
 # \StatsApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://demo.simsage.ai*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**get_index_optimization_reports**](StatsApi.md#get_index_optimization_reports) | **GET** /api/stats/reports/{organisationId}/{kbId} | get optimization report list
 [**get_stats**](StatsApi.md#get_stats) | **GET** /api/stats/stats/{organisationId}/{kbId}/{year}/{month}/{top} | Get usage Statistics
 [**sim_sage_status**](StatsApi.md#sim_sage_status) | **PUT** /api/stats/status/{organisationId} | SimSage status
-[**system_logs**](StatsApi.md#system_logs) | **GET** /api/stats/system-logs/{organisationId}/{service}/{numLines} | System Logs
+[**system_logs**](StatsApi.md#system_logs) | **GET** /api/stats/system-logs/{organisationId}/{year}/{month}/{day}/{hour}/{hours} | System Logs
 [**version**](StatsApi.md#version) | **GET** /api/stats/version | Version
 
 
@@ -147,7 +147,7 @@ No authorization required
 
 ## system_logs
 
-> Vec<crate::models::CmLoggerEntry> system_logs(organisation_id, service, num_lines, session_id)
+> Vec<crate::models::CmLoggerEntry> system_logs(organisation_id, year, month, day, hour, hours, session_id)
 System Logs
 
 return SimSage System-logs
@@ -158,8 +158,11 @@ return SimSage System-logs
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **organisation_id** | **String** | the organisation (its guid id) | [required] |
-**service** | **String** | the service to get the log for | [required] |
-**num_lines** | **i32** | the maximum number of lines to return if > 0 | [required] |
+**year** | **i32** | the year to get the log for | [required] |
+**month** | **i32** | the month to get the log for | [required] |
+**day** | **i32** | the day to get the log for | [required] |
+**hour** | **i32** | the hour to get the log for | [required] |
+**hours** | **i32** | the number of hours to get the logs for starting at hour | [required] |
 **session_id** | **String** | a valid SimSage Session id. | [required] |
 
 ### Return type

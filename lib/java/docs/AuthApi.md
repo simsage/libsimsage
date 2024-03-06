@@ -1,6 +1,6 @@
 # AuthApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://demo.simsage.ai*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -18,7 +18,6 @@ All URIs are relative to *https://test.simsage.ai*
 | [**saveGroup**](AuthApi.md#saveGroup) | **PUT** /api/auth/group | Save Group |
 | [**signIn**](AuthApi.md#signIn) | **POST** /api/auth/sign-in | Sign In |
 | [**signInAdminUsingJWTMsal**](AuthApi.md#signInAdminUsingJWTMsal) | **GET** /api/auth/admin/authenticate/msal | JWT MSal Sign In |
-| [**signInAdminUsingSessionId**](AuthApi.md#signInAdminUsingSessionId) | **GET** /api/auth/admin/authenticate/session-id | session-id Sign-in |
 | [**signInDmsUsingJWTMsal**](AuthApi.md#signInDmsUsingJWTMsal) | **GET** /api/auth/dms/authenticate/msal/{organisationId} | JWT MSal Sign In |
 | [**signInEvolveUsingJWTMsal**](AuthApi.md#signInEvolveUsingJWTMsal) | **GET** /api/auth/evolve/authenticate/msal/{organisationId} | JWT MSal Sign In |
 | [**signInSearchUsingJWTMsal**](AuthApi.md#signInSearchUsingJWTMsal) | **GET** /api/auth/search/authenticate/msal/{organisationId} | JWT MSal Sign In |
@@ -48,7 +47,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -115,7 +114,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation's id (a guid)
@@ -180,7 +179,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the main organisation (its guid id) to get users for
@@ -222,8 +221,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | get a list of groups |  -  |
 | **500** | could not get group list |  -  |
+| **200** | get a list of groups |  -  |
 
 <a id="getOTT"></a>
 # **getOTT**
@@ -245,7 +244,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -287,8 +286,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | get the one-time token as a string. |  -  |
 | **500** | could not create a one-time token. |  -  |
+| **200** | get the one-time token as a string. |  -  |
 
 <a id="getUserOrganisationList"></a>
 # **getUserOrganisationList**
@@ -310,7 +309,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     String filter = "filter_example"; // String | a text filter for partial string matching organisations
@@ -352,8 +351,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | get a list of organisations |  -  |
 | **500** | could not get organisation list |  -  |
+| **200** | get a list of organisations |  -  |
 
 <a id="getUsersPaginated"></a>
 # **getUsersPaginated**
@@ -375,7 +374,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the main organisation (its guid id) to get users for
@@ -446,7 +445,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -490,8 +489,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | import user OK response |  -  |
 | **500** | could not import users |  -  |
+| **200** | import user OK response |  -  |
 
 <a id="myRoles"></a>
 # **myRoles**
@@ -513,7 +512,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -578,7 +577,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     String userId = "userId_example"; // String | the user's id (a guid)
@@ -645,7 +644,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     CMUserPasswordReset cmUserPasswordReset = new CMUserPasswordReset(); // CMUserPasswordReset | 
@@ -708,7 +707,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     CMPasswordResetRequest cmPasswordResetRequest = new CMPasswordResetRequest(); // CMPasswordResetRequest | 
@@ -771,7 +770,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -836,7 +835,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     CMSignInParameters cmSignInParameters = new CMSignInParameters(); // CMSignInParameters | 
@@ -876,8 +875,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | a sign-in response |  -  |
 | **500** | could not sign-in username/password |  -  |
+| **200** | a sign-in response |  -  |
 
 <a id="signInAdminUsingJWTMsal"></a>
 # **signInAdminUsingJWTMsal**
@@ -899,7 +898,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     String jwt = "jwt_example"; // String | a valid JWT token.
@@ -939,71 +938,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+| **500** | could not sign-in |  -  |
 | **200** | a sign-in admin response |  -  |
-| **500** | could not sign-in |  -  |
-
-<a id="signInAdminUsingSessionId"></a>
-# **signInAdminUsingSessionId**
-> SignInAdmin signInAdminUsingSessionId(sessionId)
-
-session-id Sign-in
-
-Sign-in a user using an existing session-id.
-
-### Example
-```java
-// Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.AuthApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
-
-    AuthApi apiInstance = new AuthApi(defaultClient);
-    String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
-    try {
-      SignInAdmin result = apiInstance.signInAdminUsingSessionId(sessionId);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling AuthApi#signInAdminUsingSessionId");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **sessionId** | **String**| a valid SimSage Session id. | |
-
-### Return type
-
-[**SignInAdmin**](SignInAdmin.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **500** | could not sign-in |  -  |
-| **200** | a sign-in response |  -  |
 
 <a id="signInDmsUsingJWTMsal"></a>
 # **signInDmsUsingJWTMsal**
@@ -1025,7 +961,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     String jwt = "jwt_example"; // String | a valid JWT token.
@@ -1090,7 +1026,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     String jwt = "jwt_example"; // String | a valid JWT token.
@@ -1155,7 +1091,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     String jwt = "jwt_example"; // String | Schema valid JWT token.
@@ -1197,8 +1133,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not sign-in |  -  |
 | **200** | a sign-in search response |  -  |
+| **500** | could not sign-in |  -  |
 
 <a id="signOut"></a>
 # **signOut**
@@ -1220,7 +1156,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -1262,8 +1198,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not sign-out |  -  |
 | **200** | a sign-out OK response |  -  |
+| **500** | could not sign-out |  -  |
 
 <a id="updateOrganisation"></a>
 # **updateOrganisation**
@@ -1285,7 +1221,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -1327,8 +1263,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not save organisation |  -  |
 | **200** | save organisation response |  -  |
+| **500** | could not save organisation |  -  |
 
 <a id="updateUser"></a>
 # **updateUser**
@@ -1350,7 +1286,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the main organisation (its guid id) to update a user in.
@@ -1417,7 +1353,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     try {
@@ -1453,6 +1389,6 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | the version response |  -  |
 | **500** | could not get version |  -  |
+| **200** | the version response |  -  |
 

@@ -54,7 +54,7 @@ class AuthApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://test.simsage.ai")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://demo.simsage.ai")
         }
     }
 
@@ -1117,78 +1117,6 @@ class AuthApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
         return RequestConfig(
             method = RequestMethod.GET,
             path = "/api/auth/admin/authenticate/msal",
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = false,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * session-id Sign-in
-     * Sign-in a user using an existing session-id.
-     * @param sessionId a valid SimSage Session id.
-     * @return SignInAdmin
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun signInAdminUsingSessionId(sessionId: kotlin.String) : SignInAdmin {
-        val localVarResponse = signInAdminUsingSessionIdWithHttpInfo(sessionId = sessionId)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as SignInAdmin
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * session-id Sign-in
-     * Sign-in a user using an existing session-id.
-     * @param sessionId a valid SimSage Session id.
-     * @return ApiResponse<SignInAdmin?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun signInAdminUsingSessionIdWithHttpInfo(sessionId: kotlin.String) : ApiResponse<SignInAdmin?> {
-        val localVariableConfig = signInAdminUsingSessionIdRequestConfig(sessionId = sessionId)
-
-        return request<Unit, SignInAdmin>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation signInAdminUsingSessionId
-     *
-     * @param sessionId a valid SimSage Session id.
-     * @return RequestConfig
-     */
-    fun signInAdminUsingSessionIdRequestConfig(sessionId: kotlin.String) : RequestConfig<Unit> {
-        val localVariableBody = null
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        sessionId.apply { localVariableHeaders["session-id"] = this.toString() }
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.GET,
-            path = "/api/auth/admin/authenticate/session-id",
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = false,

@@ -54,7 +54,7 @@ class LanguageApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://test.simsage.ai")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://demo.simsage.ai")
         }
     }
 
@@ -1499,6 +1499,95 @@ class LanguageApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
         return RequestConfig(
             method = RequestMethod.PUT,
             path = "/api/language/save-synonym/{organisationId}/{kbId}".replace("{"+"organisationId"+"}", encodeURIComponent(organisationId.toString())).replace("{"+"kbId"+"}", encodeURIComponent(kbId.toString())),
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = false,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * enum for parameter apIVersion
+     */
+     enum class ApIVersionTruncateSlowIndexes(val value: kotlin.String) {
+         @Json(name = "1") _1("1")
+     }
+
+    /**
+     * Truncate slow Indexes
+     * Force slow-index truncation for a the given knowledge-base, now.
+     * @param organisationId the organisation&#39;s id (a guid)
+     * @param kbId the knowledge-bases&#39; id (a guid)
+     * @param sessionId a valid SimSage Session id.
+     * @param apIVersion  (optional)
+     * @return JsonMessage
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun truncateSlowIndexes(organisationId: kotlin.String, kbId: kotlin.String, sessionId: kotlin.String, apIVersion: ApIVersionTruncateSlowIndexes? = null) : JsonMessage {
+        val localVarResponse = truncateSlowIndexesWithHttpInfo(organisationId = organisationId, kbId = kbId, sessionId = sessionId, apIVersion = apIVersion)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as JsonMessage
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * Truncate slow Indexes
+     * Force slow-index truncation for a the given knowledge-base, now.
+     * @param organisationId the organisation&#39;s id (a guid)
+     * @param kbId the knowledge-bases&#39; id (a guid)
+     * @param sessionId a valid SimSage Session id.
+     * @param apIVersion  (optional)
+     * @return ApiResponse<JsonMessage?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun truncateSlowIndexesWithHttpInfo(organisationId: kotlin.String, kbId: kotlin.String, sessionId: kotlin.String, apIVersion: ApIVersionTruncateSlowIndexes?) : ApiResponse<JsonMessage?> {
+        val localVariableConfig = truncateSlowIndexesRequestConfig(organisationId = organisationId, kbId = kbId, sessionId = sessionId, apIVersion = apIVersion)
+
+        return request<Unit, JsonMessage>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation truncateSlowIndexes
+     *
+     * @param organisationId the organisation&#39;s id (a guid)
+     * @param kbId the knowledge-bases&#39; id (a guid)
+     * @param sessionId a valid SimSage Session id.
+     * @param apIVersion  (optional)
+     * @return RequestConfig
+     */
+    fun truncateSlowIndexesRequestConfig(organisationId: kotlin.String, kbId: kotlin.String, sessionId: kotlin.String, apIVersion: ApIVersionTruncateSlowIndexes?) : RequestConfig<Unit> {
+        val localVariableBody = null
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        sessionId.apply { localVariableHeaders["session-id"] = this.toString() }
+        apIVersion?.apply { localVariableHeaders["API-Version"] = this.toString() }
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.GET,
+            path = "/api/language/truncate-slow-indexes/{organisationId}/{kbId}".replace("{"+"organisationId"+"}", encodeURIComponent(organisationId.toString())).replace("{"+"kbId"+"}", encodeURIComponent(kbId.toString())),
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = false,

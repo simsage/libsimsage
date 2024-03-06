@@ -1,6 +1,6 @@
 # StatsApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://demo.simsage.ai*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**getIndexOptimizationReports**](StatsApi.md#getIndexOptimizationReports) | **GET** /api/stats/reports/{organisationId}/{kbId} | get optimization report list
 [**getStats**](StatsApi.md#getStats) | **GET** /api/stats/stats/{organisationId}/{kbId}/{year}/{month}/{top} | Get usage Statistics
 [**simSageStatus**](StatsApi.md#simSageStatus) | **PUT** /api/stats/status/{organisationId} | SimSage status
-[**systemLogs**](StatsApi.md#systemLogs) | **GET** /api/stats/system-logs/{organisationId}/{service}/{numLines} | System Logs
+[**systemLogs**](StatsApi.md#systemLogs) | **GET** /api/stats/system-logs/{organisationId}/{year}/{month}/{day}/{hour}/{hours} | System Logs
 [**version**](StatsApi.md#version) | **GET** /api/stats/version | Version
 
 
@@ -226,7 +226,7 @@ No authorization required
 
 <a id="systemLogs"></a>
 # **systemLogs**
-> kotlin.collections.List&lt;CMLoggerEntry&gt; systemLogs(organisationId, service, numLines, sessionId)
+> kotlin.collections.List&lt;CMLoggerEntry&gt; systemLogs(organisationId, year, month, day, hour, hours, sessionId)
 
 System Logs
 
@@ -240,11 +240,14 @@ return SimSage System-logs
 
 val apiInstance = StatsApi()
 val organisationId : kotlin.String = organisationId_example // kotlin.String | the organisation (its guid id)
-val service : kotlin.String = service_example // kotlin.String | the service to get the log for
-val numLines : kotlin.Int = 56 // kotlin.Int | the maximum number of lines to return if > 0
+val year : kotlin.Int = 56 // kotlin.Int | the year to get the log for
+val month : kotlin.Int = 56 // kotlin.Int | the month to get the log for
+val day : kotlin.Int = 56 // kotlin.Int | the day to get the log for
+val hour : kotlin.Int = 56 // kotlin.Int | the hour to get the log for
+val hours : kotlin.Int = 56 // kotlin.Int | the number of hours to get the logs for starting at hour
 val sessionId : kotlin.String = sessionId_example // kotlin.String | a valid SimSage Session id.
 try {
-    val result : kotlin.collections.List<CMLoggerEntry> = apiInstance.systemLogs(organisationId, service, numLines, sessionId)
+    val result : kotlin.collections.List<CMLoggerEntry> = apiInstance.systemLogs(organisationId, year, month, day, hour, hours, sessionId)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling StatsApi#systemLogs")
@@ -260,8 +263,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organisationId** | **kotlin.String**| the organisation (its guid id) |
- **service** | **kotlin.String**| the service to get the log for |
- **numLines** | **kotlin.Int**| the maximum number of lines to return if &gt; 0 |
+ **year** | **kotlin.Int**| the year to get the log for |
+ **month** | **kotlin.Int**| the month to get the log for |
+ **day** | **kotlin.Int**| the day to get the log for |
+ **hour** | **kotlin.Int**| the hour to get the log for |
+ **hours** | **kotlin.Int**| the number of hours to get the logs for starting at hour |
  **sessionId** | **kotlin.String**| a valid SimSage Session id. |
 
 ### Return type

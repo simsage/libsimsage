@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 **PagedResults** | [**CMPagedResultsCMSlicedDocument**](CMPagedResultsCMSlicedDocument.md) |  | 
 **AllDocs** | **long** |  | 
 **Completed** | **long** |  | 
-**Quarantined** | **long** |  | 
 **SourceMap** | **Dictionary&lt;string, string&gt;** |  | 
 **UserMap** | **Dictionary&lt;string, string&gt;** |  | 
 

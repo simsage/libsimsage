@@ -1,6 +1,6 @@
 # DataprojectApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://demo.simsage.ai*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -52,7 +52,7 @@ import org.openapitools.client.api.DataprojectApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     DataprojectApi apiInstance = new DataprojectApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -117,7 +117,7 @@ import org.openapitools.client.api.DataprojectApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     DataprojectApi apiInstance = new DataprojectApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -182,7 +182,7 @@ import org.openapitools.client.api.DataprojectApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     DataprojectApi apiInstance = new DataprojectApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -247,7 +247,7 @@ import org.openapitools.client.api.DataprojectApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     DataprojectApi apiInstance = new DataprojectApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -312,7 +312,7 @@ import org.openapitools.client.api.DataprojectApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     DataprojectApi apiInstance = new DataprojectApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -356,8 +356,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not get crawler-status. |  -  |
 | **200** | crawler-status response |  -  |
+| **500** | could not get crawler-status. |  -  |
 
 <a id="documentsByTokens"></a>
 # **documentsByTokens**
@@ -379,7 +379,7 @@ import org.openapitools.client.api.DataprojectApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     DataprojectApi apiInstance = new DataprojectApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -421,8 +421,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not retrieve document list. |  -  |
 | **200** | returns paged list of documents for the given set of query tokens |  -  |
+| **500** | could not retrieve document list. |  -  |
 
 <a id="filteredComments"></a>
 # **filteredComments**
@@ -444,7 +444,7 @@ import org.openapitools.client.api.DataprojectApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     DataprojectApi apiInstance = new DataprojectApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -509,7 +509,7 @@ import org.openapitools.client.api.DataprojectApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     DataprojectApi apiInstance = new DataprojectApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -555,8 +555,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not retrieve redaction info. |  -  |
 | **200** | List of all identified potential Redaction locations for the document |  -  |
+| **500** | could not retrieve redaction info. |  -  |
 
 <a id="getProjectDefinition"></a>
 # **getProjectDefinition**
@@ -578,7 +578,7 @@ import org.openapitools.client.api.DataprojectApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     DataprojectApi apiInstance = new DataprojectApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -645,7 +645,7 @@ import org.openapitools.client.api.DataprojectApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     DataprojectApi apiInstance = new DataprojectApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -712,7 +712,7 @@ import org.openapitools.client.api.DataprojectApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     DataprojectApi apiInstance = new DataprojectApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -756,8 +756,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not retrieve project slice. |  -  |
 | **200** | Project slice data |  -  |
+| **500** | could not retrieve project slice. |  -  |
 
 <a id="getSearchResultSummary"></a>
 # **getSearchResultSummary**
@@ -779,7 +779,7 @@ import org.openapitools.client.api.DataprojectApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     DataprojectApi apiInstance = new DataprojectApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -846,7 +846,7 @@ import org.openapitools.client.api.DataprojectApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     DataprojectApi apiInstance = new DataprojectApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -913,7 +913,7 @@ import org.openapitools.client.api.DataprojectApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     DataprojectApi apiInstance = new DataprojectApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -978,7 +978,7 @@ import org.openapitools.client.api.DataprojectApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     DataprojectApi apiInstance = new DataprojectApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -1046,7 +1046,7 @@ import org.openapitools.client.api.DataprojectApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     DataprojectApi apiInstance = new DataprojectApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -1109,7 +1109,7 @@ import org.openapitools.client.api.DataprojectApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     DataprojectApi apiInstance = new DataprojectApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -1173,7 +1173,7 @@ import org.openapitools.client.api.DataprojectApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     DataprojectApi apiInstance = new DataprojectApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -1236,7 +1236,7 @@ import org.openapitools.client.api.DataprojectApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     DataprojectApi apiInstance = new DataprojectApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -1300,7 +1300,7 @@ import org.openapitools.client.api.DataprojectApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     DataprojectApi apiInstance = new DataprojectApi(defaultClient);
     String organisationId = "organisationId_example"; // String | a valid SimSage Organisation id.
@@ -1365,7 +1365,7 @@ import org.openapitools.client.api.DataprojectApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     DataprojectApi apiInstance = new DataprojectApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -1430,7 +1430,7 @@ import org.openapitools.client.api.DataprojectApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     DataprojectApi apiInstance = new DataprojectApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -1495,7 +1495,7 @@ import org.openapitools.client.api.DataprojectApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     DataprojectApi apiInstance = new DataprojectApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -1558,7 +1558,7 @@ import org.openapitools.client.api.DataprojectApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     DataprojectApi apiInstance = new DataprojectApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -1622,7 +1622,7 @@ import org.openapitools.client.api.DataprojectApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     DataprojectApi apiInstance = new DataprojectApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -1687,7 +1687,7 @@ import org.openapitools.client.api.DataprojectApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     DataprojectApi apiInstance = new DataprojectApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.

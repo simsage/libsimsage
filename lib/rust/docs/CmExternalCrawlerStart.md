@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **kb_id** | **String** | the knowledge-base id of this context item, a guid-string | 
 **sid** | **String** | the security id (a guid) for this request.  This is effectively the shared secret between SimSage and the external-crawler system. | 
 **source_id** | **i32** | the source-id of this crawler (ie. the crawler's id) | 
-**run_id** | **i64** | the id (a unix timestamp) of the current 'go through the source once'.  This is a unique per-run identifier. | 
+**run_id** | **String** | the id (a guid) of the current 'go through the source once'.  This is a unique per-run identifier. | 
 **encrypted** | **bool** | Do we need to add transport encryption | 
 **seed** | **i32** | The seed used if encrypted | 
 

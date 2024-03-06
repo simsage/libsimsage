@@ -1,6 +1,6 @@
 # StatsApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://demo.simsage.ai*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -8,7 +8,7 @@ All URIs are relative to *https://test.simsage.ai*
 | [**getIndexOptimizationReports**](StatsApi.md#getIndexOptimizationReports) | **GET** /api/stats/reports/{organisationId}/{kbId} | get optimization report list |
 | [**getStats**](StatsApi.md#getStats) | **GET** /api/stats/stats/{organisationId}/{kbId}/{year}/{month}/{top} | Get usage Statistics |
 | [**simSageStatus**](StatsApi.md#simSageStatus) | **PUT** /api/stats/status/{organisationId} | SimSage status |
-| [**systemLogs**](StatsApi.md#systemLogs) | **GET** /api/stats/system-logs/{organisationId}/{service}/{numLines} | System Logs |
+| [**systemLogs**](StatsApi.md#systemLogs) | **GET** /api/stats/system-logs/{organisationId}/{year}/{month}/{day}/{hour}/{hours} | System Logs |
 | [**version**](StatsApi.md#version) | **GET** /api/stats/version | Version |
 
 
@@ -32,7 +32,7 @@ import org.openapitools.client.api.StatsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     StatsApi apiInstance = new StatsApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid session-guid id.
@@ -78,8 +78,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | response |  -  |
 | **500** | failed |  -  |
+| **200** | response |  -  |
 
 <a id="getIndexOptimizationReports"></a>
 # **getIndexOptimizationReports**
@@ -101,7 +101,7 @@ import org.openapitools.client.api.StatsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     StatsApi apiInstance = new StatsApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid session-guid id.
@@ -145,8 +145,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | failed |  -  |
 | **200** | response |  -  |
+| **500** | failed |  -  |
 
 <a id="getStats"></a>
 # **getStats**
@@ -168,7 +168,7 @@ import org.openapitools.client.api.StatsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     StatsApi apiInstance = new StatsApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -220,8 +220,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | failed |  -  |
 | **200** | response |  -  |
+| **500** | failed |  -  |
 
 <a id="simSageStatus"></a>
 # **simSageStatus**
@@ -243,7 +243,7 @@ import org.openapitools.client.api.StatsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     StatsApi apiInstance = new StatsApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid session-guid id.
@@ -290,7 +290,7 @@ No authorization required
 
 <a id="systemLogs"></a>
 # **systemLogs**
-> List&lt;CMLoggerEntry&gt; systemLogs(organisationId, service, numLines, sessionId)
+> List&lt;CMLoggerEntry&gt; systemLogs(organisationId, year, month, day, hour, hours, sessionId)
 
 System Logs
 
@@ -308,15 +308,18 @@ import org.openapitools.client.api.StatsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     StatsApi apiInstance = new StatsApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
-    String service = "service_example"; // String | the service to get the log for
-    Integer numLines = 56; // Integer | the maximum number of lines to return if > 0
+    Integer year = 56; // Integer | the year to get the log for
+    Integer month = 56; // Integer | the month to get the log for
+    Integer day = 56; // Integer | the day to get the log for
+    Integer hour = 56; // Integer | the hour to get the log for
+    Integer hours = 56; // Integer | the number of hours to get the logs for starting at hour
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
     try {
-      List<CMLoggerEntry> result = apiInstance.systemLogs(organisationId, service, numLines, sessionId);
+      List<CMLoggerEntry> result = apiInstance.systemLogs(organisationId, year, month, day, hour, hours, sessionId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StatsApi#systemLogs");
@@ -334,8 +337,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organisationId** | **String**| the organisation (its guid id) | |
-| **service** | **String**| the service to get the log for | |
-| **numLines** | **Integer**| the maximum number of lines to return if &gt; 0 | |
+| **year** | **Integer**| the year to get the log for | |
+| **month** | **Integer**| the month to get the log for | |
+| **day** | **Integer**| the day to get the log for | |
+| **hour** | **Integer**| the hour to get the log for | |
+| **hours** | **Integer**| the number of hours to get the logs for starting at hour | |
 | **sessionId** | **String**| a valid SimSage Session id. | |
 
 ### Return type
@@ -377,7 +383,7 @@ import org.openapitools.client.api.StatsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     StatsApi apiInstance = new StatsApi(defaultClient);
     try {
@@ -413,6 +419,6 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | get the version response |  -  |
 | **500** | could not get version. |  -  |
+| **200** | get the version response |  -  |
 

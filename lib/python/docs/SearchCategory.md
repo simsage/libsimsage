@@ -6,9 +6,14 @@ Search categories / metadata searching
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **sc_type** | **str** |  | 
+**category_type** | **str** |  | 
+**order** | **int** |  | 
+**sort_default** | **str** |  | 
+**sort_asc_text** | **str** |  | 
+**sort_desc_text** | **str** |  | 
 **metadata** | **str** |  | 
 **display_name** | **str** |  | 
-**data_type** | **str** |  | 
+**sort** | **bool** |  | 
 **min_value** | **int** |  | 
 **max_value** | **int** |  | 
 **items** | [**List[NameCounterLevel]**](NameCounterLevel.md) |  | 

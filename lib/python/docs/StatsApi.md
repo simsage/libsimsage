@@ -1,6 +1,6 @@
 # openapi_client.StatsApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://demo.simsage.ai*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**get_index_optimization_reports**](StatsApi.md#get_index_optimization_reports) | **GET** /api/stats/reports/{organisationId}/{kbId} | get optimization report list
 [**get_stats**](StatsApi.md#get_stats) | **GET** /api/stats/stats/{organisationId}/{kbId}/{year}/{month}/{top} | Get usage Statistics
 [**sim_sage_status**](StatsApi.md#sim_sage_status) | **PUT** /api/stats/status/{organisationId} | SimSage status
-[**system_logs**](StatsApi.md#system_logs) | **GET** /api/stats/system-logs/{organisationId}/{service}/{numLines} | System Logs
+[**system_logs**](StatsApi.md#system_logs) | **GET** /api/stats/system-logs/{organisationId}/{year}/{month}/{day}/{hour}/{hours} | System Logs
 [**version**](StatsApi.md#version) | **GET** /api/stats/version | Version
 
 
@@ -29,10 +29,10 @@ from openapi_client.models.optimize_indexes_get_report_cmd import OptimizeIndexe
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://demo.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://demo.simsage.ai"
 )
 
 
@@ -81,8 +81,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | response |  -  |
 **500** | failed |  -  |
+**200** | response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -103,10 +103,10 @@ from openapi_client.models.optimize_indexes_get_reports_cmd import OptimizeIndex
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://demo.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://demo.simsage.ai"
 )
 
 
@@ -153,8 +153,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**500** | failed |  -  |
 **200** | response |  -  |
+**500** | failed |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -175,10 +175,10 @@ from openapi_client.models.cm_return_statistics import CMReturnStatistics
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://demo.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://demo.simsage.ai"
 )
 
 
@@ -233,8 +233,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**500** | failed |  -  |
 **200** | response |  -  |
+**500** | failed |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -255,10 +255,10 @@ from openapi_client.models.cm_command_queue_item import CMCommandQueueItem
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://demo.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://demo.simsage.ai"
 )
 
 
@@ -309,7 +309,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **system_logs**
-> List[CMLoggerEntry] system_logs(organisation_id, service, num_lines, session_id)
+> List[CMLoggerEntry] system_logs(organisation_id, year, month, day, hour, hours, session_id)
 
 System Logs
 
@@ -325,10 +325,10 @@ from openapi_client.models.cm_logger_entry import CMLoggerEntry
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://demo.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://demo.simsage.ai"
 )
 
 
@@ -337,13 +337,16 @@ with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.StatsApi(api_client)
     organisation_id = 'organisation_id_example' # str | the organisation (its guid id)
-    service = 'service_example' # str | the service to get the log for
-    num_lines = 56 # int | the maximum number of lines to return if > 0
+    year = 56 # int | the year to get the log for
+    month = 56 # int | the month to get the log for
+    day = 56 # int | the day to get the log for
+    hour = 56 # int | the hour to get the log for
+    hours = 56 # int | the number of hours to get the logs for starting at hour
     session_id = 'session_id_example' # str | a valid SimSage Session id.
 
     try:
         # System Logs
-        api_response = api_instance.system_logs(organisation_id, service, num_lines, session_id)
+        api_response = api_instance.system_logs(organisation_id, year, month, day, hour, hours, session_id)
         print("The response of StatsApi->system_logs:\n")
         pprint(api_response)
     except Exception as e:
@@ -357,8 +360,11 @@ with openapi_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organisation_id** | **str**| the organisation (its guid id) | 
- **service** | **str**| the service to get the log for | 
- **num_lines** | **int**| the maximum number of lines to return if &gt; 0 | 
+ **year** | **int**| the year to get the log for | 
+ **month** | **int**| the month to get the log for | 
+ **day** | **int**| the day to get the log for | 
+ **hour** | **int**| the hour to get the log for | 
+ **hours** | **int**| the number of hours to get the logs for starting at hour | 
  **session_id** | **str**| a valid SimSage Session id. | 
 
 ### Return type
@@ -399,10 +405,10 @@ from openapi_client.models.cm_version import CMVersion
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://demo.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://demo.simsage.ai"
 )
 
 
@@ -441,8 +447,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | get the version response |  -  |
 **500** | could not get version. |  -  |
+**200** | get the version response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

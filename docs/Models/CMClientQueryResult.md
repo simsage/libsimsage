@@ -4,6 +4,8 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 | **messageType** | **String** |  | [default to null] |
+| **assignedOperatorId** | **String** | A unique id for this operator&#39;s session. | [default to null] |
+| **operatorName** | **String** | the name of the operator for clients | [default to null] |
 | **organisationId** | **String** | the organisation (its guid id). | [default to null] |
 | **kbId** | **String** | the knowledge-base id (its guid id) | [default to null] |
 | **text** | **String** | the text sent. | [default to null] |
@@ -21,8 +23,6 @@
 | **categoryList** | [**List**](SearchCategory.md) | updated categories (if applicable) with updated counts | [default to null] |
 | **synSetList** | [**List**](CMSynSet.md) | A list of syn-sets used in the query | [default to null] |
 | **customRender** | **Boolean** | Does this source require custom render templates or use ordinary search-results? | [default to null] |
-| **sourceIdToCounts** | **Map** | a map of sourceId -&gt; number of documents found inside this source | [default to null] |
-| **documentTypeToCounts** | **Map** | a map of document-type -&gt; number of documents found of this type | [default to null] |
 | **savedSearchList** | [**List**](CMSavedSearch.md) | a list of previous searches if applicable | [default to null] |
 | **querySummarization** | **String** | an optional summarization of the search results | [default to null] |
 

@@ -47,7 +47,7 @@ class StatsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://test.simsage.ai")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://demo.simsage.ai")
         }
     }
 
@@ -387,8 +387,11 @@ class StatsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * System Logs
      * return SimSage System-logs
      * @param organisationId the organisation (its guid id)
-     * @param service the service to get the log for
-     * @param numLines the maximum number of lines to return if &gt; 0
+     * @param year the year to get the log for
+     * @param month the month to get the log for
+     * @param day the day to get the log for
+     * @param hour the hour to get the log for
+     * @param hours the number of hours to get the logs for starting at hour
      * @param sessionId a valid SimSage Session id.
      * @return kotlin.collections.List<CMLoggerEntry>
      * @throws IllegalStateException If the request is not correctly configured
@@ -399,8 +402,8 @@ class StatsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun systemLogs(organisationId: kotlin.String, service: kotlin.String, numLines: kotlin.Int, sessionId: kotlin.String) : kotlin.collections.List<CMLoggerEntry> {
-        val localVarResponse = systemLogsWithHttpInfo(organisationId = organisationId, service = service, numLines = numLines, sessionId = sessionId)
+    fun systemLogs(organisationId: kotlin.String, year: kotlin.Int, month: kotlin.Int, day: kotlin.Int, hour: kotlin.Int, hours: kotlin.Int, sessionId: kotlin.String) : kotlin.collections.List<CMLoggerEntry> {
+        val localVarResponse = systemLogsWithHttpInfo(organisationId = organisationId, year = year, month = month, day = day, hour = hour, hours = hours, sessionId = sessionId)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<CMLoggerEntry>
@@ -421,8 +424,11 @@ class StatsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * System Logs
      * return SimSage System-logs
      * @param organisationId the organisation (its guid id)
-     * @param service the service to get the log for
-     * @param numLines the maximum number of lines to return if &gt; 0
+     * @param year the year to get the log for
+     * @param month the month to get the log for
+     * @param day the day to get the log for
+     * @param hour the hour to get the log for
+     * @param hours the number of hours to get the logs for starting at hour
      * @param sessionId a valid SimSage Session id.
      * @return ApiResponse<kotlin.collections.List<CMLoggerEntry>?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -430,8 +436,8 @@ class StatsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun systemLogsWithHttpInfo(organisationId: kotlin.String, service: kotlin.String, numLines: kotlin.Int, sessionId: kotlin.String) : ApiResponse<kotlin.collections.List<CMLoggerEntry>?> {
-        val localVariableConfig = systemLogsRequestConfig(organisationId = organisationId, service = service, numLines = numLines, sessionId = sessionId)
+    fun systemLogsWithHttpInfo(organisationId: kotlin.String, year: kotlin.Int, month: kotlin.Int, day: kotlin.Int, hour: kotlin.Int, hours: kotlin.Int, sessionId: kotlin.String) : ApiResponse<kotlin.collections.List<CMLoggerEntry>?> {
+        val localVariableConfig = systemLogsRequestConfig(organisationId = organisationId, year = year, month = month, day = day, hour = hour, hours = hours, sessionId = sessionId)
 
         return request<Unit, kotlin.collections.List<CMLoggerEntry>>(
             localVariableConfig
@@ -442,12 +448,15 @@ class StatsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
      * To obtain the request config of the operation systemLogs
      *
      * @param organisationId the organisation (its guid id)
-     * @param service the service to get the log for
-     * @param numLines the maximum number of lines to return if &gt; 0
+     * @param year the year to get the log for
+     * @param month the month to get the log for
+     * @param day the day to get the log for
+     * @param hour the hour to get the log for
+     * @param hours the number of hours to get the logs for starting at hour
      * @param sessionId a valid SimSage Session id.
      * @return RequestConfig
      */
-    fun systemLogsRequestConfig(organisationId: kotlin.String, service: kotlin.String, numLines: kotlin.Int, sessionId: kotlin.String) : RequestConfig<Unit> {
+    fun systemLogsRequestConfig(organisationId: kotlin.String, year: kotlin.Int, month: kotlin.Int, day: kotlin.Int, hour: kotlin.Int, hours: kotlin.Int, sessionId: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -456,7 +465,7 @@ class StatsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient =
 
         return RequestConfig(
             method = RequestMethod.GET,
-            path = "/api/stats/system-logs/{organisationId}/{service}/{numLines}".replace("{"+"organisationId"+"}", encodeURIComponent(organisationId.toString())).replace("{"+"service"+"}", encodeURIComponent(service.toString())).replace("{"+"numLines"+"}", encodeURIComponent(numLines.toString())),
+            path = "/api/stats/system-logs/{organisationId}/{year}/{month}/{day}/{hour}/{hours}".replace("{"+"organisationId"+"}", encodeURIComponent(organisationId.toString())).replace("{"+"year"+"}", encodeURIComponent(year.toString())).replace("{"+"month"+"}", encodeURIComponent(month.toString())).replace("{"+"day"+"}", encodeURIComponent(day.toString())).replace("{"+"hour"+"}", encodeURIComponent(hour.toString())).replace("{"+"hours"+"}", encodeURIComponent(hours.toString())),
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = false,

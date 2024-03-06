@@ -52,7 +52,7 @@ class DocumentApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://test.simsage.ai")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://demo.simsage.ai")
         }
     }
 
@@ -208,7 +208,7 @@ class DocumentApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
                 put("ott", listOf(ott.toString()))
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "application/octet-stream, application/json"
+        localVariableHeaders["Accept"] = "application/json, application/octet-stream"
 
         return RequestConfig(
             method = RequestMethod.POST,

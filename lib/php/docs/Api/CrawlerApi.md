@@ -1,6 +1,6 @@
 # OpenAPI\Client\CrawlerApi
 
-All URIs are relative to https://test.simsage.ai, except if the operation defines another base path.
+All URIs are relative to https://demo.simsage.ai, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -8,6 +8,7 @@ All URIs are relative to https://test.simsage.ai, except if the operation define
 | [**crawlerDeleteUrl()**](CrawlerApi.md#crawlerDeleteUrl) | **POST** /api/crawler/external/crawler/delete-url | Delete document |
 | [**crawlerExternalDocumentDelete()**](CrawlerApi.md#crawlerExternalDocumentDelete) | **PUT** /api/crawler/external/document/delete | Remove an External Document |
 | [**crawlerExternalDocumentFailed()**](CrawlerApi.md#crawlerExternalDocumentFailed) | **POST** /api/crawler/external/document/recordfailure | Upload External Document |
+| [**crawlerExternalDocumentUnChanged()**](CrawlerApi.md#crawlerExternalDocumentUnChanged) | **POST** /api/crawler/external/document/un-changed | Mark External Document Unchanged |
 | [**crawlerExternalDocumentUpload()**](CrawlerApi.md#crawlerExternalDocumentUpload) | **POST** /api/crawler/external/document/upload | Upload External Document |
 | [**crawlerExternalImageUpload()**](CrawlerApi.md#crawlerExternalImageUpload) | **POST** /api/crawler/external/document/upload/image | Upload External Image |
 | [**crawlerRenameFolder()**](CrawlerApi.md#crawlerRenameFolder) | **POST** /api/crawler/external/crawler/rename-folder | Rename document folder |
@@ -21,13 +22,9 @@ All URIs are relative to https://test.simsage.ai, except if the operation define
 | [**getCrawler()**](CrawlerApi.md#getCrawler) | **GET** /api/crawler/crawler/{organisationId}/{kbId}/{sourceId} | Get source |
 | [**getFailedDocuments()**](CrawlerApi.md#getFailedDocuments) | **GET** /api/crawler/faileddocs/{organisationId}/{kbId}/{sourceId}/{page}/{pageSize} | Get source List |
 | [**getSourceList()**](CrawlerApi.md#getSourceList) | **GET** /api/crawler/crawlers/{organisationId}/{kbId} | Get source List |
-| [**markFileAsSeen()**](CrawlerApi.md#markFileAsSeen) | **POST** /api/crawler/external/crawler/mark-file-as-seen | Mark file as seen |
 | [**oidcCode()**](CrawlerApi.md#oidcCode) | **GET** /api/crawler/dropbox-oidc-code/{oidcKey} | OIDC code receiver |
 | [**processAllFiles()**](CrawlerApi.md#processAllFiles) | **POST** /api/crawler/process-all-files | Process all files of crawler/source |
-| [**processorSchema()**](CrawlerApi.md#processorSchema) | **GET** /api/crawler/processor_schema |  |
-| [**receiveExternalLogEntry()**](CrawlerApi.md#receiveExternalLogEntry) | **POST** /api/crawler/external/crawler/log | External Crawler log-entry |
 | [**resetSourceDelta()**](CrawlerApi.md#resetSourceDelta) | **POST** /api/crawler/crawler/reset-delta/{organisationId}/{kbId}/{sourceId} | Reset Source delta-token |
-| [**sdcSchema()**](CrawlerApi.md#sdcSchema) | **GET** /api/crawler/sdc_schema |  |
 | [**startCrawler()**](CrawlerApi.md#startCrawler) | **POST** /api/crawler/start | Start crawler |
 | [**testCrawler()**](CrawlerApi.md#testCrawler) | **GET** /api/crawler/crawler/test/{organisationId}/{kbId}/{sourceId} | Test Crawler |
 | [**updateCrawler()**](CrawlerApi.md#updateCrawler) | **POST** /api/crawler/crawler | Update Source |
@@ -247,6 +244,64 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **cm_failed_source_document** | [**\OpenAPI\Client\Model\CMFailedSourceDocument**](../Model/CMFailedSourceDocument.md)|  | |
+| **api_version** | **string**|  | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\JsonMessage**](../Model/JsonMessage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `crawlerExternalDocumentUnChanged()`
+
+```php
+crawlerExternalDocumentUnChanged($cm_document_un_changed, $api_version): \OpenAPI\Client\Model\JsonMessage
+```
+
+Mark External Document Unchanged
+
+An external crawler document marks a document as not having changed.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\CrawlerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$cm_document_un_changed = new \OpenAPI\Client\Model\CMDocumentUnChanged(); // \OpenAPI\Client\Model\CMDocumentUnChanged
+$api_version = 'api_version_example'; // string
+
+try {
+    $result = $apiInstance->crawlerExternalDocumentUnChanged($cm_document_un_changed, $api_version);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CrawlerApi->crawlerExternalDocumentUnChanged: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **cm_document_un_changed** | [**\OpenAPI\Client\Model\CMDocumentUnChanged**](../Model/CMDocumentUnChanged.md)|  | |
 | **api_version** | **string**|  | [optional] |
 
 ### Return type
@@ -1054,64 +1109,6 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `markFileAsSeen()`
-
-```php
-markFileAsSeen($cm_external_crawler_mark_file_as_seen, $api_version): \OpenAPI\Client\Model\JsonMessage
-```
-
-Mark file as seen
-
-An external crawler marks a file as seen.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new OpenAPI\Client\Api\CrawlerApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$cm_external_crawler_mark_file_as_seen = new \OpenAPI\Client\Model\CMExternalCrawlerMarkFileAsSeen(); // \OpenAPI\Client\Model\CMExternalCrawlerMarkFileAsSeen
-$api_version = 'api_version_example'; // string
-
-try {
-    $result = $apiInstance->markFileAsSeen($cm_external_crawler_mark_file_as_seen, $api_version);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CrawlerApi->markFileAsSeen: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **cm_external_crawler_mark_file_as_seen** | [**\OpenAPI\Client\Model\CMExternalCrawlerMarkFileAsSeen**](../Model/CMExternalCrawlerMarkFileAsSeen.md)|  | |
-| **api_version** | **string**|  | [optional] |
-
-### Return type
-
-[**\OpenAPI\Client\Model\JsonMessage**](../Model/JsonMessage.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
 ## `oidcCode()`
 
 ```php
@@ -1229,115 +1226,6 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `processorSchema()`
-
-```php
-processorSchema(): object
-```
-
-
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new OpenAPI\Client\Api\CrawlerApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-
-try {
-    $result = $apiInstance->processorSchema();
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CrawlerApi->processorSchema: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-**object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json;charset=UTF-8`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `receiveExternalLogEntry()`
-
-```php
-receiveExternalLogEntry($cm_external_log_entry, $api_version): \OpenAPI\Client\Model\CMSource
-```
-
-External Crawler log-entry
-
-An external crawler sends a log entry to SimSage.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new OpenAPI\Client\Api\CrawlerApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$cm_external_log_entry = new \OpenAPI\Client\Model\CMExternalLogEntry(); // \OpenAPI\Client\Model\CMExternalLogEntry
-$api_version = 'api_version_example'; // string
-
-try {
-    $result = $apiInstance->receiveExternalLogEntry($cm_external_log_entry, $api_version);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CrawlerApi->receiveExternalLogEntry: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **cm_external_log_entry** | [**\OpenAPI\Client\Model\CMExternalLogEntry**](../Model/CMExternalLogEntry.md)|  | |
-| **api_version** | **string**|  | [optional] |
-
-### Return type
-
-[**\OpenAPI\Client\Model\CMSource**](../Model/CMSource.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
 ## `resetSourceDelta()`
 
 ```php
@@ -1397,57 +1285,6 @@ No authorization required
 
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `sdcSchema()`
-
-```php
-sdcSchema(): object
-```
-
-
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new OpenAPI\Client\Api\CrawlerApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-
-try {
-    $result = $apiInstance->sdcSchema();
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CrawlerApi->sdcSchema: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-**object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json;charset=UTF-8`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

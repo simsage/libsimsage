@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **source_id** | **i32** | the source-id, primary key of the source | 
 **source_system_id** | **String** | the unique id of the document in the source system, mostly same as web url | 
 **web_url** | **String** | the web url to access the document, can be different from url | 
-**run_id** | **i64** | the timestamp of the crawler run adding the exception | 
+**run_id** | **String** | the id of the crawler run adding the exception | 
 **error_message** | **String** | the error message added by the system | 
 **encrypted** | **bool** | Do we need to add transport encryption | 
 **seed** | **i32** | The seed used if encrypted | 

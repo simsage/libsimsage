@@ -26,7 +26,6 @@ import com.squareup.moshi.JsonClass
  * @param pagedResults 
  * @param allDocs 
  * @param completed 
- * @param quarantined 
  * @param sourceMap 
  * @param userMap 
  */
@@ -42,9 +41,6 @@ data class CMSlicedDocumentListAndTotals (
 
     @Json(name = "completed")
     val completed: kotlin.Long,
-
-    @Json(name = "quarantined")
-    val quarantined: kotlin.Long,
 
     @Json(name = "sourceMap")
     val sourceMap: kotlin.collections.Map<kotlin.String, kotlin.String>,

@@ -1,6 +1,6 @@
 # LanguageApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://demo.simsage.ai*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,6 +20,7 @@ Method | HTTP request | Description
 [**saveSemantic**](LanguageApi.md#saveSemantic) | **PUT** /api/language/save-semantic/{organisationId}/{kbId} | Save Semantic
 [**saveSynSet**](LanguageApi.md#saveSynSet) | **PUT** /api/language/save-syn-set/{organisationId}/{kbId} | Save SynSet
 [**saveSynonym**](LanguageApi.md#saveSynonym) | **PUT** /api/language/save-synonym/{organisationId}/{kbId} | Save Synonym
+[**truncateSlowIndexes**](LanguageApi.md#truncateSlowIndexes) | **GET** /api/language/truncate-slow-indexes/{organisationId}/{kbId} | Truncate slow Indexes
 [**tuneLanguageGraph**](LanguageApi.md#tuneLanguageGraph) | **GET** /api/language/tune-graph/{organisationId}/{kbId} | Tune Graph
 [**version2**](LanguageApi.md#version2) | **GET** /api/language/version | Version
 
@@ -886,6 +887,59 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a id="truncateSlowIndexes"></a>
+# **truncateSlowIndexes**
+> JsonMessage truncateSlowIndexes(organisationId, kbId, sessionId, apIVersion)
+
+Truncate slow Indexes
+
+Force slow-index truncation for a the given knowledge-base, now.
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiInstance = LanguageApi()
+val organisationId : kotlin.String = organisationId_example // kotlin.String | the organisation's id (a guid)
+val kbId : kotlin.String = kbId_example // kotlin.String | the knowledge-bases' id (a guid)
+val sessionId : kotlin.String = sessionId_example // kotlin.String | a valid SimSage Session id.
+val apIVersion : kotlin.String = apIVersion_example // kotlin.String | 
+try {
+    val result : JsonMessage = apiInstance.truncateSlowIndexes(organisationId, kbId, sessionId, apIVersion)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling LanguageApi#truncateSlowIndexes")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling LanguageApi#truncateSlowIndexes")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organisationId** | **kotlin.String**| the organisation&#39;s id (a guid) |
+ **kbId** | **kotlin.String**| the knowledge-bases&#39; id (a guid) |
+ **sessionId** | **kotlin.String**| a valid SimSage Session id. |
+ **apIVersion** | **kotlin.String**|  | [optional] [enum: 1]
+
+### Return type
+
+[**JsonMessage**](JsonMessage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a id="tuneLanguageGraph"></a>

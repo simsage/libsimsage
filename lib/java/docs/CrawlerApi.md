@@ -1,6 +1,6 @@
 # CrawlerApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://demo.simsage.ai*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -8,6 +8,7 @@ All URIs are relative to *https://test.simsage.ai*
 | [**crawlerDeleteUrl**](CrawlerApi.md#crawlerDeleteUrl) | **POST** /api/crawler/external/crawler/delete-url | Delete document |
 | [**crawlerExternalDocumentDelete**](CrawlerApi.md#crawlerExternalDocumentDelete) | **PUT** /api/crawler/external/document/delete | Remove an External Document |
 | [**crawlerExternalDocumentFailed**](CrawlerApi.md#crawlerExternalDocumentFailed) | **POST** /api/crawler/external/document/recordfailure | Upload External Document |
+| [**crawlerExternalDocumentUnChanged**](CrawlerApi.md#crawlerExternalDocumentUnChanged) | **POST** /api/crawler/external/document/un-changed | Mark External Document Unchanged |
 | [**crawlerExternalDocumentUpload**](CrawlerApi.md#crawlerExternalDocumentUpload) | **POST** /api/crawler/external/document/upload | Upload External Document |
 | [**crawlerExternalImageUpload**](CrawlerApi.md#crawlerExternalImageUpload) | **POST** /api/crawler/external/document/upload/image | Upload External Image |
 | [**crawlerRenameFolder**](CrawlerApi.md#crawlerRenameFolder) | **POST** /api/crawler/external/crawler/rename-folder | Rename document folder |
@@ -21,13 +22,9 @@ All URIs are relative to *https://test.simsage.ai*
 | [**getCrawler**](CrawlerApi.md#getCrawler) | **GET** /api/crawler/crawler/{organisationId}/{kbId}/{sourceId} | Get source |
 | [**getFailedDocuments**](CrawlerApi.md#getFailedDocuments) | **GET** /api/crawler/faileddocs/{organisationId}/{kbId}/{sourceId}/{page}/{pageSize} | Get source List |
 | [**getSourceList**](CrawlerApi.md#getSourceList) | **GET** /api/crawler/crawlers/{organisationId}/{kbId} | Get source List |
-| [**markFileAsSeen**](CrawlerApi.md#markFileAsSeen) | **POST** /api/crawler/external/crawler/mark-file-as-seen | Mark file as seen |
 | [**oidcCode**](CrawlerApi.md#oidcCode) | **GET** /api/crawler/dropbox-oidc-code/{oidcKey} | OIDC code receiver |
 | [**processAllFiles**](CrawlerApi.md#processAllFiles) | **POST** /api/crawler/process-all-files | Process all files of crawler/source |
-| [**processorSchema**](CrawlerApi.md#processorSchema) | **GET** /api/crawler/processor_schema |  |
-| [**receiveExternalLogEntry**](CrawlerApi.md#receiveExternalLogEntry) | **POST** /api/crawler/external/crawler/log | External Crawler log-entry |
 | [**resetSourceDelta**](CrawlerApi.md#resetSourceDelta) | **POST** /api/crawler/crawler/reset-delta/{organisationId}/{kbId}/{sourceId} | Reset Source delta-token |
-| [**sdcSchema**](CrawlerApi.md#sdcSchema) | **GET** /api/crawler/sdc_schema |  |
 | [**startCrawler**](CrawlerApi.md#startCrawler) | **POST** /api/crawler/start | Start crawler |
 | [**testCrawler**](CrawlerApi.md#testCrawler) | **GET** /api/crawler/crawler/test/{organisationId}/{kbId}/{sourceId} | Test Crawler |
 | [**updateCrawler**](CrawlerApi.md#updateCrawler) | **POST** /api/crawler/crawler | Update Source |
@@ -54,7 +51,7 @@ import org.openapitools.client.api.CrawlerApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     CrawlerApi apiInstance = new CrawlerApi(defaultClient);
     CMExternalCrawlerDeleteFolder cmExternalCrawlerDeleteFolder = new CMExternalCrawlerDeleteFolder(); // CMExternalCrawlerDeleteFolder | 
@@ -96,8 +93,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not delete document folder. |  -  |
 | **200** | delete document folder update OK response |  -  |
+| **500** | could not delete document folder. |  -  |
 
 <a id="crawlerDeleteUrl"></a>
 # **crawlerDeleteUrl**
@@ -119,7 +116,7 @@ import org.openapitools.client.api.CrawlerApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     CrawlerApi apiInstance = new CrawlerApi(defaultClient);
     CMExternalCrawlerDeleteUrl cmExternalCrawlerDeleteUrl = new CMExternalCrawlerDeleteUrl(); // CMExternalCrawlerDeleteUrl | 
@@ -161,8 +158,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | delete document update OK response |  -  |
 | **500** | could not delete document. |  -  |
+| **200** | delete document update OK response |  -  |
 
 <a id="crawlerExternalDocumentDelete"></a>
 # **crawlerExternalDocumentDelete**
@@ -184,7 +181,7 @@ import org.openapitools.client.api.CrawlerApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     CrawlerApi apiInstance = new CrawlerApi(defaultClient);
     CMDeleteDocument cmDeleteDocument = new CMDeleteDocument(); // CMDeleteDocument | 
@@ -249,7 +246,7 @@ import org.openapitools.client.api.CrawlerApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     CrawlerApi apiInstance = new CrawlerApi(defaultClient);
     CMFailedSourceDocument cmFailedSourceDocument = new CMFailedSourceDocument(); // CMFailedSourceDocument | 
@@ -291,8 +288,73 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not start external crawler. |  -  |
 | **200** | upload external-crawler document OK response |  -  |
+| **500** | could not start external crawler. |  -  |
+
+<a id="crawlerExternalDocumentUnChanged"></a>
+# **crawlerExternalDocumentUnChanged**
+> JsonMessage crawlerExternalDocumentUnChanged(cmDocumentUnChanged, apIVersion)
+
+Mark External Document Unchanged
+
+An external crawler document marks a document as not having changed.
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.CrawlerApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://demo.simsage.ai");
+
+    CrawlerApi apiInstance = new CrawlerApi(defaultClient);
+    CMDocumentUnChanged cmDocumentUnChanged = new CMDocumentUnChanged(); // CMDocumentUnChanged | 
+    String apIVersion = "1"; // String | 
+    try {
+      JsonMessage result = apiInstance.crawlerExternalDocumentUnChanged(cmDocumentUnChanged, apIVersion);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling CrawlerApi#crawlerExternalDocumentUnChanged");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **cmDocumentUnChanged** | [**CMDocumentUnChanged**](CMDocumentUnChanged.md)|  | |
+| **apIVersion** | **String**|  | [optional] [enum: 1] |
+
+### Return type
+
+[**JsonMessage**](JsonMessage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | mark external-crawler document unchanged OK response |  -  |
+| **500** | could not mark external-document as unchanged. |  -  |
 
 <a id="crawlerExternalDocumentUpload"></a>
 # **crawlerExternalDocumentUpload**
@@ -314,7 +376,7 @@ import org.openapitools.client.api.CrawlerApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     CrawlerApi apiInstance = new CrawlerApi(defaultClient);
     CMUploadDocument cmUploadDocument = new CMUploadDocument(); // CMUploadDocument | 
@@ -356,8 +418,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not start external crawler. |  -  |
 | **200** | upload external-crawler document OK response |  -  |
+| **500** | could not start external crawler. |  -  |
 
 <a id="crawlerExternalImageUpload"></a>
 # **crawlerExternalImageUpload**
@@ -379,7 +441,7 @@ import org.openapitools.client.api.CrawlerApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     CrawlerApi apiInstance = new CrawlerApi(defaultClient);
     CMUploadImage cmUploadImage = new CMUploadImage(); // CMUploadImage | 
@@ -444,7 +506,7 @@ import org.openapitools.client.api.CrawlerApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     CrawlerApi apiInstance = new CrawlerApi(defaultClient);
     CMExternalCrawlerRenameFolder cmExternalCrawlerRenameFolder = new CMExternalCrawlerRenameFolder(); // CMExternalCrawlerRenameFolder | 
@@ -509,7 +571,7 @@ import org.openapitools.client.api.CrawlerApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     CrawlerApi apiInstance = new CrawlerApi(defaultClient);
     CMExternalCrawlerSetDeltaToken cmExternalCrawlerSetDeltaToken = new CMExternalCrawlerSetDeltaToken(); // CMExternalCrawlerSetDeltaToken | 
@@ -574,7 +636,7 @@ import org.openapitools.client.api.CrawlerApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     CrawlerApi apiInstance = new CrawlerApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation's id (a guid)
@@ -645,7 +707,7 @@ import org.openapitools.client.api.CrawlerApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     CrawlerApi apiInstance = new CrawlerApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation's id (a guid)
@@ -693,8 +755,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | updated source response |  -  |
 | **500** | could not remove a source&#39;s documents. |  -  |
+| **200** | updated source response |  -  |
 
 <a id="encryptedCommunications"></a>
 # **encryptedCommunications**
@@ -716,7 +778,7 @@ import org.openapitools.client.api.CrawlerApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     CrawlerApi apiInstance = new CrawlerApi(defaultClient);
     Integer seed = 56; // Integer | a random integer used for the communications
@@ -760,8 +822,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not execute command. |  -  |
 | **200** | secure communication result (various) |  -  |
+| **500** | could not execute command. |  -  |
 
 <a id="externalCrawler"></a>
 # **externalCrawler**
@@ -783,7 +845,7 @@ import org.openapitools.client.api.CrawlerApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     CrawlerApi apiInstance = new CrawlerApi(defaultClient);
     CMExternalCrawler cmExternalCrawler = new CMExternalCrawler(); // CMExternalCrawler | 
@@ -825,8 +887,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not get external crawler source. |  -  |
 | **200** | external-crawler source response |  -  |
+| **500** | could not get external crawler source. |  -  |
 
 <a id="externalCrawlerFinished"></a>
 # **externalCrawlerFinished**
@@ -848,7 +910,7 @@ import org.openapitools.client.api.CrawlerApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     CrawlerApi apiInstance = new CrawlerApi(defaultClient);
     CMExternalCrawlerStop cmExternalCrawlerStop = new CMExternalCrawlerStop(); // CMExternalCrawlerStop | 
@@ -913,7 +975,7 @@ import org.openapitools.client.api.CrawlerApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     CrawlerApi apiInstance = new CrawlerApi(defaultClient);
     CMExternalCrawlerStart cmExternalCrawlerStart = new CMExternalCrawlerStart(); // CMExternalCrawlerStart | 
@@ -978,7 +1040,7 @@ import org.openapitools.client.api.CrawlerApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     CrawlerApi apiInstance = new CrawlerApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation's id (a guid)
@@ -1049,7 +1111,7 @@ import org.openapitools.client.api.CrawlerApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     CrawlerApi apiInstance = new CrawlerApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -1124,7 +1186,7 @@ import org.openapitools.client.api.CrawlerApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     CrawlerApi apiInstance = new CrawlerApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -1173,71 +1235,6 @@ No authorization required
 | **500** | could not get source list. |  -  |
 | **200** | source list response |  -  |
 
-<a id="markFileAsSeen"></a>
-# **markFileAsSeen**
-> JsonMessage markFileAsSeen(cmExternalCrawlerMarkFileAsSeen, apIVersion)
-
-Mark file as seen
-
-An external crawler marks a file as seen.
-
-### Example
-```java
-// Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.CrawlerApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
-
-    CrawlerApi apiInstance = new CrawlerApi(defaultClient);
-    CMExternalCrawlerMarkFileAsSeen cmExternalCrawlerMarkFileAsSeen = new CMExternalCrawlerMarkFileAsSeen(); // CMExternalCrawlerMarkFileAsSeen | 
-    String apIVersion = "1"; // String | 
-    try {
-      JsonMessage result = apiInstance.markFileAsSeen(cmExternalCrawlerMarkFileAsSeen, apIVersion);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling CrawlerApi#markFileAsSeen");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **cmExternalCrawlerMarkFileAsSeen** | [**CMExternalCrawlerMarkFileAsSeen**](CMExternalCrawlerMarkFileAsSeen.md)|  | |
-| **apIVersion** | **String**|  | [optional] [enum: 1] |
-
-### Return type
-
-[**JsonMessage**](JsonMessage.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | mark file as seen OK response |  -  |
-| **500** | could not mark file as seen. |  -  |
-
 <a id="oidcCode"></a>
 # **oidcCode**
 > oidcCode(oidcKey, allRequestParams)
@@ -1258,7 +1255,7 @@ import org.openapitools.client.api.CrawlerApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     CrawlerApi apiInstance = new CrawlerApi(defaultClient);
     String oidcKey = "oidcKey_example"; // String | the Dropbox OIDC key
@@ -1322,7 +1319,7 @@ import org.openapitools.client.api.CrawlerApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     CrawlerApi apiInstance = new CrawlerApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -1366,129 +1363,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not start processing files. |  -  |
 | **200** | start processing all OK response |  -  |
-
-<a id="processorSchema"></a>
-# **processorSchema**
-> Object processorSchema()
-
-
-
-### Example
-```java
-// Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.CrawlerApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
-
-    CrawlerApi apiInstance = new CrawlerApi(defaultClient);
-    try {
-      Object result = apiInstance.processorSchema();
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling CrawlerApi#processorSchema");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-**Object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json;charset=UTF-8
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-
-<a id="receiveExternalLogEntry"></a>
-# **receiveExternalLogEntry**
-> CMSource receiveExternalLogEntry(cmExternalLogEntry, apIVersion)
-
-External Crawler log-entry
-
-An external crawler sends a log entry to SimSage.
-
-### Example
-```java
-// Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.CrawlerApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
-
-    CrawlerApi apiInstance = new CrawlerApi(defaultClient);
-    CMExternalLogEntry cmExternalLogEntry = new CMExternalLogEntry(); // CMExternalLogEntry | 
-    String apIVersion = "1"; // String | 
-    try {
-      CMSource result = apiInstance.receiveExternalLogEntry(cmExternalLogEntry, apIVersion);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling CrawlerApi#receiveExternalLogEntry");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **cmExternalLogEntry** | [**CMExternalLogEntry**](CMExternalLogEntry.md)|  | |
-| **apIVersion** | **String**|  | [optional] [enum: 1] |
-
-### Return type
-
-[**CMSource**](CMSource.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **500** | could not get write log-entry / log-entry invalid. |  -  |
+| **500** | could not start processing files. |  -  |
 
 <a id="resetSourceDelta"></a>
 # **resetSourceDelta**
@@ -1510,7 +1386,7 @@ import org.openapitools.client.api.CrawlerApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     CrawlerApi apiInstance = new CrawlerApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -1558,64 +1434,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not reset source delta-token. |  -  |
 | **200** | reset delta response |  -  |
-
-<a id="sdcSchema"></a>
-# **sdcSchema**
-> Object sdcSchema()
-
-
-
-### Example
-```java
-// Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.CrawlerApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
-
-    CrawlerApi apiInstance = new CrawlerApi(defaultClient);
-    try {
-      Object result = apiInstance.sdcSchema();
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling CrawlerApi#sdcSchema");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-**Object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json;charset=UTF-8
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
+| **500** | could not reset source delta-token. |  -  |
 
 <a id="startCrawler"></a>
 # **startCrawler**
@@ -1637,7 +1457,7 @@ import org.openapitools.client.api.CrawlerApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     CrawlerApi apiInstance = new CrawlerApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -1681,8 +1501,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | start crawler OK response |  -  |
 | **500** | could not start crawler. |  -  |
+| **200** | start crawler OK response |  -  |
 
 <a id="testCrawler"></a>
 # **testCrawler**
@@ -1704,7 +1524,7 @@ import org.openapitools.client.api.CrawlerApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     CrawlerApi apiInstance = new CrawlerApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -1752,8 +1572,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | test crawler connection OK response |  -  |
 | **500** | could not test crawler. |  -  |
+| **200** | test crawler connection OK response |  -  |
 
 <a id="updateCrawler"></a>
 # **updateCrawler**
@@ -1775,7 +1595,7 @@ import org.openapitools.client.api.CrawlerApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     CrawlerApi apiInstance = new CrawlerApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -1842,7 +1662,7 @@ import org.openapitools.client.api.CrawlerApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     CrawlerApi apiInstance = new CrawlerApi(defaultClient);
     try {
@@ -1878,6 +1698,6 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | get the version response |  -  |
 | **500** | could not get version. |  -  |
+| **200** | get the version response |  -  |
 

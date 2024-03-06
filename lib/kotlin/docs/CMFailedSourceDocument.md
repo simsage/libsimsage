@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **sourceId** | **kotlin.Int** | the source-id, primary key of the source | 
 **sourceSystemId** | **kotlin.String** | the unique id of the document in the source system, mostly same as web url | 
 **webUrl** | **kotlin.String** | the web url to access the document, can be different from url | 
-**runId** | **kotlin.Long** | the timestamp of the crawler run adding the exception | 
+**runId** | **kotlin.String** | the id of the crawler run adding the exception | 
 **errorMessage** | **kotlin.String** | the error message added by the system | 
 **encrypted** | **kotlin.Boolean** | Do we need to add transport encryption | 
 **seed** | **kotlin.Int** | The seed used if encrypted | 

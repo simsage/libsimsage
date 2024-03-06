@@ -13,7 +13,7 @@ Description of an external document upload failure.
 |**sourceId** | **Integer** | the source-id, primary key of the source |  |
 |**sourceSystemId** | **String** | the unique id of the document in the source system, mostly same as web url |  |
 |**webUrl** | **String** | the web url to access the document, can be different from url |  |
-|**runId** | **Long** | the timestamp of the crawler run adding the exception |  |
+|**runId** | **String** | the id of the crawler run adding the exception |  |
 |**errorMessage** | **String** | the error message added by the system |  |
 |**encrypted** | **Boolean** | Do we need to add transport encryption |  |
 |**seed** | **Integer** | The seed used if encrypted |  |

@@ -27,7 +27,7 @@ import com.squareup.moshi.JsonClass
  * @param sourceId the source-id, primary key of the source
  * @param sourceSystemId the unique id of the document in the source system, mostly same as web url
  * @param webUrl the web url to access the document, can be different from url
- * @param runId the timestamp of the crawler run adding the exception
+ * @param runId the id of the crawler run adding the exception
  * @param errorMessage the error message added by the system
  * @param encrypted Do we need to add transport encryption
  * @param seed The seed used if encrypted
@@ -57,9 +57,9 @@ data class CMFailedSourceDocument (
     @Json(name = "webUrl")
     val webUrl: kotlin.String,
 
-    /* the timestamp of the crawler run adding the exception */
+    /* the id of the crawler run adding the exception */
     @Json(name = "runId")
-    val runId: kotlin.Long,
+    val runId: kotlin.String,
 
     /* the error message added by the system */
     @Json(name = "errorMessage")

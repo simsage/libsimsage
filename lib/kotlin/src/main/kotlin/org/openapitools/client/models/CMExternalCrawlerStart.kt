@@ -27,7 +27,7 @@ import com.squareup.moshi.JsonClass
  * @param kbId the knowledge-base id of this context item, a guid-string
  * @param sid the security id (a guid) for this request.  This is effectively the shared secret between SimSage and the external-crawler system.
  * @param sourceId the source-id of this crawler (ie. the crawler's id)
- * @param runId the id (a unix timestamp) of the current 'go through the source once'.  This is a unique per-run identifier.
+ * @param runId the id (a guid) of the current 'go through the source once'.  This is a unique per-run identifier.
  * @param encrypted Do we need to add transport encryption
  * @param seed The seed used if encrypted
  */
@@ -55,9 +55,9 @@ data class CMExternalCrawlerStart (
     @Json(name = "sourceId")
     val sourceId: kotlin.Int,
 
-    /* the id (a unix timestamp) of the current 'go through the source once'.  This is a unique per-run identifier. */
+    /* the id (a guid) of the current 'go through the source once'.  This is a unique per-run identifier. */
     @Json(name = "runId")
-    val runId: kotlin.Long,
+    val runId: kotlin.String,
 
     /* Do we need to add transport encryption */
     @Json(name = "encrypted")

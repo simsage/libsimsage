@@ -5,9 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **sc_type** | **String** |  | 
+**category_type** | **String** |  | 
+**order** | **i32** |  | 
+**sort_default** | **String** |  | 
+**sort_asc_text** | **String** |  | 
+**sort_desc_text** | **String** |  | 
 **metadata** | **String** |  | 
 **display_name** | **String** |  | 
-**data_type** | **String** |  | 
+**sort** | **bool** |  | 
 **min_value** | **i64** |  | 
 **max_value** | **i64** |  | 
 **items** | [**Vec<crate::models::NameCounterLevel>**](NameCounterLevel.md) |  | 

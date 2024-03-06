@@ -1,6 +1,6 @@
 # ConversionApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://demo.simsage.ai*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -29,7 +29,7 @@ import org.openapitools.client.api.ConversionApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     ConversionApi apiInstance = new ConversionApi(defaultClient);
     try {
@@ -65,8 +65,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | the version response |  -  |
 | **500** | could not get version |  -  |
+| **200** | the version response |  -  |
 
 <a id="sttVersion"></a>
 # **sttVersion**
@@ -88,7 +88,7 @@ import org.openapitools.client.api.ConversionApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     ConversionApi apiInstance = new ConversionApi(defaultClient);
     try {
@@ -124,8 +124,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | the version response |  -  |
 | **500** | could not get version |  -  |
+| **200** | the version response |  -  |
 
 <a id="version7"></a>
 # **version7**
@@ -147,7 +147,7 @@ import org.openapitools.client.api.ConversionApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://demo.simsage.ai");
 
     ConversionApi apiInstance = new ConversionApi(defaultClient);
     try {
@@ -183,6 +183,6 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | the version response |  -  |
 | **500** | could not get version |  -  |
+| **200** | the version response |  -  |
 

@@ -11,8 +11,6 @@ Apis/KnowledgebaseApi.md
 Apis/LanguageApi.md
 Apis/SemanticApi.md
 Apis/StatsApi.md
-Models/Asset.md
-Models/AssetACL.md
 Models/Backup.md
 Models/CMAddFolder.md
 Models/CMAddSourceFolder.md
@@ -45,18 +43,17 @@ Models/CMDocumentQuestionAndAnswer.md
 Models/CMDocumentRelationship.md
 Models/CMDocumentSubscription.md
 Models/CMDocumentTypeFrequency.md
+Models/CMDocumentUnChanged.md
 Models/CMDocumentVersion.md
 Models/CMDocumentsByToken.md
 Models/CMExportRedactedDocument.md
 Models/CMExternalCrawler.md
 Models/CMExternalCrawlerDeleteFolder.md
 Models/CMExternalCrawlerDeleteUrl.md
-Models/CMExternalCrawlerMarkFileAsSeen.md
 Models/CMExternalCrawlerRenameFolder.md
 Models/CMExternalCrawlerSetDeltaToken.md
 Models/CMExternalCrawlerStart.md
 Models/CMExternalCrawlerStop.md
-Models/CMExternalLogEntry.md
 Models/CMFailedSourceDocument.md
 Models/CMFilter.md
 Models/CMGdprSearchDetails.md
@@ -178,7 +175,7 @@ Models/Identifier.md
 Models/JsonMessage.md
 Models/KnowledgeBase.md
 Models/LocatedRedaction.md
-Models/MDMetadataMapping.md
+Models/MDCategory.md
 Models/NameCounterLevel.md
 Models/OperatorKnowledgeBase.md
 Models/OptimizeIndexesGetReportCmd.md

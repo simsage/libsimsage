@@ -15,7 +15,7 @@
 
 package org.openapitools.client.models
 
-import org.openapitools.client.models.MDMetadataMapping
+import org.openapitools.client.models.MDCategory
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -47,7 +47,7 @@ import com.squareup.moshi.JsonClass
  * @param template A render template for this document.  This is only appropriate for Database and RESTful type sources.
  * @param encrypted Do we need to add transport encryption
  * @param seed The seed used if encrypted
- * @param runId the id (a unix timestamp) of the current 'go through the source once'.  This is a unique per-run identifier.
+ * @param runId the id (a guid) of the current 'go through the source once'.  This is a unique per-run identifier.
  */
 
 
@@ -131,7 +131,7 @@ data class CMUploadDocument (
 
     /* A list of special SimSage metadata categories for matching this document with.  Can be empty. */
     @Json(name = "categories")
-    val categories: kotlin.collections.List<MDMetadataMapping>,
+    val categories: kotlin.collections.List<MDCategory>,
 
     /* The size of this document (the original) in bytes */
     @Json(name = "size")
@@ -149,9 +149,9 @@ data class CMUploadDocument (
     @Json(name = "seed")
     val seed: kotlin.Int,
 
-    /* the id (a unix timestamp) of the current 'go through the source once'.  This is a unique per-run identifier. */
+    /* the id (a guid) of the current 'go through the source once'.  This is a unique per-run identifier. */
     @Json(name = "runId")
-    val runId: kotlin.Long
+    val runId: kotlin.String
 
 )
 

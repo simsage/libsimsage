@@ -23,12 +23,12 @@ Name | Type | Description | Notes
 **created** | **i64** | a unix-timestamp of the creation date-time of this document | 
 **last_modified** | **i64** | a unix-timestamp of the last-modified date-time of this document | 
 **metadata** | **::std::collections::HashMap<String, String>** | a series of name values for other metadata values found in the container of this document | 
-**categories** | [**Vec<crate::models::MdMetadataMapping>**](MDMetadataMapping.md) | A list of special SimSage metadata categories for matching this document with.  Can be empty. | 
+**categories** | [**Vec<crate::models::MdCategory>**](MDCategory.md) | A list of special SimSage metadata categories for matching this document with.  Can be empty. | 
 **size** | **i64** | The size of this document (the original) in bytes | 
 **template** | **String** | A render template for this document.  This is only appropriate for Database and RESTful type sources. | 
 **encrypted** | **bool** | Do we need to add transport encryption | 
 **seed** | **i32** | The seed used if encrypted | 
-**run_id** | **i64** | the id (a unix timestamp) of the current 'go through the source once'.  This is a unique per-run identifier. | 
+**run_id** | **String** | the id (a guid) of the current 'go through the source once'.  This is a unique per-run identifier. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

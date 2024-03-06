@@ -24,7 +24,6 @@ Name | Type | Description | Notes
 **GroupSimilarDocuments** | **bool** | should the search-engine group similar documents together | 
 **SortByAge** | **bool** | should the search-engine sort results by age | 
 **UseQuestionAnsweringAi** | **bool** | use ChatGPT or equivalent to answer queries | 
-**WordSynSet** | **Dictionary&lt;string, int&gt;** | selected syn-sets for words | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

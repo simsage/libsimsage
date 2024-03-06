@@ -1,6 +1,6 @@
 # \LanguageApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://demo.simsage.ai*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,6 +20,7 @@ Method | HTTP request | Description
 [**save_semantic**](LanguageApi.md#save_semantic) | **PUT** /api/language/save-semantic/{organisationId}/{kbId} | Save Semantic
 [**save_syn_set**](LanguageApi.md#save_syn_set) | **PUT** /api/language/save-syn-set/{organisationId}/{kbId} | Save SynSet
 [**save_synonym**](LanguageApi.md#save_synonym) | **PUT** /api/language/save-synonym/{organisationId}/{kbId} | Save Synonym
+[**truncate_slow_indexes**](LanguageApi.md#truncate_slow_indexes) | **GET** /api/language/truncate-slow-indexes/{organisationId}/{kbId} | Truncate slow Indexes
 [**tune_language_graph**](LanguageApi.md#tune_language_graph) | **GET** /api/language/tune-graph/{organisationId}/{kbId} | Tune Graph
 [**version2**](LanguageApi.md#version2) | **GET** /api/language/version | Version
 
@@ -556,6 +557,39 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## truncate_slow_indexes
+
+> crate::models::JsonMessage truncate_slow_indexes(organisation_id, kb_id, session_id, api_version)
+Truncate slow Indexes
+
+Force slow-index truncation for a the given knowledge-base, now.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**organisation_id** | **String** | the organisation's id (a guid) | [required] |
+**kb_id** | **String** | the knowledge-bases' id (a guid) | [required] |
+**session_id** | **String** | a valid SimSage Session id. | [required] |
+**api_version** | Option<**String**> |  |  |
+
+### Return type
+
+[**crate::models::JsonMessage**](JsonMessage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

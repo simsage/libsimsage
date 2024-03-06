@@ -5,6 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **message_type** | **String** |  | 
+**assigned_operator_id** | **String** | A unique id for this operator's session. | 
+**operator_name** | **String** | the name of the operator for clients | 
 **organisation_id** | **String** | the organisation (its guid id). | 
 **kb_id** | **String** | the knowledge-base id (its guid id) | 
 **text** | **String** | the text sent. | 
@@ -22,8 +24,6 @@ Name | Type | Description | Notes
 **category_list** | [**Vec<crate::models::SearchCategory>**](SearchCategory.md) | updated categories (if applicable) with updated counts | 
 **syn_set_list** | [**Vec<crate::models::CmSynSet>**](CMSynSet.md) | A list of syn-sets used in the query | 
 **custom_render** | **bool** | Does this source require custom render templates or use ordinary search-results? | 
-**source_id_to_counts** | **::std::collections::HashMap<String, i32>** | a map of sourceId -> number of documents found inside this source | 
-**document_type_to_counts** | **::std::collections::HashMap<String, i32>** | a map of document-type -> number of documents found of this type | 
 **saved_search_list** | [**Vec<crate::models::CmSavedSearch>**](CMSavedSearch.md) | a list of previous searches if applicable | 
 **query_summarization** | **String** | an optional summarization of the search results | 
 

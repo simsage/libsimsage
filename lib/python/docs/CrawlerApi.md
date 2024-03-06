@@ -1,6 +1,6 @@
 # openapi_client.CrawlerApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://demo.simsage.ai*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**crawler_delete_url**](CrawlerApi.md#crawler_delete_url) | **POST** /api/crawler/external/crawler/delete-url | Delete document
 [**crawler_external_document_delete**](CrawlerApi.md#crawler_external_document_delete) | **PUT** /api/crawler/external/document/delete | Remove an External Document
 [**crawler_external_document_failed**](CrawlerApi.md#crawler_external_document_failed) | **POST** /api/crawler/external/document/recordfailure | Upload External Document
+[**crawler_external_document_un_changed**](CrawlerApi.md#crawler_external_document_un_changed) | **POST** /api/crawler/external/document/un-changed | Mark External Document Unchanged
 [**crawler_external_document_upload**](CrawlerApi.md#crawler_external_document_upload) | **POST** /api/crawler/external/document/upload | Upload External Document
 [**crawler_external_image_upload**](CrawlerApi.md#crawler_external_image_upload) | **POST** /api/crawler/external/document/upload/image | Upload External Image
 [**crawler_rename_folder**](CrawlerApi.md#crawler_rename_folder) | **POST** /api/crawler/external/crawler/rename-folder | Rename document folder
@@ -21,13 +22,9 @@ Method | HTTP request | Description
 [**get_crawler**](CrawlerApi.md#get_crawler) | **GET** /api/crawler/crawler/{organisationId}/{kbId}/{sourceId} | Get source
 [**get_failed_documents**](CrawlerApi.md#get_failed_documents) | **GET** /api/crawler/faileddocs/{organisationId}/{kbId}/{sourceId}/{page}/{pageSize} | Get source List
 [**get_source_list**](CrawlerApi.md#get_source_list) | **GET** /api/crawler/crawlers/{organisationId}/{kbId} | Get source List
-[**mark_file_as_seen**](CrawlerApi.md#mark_file_as_seen) | **POST** /api/crawler/external/crawler/mark-file-as-seen | Mark file as seen
 [**oidc_code**](CrawlerApi.md#oidc_code) | **GET** /api/crawler/dropbox-oidc-code/{oidcKey} | OIDC code receiver
 [**process_all_files**](CrawlerApi.md#process_all_files) | **POST** /api/crawler/process-all-files | Process all files of crawler/source
-[**processor_schema**](CrawlerApi.md#processor_schema) | **GET** /api/crawler/processor_schema | 
-[**receive_external_log_entry**](CrawlerApi.md#receive_external_log_entry) | **POST** /api/crawler/external/crawler/log | External Crawler log-entry
 [**reset_source_delta**](CrawlerApi.md#reset_source_delta) | **POST** /api/crawler/crawler/reset-delta/{organisationId}/{kbId}/{sourceId} | Reset Source delta-token
-[**sdc_schema**](CrawlerApi.md#sdc_schema) | **GET** /api/crawler/sdc_schema | 
 [**start_crawler**](CrawlerApi.md#start_crawler) | **POST** /api/crawler/start | Start crawler
 [**test_crawler**](CrawlerApi.md#test_crawler) | **GET** /api/crawler/crawler/test/{organisationId}/{kbId}/{sourceId} | Test Crawler
 [**update_crawler**](CrawlerApi.md#update_crawler) | **POST** /api/crawler/crawler | Update Source
@@ -52,10 +49,10 @@ from openapi_client.models.json_message import JsonMessage
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://demo.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://demo.simsage.ai"
 )
 
 
@@ -100,8 +97,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**500** | could not delete document folder. |  -  |
 **200** | delete document folder update OK response |  -  |
+**500** | could not delete document folder. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -123,10 +120,10 @@ from openapi_client.models.json_message import JsonMessage
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://demo.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://demo.simsage.ai"
 )
 
 
@@ -171,8 +168,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | delete document update OK response |  -  |
 **500** | could not delete document. |  -  |
+**200** | delete document update OK response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -194,10 +191,10 @@ from openapi_client.models.json_message import JsonMessage
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://demo.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://demo.simsage.ai"
 )
 
 
@@ -265,10 +262,10 @@ from openapi_client.models.json_message import JsonMessage
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://demo.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://demo.simsage.ai"
 )
 
 
@@ -313,8 +310,79 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**500** | could not start external crawler. |  -  |
 **200** | upload external-crawler document OK response |  -  |
+**500** | could not start external crawler. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **crawler_external_document_un_changed**
+> JsonMessage crawler_external_document_un_changed(cm_document_un_changed, api_version=api_version)
+
+Mark External Document Unchanged
+
+An external crawler document marks a document as not having changed.
+
+### Example
+
+```python
+import time
+import os
+import openapi_client
+from openapi_client.models.cm_document_un_changed import CMDocumentUnChanged
+from openapi_client.models.json_message import JsonMessage
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://demo.simsage.ai
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "https://demo.simsage.ai"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.CrawlerApi(api_client)
+    cm_document_un_changed = openapi_client.CMDocumentUnChanged() # CMDocumentUnChanged | 
+    api_version = 'api_version_example' # str |  (optional)
+
+    try:
+        # Mark External Document Unchanged
+        api_response = api_instance.crawler_external_document_un_changed(cm_document_un_changed, api_version=api_version)
+        print("The response of CrawlerApi->crawler_external_document_un_changed:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling CrawlerApi->crawler_external_document_un_changed: %s\n" % e)
+```
+
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cm_document_un_changed** | [**CMDocumentUnChanged**](CMDocumentUnChanged.md)|  | 
+ **api_version** | **str**|  | [optional] 
+
+### Return type
+
+[**JsonMessage**](JsonMessage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | mark external-crawler document unchanged OK response |  -  |
+**500** | could not mark external-document as unchanged. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -336,10 +404,10 @@ from openapi_client.models.json_message import JsonMessage
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://demo.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://demo.simsage.ai"
 )
 
 
@@ -384,8 +452,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**500** | could not start external crawler. |  -  |
 **200** | upload external-crawler document OK response |  -  |
+**500** | could not start external crawler. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -407,10 +475,10 @@ from openapi_client.models.json_message import JsonMessage
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://demo.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://demo.simsage.ai"
 )
 
 
@@ -478,10 +546,10 @@ from openapi_client.models.json_message import JsonMessage
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://demo.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://demo.simsage.ai"
 )
 
 
@@ -549,10 +617,10 @@ from openapi_client.models.json_message import JsonMessage
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://demo.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://demo.simsage.ai"
 )
 
 
@@ -619,10 +687,10 @@ from openapi_client.models.json_message import JsonMessage
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://demo.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://demo.simsage.ai"
 )
 
 
@@ -695,10 +763,10 @@ from openapi_client.models.cm_source import CMSource
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://demo.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://demo.simsage.ai"
 )
 
 
@@ -749,8 +817,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | updated source response |  -  |
 **500** | could not remove a source&#39;s documents. |  -  |
+**200** | updated source response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -771,10 +839,10 @@ from openapi_client.models.json_message import JsonMessage
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://demo.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://demo.simsage.ai"
 )
 
 
@@ -821,8 +889,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**500** | could not execute command. |  -  |
 **200** | secure communication result (various) |  -  |
+**500** | could not execute command. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -844,10 +912,10 @@ from openapi_client.models.cm_source import CMSource
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://demo.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://demo.simsage.ai"
 )
 
 
@@ -892,8 +960,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**500** | could not get external crawler source. |  -  |
 **200** | external-crawler source response |  -  |
+**500** | could not get external crawler source. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -915,10 +983,10 @@ from openapi_client.models.json_message import JsonMessage
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://demo.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://demo.simsage.ai"
 )
 
 
@@ -986,10 +1054,10 @@ from openapi_client.models.json_message import JsonMessage
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://demo.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://demo.simsage.ai"
 )
 
 
@@ -1056,10 +1124,10 @@ from openapi_client.models.cm_source import CMSource
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://demo.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://demo.simsage.ai"
 )
 
 
@@ -1132,10 +1200,10 @@ from openapi_client.models.cm_source import CMSource
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://demo.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://demo.simsage.ai"
 )
 
 
@@ -1212,10 +1280,10 @@ from openapi_client.models.cm_source import CMSource
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://demo.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://demo.simsage.ai"
 )
 
 
@@ -1269,77 +1337,6 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **mark_file_as_seen**
-> JsonMessage mark_file_as_seen(cm_external_crawler_mark_file_as_seen, api_version=api_version)
-
-Mark file as seen
-
-An external crawler marks a file as seen.
-
-### Example
-
-```python
-import time
-import os
-import openapi_client
-from openapi_client.models.cm_external_crawler_mark_file_as_seen import CMExternalCrawlerMarkFileAsSeen
-from openapi_client.models.json_message import JsonMessage
-from openapi_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://test.simsage.ai
-# See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
-)
-
-
-# Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = openapi_client.CrawlerApi(api_client)
-    cm_external_crawler_mark_file_as_seen = openapi_client.CMExternalCrawlerMarkFileAsSeen() # CMExternalCrawlerMarkFileAsSeen | 
-    api_version = 'api_version_example' # str |  (optional)
-
-    try:
-        # Mark file as seen
-        api_response = api_instance.mark_file_as_seen(cm_external_crawler_mark_file_as_seen, api_version=api_version)
-        print("The response of CrawlerApi->mark_file_as_seen:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling CrawlerApi->mark_file_as_seen: %s\n" % e)
-```
-
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cm_external_crawler_mark_file_as_seen** | [**CMExternalCrawlerMarkFileAsSeen**](CMExternalCrawlerMarkFileAsSeen.md)|  | 
- **api_version** | **str**|  | [optional] 
-
-### Return type
-
-[**JsonMessage**](JsonMessage.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | mark file as seen OK response |  -  |
-**500** | could not mark file as seen. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **oidc_code**
 > oidc_code(oidc_key, all_request_params)
 
@@ -1356,10 +1353,10 @@ import openapi_client
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://demo.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://demo.simsage.ai"
 )
 
 
@@ -1425,10 +1422,10 @@ from openapi_client.models.json_message import JsonMessage
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://demo.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://demo.simsage.ai"
 )
 
 
@@ -1475,138 +1472,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**500** | could not start processing files. |  -  |
 **200** | start processing all OK response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **processor_schema**
-> object processor_schema()
-
-
-
-### Example
-
-```python
-import time
-import os
-import openapi_client
-from openapi_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://test.simsage.ai
-# See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
-)
-
-
-# Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = openapi_client.CrawlerApi(api_client)
-
-    try:
-        api_response = api_instance.processor_schema()
-        print("The response of CrawlerApi->processor_schema:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling CrawlerApi->processor_schema: %s\n" % e)
-```
-
-
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-**object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json;charset=UTF-8
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **receive_external_log_entry**
-> CMSource receive_external_log_entry(cm_external_log_entry, api_version=api_version)
-
-External Crawler log-entry
-
-An external crawler sends a log entry to SimSage.
-
-### Example
-
-```python
-import time
-import os
-import openapi_client
-from openapi_client.models.cm_external_log_entry import CMExternalLogEntry
-from openapi_client.models.cm_source import CMSource
-from openapi_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://test.simsage.ai
-# See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
-)
-
-
-# Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = openapi_client.CrawlerApi(api_client)
-    cm_external_log_entry = openapi_client.CMExternalLogEntry() # CMExternalLogEntry | 
-    api_version = 'api_version_example' # str |  (optional)
-
-    try:
-        # External Crawler log-entry
-        api_response = api_instance.receive_external_log_entry(cm_external_log_entry, api_version=api_version)
-        print("The response of CrawlerApi->receive_external_log_entry:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling CrawlerApi->receive_external_log_entry: %s\n" % e)
-```
-
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cm_external_log_entry** | [**CMExternalLogEntry**](CMExternalLogEntry.md)|  | 
- **api_version** | **str**|  | [optional] 
-
-### Return type
-
-[**CMSource**](CMSource.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**500** | could not get write log-entry / log-entry invalid. |  -  |
+**500** | could not start processing files. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1627,10 +1494,10 @@ from openapi_client.models.cm_source import CMSource
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://demo.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://demo.simsage.ai"
 )
 
 
@@ -1681,67 +1548,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**500** | could not reset source delta-token. |  -  |
 **200** | reset delta response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **sdc_schema**
-> object sdc_schema()
-
-
-
-### Example
-
-```python
-import time
-import os
-import openapi_client
-from openapi_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://test.simsage.ai
-# See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
-)
-
-
-# Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = openapi_client.CrawlerApi(api_client)
-
-    try:
-        api_response = api_instance.sdc_schema()
-        print("The response of CrawlerApi->sdc_schema:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling CrawlerApi->sdc_schema: %s\n" % e)
-```
-
-
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-**object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json;charset=UTF-8
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
+**500** | could not reset source delta-token. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1763,10 +1571,10 @@ from openapi_client.models.json_message import JsonMessage
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://demo.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://demo.simsage.ai"
 )
 
 
@@ -1813,8 +1621,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | start crawler OK response |  -  |
 **500** | could not start crawler. |  -  |
+**200** | start crawler OK response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1835,10 +1643,10 @@ from openapi_client.models.json_message import JsonMessage
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://demo.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://demo.simsage.ai"
 )
 
 
@@ -1889,8 +1697,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | test crawler connection OK response |  -  |
 **500** | could not test crawler. |  -  |
+**200** | test crawler connection OK response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1911,10 +1719,10 @@ from openapi_client.models.cm_source import CMSource
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://demo.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://demo.simsage.ai"
 )
 
 
@@ -1983,10 +1791,10 @@ from openapi_client.models.cm_version import CMVersion
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://demo.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://demo.simsage.ai"
 )
 
 
@@ -2025,8 +1833,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | get the version response |  -  |
 **500** | could not get version. |  -  |
+**200** | get the version response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

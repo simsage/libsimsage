@@ -11,8 +11,7 @@ Name | Type | Description | Notes
 **Sid** | **string** | the security id (a guid) for this request.  This is effectively the shared secret between SimSage and the external-crawler system. | 
 **SourceId** | **int** | the source-id of this crawler (ie. the crawler&#39;s id) | 
 **NumErrors** | **int** | the number of errors encountered during the run of this crawler | 
-**NumFilesSeen** | **long** | the number of files seen during the run of this crawler | 
-**RunId** | **long** | the id (a unix timestamp) of the current &#39;go through the source once&#39;.  This is a unique per-run identifier. | 
+**RunId** | **string** | the id (a guid) of the current &#39;go through the source once&#39;.  This is a unique per-run identifier. | 
 **Encrypted** | **bool** | Do we need to add transport encryption | 
 **Seed** | **int** | The seed used if encrypted | 
 

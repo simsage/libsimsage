@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 **paged_results** | [**\OpenAPI\Client\Model\CMPagedResultsCMSlicedDocument**](CMPagedResultsCMSlicedDocument.md) |  |
 **all_docs** | **int** |  |
 **completed** | **int** |  |
-**quarantined** | **int** |  |
 **source_map** | **array<string,string>** |  |
 **user_map** | **array<string,string>** |  |
 

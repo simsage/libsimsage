@@ -23,7 +23,6 @@ Name | Type | Description | Notes
 **groupSimilarDocuments** | **kotlin.Boolean** | should the search-engine group similar documents together | 
 **sortByAge** | **kotlin.Boolean** | should the search-engine sort results by age | 
 **useQuestionAnsweringAi** | **kotlin.Boolean** | use ChatGPT or equivalent to answer queries | 
-**wordSynSet** | **kotlin.collections.Map&lt;kotlin.String, kotlin.Int&gt;** | selected syn-sets for words | 
 
 
 

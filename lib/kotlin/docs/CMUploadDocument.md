@@ -23,12 +23,12 @@ Name | Type | Description | Notes
 **created** | **kotlin.Long** | a unix-timestamp of the creation date-time of this document | 
 **lastModified** | **kotlin.Long** | a unix-timestamp of the last-modified date-time of this document | 
 **metadata** | **kotlin.collections.Map&lt;kotlin.String, kotlin.String&gt;** | a series of name values for other metadata values found in the container of this document | 
-**categories** | [**kotlin.collections.List&lt;MDMetadataMapping&gt;**](MDMetadataMapping.md) | A list of special SimSage metadata categories for matching this document with.  Can be empty. | 
+**categories** | [**kotlin.collections.List&lt;MDCategory&gt;**](MDCategory.md) | A list of special SimSage metadata categories for matching this document with.  Can be empty. | 
 **propertySize** | **kotlin.Long** | The size of this document (the original) in bytes | 
 **template** | **kotlin.String** | A render template for this document.  This is only appropriate for Database and RESTful type sources. | 
 **encrypted** | **kotlin.Boolean** | Do we need to add transport encryption | 
 **seed** | **kotlin.Int** | The seed used if encrypted | 
-**runId** | **kotlin.Long** | the id (a unix timestamp) of the current &#39;go through the source once&#39;.  This is a unique per-run identifier. | 
+**runId** | **kotlin.String** | the id (a guid) of the current &#39;go through the source once&#39;.  This is a unique per-run identifier. | 
 
 
 

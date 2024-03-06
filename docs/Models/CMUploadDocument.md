@@ -22,12 +22,12 @@
 | **created** | **Long** | a unix-timestamp of the creation date-time of this document | [default to null] |
 | **lastModified** | **Long** | a unix-timestamp of the last-modified date-time of this document | [default to null] |
 | **metadata** | **Map** | a series of name values for other metadata values found in the container of this document | [default to null] |
-| **categories** | [**List**](MDMetadataMapping.md) | A list of special SimSage metadata categories for matching this document with.  Can be empty. | [default to null] |
+| **categories** | [**List**](MDCategory.md) | A list of special SimSage metadata categories for matching this document with.  Can be empty. | [default to null] |
 | **size** | **Long** | The size of this document (the original) in bytes | [default to null] |
 | **template** | **String** | A render template for this document.  This is only appropriate for Database and RESTful type sources. | [default to null] |
 | **encrypted** | **Boolean** | Do we need to add transport encryption | [default to null] |
 | **seed** | **Integer** | The seed used if encrypted | [default to null] |
-| **runId** | **Long** | the id (a unix timestamp) of the current &#39;go through the source once&#39;.  This is a unique per-run identifier. | [default to null] |
+| **runId** | **String** | the id (a guid) of the current &#39;go through the source once&#39;.  This is a unique per-run identifier. | [default to null] |
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

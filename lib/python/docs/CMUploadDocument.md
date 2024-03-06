@@ -24,12 +24,12 @@ Name | Type | Description | Notes
 **created** | **int** | a unix-timestamp of the creation date-time of this document | 
 **last_modified** | **int** | a unix-timestamp of the last-modified date-time of this document | 
 **metadata** | **Dict[str, str]** | a series of name values for other metadata values found in the container of this document | 
-**categories** | [**List[MDMetadataMapping]**](MDMetadataMapping.md) | A list of special SimSage metadata categories for matching this document with.  Can be empty. | 
+**categories** | [**List[MDCategory]**](MDCategory.md) | A list of special SimSage metadata categories for matching this document with.  Can be empty. | 
 **size** | **int** | The size of this document (the original) in bytes | 
 **template** | **str** | A render template for this document.  This is only appropriate for Database and RESTful type sources. | 
 **encrypted** | **bool** | Do we need to add transport encryption | 
 **seed** | **int** | The seed used if encrypted | 
-**run_id** | **int** | the id (a unix timestamp) of the current &#39;go through the source once&#39;.  This is a unique per-run identifier. | 
+**run_id** | **str** | the id (a guid) of the current &#39;go through the source once&#39;.  This is a unique per-run identifier. | 
 
 ## Example
 

@@ -5,9 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **scType** | [**inline**](#ScType) |  | 
+**categoryType** | **kotlin.String** |  | 
+**order** | **kotlin.Int** |  | 
+**sortDefault** | **kotlin.String** |  | 
+**sortAscText** | **kotlin.String** |  | 
+**sortDescText** | **kotlin.String** |  | 
 **metadata** | **kotlin.String** |  | 
 **displayName** | **kotlin.String** |  | 
-**dataType** | **kotlin.String** |  | 
+**sort** | **kotlin.Boolean** |  | 
 **minValue** | **kotlin.Long** |  | 
 **maxValue** | **kotlin.Long** |  | 
 **items** | [**kotlin.collections.List&lt;NameCounterLevel&gt;**](NameCounterLevel.md) |  | 

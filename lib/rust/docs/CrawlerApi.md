@@ -1,6 +1,6 @@
 # \CrawlerApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://demo.simsage.ai*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**crawler_delete_url**](CrawlerApi.md#crawler_delete_url) | **POST** /api/crawler/external/crawler/delete-url | Delete document
 [**crawler_external_document_delete**](CrawlerApi.md#crawler_external_document_delete) | **PUT** /api/crawler/external/document/delete | Remove an External Document
 [**crawler_external_document_failed**](CrawlerApi.md#crawler_external_document_failed) | **POST** /api/crawler/external/document/recordfailure | Upload External Document
+[**crawler_external_document_un_changed**](CrawlerApi.md#crawler_external_document_un_changed) | **POST** /api/crawler/external/document/un-changed | Mark External Document Unchanged
 [**crawler_external_document_upload**](CrawlerApi.md#crawler_external_document_upload) | **POST** /api/crawler/external/document/upload | Upload External Document
 [**crawler_external_image_upload**](CrawlerApi.md#crawler_external_image_upload) | **POST** /api/crawler/external/document/upload/image | Upload External Image
 [**crawler_rename_folder**](CrawlerApi.md#crawler_rename_folder) | **POST** /api/crawler/external/crawler/rename-folder | Rename document folder
@@ -21,13 +22,9 @@ Method | HTTP request | Description
 [**get_crawler**](CrawlerApi.md#get_crawler) | **GET** /api/crawler/crawler/{organisationId}/{kbId}/{sourceId} | Get source
 [**get_failed_documents**](CrawlerApi.md#get_failed_documents) | **GET** /api/crawler/faileddocs/{organisationId}/{kbId}/{sourceId}/{page}/{pageSize} | Get source List
 [**get_source_list**](CrawlerApi.md#get_source_list) | **GET** /api/crawler/crawlers/{organisationId}/{kbId} | Get source List
-[**mark_file_as_seen**](CrawlerApi.md#mark_file_as_seen) | **POST** /api/crawler/external/crawler/mark-file-as-seen | Mark file as seen
 [**oidc_code**](CrawlerApi.md#oidc_code) | **GET** /api/crawler/dropbox-oidc-code/{oidcKey} | OIDC code receiver
 [**process_all_files**](CrawlerApi.md#process_all_files) | **POST** /api/crawler/process-all-files | Process all files of crawler/source
-[**processor_schema**](CrawlerApi.md#processor_schema) | **GET** /api/crawler/processor_schema | 
-[**receive_external_log_entry**](CrawlerApi.md#receive_external_log_entry) | **POST** /api/crawler/external/crawler/log | External Crawler log-entry
 [**reset_source_delta**](CrawlerApi.md#reset_source_delta) | **POST** /api/crawler/crawler/reset-delta/{organisationId}/{kbId}/{sourceId} | Reset Source delta-token
-[**sdc_schema**](CrawlerApi.md#sdc_schema) | **GET** /api/crawler/sdc_schema | 
 [**start_crawler**](CrawlerApi.md#start_crawler) | **POST** /api/crawler/start | Start crawler
 [**test_crawler**](CrawlerApi.md#test_crawler) | **GET** /api/crawler/crawler/test/{organisationId}/{kbId}/{sourceId} | Test Crawler
 [**update_crawler**](CrawlerApi.md#update_crawler) | **POST** /api/crawler/crawler | Update Source
@@ -141,6 +138,37 @@ An external crawler document wants to upload a document to SimSage.
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **cm_failed_source_document** | [**CmFailedSourceDocument**](CmFailedSourceDocument.md) |  | [required] |
+**api_version** | Option<**String**> |  |  |
+
+### Return type
+
+[**crate::models::JsonMessage**](JsonMessage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## crawler_external_document_un_changed
+
+> crate::models::JsonMessage crawler_external_document_un_changed(cm_document_un_changed, api_version)
+Mark External Document Unchanged
+
+An external crawler document marks a document as not having changed.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**cm_document_un_changed** | [**CmDocumentUnChanged**](CmDocumentUnChanged.md) |  | [required] |
 **api_version** | Option<**String**> |  |  |
 
 ### Return type
@@ -579,37 +607,6 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## mark_file_as_seen
-
-> crate::models::JsonMessage mark_file_as_seen(cm_external_crawler_mark_file_as_seen, api_version)
-Mark file as seen
-
-An external crawler marks a file as seen.
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**cm_external_crawler_mark_file_as_seen** | [**CmExternalCrawlerMarkFileAsSeen**](CmExternalCrawlerMarkFileAsSeen.md) |  | [required] |
-**api_version** | Option<**String**> |  |  |
-
-### Return type
-
-[**crate::models::JsonMessage**](JsonMessage.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
 ## oidc_code
 
 > oidc_code(oidc_key, all_request_params)
@@ -673,62 +670,6 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## processor_schema
-
-> serde_json::Value processor_schema()
-
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**serde_json::Value**](serde_json::Value.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json;charset=UTF-8
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## receive_external_log_entry
-
-> crate::models::CmSource receive_external_log_entry(cm_external_log_entry, api_version)
-External Crawler log-entry
-
-An external crawler sends a log entry to SimSage.
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**cm_external_log_entry** | [**CmExternalLogEntry**](CmExternalLogEntry.md) |  | [required] |
-**api_version** | Option<**String**> |  |  |
-
-### Return type
-
-[**crate::models::CmSource**](CMSource.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
 ## reset_source_delta
 
 > crate::models::CmSource reset_source_delta(session_id, organisation_id, kb_id, source_id, api_version)
@@ -759,31 +700,6 @@ No authorization required
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## sdc_schema
-
-> serde_json::Value sdc_schema()
-
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**serde_json::Value**](serde_json::Value.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

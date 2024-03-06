@@ -41,7 +41,6 @@ import com.squareup.moshi.JsonClass
  * @param groupSimilarDocuments should the search-engine group similar documents together
  * @param sortByAge should the search-engine sort results by age
  * @param useQuestionAnsweringAi use ChatGPT or equivalent to answer queries
- * @param wordSynSet selected syn-sets for words
  */
 
 
@@ -121,11 +120,7 @@ data class CMClientQuery (
 
     /* use ChatGPT or equivalent to answer queries */
     @Json(name = "useQuestionAnsweringAi")
-    val useQuestionAnsweringAi: kotlin.Boolean,
-
-    /* selected syn-sets for words */
-    @Json(name = "wordSynSet")
-    val wordSynSet: kotlin.collections.Map<kotlin.String, kotlin.Int>
+    val useQuestionAnsweringAi: kotlin.Boolean
 
 )
 

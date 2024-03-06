@@ -26,6 +26,9 @@ import com.squareup.moshi.JsonClass
  * @param sourceId the id of this source
  * @param sourceType the type of this source
  * @param customRender Does this source require custom render templates or use ordinary search-results?
+ * @param domainType the domain security type (if applicable) of this source (can be empty).  Types: 'ad' classical Microsoft Active Directory, 'aad' Azure Active Directory, 'simsage' SimSage platform user accounts
+ * @param clientId a Microsoft client-id for Azure Domain access
+ * @param redirectUrl a Microsoft redirect-url for Azure Domain access
  */
 
 
@@ -45,7 +48,19 @@ data class CMSourceBaseInfo (
 
     /* Does this source require custom render templates or use ordinary search-results? */
     @Json(name = "customRender")
-    val customRender: kotlin.Boolean
+    val customRender: kotlin.Boolean,
+
+    /* the domain security type (if applicable) of this source (can be empty).  Types: 'ad' classical Microsoft Active Directory, 'aad' Azure Active Directory, 'simsage' SimSage platform user accounts */
+    @Json(name = "domainType")
+    val domainType: kotlin.String,
+
+    /* a Microsoft client-id for Azure Domain access */
+    @Json(name = "clientId")
+    val clientId: kotlin.String,
+
+    /* a Microsoft redirect-url for Azure Domain access */
+    @Json(name = "redirectUrl")
+    val redirectUrl: kotlin.String
 
 )
 

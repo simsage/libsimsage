@@ -1,6 +1,6 @@
 # StatsApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://demo.simsage.ai*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -8,7 +8,7 @@ All URIs are relative to *https://test.simsage.ai*
 | [**getIndexOptimizationReports**](StatsApi.md#getIndexOptimizationReports) | **GET** /api/stats/reports/{organisationId}/{kbId} | get optimization report list |
 | [**getStats**](StatsApi.md#getStats) | **GET** /api/stats/stats/{organisationId}/{kbId}/{year}/{month}/{top} | Get usage Statistics |
 | [**simSageStatus**](StatsApi.md#simSageStatus) | **PUT** /api/stats/status/{organisationId} | SimSage status |
-| [**systemLogs**](StatsApi.md#systemLogs) | **GET** /api/stats/system-logs/{organisationId}/{service}/{numLines} | System Logs |
+| [**systemLogs**](StatsApi.md#systemLogs) | **GET** /api/stats/system-logs/{organisationId}/{year}/{month}/{day}/{hour}/{hours} | System Logs |
 | [**version**](StatsApi.md#version) | **GET** /api/stats/version | Version |
 
 
@@ -134,7 +134,7 @@ No authorization required
 
 <a name="systemLogs"></a>
 # **systemLogs**
-> List systemLogs(organisationId, service, numLines, session-id)
+> List systemLogs(organisationId, year, month, day, hour, hours, session-id)
 
 System Logs
 
@@ -145,8 +145,11 @@ System Logs
 |Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organisationId** | **String**| the organisation (its guid id) | [default to null] |
-| **service** | **String**| the service to get the log for | [default to null] |
-| **numLines** | **Integer**| the maximum number of lines to return if &gt; 0 | [default to null] |
+| **year** | **Integer**| the year to get the log for | [default to null] |
+| **month** | **Integer**| the month to get the log for | [default to null] |
+| **day** | **Integer**| the day to get the log for | [default to null] |
+| **hour** | **Integer**| the hour to get the log for | [default to null] |
+| **hours** | **Integer**| the number of hours to get the logs for starting at hour | [default to null] |
 | **session-id** | **String**| a valid SimSage Session id. | [default to null] |
 
 ### Return type

@@ -5,6 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **messageType** | **kotlin.String** |  | 
+**assignedOperatorId** | **kotlin.String** | A unique id for this operator&#39;s session. | 
+**operatorName** | **kotlin.String** | the name of the operator for clients | 
 **organisationId** | **kotlin.String** | the organisation (its guid id). | 
 **kbId** | **kotlin.String** | the knowledge-base id (its guid id) | 
 **text** | **kotlin.String** | the text sent. | 
@@ -22,8 +24,6 @@ Name | Type | Description | Notes
 **categoryList** | [**kotlin.collections.List&lt;SearchCategory&gt;**](SearchCategory.md) | updated categories (if applicable) with updated counts | 
 **synSetList** | [**kotlin.collections.List&lt;CMSynSet&gt;**](CMSynSet.md) | A list of syn-sets used in the query | 
 **customRender** | **kotlin.Boolean** | Does this source require custom render templates or use ordinary search-results? | 
-**sourceIdToCounts** | **kotlin.collections.Map&lt;kotlin.String, kotlin.Int&gt;** | a map of sourceId -&gt; number of documents found inside this source | 
-**documentTypeToCounts** | **kotlin.collections.Map&lt;kotlin.String, kotlin.Int&gt;** | a map of document-type -&gt; number of documents found of this type | 
 **savedSearchList** | [**kotlin.collections.List&lt;CMSavedSearch&gt;**](CMSavedSearch.md) | a list of previous searches if applicable | 
 **querySummarization** | **kotlin.String** | an optional summarization of the search results | 
 

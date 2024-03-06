@@ -1,6 +1,6 @@
 # \AuthApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://demo.simsage.ai*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,7 +18,6 @@ Method | HTTP request | Description
 [**save_group**](AuthApi.md#save_group) | **PUT** /api/auth/group | Save Group
 [**sign_in**](AuthApi.md#sign_in) | **POST** /api/auth/sign-in | Sign In
 [**sign_in_admin_using_jwt_msal**](AuthApi.md#sign_in_admin_using_jwt_msal) | **GET** /api/auth/admin/authenticate/msal | JWT MSal Sign In
-[**sign_in_admin_using_session_id**](AuthApi.md#sign_in_admin_using_session_id) | **GET** /api/auth/admin/authenticate/session-id | session-id Sign-in
 [**sign_in_dms_using_jwt_msal**](AuthApi.md#sign_in_dms_using_jwt_msal) | **GET** /api/auth/dms/authenticate/msal/{organisationId} | JWT MSal Sign In
 [**sign_in_evolve_using_jwt_msal**](AuthApi.md#sign_in_evolve_using_jwt_msal) | **GET** /api/auth/evolve/authenticate/msal/{organisationId} | JWT MSal Sign In
 [**sign_in_search_using_jwt_msal**](AuthApi.md#sign_in_search_using_jwt_msal) | **GET** /api/auth/search/authenticate/msal/{organisationId} | JWT MSal Sign In
@@ -448,36 +447,6 @@ Sign-in a user using an Msal JWT.
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **jwt** | **String** | a valid JWT token. | [required] |
-
-### Return type
-
-[**crate::models::SignInAdmin**](SignInAdmin.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## sign_in_admin_using_session_id
-
-> crate::models::SignInAdmin sign_in_admin_using_session_id(session_id)
-session-id Sign-in
-
-Sign-in a user using an existing session-id.
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**session_id** | **String** | a valid SimSage Session id. | [required] |
 
 ### Return type
 

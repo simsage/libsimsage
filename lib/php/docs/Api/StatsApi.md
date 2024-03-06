@@ -1,6 +1,6 @@
 # OpenAPI\Client\StatsApi
 
-All URIs are relative to https://test.simsage.ai, except if the operation defines another base path.
+All URIs are relative to https://demo.simsage.ai, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -8,7 +8,7 @@ All URIs are relative to https://test.simsage.ai, except if the operation define
 | [**getIndexOptimizationReports()**](StatsApi.md#getIndexOptimizationReports) | **GET** /api/stats/reports/{organisationId}/{kbId} | get optimization report list |
 | [**getStats()**](StatsApi.md#getStats) | **GET** /api/stats/stats/{organisationId}/{kbId}/{year}/{month}/{top} | Get usage Statistics |
 | [**simSageStatus()**](StatsApi.md#simSageStatus) | **PUT** /api/stats/status/{organisationId} | SimSage status |
-| [**systemLogs()**](StatsApi.md#systemLogs) | **GET** /api/stats/system-logs/{organisationId}/{service}/{numLines} | System Logs |
+| [**systemLogs()**](StatsApi.md#systemLogs) | **GET** /api/stats/system-logs/{organisationId}/{year}/{month}/{day}/{hour}/{hours} | System Logs |
 | [**version()**](StatsApi.md#version) | **GET** /api/stats/version | Version |
 
 
@@ -263,7 +263,7 @@ No authorization required
 ## `systemLogs()`
 
 ```php
-systemLogs($organisation_id, $service, $num_lines, $session_id): \OpenAPI\Client\Model\CMLoggerEntry[]
+systemLogs($organisation_id, $year, $month, $day, $hour, $hours, $session_id): \OpenAPI\Client\Model\CMLoggerEntry[]
 ```
 
 System Logs
@@ -284,12 +284,15 @@ $apiInstance = new OpenAPI\Client\Api\StatsApi(
     new GuzzleHttp\Client()
 );
 $organisation_id = 'organisation_id_example'; // string | the organisation (its guid id)
-$service = 'service_example'; // string | the service to get the log for
-$num_lines = 56; // int | the maximum number of lines to return if > 0
+$year = 56; // int | the year to get the log for
+$month = 56; // int | the month to get the log for
+$day = 56; // int | the day to get the log for
+$hour = 56; // int | the hour to get the log for
+$hours = 56; // int | the number of hours to get the logs for starting at hour
 $session_id = 'session_id_example'; // string | a valid SimSage Session id.
 
 try {
-    $result = $apiInstance->systemLogs($organisation_id, $service, $num_lines, $session_id);
+    $result = $apiInstance->systemLogs($organisation_id, $year, $month, $day, $hour, $hours, $session_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling StatsApi->systemLogs: ', $e->getMessage(), PHP_EOL;
@@ -301,8 +304,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **organisation_id** | **string**| the organisation (its guid id) | |
-| **service** | **string**| the service to get the log for | |
-| **num_lines** | **int**| the maximum number of lines to return if &gt; 0 | |
+| **year** | **int**| the year to get the log for | |
+| **month** | **int**| the month to get the log for | |
+| **day** | **int**| the day to get the log for | |
+| **hour** | **int**| the hour to get the log for | |
+| **hours** | **int**| the number of hours to get the logs for starting at hour | |
 | **session_id** | **string**| a valid SimSage Session id. | |
 
 ### Return type

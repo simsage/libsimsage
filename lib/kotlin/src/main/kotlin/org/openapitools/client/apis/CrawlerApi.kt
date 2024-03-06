@@ -20,15 +20,14 @@ import okhttp3.OkHttpClient
 import okhttp3.HttpUrl
 
 import org.openapitools.client.models.CMDeleteDocument
+import org.openapitools.client.models.CMDocumentUnChanged
 import org.openapitools.client.models.CMExternalCrawler
 import org.openapitools.client.models.CMExternalCrawlerDeleteFolder
 import org.openapitools.client.models.CMExternalCrawlerDeleteUrl
-import org.openapitools.client.models.CMExternalCrawlerMarkFileAsSeen
 import org.openapitools.client.models.CMExternalCrawlerRenameFolder
 import org.openapitools.client.models.CMExternalCrawlerSetDeltaToken
 import org.openapitools.client.models.CMExternalCrawlerStart
 import org.openapitools.client.models.CMExternalCrawlerStop
-import org.openapitools.client.models.CMExternalLogEntry
 import org.openapitools.client.models.CMFailedSourceDocument
 import org.openapitools.client.models.CMSource
 import org.openapitools.client.models.CMStartCrawler
@@ -57,7 +56,7 @@ class CrawlerApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://test.simsage.ai")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://demo.simsage.ai")
         }
     }
 
@@ -386,6 +385,89 @@ class CrawlerApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
         return RequestConfig(
             method = RequestMethod.POST,
             path = "/api/crawler/external/document/recordfailure",
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = false,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * enum for parameter apIVersion
+     */
+     enum class ApIVersionCrawlerExternalDocumentUnChanged(val value: kotlin.String) {
+         @Json(name = "1") _1("1")
+     }
+
+    /**
+     * Mark External Document Unchanged
+     * An external crawler document marks a document as not having changed.
+     * @param cmDocumentUnChanged 
+     * @param apIVersion  (optional)
+     * @return JsonMessage
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun crawlerExternalDocumentUnChanged(cmDocumentUnChanged: CMDocumentUnChanged, apIVersion: ApIVersionCrawlerExternalDocumentUnChanged? = null) : JsonMessage {
+        val localVarResponse = crawlerExternalDocumentUnChangedWithHttpInfo(cmDocumentUnChanged = cmDocumentUnChanged, apIVersion = apIVersion)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as JsonMessage
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * Mark External Document Unchanged
+     * An external crawler document marks a document as not having changed.
+     * @param cmDocumentUnChanged 
+     * @param apIVersion  (optional)
+     * @return ApiResponse<JsonMessage?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun crawlerExternalDocumentUnChangedWithHttpInfo(cmDocumentUnChanged: CMDocumentUnChanged, apIVersion: ApIVersionCrawlerExternalDocumentUnChanged?) : ApiResponse<JsonMessage?> {
+        val localVariableConfig = crawlerExternalDocumentUnChangedRequestConfig(cmDocumentUnChanged = cmDocumentUnChanged, apIVersion = apIVersion)
+
+        return request<CMDocumentUnChanged, JsonMessage>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation crawlerExternalDocumentUnChanged
+     *
+     * @param cmDocumentUnChanged 
+     * @param apIVersion  (optional)
+     * @return RequestConfig
+     */
+    fun crawlerExternalDocumentUnChangedRequestConfig(cmDocumentUnChanged: CMDocumentUnChanged, apIVersion: ApIVersionCrawlerExternalDocumentUnChanged?) : RequestConfig<CMDocumentUnChanged> {
+        val localVariableBody = cmDocumentUnChanged
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        apIVersion?.apply { localVariableHeaders["API-Version"] = this.toString() }
+        localVariableHeaders["Content-Type"] = "application/json"
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.POST,
+            path = "/api/crawler/external/document/un-changed",
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = false,
@@ -1524,89 +1606,6 @@ class CrawlerApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
     }
 
     /**
-     * enum for parameter apIVersion
-     */
-     enum class ApIVersionMarkFileAsSeen(val value: kotlin.String) {
-         @Json(name = "1") _1("1")
-     }
-
-    /**
-     * Mark file as seen
-     * An external crawler marks a file as seen.
-     * @param cmExternalCrawlerMarkFileAsSeen 
-     * @param apIVersion  (optional)
-     * @return JsonMessage
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun markFileAsSeen(cmExternalCrawlerMarkFileAsSeen: CMExternalCrawlerMarkFileAsSeen, apIVersion: ApIVersionMarkFileAsSeen? = null) : JsonMessage {
-        val localVarResponse = markFileAsSeenWithHttpInfo(cmExternalCrawlerMarkFileAsSeen = cmExternalCrawlerMarkFileAsSeen, apIVersion = apIVersion)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as JsonMessage
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * Mark file as seen
-     * An external crawler marks a file as seen.
-     * @param cmExternalCrawlerMarkFileAsSeen 
-     * @param apIVersion  (optional)
-     * @return ApiResponse<JsonMessage?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun markFileAsSeenWithHttpInfo(cmExternalCrawlerMarkFileAsSeen: CMExternalCrawlerMarkFileAsSeen, apIVersion: ApIVersionMarkFileAsSeen?) : ApiResponse<JsonMessage?> {
-        val localVariableConfig = markFileAsSeenRequestConfig(cmExternalCrawlerMarkFileAsSeen = cmExternalCrawlerMarkFileAsSeen, apIVersion = apIVersion)
-
-        return request<CMExternalCrawlerMarkFileAsSeen, JsonMessage>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation markFileAsSeen
-     *
-     * @param cmExternalCrawlerMarkFileAsSeen 
-     * @param apIVersion  (optional)
-     * @return RequestConfig
-     */
-    fun markFileAsSeenRequestConfig(cmExternalCrawlerMarkFileAsSeen: CMExternalCrawlerMarkFileAsSeen, apIVersion: ApIVersionMarkFileAsSeen?) : RequestConfig<CMExternalCrawlerMarkFileAsSeen> {
-        val localVariableBody = cmExternalCrawlerMarkFileAsSeen
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        apIVersion?.apply { localVariableHeaders["API-Version"] = this.toString() }
-        localVariableHeaders["Content-Type"] = "application/json"
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.POST,
-            path = "/api/crawler/external/crawler/mark-file-as-seen",
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = false,
-            body = localVariableBody
-        )
-    }
-
-    /**
      * OIDC code receiver
      * used for OIDC systems to receive codes
      * @param oidcKey the Dropbox OIDC key
@@ -1768,157 +1767,6 @@ class CrawlerApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
     }
 
     /**
-     * 
-     * 
-     * @return kotlin.Any
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun processorSchema() : kotlin.Any {
-        val localVarResponse = processorSchemaWithHttpInfo()
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.Any
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * 
-     * 
-     * @return ApiResponse<kotlin.Any?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun processorSchemaWithHttpInfo() : ApiResponse<kotlin.Any?> {
-        val localVariableConfig = processorSchemaRequestConfig()
-
-        return request<Unit, kotlin.Any>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation processorSchema
-     *
-     * @return RequestConfig
-     */
-    fun processorSchemaRequestConfig() : RequestConfig<Unit> {
-        val localVariableBody = null
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "application/json;charset=UTF-8"
-
-        return RequestConfig(
-            method = RequestMethod.GET,
-            path = "/api/crawler/processor_schema",
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = false,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * enum for parameter apIVersion
-     */
-     enum class ApIVersionReceiveExternalLogEntry(val value: kotlin.String) {
-         @Json(name = "1") _1("1")
-     }
-
-    /**
-     * External Crawler log-entry
-     * An external crawler sends a log entry to SimSage.
-     * @param cmExternalLogEntry 
-     * @param apIVersion  (optional)
-     * @return CMSource
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun receiveExternalLogEntry(cmExternalLogEntry: CMExternalLogEntry, apIVersion: ApIVersionReceiveExternalLogEntry? = null) : CMSource {
-        val localVarResponse = receiveExternalLogEntryWithHttpInfo(cmExternalLogEntry = cmExternalLogEntry, apIVersion = apIVersion)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as CMSource
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * External Crawler log-entry
-     * An external crawler sends a log entry to SimSage.
-     * @param cmExternalLogEntry 
-     * @param apIVersion  (optional)
-     * @return ApiResponse<CMSource?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun receiveExternalLogEntryWithHttpInfo(cmExternalLogEntry: CMExternalLogEntry, apIVersion: ApIVersionReceiveExternalLogEntry?) : ApiResponse<CMSource?> {
-        val localVariableConfig = receiveExternalLogEntryRequestConfig(cmExternalLogEntry = cmExternalLogEntry, apIVersion = apIVersion)
-
-        return request<CMExternalLogEntry, CMSource>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation receiveExternalLogEntry
-     *
-     * @param cmExternalLogEntry 
-     * @param apIVersion  (optional)
-     * @return RequestConfig
-     */
-    fun receiveExternalLogEntryRequestConfig(cmExternalLogEntry: CMExternalLogEntry, apIVersion: ApIVersionReceiveExternalLogEntry?) : RequestConfig<CMExternalLogEntry> {
-        val localVariableBody = cmExternalLogEntry
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        apIVersion?.apply { localVariableHeaders["API-Version"] = this.toString() }
-        localVariableHeaders["Content-Type"] = "application/json"
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.POST,
-            path = "/api/crawler/external/crawler/log",
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = false,
-            body = localVariableBody
-        )
-    }
-
-    /**
      * enum for parameter apIVersion
      */
      enum class ApIVersionResetSourceDelta(val value: kotlin.String) {
@@ -2003,74 +1851,6 @@ class CrawlerApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
         return RequestConfig(
             method = RequestMethod.POST,
             path = "/api/crawler/crawler/reset-delta/{organisationId}/{kbId}/{sourceId}".replace("{"+"organisationId"+"}", encodeURIComponent(organisationId.toString())).replace("{"+"kbId"+"}", encodeURIComponent(kbId.toString())).replace("{"+"sourceId"+"}", encodeURIComponent(sourceId.toString())),
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = false,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * 
-     * 
-     * @return kotlin.Any
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun sdcSchema() : kotlin.Any {
-        val localVarResponse = sdcSchemaWithHttpInfo()
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.Any
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * 
-     * 
-     * @return ApiResponse<kotlin.Any?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun sdcSchemaWithHttpInfo() : ApiResponse<kotlin.Any?> {
-        val localVariableConfig = sdcSchemaRequestConfig()
-
-        return request<Unit, kotlin.Any>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation sdcSchema
-     *
-     * @return RequestConfig
-     */
-    fun sdcSchemaRequestConfig() : RequestConfig<Unit> {
-        val localVariableBody = null
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "application/json;charset=UTF-8"
-
-        return RequestConfig(
-            method = RequestMethod.GET,
-            path = "/api/crawler/sdc_schema",
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = false,

@@ -1,6 +1,6 @@
 # DocumentApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://demo.simsage.ai*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -79,7 +79,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/octet-stream, application/json
+- **Accept**: application/json, application/octet-stream
 
 <a name="getParquetList"></a>
 # **getParquetList**
@@ -141,7 +141,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+- **Accept**: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/json
 
 <a name="getStats1"></a>
 # **getStats1**
