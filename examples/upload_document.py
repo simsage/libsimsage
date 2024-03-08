@@ -22,20 +22,6 @@ source_id = 1
 run_id = int(time.time() * 1000)
 
 
-# sign-into SimSage and return a session
-def sign_in(username, password):
-    data = {"email": username, "password": password}
-    url = api_base + "/auth/sign-in"
-    header = {"API-Version": "1", "Content-Type": "application/json"}
-    x = requests.post(url, json=data, headers=header)
-    json_result = x.json()
-    if "error" in json_result:
-        raise ValueError("sign-in:" + json_result["error"])
-    if x.status_code not in range(200, 299):
-        raise ValueError("sign-in: bad http status code " + str(x.status_code))
-    return json_result["session"]["id"]
-
-
 #
 # upload a document to a SimSage external source
 #
@@ -78,7 +64,7 @@ def upload_document_to_external_source(url, mime_type, metadata_map, binary_data
     return x.json()
 
 
-# upload the README of this repository as an example
+# upload the README.md of this repository as an example
 with open('README.md', 'rb') as reader:
     data = reader.read()
 
