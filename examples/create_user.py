@@ -52,6 +52,9 @@ def create_groups(group_list):
 #
 # get an existing user by email address - use the paginate users call with the email address as filter
 #
+# @param session_id a valid session GUID string
+# @param email a valid email address for this user (must be unique for this user's account)
+# @return a user object or None if we can't find this user
 def get_user(session_id, email):
     url = api_base + "/auth/users-paginated/{}/0/10/{}".format(organisation_id, email)
     header = {"API-Version": "1", "Content-Type": "application/json", "session-id": session_id}
@@ -70,11 +73,16 @@ def get_user(session_id, email):
 
 #
 # to update an existing user, set the user_id to the guid string of the existing user
-# to create a new user, leave user_id as an empty string
-# password must be at least 8 characters long
-# role_list is a list of strings, where each string must be one of: {admin, manager, search, discover}
-# group_list is a list of strings with the names of existing groups
 #
+# @param session_id a valid session GUID string
+# @param user_id to create a new user, leave user_id as an empty string
+# @param email a valid email address for this user (must be unique for this user's account)
+# @param password must be at least 8 characters long
+# @param first_name the user's first-name
+# @param surname the user's surname / family name
+# @param role_list is a list of strings, where each string must be one of: {admin, manager, search, discover}
+# @param group_list is a list of strings with the names of existing groups
+# @return nothing
 def create_or_update_user(session_id, user_id, email, password, first_name, surname, role_list, group_list):
     if len(password.strip()) < 8:
         raise ValueError("password too short")
