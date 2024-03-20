@@ -11,7 +11,7 @@ organisation_id = "c276f883-e0c8-43ae-9119-df8b7df9c574"
 kb_id = "46ff0c75-7938-492c-ab50-442496f5de51"
 
 # your API credentials, as set up in your admin UX
-email = "info@simsage.nz"
+email = "info@simsage.ai"
 pwd = ""
 
 

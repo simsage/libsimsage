@@ -25,12 +25,13 @@ run_id = int(time.time() * 1000)
 #
 # upload a document to a SimSage external source
 #
-# url: the url / unique identifier of this item / document / record
-# mime_type: the mime-type of this item (e.g. "text/html")
-# metadata_map: extra metadata items in a map (e.g. {"name1": "value1", "name2": "value2"}
-# binary_data: the binary data to be uploaded, default maximum allowed is 50MB
-# created: a unix long (with milliseconds) representing the created date-time of this item
-# last_modified: a unix long (with milliseconds) representing the created date-time of this item
+# @param url a unique identifier of this item / document / record
+# @param mime_type the mime-type of this item (e.g. "text/html")
+# @param metadata_map extra metadata items in a map (e.g. {"name1": "value1", "name2": "value2"}
+# @param binary_data the binary data to be uploaded, default maximum allowed is 50MB
+# @param created a unix long (with milliseconds) representing the created date-time of this item
+# @param last_modified a unix long (with milliseconds) representing the created date-time of this item
+# @return a status message on how we did
 def upload_document_to_external_source(url, mime_type, metadata_map, binary_data, created, last_modified):
     base64_data = base64.b64encode(binary_data).decode("utf-8")
     data = {

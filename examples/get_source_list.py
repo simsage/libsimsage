@@ -49,6 +49,7 @@ session_id = sign_in(email, pwd)
 
 # get the list of sources for this org/kb
 source_list = get_source_list(session_id)
+# pretty print some of the source details
 for source in source_list:
     source_id = source["sourceId"]
     name = source["name"]
