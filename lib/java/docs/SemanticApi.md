@@ -1,6 +1,6 @@
 # SemanticApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://training.simsage.ai*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -34,7 +34,7 @@ import org.openapitools.client.api.SemanticApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     SemanticApi apiInstance = new SemanticApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -82,8 +82,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | fail response |  -  |
 | **200** | OK response |  -  |
+| **500** | fail response |  -  |
 
 <a id="documentQuestionAndAnswer"></a>
 # **documentQuestionAndAnswer**
@@ -105,7 +105,7 @@ import org.openapitools.client.api.SemanticApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     SemanticApi apiInstance = new SemanticApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -147,8 +147,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | response |  -  |
 | **500** | fail response |  -  |
+| **200** | response |  -  |
 
 <a id="getTextToSearchPaginated"></a>
 # **getTextToSearchPaginated**
@@ -170,7 +170,7 @@ import org.openapitools.client.api.SemanticApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     SemanticApi apiInstance = new SemanticApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -214,8 +214,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | response |  -  |
 | **500** | fail response |  -  |
+| **200** | response |  -  |
 
 <a id="restfulClientQuery"></a>
 # **restfulClientQuery**
@@ -237,7 +237,7 @@ import org.openapitools.client.api.SemanticApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     SemanticApi apiInstance = new SemanticApi(defaultClient);
     CMClientQuery cmClientQuery = new CMClientQuery(); // CMClientQuery | 
@@ -277,8 +277,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | response |  -  |
 | **500** | fail response |  -  |
+| **200** | response |  -  |
 
 <a id="saveTextToSearch"></a>
 # **saveTextToSearch**
@@ -300,7 +300,7 @@ import org.openapitools.client.api.SemanticApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     SemanticApi apiInstance = new SemanticApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -348,8 +348,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | fail response |  -  |
 | **200** | OK response |  -  |
+| **500** | fail response |  -  |
 
 <a id="shortSummary"></a>
 # **shortSummary**
@@ -371,7 +371,7 @@ import org.openapitools.client.api.SemanticApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     SemanticApi apiInstance = new SemanticApi(defaultClient);
     CMShortSummary cmShortSummary = new CMShortSummary(); // CMShortSummary | 
@@ -411,8 +411,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | response |  -  |
 | **500** | fail response |  -  |
+| **200** | response |  -  |
 
 <a id="tryTextToSearchConversion"></a>
 # **tryTextToSearchConversion**
@@ -434,7 +434,7 @@ import org.openapitools.client.api.SemanticApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     SemanticApi apiInstance = new SemanticApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -501,7 +501,7 @@ import org.openapitools.client.api.SemanticApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     SemanticApi apiInstance = new SemanticApi(defaultClient);
     try {
@@ -537,6 +537,6 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | get the version response |  -  |
 | **500** | could not get version. |  -  |
+| **200** | get the version response |  -  |
 

@@ -40,6 +40,6 @@ export class ServerConfiguration<T extends { [key: string]: string }> {
     }
 }
 
-const server1 = new ServerConfiguration<{  }>("https://test.simsage.ai", {  }, "SimSage API");
+const server1 = new ServerConfiguration<{  }>("https://training.simsage.ai", {  }, "SimSage API");
 
 export const servers = [server1];

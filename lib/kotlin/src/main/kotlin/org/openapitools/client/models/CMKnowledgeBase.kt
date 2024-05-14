@@ -35,6 +35,9 @@ import com.squareup.moshi.JsonClass
  * @param capacityWarnings All queries are given a 10% grace when daily-limits (maxQueriesPerDay) are enforced.  If this flag is true, the owner of this knowledge-base (email) is sent a warning at 100% daily utiliziation.
  * @param indexSchedule the time-schedule for index-optimization, when active.
  * @param lastIndexOptimizationTime the last time this triggered and ran as a unix date-time (read only)
+ * @param isOptimizing is the index optimizer active?
+ * @param optimizationProgress how far along is the optimizer if it is active (0% to 100%)
+ * @param optimizing 
  */
 
 
@@ -90,7 +93,18 @@ data class CMKnowledgeBase (
 
     /* the last time this triggered and ran as a unix date-time (read only) */
     @Json(name = "lastIndexOptimizationTime")
-    val lastIndexOptimizationTime: kotlin.Long
+    val lastIndexOptimizationTime: kotlin.Long,
+
+    /* is the index optimizer active? */
+    @Json(name = "isOptimizing")
+    val isOptimizing: kotlin.Boolean,
+
+    /* how far along is the optimizer if it is active (0% to 100%) */
+    @Json(name = "optimizationProgress")
+    val optimizationProgress: kotlin.Int,
+
+    @Json(name = "optimizing")
+    val optimizing: kotlin.Boolean? = null
 
 )
 

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **organisation_id** | **str** | the organisation (its guid id) this group is associated with | 
 **name** | **str** | the name of this group | 
+**original_name** | **str** | the original-name of this group to help rename the group | 
 **user_id_list** | **List[str]** | a list of user-ids (can be empty) part of this group | 
 
 ## Example

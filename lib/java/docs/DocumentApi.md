@@ -1,6 +1,6 @@
 # DocumentApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://training.simsage.ai*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -18,7 +18,6 @@ All URIs are relative to *https://test.simsage.ai*
 | [**removeParquetFile**](DocumentApi.md#removeParquetFile) | **DELETE** /api/document/parquet/{organisationId}/{kbId}/{dateTime} | Delete Parquet File |
 | [**summarizeDocument**](DocumentApi.md#summarizeDocument) | **POST** /api/document/summarize/document | Summarize a document |
 | [**version4**](DocumentApi.md#version4) | **GET** /api/document/version | Version |
-| [**zipSource**](DocumentApi.md#zipSource) | **POST** /api/document/zip/source | Zip source documents |
 
 
 <a id="document"></a>
@@ -41,7 +40,7 @@ import org.openapitools.client.api.DocumentApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DocumentApi apiInstance = new DocumentApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -87,8 +86,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | document object response |  -  |
 | **500** | could not get document. |  -  |
+| **200** | document object response |  -  |
 
 <a id="getParquetFile"></a>
 # **getParquetFile**
@@ -110,7 +109,7 @@ import org.openapitools.client.api.DocumentApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DocumentApi apiInstance = new DocumentApi(defaultClient);
     String ott = "ott_example"; // String | a one-time token for downloading data.
@@ -151,13 +150,13 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/octet-stream, application/json
+ - **Accept**: application/json, application/octet-stream
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | parquet download response |  -  |
 | **500** | could not get parquet download. |  -  |
+| **200** | parquet download response |  -  |
 
 <a id="getParquetList"></a>
 # **getParquetList**
@@ -179,7 +178,7 @@ import org.openapitools.client.api.DocumentApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DocumentApi apiInstance = new DocumentApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -252,7 +251,7 @@ import org.openapitools.client.api.DocumentApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DocumentApi apiInstance = new DocumentApi(defaultClient);
     String ott = "ott_example"; // String | a one-time token for downloading data.
@@ -321,7 +320,7 @@ import org.openapitools.client.api.DocumentApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DocumentApi apiInstance = new DocumentApi(defaultClient);
     String ott = "ott_example"; // String | a one-time token for downloading data.
@@ -367,8 +366,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | document statistic response |  -  |
 | **500** | could not get document statistics. |  -  |
+| **200** | document statistic response |  -  |
 
 <a id="inventorizeDocuments"></a>
 # **inventorizeDocuments**
@@ -390,7 +389,7 @@ import org.openapitools.client.api.DocumentApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DocumentApi apiInstance = new DocumentApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -434,8 +433,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not start inventory process. |  -  |
 | **200** | document inventory process OK result |  -  |
+| **500** | could not start inventory process. |  -  |
 
 <a id="inventorizeIndexes"></a>
 # **inventorizeIndexes**
@@ -457,7 +456,7 @@ import org.openapitools.client.api.DocumentApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DocumentApi apiInstance = new DocumentApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -524,7 +523,7 @@ import org.openapitools.client.api.DocumentApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DocumentApi apiInstance = new DocumentApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -569,13 +568,13 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: image/jpeg, image/svg+xml, application/json
+ - **Accept**: application/json, image/jpeg, image/svg+xml
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | image response |  -  |
 | **500** | could not get image. |  -  |
+| **200** | image response |  -  |
 
 <a id="previewHtml"></a>
 # **previewHtml**
@@ -597,7 +596,7 @@ import org.openapitools.client.api.DocumentApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DocumentApi apiInstance = new DocumentApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid session-guid id or a anonymous user-id.
@@ -639,8 +638,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not get preview HTML. |  -  |
 | **200** | get preview HTML response |  -  |
+| **500** | could not get preview HTML. |  -  |
 
 <a id="queryFocussedSummarization"></a>
 # **queryFocussedSummarization**
@@ -662,7 +661,7 @@ import org.openapitools.client.api.DocumentApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DocumentApi apiInstance = new DocumentApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -729,7 +728,7 @@ import org.openapitools.client.api.DocumentApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DocumentApi apiInstance = new DocumentApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -802,7 +801,7 @@ import org.openapitools.client.api.DocumentApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DocumentApi apiInstance = new DocumentApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -850,8 +849,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | delete parquet OK response |  -  |
 | **500** | could not get delete parquet. |  -  |
+| **200** | delete parquet OK response |  -  |
 
 <a id="summarizeDocument"></a>
 # **summarizeDocument**
@@ -873,7 +872,7 @@ import org.openapitools.client.api.DocumentApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DocumentApi apiInstance = new DocumentApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -940,7 +939,7 @@ import org.openapitools.client.api.DocumentApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DocumentApi apiInstance = new DocumentApi(defaultClient);
     try {
@@ -976,73 +975,6 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | get the version response |  -  |
 | **500** | could not get version. |  -  |
-
-<a id="zipSource"></a>
-# **zipSource**
-> JsonMessage zipSource(sessionId, cmZipSource, apIVersion)
-
-Zip source documents
-
-Zip all documents in a source on the local server.
-
-### Example
-```java
-// Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.DocumentApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
-
-    DocumentApi apiInstance = new DocumentApi(defaultClient);
-    String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
-    CMZipSource cmZipSource = new CMZipSource(); // CMZipSource | 
-    String apIVersion = "1"; // String | 
-    try {
-      JsonMessage result = apiInstance.zipSource(sessionId, cmZipSource, apIVersion);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling DocumentApi#zipSource");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **sessionId** | **String**| a valid SimSage Session id. | |
-| **cmZipSource** | [**CMZipSource**](CMZipSource.md)|  | |
-| **apIVersion** | **String**|  | [optional] [enum: 1] |
-
-### Return type
-
-[**JsonMessage**](JsonMessage.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | zip source documents OK response |  -  |
-| **500** | could not create source document zip. |  -  |
+| **200** | get the version response |  -  |
 

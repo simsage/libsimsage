@@ -1,6 +1,6 @@
 # LanguageApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://training.simsage.ai*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**getPaginated**](LanguageApi.md#getPaginated) | **PUT** /api/language/synonyms | get Synonyms Paginated
 [**getSemanticsPaginated**](LanguageApi.md#getSemanticsPaginated) | **PUT** /api/language/semantics | Semantics Paginated
 [**optimizeIndexes**](LanguageApi.md#optimizeIndexes) | **PUT** /api/language/optimize-indexes | Optimize Indexes
+[**optimizeIndexesAbort**](LanguageApi.md#optimizeIndexesAbort) | **PUT** /api/language/optimize-indexes-abort | Abort Index Optimization
 [**redactDocument**](LanguageApi.md#redactDocument) | **GET** /api/language/redact/{organisationId}/{kbId}/{url}/{entityCsv}/{wordCsv}/{allowWordsCsv} | Redact Document
 [**saveCategorization**](LanguageApi.md#saveCategorization) | **PUT** /api/language/categorization | save categorization
 [**saveSemantic**](LanguageApi.md#saveSemantic) | **PUT** /api/language/save-semantic/{organisationId}/{kbId} | Save Semantic
@@ -588,6 +589,57 @@ try {
     e.printStackTrace()
 } catch (e: ServerException) {
     println("5xx response calling LanguageApi#optimizeIndexes")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **sessionId** | **kotlin.String**| a valid SimSage Session id. |
+ **cmOptimizeIndex** | [**CMOptimizeIndex**](CMOptimizeIndex.md)|  |
+ **apIVersion** | **kotlin.String**|  | [optional] [enum: 1]
+
+### Return type
+
+[**JsonMessage**](JsonMessage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a id="optimizeIndexesAbort"></a>
+# **optimizeIndexesAbort**
+> JsonMessage optimizeIndexesAbort(sessionId, cmOptimizeIndex, apIVersion)
+
+Abort Index Optimization
+
+Force index optimizer to abort a job.
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiInstance = LanguageApi()
+val sessionId : kotlin.String = sessionId_example // kotlin.String | a valid SimSage Session id.
+val cmOptimizeIndex : CMOptimizeIndex =  // CMOptimizeIndex | 
+val apIVersion : kotlin.String = apIVersion_example // kotlin.String | 
+try {
+    val result : JsonMessage = apiInstance.optimizeIndexesAbort(sessionId, cmOptimizeIndex, apIVersion)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling LanguageApi#optimizeIndexesAbort")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling LanguageApi#optimizeIndexesAbort")
     e.printStackTrace()
 }
 ```

@@ -1,6 +1,6 @@
 # openapi_client.DmsApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://training.simsage.ai*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -61,10 +61,10 @@ from openapi_client.models.cm_document_folder import CMDocumentFolder
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://training.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://training.simsage.ai"
 )
 
 
@@ -134,10 +134,10 @@ from openapi_client.models.cm_document_folder import CMDocumentFolder
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://training.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://training.simsage.ai"
 )
 
 
@@ -206,10 +206,10 @@ from openapi_client.models.json_message import JsonMessage
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://training.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://training.simsage.ai"
 )
 
 
@@ -260,8 +260,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**500** | fail response |  -  |
 **200** | OK response |  -  |
+**500** | fail response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -282,10 +282,10 @@ from openapi_client.models.cm_document_bookmark import CMDocumentBookmark
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://training.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://training.simsage.ai"
 )
 
 
@@ -338,8 +338,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | response |  -  |
 **500** | fail response |  -  |
+**200** | response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -360,10 +360,10 @@ from openapi_client.models.cm_document_folder import CMDocumentFolder
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://training.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://training.simsage.ai"
 )
 
 
@@ -442,10 +442,10 @@ from openapi_client.models.cm_document_note import CMDocumentNote
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://training.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://training.simsage.ai"
 )
 
 
@@ -498,8 +498,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | response |  -  |
 **500** | fail response |  -  |
+**200** | response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -520,10 +520,10 @@ from openapi_client.models.cm_document_folder import CMDocumentFolder
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://training.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://training.simsage.ai"
 )
 
 
@@ -596,10 +596,10 @@ from openapi_client.models.cm_subscriptions import CMSubscriptions
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://training.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://training.simsage.ai"
 )
 
 
@@ -674,10 +674,10 @@ from openapi_client.models.cm_saved_search import CMSavedSearch
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://training.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://training.simsage.ai"
 )
 
 
@@ -754,10 +754,10 @@ from openapi_client.models.cm_document import CMDocument
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://training.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://training.simsage.ai"
 )
 
 
@@ -827,10 +827,10 @@ import openapi_client
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://training.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://training.simsage.ai"
 )
 
 
@@ -874,13 +874,13 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/octet-stream, application/json
+ - **Accept**: application/json, application/octet-stream
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | document binary response |  -  |
 **500** | fail response |  -  |
+**200** | document binary response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -900,10 +900,10 @@ import openapi_client
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://training.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://training.simsage.ai"
 )
 
 
@@ -949,13 +949,13 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/octet-stream, application/json
+ - **Accept**: application/json, application/octet-stream
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | document binary response |  -  |
 **500** | fail response |  -  |
+**200** | document binary response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -976,10 +976,10 @@ from openapi_client.models.cm_document_folder import CMDocumentFolder
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://training.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://training.simsage.ai"
 )
 
 
@@ -1052,10 +1052,10 @@ from openapi_client.models.json_message import JsonMessage
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://training.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://training.simsage.ai"
 )
 
 
@@ -1108,8 +1108,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**500** | fail response |  -  |
 **200** | OK response |  -  |
+**500** | fail response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1130,10 +1130,10 @@ from openapi_client.models.cm_document_bookmark import CMDocumentBookmark
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://training.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://training.simsage.ai"
 )
 
 
@@ -1184,8 +1184,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | response |  -  |
 **500** | fail response |  -  |
+**200** | response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1206,10 +1206,10 @@ from openapi_client.models.document_deleted import DocumentDeleted
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://training.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://training.simsage.ai"
 )
 
 
@@ -1282,10 +1282,10 @@ from openapi_client.models.cm_document_audit import CMDocumentAudit
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://training.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://training.simsage.ai"
 )
 
 
@@ -1340,8 +1340,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | response |  -  |
 **500** | fail response |  -  |
+**200** | response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1362,10 +1362,10 @@ from openapi_client.models.cm_document_folder import CMDocumentFolder
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://training.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://training.simsage.ai"
 )
 
 
@@ -1444,10 +1444,10 @@ from openapi_client.models.cm_document_audit import CMDocumentAudit
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://training.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://training.simsage.ai"
 )
 
 
@@ -1500,8 +1500,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | response |  -  |
 **500** | fail response |  -  |
+**200** | response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1522,10 +1522,10 @@ from openapi_client.models.cm_document import CMDocument
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://training.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://training.simsage.ai"
 )
 
 
@@ -1576,8 +1576,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | response |  -  |
 **500** | fail response |  -  |
+**200** | response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1598,10 +1598,10 @@ from openapi_client.models.cm_document_note import CMDocumentNote
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://training.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://training.simsage.ai"
 )
 
 
@@ -1652,8 +1652,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | response |  -  |
 **500** | fail response |  -  |
+**200** | response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1674,10 +1674,10 @@ from openapi_client.models.cm_saved_search import CMSavedSearch
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://training.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://training.simsage.ai"
 )
 
 
@@ -1752,10 +1752,10 @@ from openapi_client.models.cm_document_folder import CMDocumentFolder
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://training.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://training.simsage.ai"
 )
 
 
@@ -1828,10 +1828,10 @@ from openapi_client.models.cm_subscriptions import CMSubscriptions
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://training.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://training.simsage.ai"
 )
 
 
@@ -1904,10 +1904,10 @@ from openapi_client.models.cmd_user_dashboard import CMDUserDashboard
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://training.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://training.simsage.ai"
 )
 
 
@@ -1978,10 +1978,10 @@ from openapi_client.models.cm_user_notification import CMUserNotification
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://training.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://training.simsage.ai"
 )
 
 
@@ -2034,8 +2034,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | response |  -  |
 **500** | fail response |  -  |
+**200** | response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2057,10 +2057,10 @@ from openapi_client.models.cm_document_lock import CMDocumentLock
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://training.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://training.simsage.ai"
 )
 
 
@@ -2107,8 +2107,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | response |  -  |
 **500** | fail response |  -  |
+**200** | response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2129,10 +2129,10 @@ from openapi_client.models.cm_document import CMDocument
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://training.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://training.simsage.ai"
 )
 
 
@@ -2185,8 +2185,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | response |  -  |
 **500** | fail response |  -  |
+**200** | response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2208,10 +2208,10 @@ from openapi_client.models.cm_client_query_result import CMClientQueryResult
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://training.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://training.simsage.ai"
 )
 
 
@@ -2256,8 +2256,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | response |  -  |
 **500** | fail response |  -  |
+**200** | response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2279,10 +2279,10 @@ from openapi_client.models.document_bookmark import DocumentBookmark
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://training.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://training.simsage.ai"
 )
 
 
@@ -2352,10 +2352,10 @@ from openapi_client.models.json_message import JsonMessage
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://training.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://training.simsage.ai"
 )
 
 
@@ -2402,8 +2402,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**500** | fail response |  -  |
 **200** | OK response |  -  |
+**500** | fail response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2424,10 +2424,10 @@ from openapi_client.models.cm_document_note import CMDocumentNote
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://training.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://training.simsage.ai"
 )
 
 
@@ -2474,8 +2474,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | response |  -  |
 **500** | fail response |  -  |
+**200** | response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2496,10 +2496,10 @@ from openapi_client.models.cm_saved_search import CMSavedSearch
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://training.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://training.simsage.ai"
 )
 
 
@@ -2569,10 +2569,10 @@ from openapi_client.models.cm_subscriptions import CMSubscriptions
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://training.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://training.simsage.ai"
 )
 
 
@@ -2641,10 +2641,10 @@ from openapi_client.models.document_deleted import DocumentDeleted
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://training.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://training.simsage.ai"
 )
 
 
@@ -2722,10 +2722,10 @@ from openapi_client.models.json_message import JsonMessage
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://training.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://training.simsage.ai"
 )
 
 
@@ -2772,8 +2772,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**500** | fail response |  -  |
 **200** | OK response |  -  |
+**500** | fail response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2794,10 +2794,10 @@ from openapi_client.models.cm_document_folder import CMDocumentFolder
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://training.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://training.simsage.ai"
 )
 
 

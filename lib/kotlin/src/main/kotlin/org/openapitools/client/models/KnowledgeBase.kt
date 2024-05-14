@@ -36,6 +36,9 @@ import com.squareup.moshi.JsonClass
  * @param indexSchedule 
  * @param lastIndexOptimizationTime 
  * @param projectKb 
+ * @param isOptimizing 
+ * @param optimizationProgress 
+ * @param optimizing 
  */
 
 
@@ -81,7 +84,16 @@ data class KnowledgeBase (
     val lastIndexOptimizationTime: kotlin.Long,
 
     @Json(name = "projectKb")
-    val projectKb: kotlin.Boolean
+    val projectKb: kotlin.Boolean,
+
+    @Json(name = "isOptimizing")
+    val isOptimizing: kotlin.Boolean,
+
+    @Json(name = "optimizationProgress")
+    val optimizationProgress: kotlin.Int,
+
+    @Json(name = "optimizing")
+    val optimizing: kotlin.Boolean? = null
 
 )
 

@@ -1,6 +1,6 @@
 # AuthApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://training.simsage.ai*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -10,6 +10,7 @@ All URIs are relative to *https://test.simsage.ai*
 | [**getOTT**](AuthApi.md#getOTT) | **PUT** /api/auth/ott/{organisationId} | Get a one-time token. |
 | [**getUserOrganisationList**](AuthApi.md#getUserOrganisationList) | **GET** /api/auth/user/organisations/{filter} | Get a list of Organisations |
 | [**getUsersPaginated**](AuthApi.md#getUsersPaginated) | **GET** /api/auth/users-paginated/{organisationId}/{page}/{pageSize}/{filter} | Get Users paginated |
+| [**groupEditInfo**](AuthApi.md#groupEditInfo) | **POST** /api/auth/group-edit-info/{organisationId} | Get Group edit information |
 | [**importUsersAndGroups**](AuthApi.md#importUsersAndGroups) | **PUT** /api/auth/user/import |  |
 | [**myRoles**](AuthApi.md#myRoles) | **GET** /api/auth/myroles/{organisationId} | Get users application roles |
 | [**removeUserFromOrganisation**](AuthApi.md#removeUserFromOrganisation) | **DELETE** /api/auth/organisation/user/{userId}/{organisationId} | Remove User from Organisation |
@@ -48,7 +49,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -92,8 +93,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not delete group |  -  |
 | **200** | delete group OK response |  -  |
+| **500** | could not delete group |  -  |
 
 <a id="deleteOrganisation"></a>
 # **deleteOrganisation**
@@ -115,7 +116,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation's id (a guid)
@@ -157,8 +158,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | remove organisation OK response |  -  |
 | **500** | could not remove organisation |  -  |
+| **200** | remove organisation OK response |  -  |
 
 <a id="getGroups"></a>
 # **getGroups**
@@ -180,7 +181,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the main organisation (its guid id) to get users for
@@ -222,8 +223,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | get a list of groups |  -  |
 | **500** | could not get group list |  -  |
+| **200** | get a list of groups |  -  |
 
 <a id="getOTT"></a>
 # **getOTT**
@@ -245,7 +246,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -310,7 +311,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     String filter = "filter_example"; // String | a text filter for partial string matching organisations
@@ -352,8 +353,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | get a list of organisations |  -  |
 | **500** | could not get organisation list |  -  |
+| **200** | get a list of organisations |  -  |
 
 <a id="getUsersPaginated"></a>
 # **getUsersPaginated**
@@ -375,7 +376,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the main organisation (its guid id) to get users for
@@ -423,8 +424,75 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not get users paginated |  -  |
 | **200** | get users paginated response |  -  |
+| **500** | could not get users paginated |  -  |
+
+<a id="groupEditInfo"></a>
+# **groupEditInfo**
+> CMGroupList groupEditInfo(organisationId, sessionId, cmGroupEditInfo)
+
+Get Group edit information
+
+Return the information needed for the admin UX editing a group
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.AuthApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://training.simsage.ai");
+
+    AuthApi apiInstance = new AuthApi(defaultClient);
+    String organisationId = "organisationId_example"; // String | the main organisation (its guid id) to get users for
+    String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
+    CMGroupEditInfo cmGroupEditInfo = new CMGroupEditInfo(); // CMGroupEditInfo | 
+    try {
+      CMGroupList result = apiInstance.groupEditInfo(organisationId, sessionId, cmGroupEditInfo);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AuthApi#groupEditInfo");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **organisationId** | **String**| the main organisation (its guid id) to get users for | |
+| **sessionId** | **String**| a valid SimSage Session id. | |
+| **cmGroupEditInfo** | [**CMGroupEditInfo**](CMGroupEditInfo.md)|  | |
+
+### Return type
+
+[**CMGroupList**](CMGroupList.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **500** | could not return group edit information |  -  |
+| **200** | return group edit information |  -  |
 
 <a id="importUsersAndGroups"></a>
 # **importUsersAndGroups**
@@ -446,7 +514,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -490,8 +558,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | import user OK response |  -  |
 | **500** | could not import users |  -  |
+| **200** | import user OK response |  -  |
 
 <a id="myRoles"></a>
 # **myRoles**
@@ -513,7 +581,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -578,7 +646,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     String userId = "userId_example"; // String | the user's id (a guid)
@@ -622,8 +690,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | remove user from organisation OK response |  -  |
 | **500** | could not remove user from organisation |  -  |
+| **200** | remove user from organisation OK response |  -  |
 
 <a id="resetPassword"></a>
 # **resetPassword**
@@ -645,7 +713,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     CMUserPasswordReset cmUserPasswordReset = new CMUserPasswordReset(); // CMUserPasswordReset | 
@@ -708,7 +776,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     CMPasswordResetRequest cmPasswordResetRequest = new CMPasswordResetRequest(); // CMPasswordResetRequest | 
@@ -771,7 +839,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -813,8 +881,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | save a group OK response |  -  |
 | **500** | could not save group |  -  |
+| **200** | save a group OK response |  -  |
 
 <a id="signIn"></a>
 # **signIn**
@@ -836,7 +904,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     CMSignInParameters cmSignInParameters = new CMSignInParameters(); // CMSignInParameters | 
@@ -899,7 +967,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     String jwt = "jwt_example"; // String | a valid JWT token.
@@ -962,7 +1030,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -1025,7 +1093,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     String jwt = "jwt_example"; // String | a valid JWT token.
@@ -1090,7 +1158,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     String jwt = "jwt_example"; // String | a valid JWT token.
@@ -1132,8 +1200,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | a sign-in Evolve response |  -  |
 | **500** | could not sign-in |  -  |
+| **200** | a sign-in Evolve response |  -  |
 
 <a id="signInSearchUsingJWTMsal"></a>
 # **signInSearchUsingJWTMsal**
@@ -1155,7 +1223,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     String jwt = "jwt_example"; // String | Schema valid JWT token.
@@ -1220,7 +1288,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -1285,7 +1353,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -1327,8 +1395,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not save organisation |  -  |
 | **200** | save organisation response |  -  |
+| **500** | could not save organisation |  -  |
 
 <a id="updateUser"></a>
 # **updateUser**
@@ -1350,7 +1418,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the main organisation (its guid id) to update a user in.
@@ -1394,8 +1462,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | save user response |  -  |
 | **500** | could not save user |  -  |
+| **200** | save user response |  -  |
 
 <a id="version8"></a>
 # **version8**
@@ -1417,7 +1485,7 @@ import org.openapitools.client.api.AuthApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     AuthApi apiInstance = new AuthApi(defaultClient);
     try {

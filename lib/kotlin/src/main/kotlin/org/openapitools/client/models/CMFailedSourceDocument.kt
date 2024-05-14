@@ -27,6 +27,7 @@ import com.squareup.moshi.JsonClass
  * @param sourceId the source-id, primary key of the source
  * @param sourceSystemId the unique id of the document in the source system, mostly same as web url
  * @param webUrl the web url to access the document, can be different from url
+ * @param deltaRootId For delta crawlers with multiple roots, the id of the document's delta root
  * @param runId the timestamp of the crawler run adding the exception
  * @param errorMessage the error message added by the system
  * @param encrypted Do we need to add transport encryption
@@ -56,6 +57,10 @@ data class CMFailedSourceDocument (
     /* the web url to access the document, can be different from url */
     @Json(name = "webUrl")
     val webUrl: kotlin.String,
+
+    /* For delta crawlers with multiple roots, the id of the document's delta root */
+    @Json(name = "deltaRootId")
+    val deltaRootId: kotlin.String,
 
     /* the timestamp of the crawler run adding the exception */
     @Json(name = "runId")

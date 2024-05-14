@@ -18,6 +18,9 @@ Name | Type | Description | Notes
 **CapacityWarnings** | **bool** | All queries are given a 10% grace when daily-limits (maxQueriesPerDay) are enforced.  If this flag is true, the owner of this knowledge-base (email) is sent a warning at 100% daily utiliziation. | 
 **IndexSchedule** | **string** | the time-schedule for index-optimization, when active. | 
 **LastIndexOptimizationTime** | **long** | the last time this triggered and ran as a unix date-time (read only) | 
+**IsOptimizing** | **bool** | is the index optimizer active? | 
+**OptimizationProgress** | **int** | how far along is the optimizer if it is active (0% to 100%) | 
+**Optimizing** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

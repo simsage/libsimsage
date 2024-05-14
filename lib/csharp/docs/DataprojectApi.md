@@ -1,6 +1,6 @@
 # Org.OpenAPITools.Api.DataprojectApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://training.simsage.ai*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
@@ -54,7 +54,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMNewComment = new CMNewComment(); // CMNewComment | 
@@ -148,7 +148,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMQueueFilter = new CMQueueFilter(); // CMQueueFilter | 
@@ -214,8 +214,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not get running projects list. |  -  |
 | **200** | running project list response |  -  |
+| **500** | could not get running projects list. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -242,7 +242,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMChangeTaskPhase = new CMChangeTaskPhase(); // CMChangeTaskPhase | 
@@ -308,8 +308,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | change task-phase OK response |  -  |
 | **500** | could not change task-phase. |  -  |
+| **200** | change task-phase OK response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -336,7 +336,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMClaimDocument = new CMClaimDocument(); // CMClaimDocument | 
@@ -402,8 +402,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not retrieve redacted document. |  -  |
 | **200** | Wrapper containing the document binary |  -  |
+| **500** | could not retrieve redacted document. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -430,7 +430,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
             var taskId = "taskId_example";  // string | the id of the task
@@ -498,8 +498,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not get crawler-status. |  -  |
 | **200** | crawler-status response |  -  |
+| **500** | could not get crawler-status. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -526,7 +526,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMDocumentsByToken = new CMDocumentsByToken(); // CMDocumentsByToken | 
@@ -620,7 +620,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMCommentFilter = new CMCommentFilter(); // CMCommentFilter | 
@@ -714,7 +714,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
             var sliceId = "sliceId_example";  // string | the id of the slice
@@ -812,7 +812,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
             var taskId = "taskId_example";  // string | the id of the task
@@ -880,8 +880,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not get project definition. |  -  |
 | **200** | project definition response |  -  |
+| **500** | could not get project definition. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -908,7 +908,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
             var projectId = "projectId_example";  // string | the id of the task
@@ -976,8 +976,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | project review response |  -  |
 | **500** | could not get project review. |  -  |
+| **200** | project review response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1004,7 +1004,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
             var taskId = "taskId_example";  // string | the id of the task
@@ -1100,7 +1100,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
             var taskId = "taskId_example";  // string | the id of the task
@@ -1168,8 +1168,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not get search result summary. |  -  |
 | **200** | search result summary response |  -  |
+| **500** | could not get search result summary. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1196,7 +1196,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
             var projectId = "projectId_example";  // string | the id of the task
@@ -1292,7 +1292,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMNextDocument = new CMNextDocument(); // CMNextDocument | 
@@ -1358,8 +1358,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Paged list of documents for the passed in slice and filters as well as totals |  -  |
 | **500** | could not retrieve document list. |  -  |
+| **200** | Paged list of documents for the passed in slice and filters as well as totals |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1386,7 +1386,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
             var kbId = "kbId_example";  // string | the knowledge-base (its guid id)
@@ -1483,7 +1483,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
@@ -1575,7 +1575,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMReassignSliceDocument = new CMReassignSliceDocument(); // CMReassignSliceDocument | 
@@ -1666,7 +1666,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMRedactionDetails = new CMRedactionDetails(); // CMRedactionDetails | 
@@ -1732,8 +1732,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not retrieve redacted document. |  -  |
 | **200** | Wrapper containing the document binary |  -  |
+| **500** | could not retrieve redacted document. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1758,7 +1758,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMRemoveSliceDocument = new CMRemoveSliceDocument(); // CMRemoveSliceDocument | 
@@ -1849,7 +1849,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var organisationId = "organisationId_example";  // string | a valid SimSage Organisation id.
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
@@ -1915,8 +1915,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | Exception during reset. |  -  |
 | **200** | Evolve successfully reset |  -  |
+| **500** | Exception during reset. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1943,7 +1943,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMProjectDefinition = new CMProjectDefinition(); // CMProjectDefinition | 
@@ -2009,8 +2009,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Object containing the task and project ids to use to further refine the project details |  -  |
 | **500** | could not save project-definition. |  -  |
+| **200** | Object containing the task and project ids to use to further refine the project details |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2037,7 +2037,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMSetSliceDefinitions = new CMSetSliceDefinitions(); // CMSetSliceDefinitions | 
@@ -2131,7 +2131,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMSlicedDocumentRequest = new CMSlicedDocumentRequest(); // CMSlicedDocumentRequest | 
@@ -2197,8 +2197,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Paged list of documents for the passed in slice and filters as well as totals |  -  |
 | **500** | could not retrieve document list. |  -  |
+| **200** | Paged list of documents for the passed in slice and filters as well as totals |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2223,7 +2223,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMStartProject = new CMStartProject(); // CMStartProject | 
@@ -2314,7 +2314,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMUpdateDocumentStatus = new CMUpdateDocumentStatus(); // CMUpdateDocumentStatus | 
@@ -2408,7 +2408,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DataprojectApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMUpdateRedactions = new CMUpdateRedactions(); // CMUpdateRedactions | 

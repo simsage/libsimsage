@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **parent_url** | **String** |  | 
 **mime_type** | **String** |  | 
 **acls** | [**Vec<crate::models::AssetAcl>**](AssetACL.md) |  | 
+**delta_root_id** | **String** |  | 
 **title** | **String** |  | 
 **author** | **String** |  | 
 **binary_size** | **i64** |  | 

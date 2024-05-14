@@ -1,6 +1,6 @@
 # CrawlerApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://training.simsage.ai*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,6 +21,7 @@ Method | HTTP request | Description
 [**getCrawler**](CrawlerApi.md#getCrawler) | **GET** /api/crawler/crawler/{organisationId}/{kbId}/{sourceId} | Get source
 [**getFailedDocuments**](CrawlerApi.md#getFailedDocuments) | **GET** /api/crawler/faileddocs/{organisationId}/{kbId}/{sourceId}/{page}/{pageSize} | Get source List
 [**getSourceList**](CrawlerApi.md#getSourceList) | **GET** /api/crawler/crawlers/{organisationId}/{kbId} | Get source List
+[**markCrawlAsDeltaReset**](CrawlerApi.md#markCrawlAsDeltaReset) | **POST** /api/crawler/external/crawler/mark-as-reset | Update delta token
 [**markFileAsSeen**](CrawlerApi.md#markFileAsSeen) | **POST** /api/crawler/external/crawler/mark-file-as-seen | Mark file as seen
 [**oidcCode**](CrawlerApi.md#oidcCode) | **GET** /api/crawler/dropbox-oidc-code/{oidcKey} | OIDC code receiver
 [**processAllFiles**](CrawlerApi.md#processAllFiles) | **POST** /api/crawler/process-all-files | Process all files of crawler/source
@@ -29,6 +30,7 @@ Method | HTTP request | Description
 [**resetSourceDelta**](CrawlerApi.md#resetSourceDelta) | **POST** /api/crawler/crawler/reset-delta/{organisationId}/{kbId}/{sourceId} | Reset Source delta-token
 [**sdcSchema**](CrawlerApi.md#sdcSchema) | **GET** /api/crawler/sdc_schema | 
 [**startCrawler**](CrawlerApi.md#startCrawler) | **POST** /api/crawler/start | Start crawler
+[**sync**](CrawlerApi.md#sync) | **POST** /api/crawler/syncgdrivegroups | 
 [**testCrawler**](CrawlerApi.md#testCrawler) | **GET** /api/crawler/crawler/test/{organisationId}/{kbId}/{sourceId} | Test Crawler
 [**updateCrawler**](CrawlerApi.md#updateCrawler) | **POST** /api/crawler/crawler | Update Source
 [**version6**](CrawlerApi.md#version6) | **GET** /api/crawler/version | Version
@@ -901,6 +903,55 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+<a id="markCrawlAsDeltaReset"></a>
+# **markCrawlAsDeltaReset**
+> JsonMessage markCrawlAsDeltaReset(cmExternalMarkResetCrawl, apIVersion)
+
+Update delta token
+
+An external crawler marks a source as delta reset required.
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiInstance = CrawlerApi()
+val cmExternalMarkResetCrawl : CMExternalMarkResetCrawl =  // CMExternalMarkResetCrawl | 
+val apIVersion : kotlin.String = apIVersion_example // kotlin.String | 
+try {
+    val result : JsonMessage = apiInstance.markCrawlAsDeltaReset(cmExternalMarkResetCrawl, apIVersion)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling CrawlerApi#markCrawlAsDeltaReset")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling CrawlerApi#markCrawlAsDeltaReset")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cmExternalMarkResetCrawl** | [**CMExternalMarkResetCrawl**](CMExternalMarkResetCrawl.md)|  |
+ **apIVersion** | **kotlin.String**|  | [optional] [enum: 1]
+
+### Return type
+
+[**JsonMessage**](JsonMessage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a id="markFileAsSeen"></a>
 # **markFileAsSeen**
 > JsonMessage markFileAsSeen(cmExternalCrawlerMarkFileAsSeen, apIVersion)
@@ -1285,6 +1336,53 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+<a id="sync"></a>
+# **sync**
+> kotlin.Any sync(sessionId, cmSyncGDrive)
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiInstance = CrawlerApi()
+val sessionId : kotlin.String = sessionId_example // kotlin.String | a valid SimSage Session id.
+val cmSyncGDrive : CMSyncGDrive =  // CMSyncGDrive | 
+try {
+    val result : kotlin.Any = apiInstance.sync(sessionId, cmSyncGDrive)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling CrawlerApi#sync")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling CrawlerApi#sync")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **sessionId** | **kotlin.String**| a valid SimSage Session id. |
+ **cmSyncGDrive** | [**CMSyncGDrive**](CMSyncGDrive.md)|  |
+
+### Return type
+
+[**kotlin.Any**](kotlin.Any.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json;charset=UTF-8
 
 <a id="testCrawler"></a>
 # **testCrawler**

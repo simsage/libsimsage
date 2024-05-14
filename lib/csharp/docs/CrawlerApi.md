@@ -1,6 +1,6 @@
 # Org.OpenAPITools.Api.CrawlerApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://training.simsage.ai*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
@@ -21,6 +21,7 @@ All URIs are relative to *https://test.simsage.ai*
 | [**GetCrawler**](CrawlerApi.md#getcrawler) | **GET** /api/crawler/crawler/{organisationId}/{kbId}/{sourceId} | Get source |
 | [**GetFailedDocuments**](CrawlerApi.md#getfaileddocuments) | **GET** /api/crawler/faileddocs/{organisationId}/{kbId}/{sourceId}/{page}/{pageSize} | Get source List |
 | [**GetSourceList**](CrawlerApi.md#getsourcelist) | **GET** /api/crawler/crawlers/{organisationId}/{kbId} | Get source List |
+| [**MarkCrawlAsDeltaReset**](CrawlerApi.md#markcrawlasdeltareset) | **POST** /api/crawler/external/crawler/mark-as-reset | Update delta token |
 | [**MarkFileAsSeen**](CrawlerApi.md#markfileasseen) | **POST** /api/crawler/external/crawler/mark-file-as-seen | Mark file as seen |
 | [**OidcCode**](CrawlerApi.md#oidccode) | **GET** /api/crawler/dropbox-oidc-code/{oidcKey} | OIDC code receiver |
 | [**ProcessAllFiles**](CrawlerApi.md#processallfiles) | **POST** /api/crawler/process-all-files | Process all files of crawler/source |
@@ -29,6 +30,7 @@ All URIs are relative to *https://test.simsage.ai*
 | [**ResetSourceDelta**](CrawlerApi.md#resetsourcedelta) | **POST** /api/crawler/crawler/reset-delta/{organisationId}/{kbId}/{sourceId} | Reset Source delta-token |
 | [**SdcSchema**](CrawlerApi.md#sdcschema) | **GET** /api/crawler/sdc_schema |  |
 | [**StartCrawler**](CrawlerApi.md#startcrawler) | **POST** /api/crawler/start | Start crawler |
+| [**Sync**](CrawlerApi.md#sync) | **POST** /api/crawler/syncgdrivegroups |  |
 | [**TestCrawler**](CrawlerApi.md#testcrawler) | **GET** /api/crawler/crawler/test/{organisationId}/{kbId}/{sourceId} | Test Crawler |
 | [**UpdateCrawler**](CrawlerApi.md#updatecrawler) | **POST** /api/crawler/crawler | Update Source |
 | [**Version6**](CrawlerApi.md#version6) | **GET** /api/crawler/version | Version |
@@ -56,7 +58,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new CrawlerApi(config);
             var cMExternalCrawlerDeleteFolder = new CMExternalCrawlerDeleteFolder(); // CMExternalCrawlerDeleteFolder | 
             var aPIVersion = "1";  // string? |  (optional) 
@@ -122,8 +124,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not delete document folder. |  -  |
 | **200** | delete document folder update OK response |  -  |
+| **500** | could not delete document folder. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -150,7 +152,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new CrawlerApi(config);
             var cMExternalCrawlerDeleteUrl = new CMExternalCrawlerDeleteUrl(); // CMExternalCrawlerDeleteUrl | 
             var aPIVersion = "1";  // string? |  (optional) 
@@ -216,8 +218,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | delete document update OK response |  -  |
 | **500** | could not delete document. |  -  |
+| **200** | delete document update OK response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -244,7 +246,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new CrawlerApi(config);
             var cMDeleteDocument = new CMDeleteDocument(); // CMDeleteDocument | 
             var aPIVersion = "1";  // string? |  (optional) 
@@ -310,8 +312,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | remove external-crawler document OK response |  -  |
 | **500** | could not remove external-crawler document. |  -  |
+| **200** | remove external-crawler document OK response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -338,7 +340,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new CrawlerApi(config);
             var cMFailedSourceDocument = new CMFailedSourceDocument(); // CMFailedSourceDocument | 
             var aPIVersion = "1";  // string? |  (optional) 
@@ -404,8 +406,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not start external crawler. |  -  |
 | **200** | upload external-crawler document OK response |  -  |
+| **500** | could not start external crawler. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -432,7 +434,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new CrawlerApi(config);
             var cMUploadDocument = new CMUploadDocument(); // CMUploadDocument | 
             var aPIVersion = "1";  // string? |  (optional) 
@@ -498,8 +500,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not start external crawler. |  -  |
 | **200** | upload external-crawler document OK response |  -  |
+| **500** | could not start external crawler. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -526,7 +528,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new CrawlerApi(config);
             var cMUploadImage = new CMUploadImage(); // CMUploadImage | 
             var aPIVersion = "1";  // string? |  (optional) 
@@ -592,8 +594,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | upload external-crawler document-image OK response |  -  |
 | **500** | could not upload external-crawler document image. |  -  |
+| **200** | upload external-crawler document-image OK response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -620,7 +622,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new CrawlerApi(config);
             var cMExternalCrawlerRenameFolder = new CMExternalCrawlerRenameFolder(); // CMExternalCrawlerRenameFolder | 
             var aPIVersion = "1";  // string? |  (optional) 
@@ -686,8 +688,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | rename document folder update OK response |  -  |
 | **500** | could not rename document folder. |  -  |
+| **200** | rename document folder update OK response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -714,7 +716,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new CrawlerApi(config);
             var cMExternalCrawlerSetDeltaToken = new CMExternalCrawlerSetDeltaToken(); // CMExternalCrawlerSetDeltaToken | 
             var aPIVersion = "1";  // string? |  (optional) 
@@ -780,8 +782,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | source delta-token update OK response |  -  |
 | **500** | could not update source delta-token. |  -  |
+| **200** | source delta-token update OK response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -808,7 +810,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new CrawlerApi(config);
             var organisationId = "organisationId_example";  // string | the organisation's id (a guid)
             var kbId = "kbId_example";  // string | the knowledge-base's id (a guid)
@@ -880,8 +882,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not remove source. |  -  |
 | **200** | remove a source OK response |  -  |
+| **500** | could not remove source. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -908,7 +910,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new CrawlerApi(config);
             var organisationId = "organisationId_example";  // string | the organisation's id (a guid)
             var kbId = "kbId_example";  // string | the knowledge-base's id (a guid)
@@ -980,8 +982,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | updated source response |  -  |
 | **500** | could not remove a source&#39;s documents. |  -  |
+| **200** | updated source response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1008,7 +1010,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new CrawlerApi(config);
             var seed = 56;  // int | a random integer used for the communications
             var body = "body_example";  // string | 
@@ -1076,8 +1078,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not execute command. |  -  |
 | **200** | secure communication result (various) |  -  |
+| **500** | could not execute command. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1104,7 +1106,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new CrawlerApi(config);
             var cMExternalCrawler = new CMExternalCrawler(); // CMExternalCrawler | 
             var aPIVersion = "1";  // string? |  (optional) 
@@ -1170,8 +1172,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not get external crawler source. |  -  |
 | **200** | external-crawler source response |  -  |
+| **500** | could not get external crawler source. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1198,7 +1200,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new CrawlerApi(config);
             var cMExternalCrawlerStop = new CMExternalCrawlerStop(); // CMExternalCrawlerStop | 
             var aPIVersion = "1";  // string? |  (optional) 
@@ -1292,7 +1294,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new CrawlerApi(config);
             var cMExternalCrawlerStart = new CMExternalCrawlerStart(); // CMExternalCrawlerStart | 
             var aPIVersion = "1";  // string? |  (optional) 
@@ -1358,8 +1360,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not start external crawler. |  -  |
 | **200** | external-crawler start OK response |  -  |
+| **500** | could not start external crawler. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1386,7 +1388,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new CrawlerApi(config);
             var organisationId = "organisationId_example";  // string | the organisation's id (a guid)
             var kbId = "kbId_example";  // string | the knowledge-base's id (a guid)
@@ -1458,8 +1460,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not get source. |  -  |
 | **200** | the source |  -  |
+| **500** | could not get source. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1486,7 +1488,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new CrawlerApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var organisationId = "organisationId_example";  // string | the organisation's id (a guid)
@@ -1562,8 +1564,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not get source list. |  -  |
 | **200** | source list response |  -  |
+| **500** | could not get source list. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1590,7 +1592,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new CrawlerApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var organisationId = "organisationId_example";  // string | the organisation's id (a guid)
@@ -1660,8 +1662,102 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not get source list. |  -  |
 | **200** | source list response |  -  |
+| **500** | could not get source list. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="markcrawlasdeltareset"></a>
+# **MarkCrawlAsDeltaReset**
+> JsonMessage MarkCrawlAsDeltaReset (CMExternalMarkResetCrawl cMExternalMarkResetCrawl, string? aPIVersion = null)
+
+Update delta token
+
+An external crawler marks a source as delta reset required.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
+
+namespace Example
+{
+    public class MarkCrawlAsDeltaResetExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://training.simsage.ai";
+            var apiInstance = new CrawlerApi(config);
+            var cMExternalMarkResetCrawl = new CMExternalMarkResetCrawl(); // CMExternalMarkResetCrawl | 
+            var aPIVersion = "1";  // string? |  (optional) 
+
+            try
+            {
+                // Update delta token
+                JsonMessage result = apiInstance.MarkCrawlAsDeltaReset(cMExternalMarkResetCrawl, aPIVersion);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling CrawlerApi.MarkCrawlAsDeltaReset: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the MarkCrawlAsDeltaResetWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Update delta token
+    ApiResponse<JsonMessage> response = apiInstance.MarkCrawlAsDeltaResetWithHttpInfo(cMExternalMarkResetCrawl, aPIVersion);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling CrawlerApi.MarkCrawlAsDeltaResetWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **cMExternalMarkResetCrawl** | [**CMExternalMarkResetCrawl**](CMExternalMarkResetCrawl.md) |  |  |
+| **aPIVersion** | **string?** |  | [optional]  |
+
+### Return type
+
+[**JsonMessage**](JsonMessage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **500** | could not mark source as reset requested. |  -  |
+| **200** | source delta-token reset OK response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1688,7 +1784,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new CrawlerApi(config);
             var cMExternalCrawlerMarkFileAsSeen = new CMExternalCrawlerMarkFileAsSeen(); // CMExternalCrawlerMarkFileAsSeen | 
             var aPIVersion = "1";  // string? |  (optional) 
@@ -1754,8 +1850,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | mark file as seen OK response |  -  |
 | **500** | could not mark file as seen. |  -  |
+| **200** | mark file as seen OK response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1782,7 +1878,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new CrawlerApi(config);
             var oidcKey = "oidcKey_example";  // string | the Dropbox OIDC key
             var allRequestParams = new Dictionary<string, string>(); // Dictionary<string, string> | 
@@ -1872,7 +1968,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new CrawlerApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMStartCrawler = new CMStartCrawler(); // CMStartCrawler | 
@@ -1940,8 +2036,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not start processing files. |  -  |
 | **200** | start processing all OK response |  -  |
+| **500** | could not start processing files. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1966,7 +2062,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new CrawlerApi(config);
 
             try
@@ -2050,7 +2146,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new CrawlerApi(config);
             var cMExternalLogEntry = new CMExternalLogEntry(); // CMExternalLogEntry | 
             var aPIVersion = "1";  // string? |  (optional) 
@@ -2144,7 +2240,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new CrawlerApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var organisationId = "organisationId_example";  // string | the organisation's id (a guid)
@@ -2242,7 +2338,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new CrawlerApi(config);
 
             try
@@ -2326,7 +2422,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new CrawlerApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMStartCrawler = new CMStartCrawler(); // CMStartCrawler | 
@@ -2399,6 +2495,95 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="sync"></a>
+# **Sync**
+> Object Sync (string sessionId, CMSyncGDrive cMSyncGDrive)
+
+
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
+
+namespace Example
+{
+    public class SyncExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://training.simsage.ai";
+            var apiInstance = new CrawlerApi(config);
+            var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
+            var cMSyncGDrive = new CMSyncGDrive(); // CMSyncGDrive | 
+
+            try
+            {
+                Object result = apiInstance.Sync(sessionId, cMSyncGDrive);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling CrawlerApi.Sync: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the SyncWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<Object> response = apiInstance.SyncWithHttpInfo(sessionId, cMSyncGDrive);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling CrawlerApi.SyncWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **sessionId** | **string** | a valid SimSage Session id. |  |
+| **cMSyncGDrive** | [**CMSyncGDrive**](CMSyncGDrive.md) |  |  |
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json;charset=UTF-8
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="testcrawler"></a>
 # **TestCrawler**
 > JsonMessage TestCrawler (string sessionId, string organisationId, string kbId, int sourceId, string? aPIVersion = null)
@@ -2422,7 +2607,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new CrawlerApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var organisationId = "organisationId_example";  // string | the organisation's id (a guid)
@@ -2494,8 +2679,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | test crawler connection OK response |  -  |
 | **500** | could not test crawler. |  -  |
+| **200** | test crawler connection OK response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2522,7 +2707,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new CrawlerApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMSource = new CMSource(); // CMSource | 
@@ -2590,8 +2775,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not save source. |  -  |
 | **200** | save source response |  -  |
+| **500** | could not save source. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2618,7 +2803,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new CrawlerApi(config);
 
             try
@@ -2677,8 +2862,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | get the version response |  -  |
 | **500** | could not get version. |  -  |
+| **200** | get the version response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

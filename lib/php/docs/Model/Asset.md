@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **parent_url** | **string** |  |
 **mime_type** | **string** |  |
 **acls** | [**\OpenAPI\Client\Model\AssetACL[]**](AssetACL.md) |  |
+**delta_root_id** | **string** |  |
 **title** | **string** |  |
 **author** | **string** |  |
 **binary_size** | **int** |  |

@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **parent_url** | **str** |  | 
 **mime_type** | **str** |  | 
 **acls** | [**List[AssetACL]**](AssetACL.md) |  | 
+**delta_root_id** | **str** |  | 
 **title** | **str** |  | 
 **author** | **str** |  | 
 **binary_size** | **int** |  | 

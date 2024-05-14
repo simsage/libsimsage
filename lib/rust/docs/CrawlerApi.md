@@ -1,6 +1,6 @@
 # \CrawlerApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://training.simsage.ai*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,6 +21,7 @@ Method | HTTP request | Description
 [**get_crawler**](CrawlerApi.md#get_crawler) | **GET** /api/crawler/crawler/{organisationId}/{kbId}/{sourceId} | Get source
 [**get_failed_documents**](CrawlerApi.md#get_failed_documents) | **GET** /api/crawler/faileddocs/{organisationId}/{kbId}/{sourceId}/{page}/{pageSize} | Get source List
 [**get_source_list**](CrawlerApi.md#get_source_list) | **GET** /api/crawler/crawlers/{organisationId}/{kbId} | Get source List
+[**mark_crawl_as_delta_reset**](CrawlerApi.md#mark_crawl_as_delta_reset) | **POST** /api/crawler/external/crawler/mark-as-reset | Update delta token
 [**mark_file_as_seen**](CrawlerApi.md#mark_file_as_seen) | **POST** /api/crawler/external/crawler/mark-file-as-seen | Mark file as seen
 [**oidc_code**](CrawlerApi.md#oidc_code) | **GET** /api/crawler/dropbox-oidc-code/{oidcKey} | OIDC code receiver
 [**process_all_files**](CrawlerApi.md#process_all_files) | **POST** /api/crawler/process-all-files | Process all files of crawler/source
@@ -29,6 +30,7 @@ Method | HTTP request | Description
 [**reset_source_delta**](CrawlerApi.md#reset_source_delta) | **POST** /api/crawler/crawler/reset-delta/{organisationId}/{kbId}/{sourceId} | Reset Source delta-token
 [**sdc_schema**](CrawlerApi.md#sdc_schema) | **GET** /api/crawler/sdc_schema | 
 [**start_crawler**](CrawlerApi.md#start_crawler) | **POST** /api/crawler/start | Start crawler
+[**sync**](CrawlerApi.md#sync) | **POST** /api/crawler/syncgdrivegroups | 
 [**test_crawler**](CrawlerApi.md#test_crawler) | **GET** /api/crawler/crawler/test/{organisationId}/{kbId}/{sourceId} | Test Crawler
 [**update_crawler**](CrawlerApi.md#update_crawler) | **POST** /api/crawler/crawler | Update Source
 [**version6**](CrawlerApi.md#version6) | **GET** /api/crawler/version | Version
@@ -579,6 +581,37 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
+## mark_crawl_as_delta_reset
+
+> crate::models::JsonMessage mark_crawl_as_delta_reset(cm_external_mark_reset_crawl, api_version)
+Update delta token
+
+An external crawler marks a source as delta reset required.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**cm_external_mark_reset_crawl** | [**CmExternalMarkResetCrawl**](CmExternalMarkResetCrawl.md) |  | [required] |
+**api_version** | Option<**String**> |  |  |
+
+### Return type
+
+[**crate::models::JsonMessage**](JsonMessage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
 ## mark_file_as_seen
 
 > crate::models::JsonMessage mark_file_as_seen(cm_external_crawler_mark_file_as_seen, api_version)
@@ -816,6 +849,35 @@ No authorization required
 
 - **Content-Type**: application/json
 - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## sync
+
+> serde_json::Value sync(session_id, cm_sync_g_drive)
+
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**session_id** | **String** | a valid SimSage Session id. | [required] |
+**cm_sync_g_drive** | [**CmSyncGDrive**](CmSyncGDrive.md) |  | [required] |
+
+### Return type
+
+[**serde_json::Value**](serde_json::Value.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json;charset=UTF-8
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

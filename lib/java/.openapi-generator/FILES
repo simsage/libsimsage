@@ -54,11 +54,13 @@ docs/CMExternalCrawlerSetDeltaToken.md
 docs/CMExternalCrawlerStart.md
 docs/CMExternalCrawlerStop.md
 docs/CMExternalLogEntry.md
+docs/CMExternalMarkResetCrawl.md
 docs/CMFailedSourceDocument.md
 docs/CMFilter.md
 docs/CMGdprSearchDetails.md
 docs/CMGetHtml.md
 docs/CMGroup.md
+docs/CMGroupEditInfo.md
 docs/CMGroupList.md
 docs/CMImportUsers.md
 docs/CMInfo.md
@@ -134,6 +136,7 @@ docs/CMSlicedDocumentListAndTotals.md
 docs/CMSlicedDocumentRequest.md
 docs/CMSource.md
 docs/CMSourceBaseInfo.md
+docs/CMSourceError.md
 docs/CMStartCrawler.md
 docs/CMStartProject.md
 docs/CMStepConfig.md
@@ -142,6 +145,7 @@ docs/CMSubscriptions.md
 docs/CMSynSet.md
 docs/CMSynSetFind.md
 docs/CMSynSetList.md
+docs/CMSyncGDrive.md
 docs/CMSynonym.md
 docs/CMSynonymsPaginated.md
 docs/CMSynonymsPaginatedResult.md
@@ -165,7 +169,6 @@ docs/CMUserRole.md
 docs/CMUserWithExtras.md
 docs/CMVersion.md
 docs/CMWordFrequency.md
-docs/CMZipSource.md
 docs/ContextItem.md
 docs/ConversionApi.md
 docs/CrawlerApi.md
@@ -285,11 +288,13 @@ src/main/java/org/openapitools/client/model/CMExternalCrawlerSetDeltaToken.java
 src/main/java/org/openapitools/client/model/CMExternalCrawlerStart.java
 src/main/java/org/openapitools/client/model/CMExternalCrawlerStop.java
 src/main/java/org/openapitools/client/model/CMExternalLogEntry.java
+src/main/java/org/openapitools/client/model/CMExternalMarkResetCrawl.java
 src/main/java/org/openapitools/client/model/CMFailedSourceDocument.java
 src/main/java/org/openapitools/client/model/CMFilter.java
 src/main/java/org/openapitools/client/model/CMGdprSearchDetails.java
 src/main/java/org/openapitools/client/model/CMGetHtml.java
 src/main/java/org/openapitools/client/model/CMGroup.java
+src/main/java/org/openapitools/client/model/CMGroupEditInfo.java
 src/main/java/org/openapitools/client/model/CMGroupList.java
 src/main/java/org/openapitools/client/model/CMImportUsers.java
 src/main/java/org/openapitools/client/model/CMInfo.java
@@ -365,6 +370,7 @@ src/main/java/org/openapitools/client/model/CMSlicedDocumentListAndTotals.java
 src/main/java/org/openapitools/client/model/CMSlicedDocumentRequest.java
 src/main/java/org/openapitools/client/model/CMSource.java
 src/main/java/org/openapitools/client/model/CMSourceBaseInfo.java
+src/main/java/org/openapitools/client/model/CMSourceError.java
 src/main/java/org/openapitools/client/model/CMStartCrawler.java
 src/main/java/org/openapitools/client/model/CMStartProject.java
 src/main/java/org/openapitools/client/model/CMStepConfig.java
@@ -373,6 +379,7 @@ src/main/java/org/openapitools/client/model/CMSubscriptions.java
 src/main/java/org/openapitools/client/model/CMSynSet.java
 src/main/java/org/openapitools/client/model/CMSynSetFind.java
 src/main/java/org/openapitools/client/model/CMSynSetList.java
+src/main/java/org/openapitools/client/model/CMSyncGDrive.java
 src/main/java/org/openapitools/client/model/CMSynonym.java
 src/main/java/org/openapitools/client/model/CMSynonymsPaginated.java
 src/main/java/org/openapitools/client/model/CMSynonymsPaginatedResult.java
@@ -396,7 +403,6 @@ src/main/java/org/openapitools/client/model/CMUserRole.java
 src/main/java/org/openapitools/client/model/CMUserWithExtras.java
 src/main/java/org/openapitools/client/model/CMVersion.java
 src/main/java/org/openapitools/client/model/CMWordFrequency.java
-src/main/java/org/openapitools/client/model/CMZipSource.java
 src/main/java/org/openapitools/client/model/ContextItem.java
 src/main/java/org/openapitools/client/model/DocumentBookmark.java
 src/main/java/org/openapitools/client/model/DocumentDeleted.java
@@ -479,10 +485,12 @@ src/test/java/org/openapitools/client/model/CMExternalCrawlerStartTest.java
 src/test/java/org/openapitools/client/model/CMExternalCrawlerStopTest.java
 src/test/java/org/openapitools/client/model/CMExternalCrawlerTest.java
 src/test/java/org/openapitools/client/model/CMExternalLogEntryTest.java
+src/test/java/org/openapitools/client/model/CMExternalMarkResetCrawlTest.java
 src/test/java/org/openapitools/client/model/CMFailedSourceDocumentTest.java
 src/test/java/org/openapitools/client/model/CMFilterTest.java
 src/test/java/org/openapitools/client/model/CMGdprSearchDetailsTest.java
 src/test/java/org/openapitools/client/model/CMGetHtmlTest.java
+src/test/java/org/openapitools/client/model/CMGroupEditInfoTest.java
 src/test/java/org/openapitools/client/model/CMGroupListTest.java
 src/test/java/org/openapitools/client/model/CMGroupTest.java
 src/test/java/org/openapitools/client/model/CMImportUsersTest.java
@@ -558,6 +566,7 @@ src/test/java/org/openapitools/client/model/CMSlicedDocumentListAndTotalsTest.ja
 src/test/java/org/openapitools/client/model/CMSlicedDocumentRequestTest.java
 src/test/java/org/openapitools/client/model/CMSlicedDocumentTest.java
 src/test/java/org/openapitools/client/model/CMSourceBaseInfoTest.java
+src/test/java/org/openapitools/client/model/CMSourceErrorTest.java
 src/test/java/org/openapitools/client/model/CMSourceTest.java
 src/test/java/org/openapitools/client/model/CMStartCrawlerTest.java
 src/test/java/org/openapitools/client/model/CMStartProjectTest.java
@@ -567,6 +576,7 @@ src/test/java/org/openapitools/client/model/CMSubscriptionsTest.java
 src/test/java/org/openapitools/client/model/CMSynSetFindTest.java
 src/test/java/org/openapitools/client/model/CMSynSetListTest.java
 src/test/java/org/openapitools/client/model/CMSynSetTest.java
+src/test/java/org/openapitools/client/model/CMSyncGDriveTest.java
 src/test/java/org/openapitools/client/model/CMSynonymTest.java
 src/test/java/org/openapitools/client/model/CMSynonymsPaginatedResultTest.java
 src/test/java/org/openapitools/client/model/CMSynonymsPaginatedTest.java
@@ -590,7 +600,6 @@ src/test/java/org/openapitools/client/model/CMUserTest.java
 src/test/java/org/openapitools/client/model/CMUserWithExtrasTest.java
 src/test/java/org/openapitools/client/model/CMVersionTest.java
 src/test/java/org/openapitools/client/model/CMWordFrequencyTest.java
-src/test/java/org/openapitools/client/model/CMZipSourceTest.java
 src/test/java/org/openapitools/client/model/ContextItemTest.java
 src/test/java/org/openapitools/client/model/DocumentBookmarkTest.java
 src/test/java/org/openapitools/client/model/DocumentDeletedTest.java

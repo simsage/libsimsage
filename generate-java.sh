@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # wget https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/7.0.1/openapi-generator-cli-7.0.1.jar
-VERSION=7.13.31
+VERSION=7.14.12
 
 if [ ! -f "openapi-generator-cli-7.0.1.jar" ]; then
   printf "openapi generate cli missing\n"

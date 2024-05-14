@@ -1,6 +1,6 @@
 # DocumentApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://training.simsage.ai*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,7 +18,6 @@ Method | HTTP request | Description
 [**removeParquetFile**](DocumentApi.md#removeParquetFile) | **DELETE** /api/document/parquet/{organisationId}/{kbId}/{dateTime} | Delete Parquet File
 [**summarizeDocument**](DocumentApi.md#summarizeDocument) | **POST** /api/document/summarize/document | Summarize a document
 [**version4**](DocumentApi.md#version4) | **GET** /api/document/version | Version
-[**zipSource**](DocumentApi.md#zipSource) | **POST** /api/document/zip/source | Zip source documents
 
 
 <a id="document"></a>
@@ -125,7 +124,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/octet-stream, application/json
+ - **Accept**: application/json, application/octet-stream
 
 <a id="getParquetList"></a>
 # **getParquetList**
@@ -753,56 +752,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a id="zipSource"></a>
-# **zipSource**
-> JsonMessage zipSource(sessionId, cmZipSource, apIVersion)
-
-Zip source documents
-
-Zip all documents in a source on the local server.
-
-### Example
-```kotlin
-// Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
-
-val apiInstance = DocumentApi()
-val sessionId : kotlin.String = sessionId_example // kotlin.String | a valid SimSage Session id.
-val cmZipSource : CMZipSource =  // CMZipSource | 
-val apIVersion : kotlin.String = apIVersion_example // kotlin.String | 
-try {
-    val result : JsonMessage = apiInstance.zipSource(sessionId, cmZipSource, apIVersion)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling DocumentApi#zipSource")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling DocumentApi#zipSource")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **sessionId** | **kotlin.String**| a valid SimSage Session id. |
- **cmZipSource** | [**CMZipSource**](CMZipSource.md)|  |
- **apIVersion** | **kotlin.String**|  | [optional] [enum: 1]
-
-### Return type
-
-[**JsonMessage**](JsonMessage.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
  - **Accept**: application/json
 

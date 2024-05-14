@@ -1,6 +1,6 @@
 # OpenAPI\Client\AuthApi
 
-All URIs are relative to https://test.simsage.ai, except if the operation defines another base path.
+All URIs are relative to https://training.simsage.ai, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -10,6 +10,7 @@ All URIs are relative to https://test.simsage.ai, except if the operation define
 | [**getOTT()**](AuthApi.md#getOTT) | **PUT** /api/auth/ott/{organisationId} | Get a one-time token. |
 | [**getUserOrganisationList()**](AuthApi.md#getUserOrganisationList) | **GET** /api/auth/user/organisations/{filter} | Get a list of Organisations |
 | [**getUsersPaginated()**](AuthApi.md#getUsersPaginated) | **GET** /api/auth/users-paginated/{organisationId}/{page}/{pageSize}/{filter} | Get Users paginated |
+| [**groupEditInfo()**](AuthApi.md#groupEditInfo) | **POST** /api/auth/group-edit-info/{organisationId} | Get Group edit information |
 | [**importUsersAndGroups()**](AuthApi.md#importUsersAndGroups) | **PUT** /api/auth/user/import |  |
 | [**myRoles()**](AuthApi.md#myRoles) | **GET** /api/auth/myroles/{organisationId} | Get users application roles |
 | [**removeUserFromOrganisation()**](AuthApi.md#removeUserFromOrganisation) | **DELETE** /api/auth/organisation/user/{userId}/{organisationId} | Remove User from Organisation |
@@ -378,6 +379,66 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `groupEditInfo()`
+
+```php
+groupEditInfo($organisation_id, $session_id, $cm_group_edit_info): \OpenAPI\Client\Model\CMGroupList
+```
+
+Get Group edit information
+
+Return the information needed for the admin UX editing a group
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\AuthApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$organisation_id = 'organisation_id_example'; // string | the main organisation (its guid id) to get users for
+$session_id = 'session_id_example'; // string | a valid SimSage Session id.
+$cm_group_edit_info = new \OpenAPI\Client\Model\CMGroupEditInfo(); // \OpenAPI\Client\Model\CMGroupEditInfo
+
+try {
+    $result = $apiInstance->groupEditInfo($organisation_id, $session_id, $cm_group_edit_info);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AuthApi->groupEditInfo: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **organisation_id** | **string**| the main organisation (its guid id) to get users for | |
+| **session_id** | **string**| a valid SimSage Session id. | |
+| **cm_group_edit_info** | [**\OpenAPI\Client\Model\CMGroupEditInfo**](../Model/CMGroupEditInfo.md)|  | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\CMGroupList**](../Model/CMGroupList.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

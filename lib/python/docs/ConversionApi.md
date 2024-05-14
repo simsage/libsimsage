@@ -1,6 +1,6 @@
 # openapi_client.ConversionApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://training.simsage.ai*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -26,10 +26,10 @@ from openapi_client.models.sign_in_cmd import SignInCmd
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://training.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://training.simsage.ai"
 )
 
 
@@ -90,10 +90,10 @@ from openapi_client.models.sign_in_cmd import SignInCmd
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://training.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://training.simsage.ai"
 )
 
 
@@ -154,10 +154,10 @@ from openapi_client.models.sign_in_cmd import SignInCmd
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://test.simsage.ai
+# Defining the host is optional and defaults to https://training.simsage.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://test.simsage.ai"
+    host = "https://training.simsage.ai"
 )
 
 

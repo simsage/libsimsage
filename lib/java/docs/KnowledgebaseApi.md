@@ -1,6 +1,6 @@
 # KnowledgebaseApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://training.simsage.ai*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -34,7 +34,7 @@ import org.openapitools.client.api.KnowledgebaseApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     KnowledgebaseApi apiInstance = new KnowledgebaseApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -101,7 +101,7 @@ import org.openapitools.client.api.KnowledgebaseApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     KnowledgebaseApi apiInstance = new KnowledgebaseApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -147,8 +147,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not get knowledge-base. |  -  |
 | **200** | get knowledge-base response |  -  |
+| **500** | could not get knowledge-base. |  -  |
 
 <a id="getKnowledgeBases"></a>
 # **getKnowledgeBases**
@@ -170,7 +170,7 @@ import org.openapitools.client.api.KnowledgebaseApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     KnowledgebaseApi apiInstance = new KnowledgebaseApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -212,8 +212,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not get knowledge-base list. |  -  |
 | **200** | get knowledge-base list response |  -  |
+| **500** | could not get knowledge-base list. |  -  |
 
 <a id="getSearchInfo"></a>
 # **getSearchInfo**
@@ -235,7 +235,7 @@ import org.openapitools.client.api.KnowledgebaseApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     KnowledgebaseApi apiInstance = new KnowledgebaseApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -302,7 +302,7 @@ import org.openapitools.client.api.KnowledgebaseApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     KnowledgebaseApi apiInstance = new KnowledgebaseApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -367,7 +367,7 @@ import org.openapitools.client.api.KnowledgebaseApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     KnowledgebaseApi apiInstance = new KnowledgebaseApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -436,7 +436,7 @@ import org.openapitools.client.api.KnowledgebaseApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     KnowledgebaseApi apiInstance = new KnowledgebaseApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -503,7 +503,7 @@ import org.openapitools.client.api.KnowledgebaseApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     KnowledgebaseApi apiInstance = new KnowledgebaseApi(defaultClient);
     try {
@@ -539,6 +539,6 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | get the version response |  -  |
 | **500** | could not get version. |  -  |
+| **200** | get the version response |  -  |
 

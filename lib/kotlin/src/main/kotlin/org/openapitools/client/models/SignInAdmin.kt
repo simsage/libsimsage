@@ -25,6 +25,8 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
+ * @param organisationList 
+ * @param sharedSecretSalt 
  * @param jobId 
  * @param returnAddress 
  * @param errorStr 
@@ -38,13 +40,17 @@ import com.squareup.moshi.JsonClass
  * @param session 
  * @param user 
  * @param organisationId 
- * @param organisationList 
- * @param sharedSecretSalt 
  * @param returnResult 
  */
 
 
 data class SignInAdmin (
+
+    @Json(name = "organisationList")
+    val organisationList: kotlin.collections.List<Organisation>,
+
+    @Json(name = "sharedSecretSalt")
+    val sharedSecretSalt: kotlin.String,
 
     @Json(name = "jobId")
     val jobId: kotlin.String,
@@ -84,12 +90,6 @@ data class SignInAdmin (
 
     @Json(name = "organisationId")
     val organisationId: kotlin.String,
-
-    @Json(name = "organisationList")
-    val organisationList: kotlin.collections.List<Organisation>,
-
-    @Json(name = "sharedSecretSalt")
-    val sharedSecretSalt: kotlin.String,
 
     @Json(name = "returnResult")
     val returnResult: kotlin.Boolean? = null

@@ -1,6 +1,6 @@
 # Org.OpenAPITools.Api.DiscoveryApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://training.simsage.ai*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
@@ -39,7 +39,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DiscoveryApi(config);
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
             var kbId = "kbId_example";  // string | the knowledge-base (its guid id)
@@ -142,7 +142,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DiscoveryApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMRedactionData = new CMRedactionData(); // CMRedactionData | 
@@ -231,7 +231,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DiscoveryApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMCreateGdprProject = new CMCreateGdprProject(); // CMCreateGdprProject | 
@@ -320,7 +320,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DiscoveryApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMDeleteProjectCmd = new CMDeleteProjectCmd(); // CMDeleteProjectCmd | 
@@ -409,7 +409,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DiscoveryApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMExportRedactedDocument = new CMExportRedactedDocument(); // CMExportRedactedDocument | 
@@ -498,7 +498,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DiscoveryApi(config);
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
             var kbId = "kbId_example";  // string | the knowledge-base (its guid id)
@@ -593,7 +593,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DiscoveryApi(config);
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
             var kbId = "kbId_example";  // string | the knowledge-base (its guid id)
@@ -702,7 +702,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DiscoveryApi(config);
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
             var kbId = "kbId_example";  // string | the knowledge-base (its guid id)
@@ -795,7 +795,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DiscoveryApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMRedactionData = new CMRedactionData(); // CMRedactionData | 
@@ -886,7 +886,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DiscoveryApi(config);
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
             var kbId = "kbId_example";  // string | the knowledge-base (its guid id)
@@ -981,7 +981,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DiscoveryApi(config);
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
             var kbId = "kbId_example";  // string | the knowledge-base (its guid id)
@@ -1074,7 +1074,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DiscoveryApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMUpdateDocumentSet = new CMUpdateDocumentSet(); // CMUpdateDocumentSet | 
@@ -1165,7 +1165,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DiscoveryApi(config);
 
             try
@@ -1224,8 +1224,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | get the version response |  -  |
 | **500** | could not get version. |  -  |
+| **200** | get the version response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

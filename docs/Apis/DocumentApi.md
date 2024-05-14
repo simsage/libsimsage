@@ -1,6 +1,6 @@
 # DocumentApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://training.simsage.ai*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -18,7 +18,6 @@ All URIs are relative to *https://test.simsage.ai*
 | [**removeParquetFile**](DocumentApi.md#removeParquetFile) | **DELETE** /api/document/parquet/{organisationId}/{kbId}/{dateTime} | Delete Parquet File |
 | [**summarizeDocument**](DocumentApi.md#summarizeDocument) | **POST** /api/document/summarize/document | Summarize a document |
 | [**version4**](DocumentApi.md#version4) | **GET** /api/document/version | Version |
-| [**zipSource**](DocumentApi.md#zipSource) | **POST** /api/document/zip/source | Zip source documents |
 
 
 <a name="document"></a>
@@ -79,7 +78,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/octet-stream, application/json
+- **Accept**: application/json, application/octet-stream
 
 <a name="getParquetList"></a>
 # **getParquetList**
@@ -261,7 +260,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: image/jpeg, image/svg+xml, application/json
+- **Accept**: application/json, image/jpeg, image/svg+xml
 
 <a name="previewHtml"></a>
 # **previewHtml**
@@ -434,34 +433,5 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
-
-<a name="zipSource"></a>
-# **zipSource**
-> JsonMessage zipSource(session-id, CMZipSource, API-Version)
-
-Zip source documents
-
-    Zip all documents in a source on the local server.
-
-### Parameters
-
-|Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **session-id** | **String**| a valid SimSage Session id. | [default to null] |
-| **CMZipSource** | [**CMZipSource**](../Models/CMZipSource.md)|  | |
-| **API-Version** | **String**|  | [optional] [default to null] [enum: 1] |
-
-### Return type
-
-[**JsonMessage**](../Models/JsonMessage.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
 - **Accept**: application/json
 

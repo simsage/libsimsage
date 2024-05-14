@@ -21,6 +21,9 @@
 |**indexSchedule** | **String** |  |  |
 |**lastIndexOptimizationTime** | **Long** |  |  |
 |**projectKb** | **Boolean** |  |  |
+|**isOptimizing** | **Boolean** |  |  |
+|**optimizationProgress** | **Integer** |  |  |
+|**optimizing** | **Boolean** |  |  [optional] |
 
 
 

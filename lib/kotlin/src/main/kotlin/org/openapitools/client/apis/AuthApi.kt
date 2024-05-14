@@ -20,6 +20,7 @@ import okhttp3.OkHttpClient
 import okhttp3.HttpUrl
 
 import org.openapitools.client.models.CMGroup
+import org.openapitools.client.models.CMGroupEditInfo
 import org.openapitools.client.models.CMGroupList
 import org.openapitools.client.models.CMImportUsers
 import org.openapitools.client.models.CMOrganisation
@@ -54,7 +55,7 @@ class AuthApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://test.simsage.ai")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://training.simsage.ai")
         }
     }
 
@@ -513,6 +514,85 @@ class AuthApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = 
         return RequestConfig(
             method = RequestMethod.GET,
             path = "/api/auth/users-paginated/{organisationId}/{page}/{pageSize}/{filter}".replace("{"+"organisationId"+"}", encodeURIComponent(organisationId.toString())).replace("{"+"page"+"}", encodeURIComponent(page.toString())).replace("{"+"pageSize"+"}", encodeURIComponent(pageSize.toString())).replace("{"+"filter"+"}", encodeURIComponent(filter.toString())),
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = false,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * Get Group edit information
+     * Return the information needed for the admin UX editing a group
+     * @param organisationId the main organisation (its guid id) to get users for
+     * @param sessionId a valid SimSage Session id.
+     * @param cmGroupEditInfo 
+     * @return CMGroupList
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun groupEditInfo(organisationId: kotlin.String, sessionId: kotlin.String, cmGroupEditInfo: CMGroupEditInfo) : CMGroupList {
+        val localVarResponse = groupEditInfoWithHttpInfo(organisationId = organisationId, sessionId = sessionId, cmGroupEditInfo = cmGroupEditInfo)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as CMGroupList
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * Get Group edit information
+     * Return the information needed for the admin UX editing a group
+     * @param organisationId the main organisation (its guid id) to get users for
+     * @param sessionId a valid SimSage Session id.
+     * @param cmGroupEditInfo 
+     * @return ApiResponse<CMGroupList?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun groupEditInfoWithHttpInfo(organisationId: kotlin.String, sessionId: kotlin.String, cmGroupEditInfo: CMGroupEditInfo) : ApiResponse<CMGroupList?> {
+        val localVariableConfig = groupEditInfoRequestConfig(organisationId = organisationId, sessionId = sessionId, cmGroupEditInfo = cmGroupEditInfo)
+
+        return request<CMGroupEditInfo, CMGroupList>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation groupEditInfo
+     *
+     * @param organisationId the main organisation (its guid id) to get users for
+     * @param sessionId a valid SimSage Session id.
+     * @param cmGroupEditInfo 
+     * @return RequestConfig
+     */
+    fun groupEditInfoRequestConfig(organisationId: kotlin.String, sessionId: kotlin.String, cmGroupEditInfo: CMGroupEditInfo) : RequestConfig<CMGroupEditInfo> {
+        val localVariableBody = cmGroupEditInfo
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        sessionId.apply { localVariableHeaders["session-id"] = this.toString() }
+        localVariableHeaders["Content-Type"] = "application/json"
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.POST,
+            path = "/api/auth/group-edit-info/{organisationId}".replace("{"+"organisationId"+"}", encodeURIComponent(organisationId.toString())),
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = false,

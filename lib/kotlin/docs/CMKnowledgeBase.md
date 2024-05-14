@@ -17,6 +17,9 @@ Name | Type | Description | Notes
 **capacityWarnings** | **kotlin.Boolean** | All queries are given a 10% grace when daily-limits (maxQueriesPerDay) are enforced.  If this flag is true, the owner of this knowledge-base (email) is sent a warning at 100% daily utiliziation. | 
 **indexSchedule** | **kotlin.String** | the time-schedule for index-optimization, when active. | 
 **lastIndexOptimizationTime** | **kotlin.Long** | the last time this triggered and ran as a unix date-time (read only) | 
+**isOptimizing** | **kotlin.Boolean** | is the index optimizer active? | 
+**optimizationProgress** | **kotlin.Int** | how far along is the optimizer if it is active (0% to 100%) | 
+**optimizing** | **kotlin.Boolean** |  |  [optional]
 
 
 

@@ -29,7 +29,6 @@ import org.openapitools.client.models.CMQueryFocussedSummarizationRequest
 import org.openapitools.client.models.CMSingleDocumentSummary
 import org.openapitools.client.models.CMSingleDocumentSummaryRequest
 import org.openapitools.client.models.CMVersion
-import org.openapitools.client.models.CMZipSource
 import org.openapitools.client.models.JsonMessage
 
 import com.squareup.moshi.Json
@@ -52,7 +51,7 @@ class DocumentApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://test.simsage.ai")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://training.simsage.ai")
         }
     }
 
@@ -208,7 +207,7 @@ class DocumentApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
                 put("ott", listOf(ott.toString()))
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "application/octet-stream, application/json"
+        localVariableHeaders["Accept"] = "application/json, application/octet-stream"
 
         return RequestConfig(
             method = RequestMethod.POST,
@@ -1239,93 +1238,6 @@ class DocumentApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
         return RequestConfig(
             method = RequestMethod.GET,
             path = "/api/document/version",
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = false,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * enum for parameter apIVersion
-     */
-     enum class ApIVersionZipSource(val value: kotlin.String) {
-         @Json(name = "1") _1("1")
-     }
-
-    /**
-     * Zip source documents
-     * Zip all documents in a source on the local server.
-     * @param sessionId a valid SimSage Session id.
-     * @param cmZipSource 
-     * @param apIVersion  (optional)
-     * @return JsonMessage
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun zipSource(sessionId: kotlin.String, cmZipSource: CMZipSource, apIVersion: ApIVersionZipSource? = null) : JsonMessage {
-        val localVarResponse = zipSourceWithHttpInfo(sessionId = sessionId, cmZipSource = cmZipSource, apIVersion = apIVersion)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as JsonMessage
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * Zip source documents
-     * Zip all documents in a source on the local server.
-     * @param sessionId a valid SimSage Session id.
-     * @param cmZipSource 
-     * @param apIVersion  (optional)
-     * @return ApiResponse<JsonMessage?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun zipSourceWithHttpInfo(sessionId: kotlin.String, cmZipSource: CMZipSource, apIVersion: ApIVersionZipSource?) : ApiResponse<JsonMessage?> {
-        val localVariableConfig = zipSourceRequestConfig(sessionId = sessionId, cmZipSource = cmZipSource, apIVersion = apIVersion)
-
-        return request<CMZipSource, JsonMessage>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation zipSource
-     *
-     * @param sessionId a valid SimSage Session id.
-     * @param cmZipSource 
-     * @param apIVersion  (optional)
-     * @return RequestConfig
-     */
-    fun zipSourceRequestConfig(sessionId: kotlin.String, cmZipSource: CMZipSource, apIVersion: ApIVersionZipSource?) : RequestConfig<CMZipSource> {
-        val localVariableBody = cmZipSource
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        sessionId.apply { localVariableHeaders["session-id"] = this.toString() }
-        apIVersion?.apply { localVariableHeaders["API-Version"] = this.toString() }
-        localVariableHeaders["Content-Type"] = "application/json"
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.POST,
-            path = "/api/document/zip/source",
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = false,

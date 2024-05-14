@@ -1,6 +1,6 @@
 # DmsApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://training.simsage.ai*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -63,7 +63,7 @@ import org.openapitools.client.api.DmsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DmsApi apiInstance = new DmsApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -130,7 +130,7 @@ import org.openapitools.client.api.DmsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DmsApi apiInstance = new DmsApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -197,7 +197,7 @@ import org.openapitools.client.api.DmsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DmsApi apiInstance = new DmsApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -245,8 +245,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | fail response |  -  |
 | **200** | OK response |  -  |
+| **500** | fail response |  -  |
 
 <a id="deleteBookmark"></a>
 # **deleteBookmark**
@@ -268,7 +268,7 @@ import org.openapitools.client.api.DmsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DmsApi apiInstance = new DmsApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -318,8 +318,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | response |  -  |
 | **500** | fail response |  -  |
+| **200** | response |  -  |
 
 <a id="deleteDocumentOrFolder"></a>
 # **deleteDocumentOrFolder**
@@ -341,7 +341,7 @@ import org.openapitools.client.api.DmsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DmsApi apiInstance = new DmsApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -418,7 +418,7 @@ import org.openapitools.client.api.DmsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DmsApi apiInstance = new DmsApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -468,8 +468,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | response |  -  |
 | **500** | fail response |  -  |
+| **200** | response |  -  |
 
 <a id="deleteSourceFolder"></a>
 # **deleteSourceFolder**
@@ -491,7 +491,7 @@ import org.openapitools.client.api.DmsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DmsApi apiInstance = new DmsApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -562,7 +562,7 @@ import org.openapitools.client.api.DmsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DmsApi apiInstance = new DmsApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -635,7 +635,7 @@ import org.openapitools.client.api.DmsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DmsApi apiInstance = new DmsApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -710,7 +710,7 @@ import org.openapitools.client.api.DmsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DmsApi apiInstance = new DmsApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -779,7 +779,7 @@ import org.openapitools.client.api.DmsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DmsApi apiInstance = new DmsApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -820,13 +820,13 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/octet-stream, application/json
+ - **Accept**: application/json, application/octet-stream
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | document binary response |  -  |
 | **500** | fail response |  -  |
+| **200** | document binary response |  -  |
 
 <a id="documentVersion"></a>
 # **documentVersion**
@@ -848,7 +848,7 @@ import org.openapitools.client.api.DmsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DmsApi apiInstance = new DmsApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -891,13 +891,13 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/octet-stream, application/json
+ - **Accept**: application/json, application/octet-stream
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | document binary response |  -  |
 | **500** | fail response |  -  |
+| **200** | document binary response |  -  |
 
 <a id="filterFolders"></a>
 # **filterFolders**
@@ -919,7 +919,7 @@ import org.openapitools.client.api.DmsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DmsApi apiInstance = new DmsApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -990,7 +990,7 @@ import org.openapitools.client.api.DmsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DmsApi apiInstance = new DmsApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -1040,8 +1040,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | fail response |  -  |
 | **200** | OK response |  -  |
+| **500** | fail response |  -  |
 
 <a id="getBookmarkList"></a>
 # **getBookmarkList**
@@ -1063,7 +1063,7 @@ import org.openapitools.client.api.DmsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DmsApi apiInstance = new DmsApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -1111,8 +1111,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | response |  -  |
 | **500** | fail response |  -  |
+| **200** | response |  -  |
 
 <a id="getDeletedDocuments"></a>
 # **getDeletedDocuments**
@@ -1134,7 +1134,7 @@ import org.openapitools.client.api.DmsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DmsApi apiInstance = new DmsApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -1205,7 +1205,7 @@ import org.openapitools.client.api.DmsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DmsApi apiInstance = new DmsApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -1257,8 +1257,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | response |  -  |
 | **500** | fail response |  -  |
+| **200** | response |  -  |
 
 <a id="getFolder"></a>
 # **getFolder**
@@ -1280,7 +1280,7 @@ import org.openapitools.client.api.DmsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DmsApi apiInstance = new DmsApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -1357,7 +1357,7 @@ import org.openapitools.client.api.DmsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DmsApi apiInstance = new DmsApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -1407,8 +1407,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | response |  -  |
 | **500** | fail response |  -  |
+| **200** | response |  -  |
 
 <a id="getLockedList"></a>
 # **getLockedList**
@@ -1430,7 +1430,7 @@ import org.openapitools.client.api.DmsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DmsApi apiInstance = new DmsApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -1478,8 +1478,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | response |  -  |
 | **500** | fail response |  -  |
+| **200** | response |  -  |
 
 <a id="getNoteList"></a>
 # **getNoteList**
@@ -1501,7 +1501,7 @@ import org.openapitools.client.api.DmsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DmsApi apiInstance = new DmsApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -1549,8 +1549,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | response |  -  |
 | **500** | fail response |  -  |
+| **200** | response |  -  |
 
 <a id="getSavedSearches"></a>
 # **getSavedSearches**
@@ -1572,7 +1572,7 @@ import org.openapitools.client.api.DmsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DmsApi apiInstance = new DmsApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -1645,7 +1645,7 @@ import org.openapitools.client.api.DmsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DmsApi apiInstance = new DmsApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -1716,7 +1716,7 @@ import org.openapitools.client.api.DmsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DmsApi apiInstance = new DmsApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -1787,7 +1787,7 @@ import org.openapitools.client.api.DmsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DmsApi apiInstance = new DmsApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -1856,7 +1856,7 @@ import org.openapitools.client.api.DmsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DmsApi apiInstance = new DmsApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -1906,8 +1906,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | response |  -  |
 | **500** | fail response |  -  |
+| **200** | response |  -  |
 
 <a id="lockDocument"></a>
 # **lockDocument**
@@ -1929,7 +1929,7 @@ import org.openapitools.client.api.DmsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DmsApi apiInstance = new DmsApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -1973,8 +1973,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | response |  -  |
 | **500** | fail response |  -  |
+| **200** | response |  -  |
 
 <a id="releaseLock"></a>
 # **releaseLock**
@@ -1996,7 +1996,7 @@ import org.openapitools.client.api.DmsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DmsApi apiInstance = new DmsApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -2046,8 +2046,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | response |  -  |
 | **500** | fail response |  -  |
+| **200** | response |  -  |
 
 <a id="restfulDMSClientQuery"></a>
 # **restfulDMSClientQuery**
@@ -2069,7 +2069,7 @@ import org.openapitools.client.api.DmsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DmsApi apiInstance = new DmsApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -2111,8 +2111,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | response |  -  |
 | **500** | fail response |  -  |
+| **200** | response |  -  |
 
 <a id="saveBookmark"></a>
 # **saveBookmark**
@@ -2134,7 +2134,7 @@ import org.openapitools.client.api.DmsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DmsApi apiInstance = new DmsApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -2201,7 +2201,7 @@ import org.openapitools.client.api.DmsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DmsApi apiInstance = new DmsApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -2245,8 +2245,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | fail response |  -  |
 | **200** | OK response |  -  |
+| **500** | fail response |  -  |
 
 <a id="saveNote"></a>
 # **saveNote**
@@ -2268,7 +2268,7 @@ import org.openapitools.client.api.DmsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DmsApi apiInstance = new DmsApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -2312,8 +2312,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | response |  -  |
 | **500** | fail response |  -  |
+| **200** | response |  -  |
 
 <a id="saveSearch"></a>
 # **saveSearch**
@@ -2335,7 +2335,7 @@ import org.openapitools.client.api.DmsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DmsApi apiInstance = new DmsApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -2402,7 +2402,7 @@ import org.openapitools.client.api.DmsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DmsApi apiInstance = new DmsApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -2469,7 +2469,7 @@ import org.openapitools.client.api.DmsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DmsApi apiInstance = new DmsApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -2544,7 +2544,7 @@ import org.openapitools.client.api.DmsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DmsApi apiInstance = new DmsApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -2588,8 +2588,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | fail response |  -  |
 | **200** | OK response |  -  |
+| **500** | fail response |  -  |
 
 <a id="uploadDocument"></a>
 # **uploadDocument**
@@ -2611,7 +2611,7 @@ import org.openapitools.client.api.DmsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     DmsApi apiInstance = new DmsApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.

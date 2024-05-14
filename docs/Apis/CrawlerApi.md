@@ -1,6 +1,6 @@
 # CrawlerApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://training.simsage.ai*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -21,6 +21,7 @@ All URIs are relative to *https://test.simsage.ai*
 | [**getCrawler**](CrawlerApi.md#getCrawler) | **GET** /api/crawler/crawler/{organisationId}/{kbId}/{sourceId} | Get source |
 | [**getFailedDocuments**](CrawlerApi.md#getFailedDocuments) | **GET** /api/crawler/faileddocs/{organisationId}/{kbId}/{sourceId}/{page}/{pageSize} | Get source List |
 | [**getSourceList**](CrawlerApi.md#getSourceList) | **GET** /api/crawler/crawlers/{organisationId}/{kbId} | Get source List |
+| [**markCrawlAsDeltaReset**](CrawlerApi.md#markCrawlAsDeltaReset) | **POST** /api/crawler/external/crawler/mark-as-reset | Update delta token |
 | [**markFileAsSeen**](CrawlerApi.md#markFileAsSeen) | **POST** /api/crawler/external/crawler/mark-file-as-seen | Mark file as seen |
 | [**oidcCode**](CrawlerApi.md#oidcCode) | **GET** /api/crawler/dropbox-oidc-code/{oidcKey} | OIDC code receiver |
 | [**processAllFiles**](CrawlerApi.md#processAllFiles) | **POST** /api/crawler/process-all-files | Process all files of crawler/source |
@@ -29,6 +30,7 @@ All URIs are relative to *https://test.simsage.ai*
 | [**resetSourceDelta**](CrawlerApi.md#resetSourceDelta) | **POST** /api/crawler/crawler/reset-delta/{organisationId}/{kbId}/{sourceId} | Reset Source delta-token |
 | [**sdcSchema**](CrawlerApi.md#sdcSchema) | **GET** /api/crawler/sdc_schema |  |
 | [**startCrawler**](CrawlerApi.md#startCrawler) | **POST** /api/crawler/start | Start crawler |
+| [**sync**](CrawlerApi.md#sync) | **POST** /api/crawler/syncgdrivegroups |  |
 | [**testCrawler**](CrawlerApi.md#testCrawler) | **GET** /api/crawler/crawler/test/{organisationId}/{kbId}/{sourceId} | Test Crawler |
 | [**updateCrawler**](CrawlerApi.md#updateCrawler) | **POST** /api/crawler/crawler | Update Source |
 | [**version6**](CrawlerApi.md#version6) | **GET** /api/crawler/version | Version |
@@ -527,6 +529,34 @@ No authorization required
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
+<a name="markCrawlAsDeltaReset"></a>
+# **markCrawlAsDeltaReset**
+> JsonMessage markCrawlAsDeltaReset(CMExternalMarkResetCrawl, API-Version)
+
+Update delta token
+
+    An external crawler marks a source as delta reset required.
+
+### Parameters
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **CMExternalMarkResetCrawl** | [**CMExternalMarkResetCrawl**](../Models/CMExternalMarkResetCrawl.md)|  | |
+| **API-Version** | **String**|  | [optional] [default to null] [enum: 1] |
+
+### Return type
+
+[**JsonMessage**](../Models/JsonMessage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
 <a name="markFileAsSeen"></a>
 # **markFileAsSeen**
 > JsonMessage markFileAsSeen(CMExternalCrawlerMarkFileAsSeen, API-Version)
@@ -743,6 +773,32 @@ No authorization required
 
 - **Content-Type**: application/json
 - **Accept**: application/json
+
+<a name="sync"></a>
+# **sync**
+> Object sync(session-id, CMSyncGDrive)
+
+
+
+### Parameters
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **session-id** | **String**| a valid SimSage Session id. | [default to null] |
+| **CMSyncGDrive** | [**CMSyncGDrive**](../Models/CMSyncGDrive.md)|  | |
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json;charset=UTF-8
 
 <a name="testCrawler"></a>
 # **testCrawler**

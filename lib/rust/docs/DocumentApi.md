@@ -1,6 +1,6 @@
 # \DocumentApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://training.simsage.ai*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,7 +18,6 @@ Method | HTTP request | Description
 [**remove_parquet_file**](DocumentApi.md#remove_parquet_file) | **DELETE** /api/document/parquet/{organisationId}/{kbId}/{dateTime} | Delete Parquet File
 [**summarize_document**](DocumentApi.md#summarize_document) | **POST** /api/document/summarize/document | Summarize a document
 [**version4**](DocumentApi.md#version4) | **GET** /api/document/version | Version
-[**zip_source**](DocumentApi.md#zip_source) | **POST** /api/document/zip/source | Zip source documents
 
 
 
@@ -83,7 +82,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/octet-stream, application/json
+- **Accept**: application/json, application/octet-stream
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -283,7 +282,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: image/jpeg, image/svg+xml, application/json
+- **Accept**: application/json, image/jpeg, image/svg+xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -474,38 +473,6 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## zip_source
-
-> crate::models::JsonMessage zip_source(session_id, cm_zip_source, api_version)
-Zip source documents
-
-Zip all documents in a source on the local server.
-
-### Parameters
-
-
-Name | Type | Description  | Required | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-**session_id** | **String** | a valid SimSage Session id. | [required] |
-**cm_zip_source** | [**CmZipSource**](CmZipSource.md) |  | [required] |
-**api_version** | Option<**String**> |  |  |
-
-### Return type
-
-[**crate::models::JsonMessage**](JsonMessage.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

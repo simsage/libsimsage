@@ -52,11 +52,13 @@ docs/CMExternalCrawlerSetDeltaToken.md
 docs/CMExternalCrawlerStart.md
 docs/CMExternalCrawlerStop.md
 docs/CMExternalLogEntry.md
+docs/CMExternalMarkResetCrawl.md
 docs/CMFailedSourceDocument.md
 docs/CMFilter.md
 docs/CMGdprSearchDetails.md
 docs/CMGetHtml.md
 docs/CMGroup.md
+docs/CMGroupEditInfo.md
 docs/CMGroupList.md
 docs/CMImportUsers.md
 docs/CMInfo.md
@@ -132,6 +134,7 @@ docs/CMSlicedDocumentListAndTotals.md
 docs/CMSlicedDocumentRequest.md
 docs/CMSource.md
 docs/CMSourceBaseInfo.md
+docs/CMSourceError.md
 docs/CMStartCrawler.md
 docs/CMStartProject.md
 docs/CMStepConfig.md
@@ -140,6 +143,7 @@ docs/CMSubscriptions.md
 docs/CMSynSet.md
 docs/CMSynSetFind.md
 docs/CMSynSetList.md
+docs/CMSyncGDrive.md
 docs/CMSynonym.md
 docs/CMSynonymsPaginated.md
 docs/CMSynonymsPaginatedResult.md
@@ -163,7 +167,6 @@ docs/CMUserRole.md
 docs/CMUserWithExtras.md
 docs/CMVersion.md
 docs/CMWordFrequency.md
-docs/CMZipSource.md
 docs/ContextItem.md
 docs/ConversionApi.md
 docs/CrawlerApi.md
@@ -262,11 +265,13 @@ openapi_client/models/cm_external_crawler_set_delta_token.py
 openapi_client/models/cm_external_crawler_start.py
 openapi_client/models/cm_external_crawler_stop.py
 openapi_client/models/cm_external_log_entry.py
+openapi_client/models/cm_external_mark_reset_crawl.py
 openapi_client/models/cm_failed_source_document.py
 openapi_client/models/cm_filter.py
 openapi_client/models/cm_gdpr_search_details.py
 openapi_client/models/cm_get_html.py
 openapi_client/models/cm_group.py
+openapi_client/models/cm_group_edit_info.py
 openapi_client/models/cm_group_list.py
 openapi_client/models/cm_import_users.py
 openapi_client/models/cm_info.py
@@ -342,6 +347,7 @@ openapi_client/models/cm_sliced_document_list_and_totals.py
 openapi_client/models/cm_sliced_document_request.py
 openapi_client/models/cm_source.py
 openapi_client/models/cm_source_base_info.py
+openapi_client/models/cm_source_error.py
 openapi_client/models/cm_start_crawler.py
 openapi_client/models/cm_start_project.py
 openapi_client/models/cm_step_config.py
@@ -350,6 +356,7 @@ openapi_client/models/cm_subscriptions.py
 openapi_client/models/cm_syn_set.py
 openapi_client/models/cm_syn_set_find.py
 openapi_client/models/cm_syn_set_list.py
+openapi_client/models/cm_sync_g_drive.py
 openapi_client/models/cm_synonym.py
 openapi_client/models/cm_synonyms_paginated.py
 openapi_client/models/cm_synonyms_paginated_result.py
@@ -373,7 +380,6 @@ openapi_client/models/cm_user_role.py
 openapi_client/models/cm_user_with_extras.py
 openapi_client/models/cm_version.py
 openapi_client/models/cm_word_frequency.py
-openapi_client/models/cm_zip_source.py
 openapi_client/models/cmd_paragraph_summary.py
 openapi_client/models/cmd_user_dashboard.py
 openapi_client/models/context_item.py
@@ -454,11 +460,13 @@ test/test_cm_external_crawler_set_delta_token.py
 test/test_cm_external_crawler_start.py
 test/test_cm_external_crawler_stop.py
 test/test_cm_external_log_entry.py
+test/test_cm_external_mark_reset_crawl.py
 test/test_cm_failed_source_document.py
 test/test_cm_filter.py
 test/test_cm_gdpr_search_details.py
 test/test_cm_get_html.py
 test/test_cm_group.py
+test/test_cm_group_edit_info.py
 test/test_cm_group_list.py
 test/test_cm_import_users.py
 test/test_cm_info.py
@@ -534,6 +542,7 @@ test/test_cm_sliced_document_list_and_totals.py
 test/test_cm_sliced_document_request.py
 test/test_cm_source.py
 test/test_cm_source_base_info.py
+test/test_cm_source_error.py
 test/test_cm_start_crawler.py
 test/test_cm_start_project.py
 test/test_cm_step_config.py
@@ -542,6 +551,7 @@ test/test_cm_subscriptions.py
 test/test_cm_syn_set.py
 test/test_cm_syn_set_find.py
 test/test_cm_syn_set_list.py
+test/test_cm_sync_g_drive.py
 test/test_cm_synonym.py
 test/test_cm_synonyms_paginated.py
 test/test_cm_synonyms_paginated_result.py
@@ -565,7 +575,6 @@ test/test_cm_user_role.py
 test/test_cm_user_with_extras.py
 test/test_cm_version.py
 test/test_cm_word_frequency.py
-test/test_cm_zip_source.py
 test/test_cmd_paragraph_summary.py
 test/test_cmd_user_dashboard.py
 test/test_context_item.py

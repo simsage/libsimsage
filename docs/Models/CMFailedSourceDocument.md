@@ -8,6 +8,7 @@
 | **sourceId** | **Integer** | the source-id, primary key of the source | [default to null] |
 | **sourceSystemId** | **String** | the unique id of the document in the source system, mostly same as web url | [default to null] |
 | **webUrl** | **String** | the web url to access the document, can be different from url | [default to null] |
+| **deltaRootId** | **String** | For delta crawlers with multiple roots, the id of the document&#39;s delta root | [default to null] |
 | **runId** | **Long** | the timestamp of the crawler run adding the exception | [default to null] |
 | **errorMessage** | **String** | the error message added by the system | [default to null] |
 | **encrypted** | **Boolean** | Do we need to add transport encryption | [default to null] |

@@ -17,6 +17,9 @@
 | **indexSchedule** | **String** |  | [default to null] |
 | **lastIndexOptimizationTime** | **Long** |  | [default to null] |
 | **projectKb** | **Boolean** |  | [default to null] |
+| **isOptimizing** | **Boolean** |  | [default to null] |
+| **optimizationProgress** | **Integer** |  | [default to null] |
+| **optimizing** | **Boolean** |  | [optional] [default to null] |
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

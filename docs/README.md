@@ -3,7 +3,7 @@
 <a name="documentation-for-api-endpoints"></a>
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://training.simsage.ai*
 
 | Class | Method | HTTP request | Description |
 |------------ | ------------- | ------------- | -------------|
@@ -13,6 +13,7 @@ All URIs are relative to *https://test.simsage.ai*
 *AuthApi* | [**getOTT**](Apis/AuthApi.md#getott) | **PUT** /api/auth/ott/{organisationId} | Get a one-time token. |
 *AuthApi* | [**getUserOrganisationList**](Apis/AuthApi.md#getuserorganisationlist) | **GET** /api/auth/user/organisations/{filter} | Get a list of Organisations |
 *AuthApi* | [**getUsersPaginated**](Apis/AuthApi.md#getuserspaginated) | **GET** /api/auth/users-paginated/{organisationId}/{page}/{pageSize}/{filter} | Get Users paginated |
+*AuthApi* | [**groupEditInfo**](Apis/AuthApi.md#groupeditinfo) | **POST** /api/auth/group-edit-info/{organisationId} | Get Group edit information |
 *AuthApi* | [**importUsersAndGroups**](Apis/AuthApi.md#importusersandgroups) | **PUT** /api/auth/user/import | Import users and groups. |
 *AuthApi* | [**myRoles**](Apis/AuthApi.md#myroles) | **GET** /api/auth/myroles/{organisationId} | Get users application roles |
 *AuthApi* | [**removeUserFromOrganisation**](Apis/AuthApi.md#removeuserfromorganisation) | **DELETE** /api/auth/organisation/user/{userId}/{organisationId} | Remove User from Organisation |
@@ -54,6 +55,7 @@ All URIs are relative to *https://test.simsage.ai*
 *CrawlerApi* | [**getCrawler**](Apis/CrawlerApi.md#getcrawler) | **GET** /api/crawler/crawler/{organisationId}/{kbId}/{sourceId} | Get source |
 *CrawlerApi* | [**getFailedDocuments**](Apis/CrawlerApi.md#getfaileddocuments) | **GET** /api/crawler/faileddocs/{organisationId}/{kbId}/{sourceId}/{page}/{pageSize} | Get source List |
 *CrawlerApi* | [**getSourceList**](Apis/CrawlerApi.md#getsourcelist) | **GET** /api/crawler/crawlers/{organisationId}/{kbId} | Get source List |
+*CrawlerApi* | [**markCrawlAsDeltaReset**](Apis/CrawlerApi.md#markcrawlasdeltareset) | **POST** /api/crawler/external/crawler/mark-as-reset | Update delta token |
 *CrawlerApi* | [**markFileAsSeen**](Apis/CrawlerApi.md#markfileasseen) | **POST** /api/crawler/external/crawler/mark-file-as-seen | Mark file as seen |
 *CrawlerApi* | [**oidcCode**](Apis/CrawlerApi.md#oidccode) | **GET** /api/crawler/dropbox-oidc-code/{oidcKey} | OIDC code receiver |
 *CrawlerApi* | [**processAllFiles**](Apis/CrawlerApi.md#processallfiles) | **POST** /api/crawler/process-all-files | Process all files of crawler/source |
@@ -62,6 +64,7 @@ All URIs are relative to *https://test.simsage.ai*
 *CrawlerApi* | [**resetSourceDelta**](Apis/CrawlerApi.md#resetsourcedelta) | **POST** /api/crawler/crawler/reset-delta/{organisationId}/{kbId}/{sourceId} | Reset Source delta-token |
 *CrawlerApi* | [**sdcSchema**](Apis/CrawlerApi.md#sdcschema) | **GET** /api/crawler/sdc_schema |  |
 *CrawlerApi* | [**startCrawler**](Apis/CrawlerApi.md#startcrawler) | **POST** /api/crawler/start | Start crawler |
+*CrawlerApi* | [**sync**](Apis/CrawlerApi.md#sync) | **POST** /api/crawler/syncgdrivegroups |  |
 *CrawlerApi* | [**testCrawler**](Apis/CrawlerApi.md#testcrawler) | **GET** /api/crawler/crawler/test/{organisationId}/{kbId}/{sourceId} | Test Crawler |
 *CrawlerApi* | [**updateCrawler**](Apis/CrawlerApi.md#updatecrawler) | **POST** /api/crawler/crawler | Update Source |
 *CrawlerApi* | [**version6**](Apis/CrawlerApi.md#version6) | **GET** /api/crawler/version | Version |
@@ -155,7 +158,6 @@ All URIs are relative to *https://test.simsage.ai*
 *DocumentApi* | [**removeParquetFile**](Apis/DocumentApi.md#removeparquetfile) | **DELETE** /api/document/parquet/{organisationId}/{kbId}/{dateTime} | Delete Parquet File |
 *DocumentApi* | [**summarizeDocument**](Apis/DocumentApi.md#summarizedocument) | **POST** /api/document/summarize/document | Summarize a document |
 *DocumentApi* | [**version4**](Apis/DocumentApi.md#version4) | **GET** /api/document/version | Version |
-*DocumentApi* | [**zipSource**](Apis/DocumentApi.md#zipsource) | **POST** /api/document/zip/source | Zip source documents |
 | *KnowledgebaseApi* | [**exportKnowledgeBase**](Apis/KnowledgebaseApi.md#exportknowledgebase) | **POST** /api/knowledgebase/export | export Knowledge-base |
 *KnowledgebaseApi* | [**getKnowledgeBase**](Apis/KnowledgebaseApi.md#getknowledgebase) | **GET** /api/knowledgebase/{organisationId}/{kbId} | Get Knowledge-base |
 *KnowledgebaseApi* | [**getKnowledgeBases**](Apis/KnowledgebaseApi.md#getknowledgebases) | **GET** /api/knowledgebase/{organisationId} | Get Knowledge-bases |
@@ -175,6 +177,7 @@ All URIs are relative to *https://test.simsage.ai*
 *LanguageApi* | [**getPaginated**](Apis/LanguageApi.md#getpaginated) | **PUT** /api/language/synonyms | get Synonyms Paginated |
 *LanguageApi* | [**getSemanticsPaginated**](Apis/LanguageApi.md#getsemanticspaginated) | **PUT** /api/language/semantics | Semantics Paginated |
 *LanguageApi* | [**optimizeIndexes**](Apis/LanguageApi.md#optimizeindexes) | **PUT** /api/language/optimize-indexes | Optimize Indexes |
+*LanguageApi* | [**optimizeIndexesAbort**](Apis/LanguageApi.md#optimizeindexesabort) | **PUT** /api/language/optimize-indexes-abort | Abort Index Optimization |
 *LanguageApi* | [**redactDocument**](Apis/LanguageApi.md#redactdocument) | **GET** /api/language/redact/{organisationId}/{kbId}/{url}/{entityCsv}/{wordCsv}/{allowWordsCsv} | Redact Document |
 *LanguageApi* | [**saveCategorization**](Apis/LanguageApi.md#savecategorization) | **PUT** /api/language/categorization | save categorization |
 *LanguageApi* | [**saveSemantic**](Apis/LanguageApi.md#savesemantic) | **PUT** /api/language/save-semantic/{organisationId}/{kbId} | Save Semantic |
@@ -247,11 +250,13 @@ All URIs are relative to *https://test.simsage.ai*
  - [CMExternalCrawlerStart](./Models/CMExternalCrawlerStart.md)
  - [CMExternalCrawlerStop](./Models/CMExternalCrawlerStop.md)
  - [CMExternalLogEntry](./Models/CMExternalLogEntry.md)
+ - [CMExternalMarkResetCrawl](./Models/CMExternalMarkResetCrawl.md)
  - [CMFailedSourceDocument](./Models/CMFailedSourceDocument.md)
  - [CMFilter](./Models/CMFilter.md)
  - [CMGdprSearchDetails](./Models/CMGdprSearchDetails.md)
  - [CMGetHtml](./Models/CMGetHtml.md)
  - [CMGroup](./Models/CMGroup.md)
+ - [CMGroupEditInfo](./Models/CMGroupEditInfo.md)
  - [CMGroupList](./Models/CMGroupList.md)
  - [CMImportUsers](./Models/CMImportUsers.md)
  - [CMInfo](./Models/CMInfo.md)
@@ -327,6 +332,7 @@ All URIs are relative to *https://test.simsage.ai*
  - [CMSlicedDocumentRequest](./Models/CMSlicedDocumentRequest.md)
  - [CMSource](./Models/CMSource.md)
  - [CMSourceBaseInfo](./Models/CMSourceBaseInfo.md)
+ - [CMSourceError](./Models/CMSourceError.md)
  - [CMStartCrawler](./Models/CMStartCrawler.md)
  - [CMStartProject](./Models/CMStartProject.md)
  - [CMStepConfig](./Models/CMStepConfig.md)
@@ -335,6 +341,7 @@ All URIs are relative to *https://test.simsage.ai*
  - [CMSynSet](./Models/CMSynSet.md)
  - [CMSynSetFind](./Models/CMSynSetFind.md)
  - [CMSynSetList](./Models/CMSynSetList.md)
+ - [CMSyncGDrive](./Models/CMSyncGDrive.md)
  - [CMSynonym](./Models/CMSynonym.md)
  - [CMSynonymsPaginated](./Models/CMSynonymsPaginated.md)
  - [CMSynonymsPaginatedResult](./Models/CMSynonymsPaginatedResult.md)
@@ -358,7 +365,6 @@ All URIs are relative to *https://test.simsage.ai*
  - [CMUserWithExtras](./Models/CMUserWithExtras.md)
  - [CMVersion](./Models/CMVersion.md)
  - [CMWordFrequency](./Models/CMWordFrequency.md)
- - [CMZipSource](./Models/CMZipSource.md)
  - [ContextItem](./Models/ContextItem.md)
  - [DocumentBookmark](./Models/DocumentBookmark.md)
  - [DocumentDeleted](./Models/DocumentDeleted.md)

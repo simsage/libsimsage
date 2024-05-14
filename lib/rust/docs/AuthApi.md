@@ -1,6 +1,6 @@
 # \AuthApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://training.simsage.ai*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**get_ott**](AuthApi.md#get_ott) | **PUT** /api/auth/ott/{organisationId} | Get a one-time token.
 [**get_user_organisation_list**](AuthApi.md#get_user_organisation_list) | **GET** /api/auth/user/organisations/{filter} | Get a list of Organisations
 [**get_users_paginated**](AuthApi.md#get_users_paginated) | **GET** /api/auth/users-paginated/{organisationId}/{page}/{pageSize}/{filter} | Get Users paginated
+[**group_edit_info**](AuthApi.md#group_edit_info) | **POST** /api/auth/group-edit-info/{organisationId} | Get Group edit information
 [**import_users_and_groups**](AuthApi.md#import_users_and_groups) | **PUT** /api/auth/user/import | 
 [**my_roles**](AuthApi.md#my_roles) | **GET** /api/auth/myroles/{organisationId} | Get users application roles
 [**remove_user_from_organisation**](AuthApi.md#remove_user_from_organisation) | **DELETE** /api/auth/organisation/user/{userId}/{organisationId} | Remove User from Organisation
@@ -214,6 +215,38 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## group_edit_info
+
+> crate::models::CmGroupList group_edit_info(organisation_id, session_id, cm_group_edit_info)
+Get Group edit information
+
+Return the information needed for the admin UX editing a group
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**organisation_id** | **String** | the main organisation (its guid id) to get users for | [required] |
+**session_id** | **String** | a valid SimSage Session id. | [required] |
+**cm_group_edit_info** | [**CmGroupEditInfo**](CmGroupEditInfo.md) |  | [required] |
+
+### Return type
+
+[**crate::models::CmGroupList**](CMGroupList.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

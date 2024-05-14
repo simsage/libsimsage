@@ -2,7 +2,7 @@
 
 SimSage REST API
 
-For more information, please visit [https://test.simsage.ai](https://test.simsage.ai).
+For more information, please visit [https://training.simsage.ai](https://training.simsage.ai).
 
 ## Installation & Usage
 
@@ -71,7 +71,7 @@ try {
 
 ## API Endpoints
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://training.simsage.ai*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -81,6 +81,7 @@ Class | Method | HTTP request | Description
 *AuthApi* | [**getOTT**](docs/Api/AuthApi.md#getott) | **PUT** /api/auth/ott/{organisationId} | Get a one-time token.
 *AuthApi* | [**getUserOrganisationList**](docs/Api/AuthApi.md#getuserorganisationlist) | **GET** /api/auth/user/organisations/{filter} | Get a list of Organisations
 *AuthApi* | [**getUsersPaginated**](docs/Api/AuthApi.md#getuserspaginated) | **GET** /api/auth/users-paginated/{organisationId}/{page}/{pageSize}/{filter} | Get Users paginated
+*AuthApi* | [**groupEditInfo**](docs/Api/AuthApi.md#groupeditinfo) | **POST** /api/auth/group-edit-info/{organisationId} | Get Group edit information
 *AuthApi* | [**importUsersAndGroups**](docs/Api/AuthApi.md#importusersandgroups) | **PUT** /api/auth/user/import | 
 *AuthApi* | [**myRoles**](docs/Api/AuthApi.md#myroles) | **GET** /api/auth/myroles/{organisationId} | Get users application roles
 *AuthApi* | [**removeUserFromOrganisation**](docs/Api/AuthApi.md#removeuserfromorganisation) | **DELETE** /api/auth/organisation/user/{userId}/{organisationId} | Remove User from Organisation
@@ -122,6 +123,7 @@ Class | Method | HTTP request | Description
 *CrawlerApi* | [**getCrawler**](docs/Api/CrawlerApi.md#getcrawler) | **GET** /api/crawler/crawler/{organisationId}/{kbId}/{sourceId} | Get source
 *CrawlerApi* | [**getFailedDocuments**](docs/Api/CrawlerApi.md#getfaileddocuments) | **GET** /api/crawler/faileddocs/{organisationId}/{kbId}/{sourceId}/{page}/{pageSize} | Get source List
 *CrawlerApi* | [**getSourceList**](docs/Api/CrawlerApi.md#getsourcelist) | **GET** /api/crawler/crawlers/{organisationId}/{kbId} | Get source List
+*CrawlerApi* | [**markCrawlAsDeltaReset**](docs/Api/CrawlerApi.md#markcrawlasdeltareset) | **POST** /api/crawler/external/crawler/mark-as-reset | Update delta token
 *CrawlerApi* | [**markFileAsSeen**](docs/Api/CrawlerApi.md#markfileasseen) | **POST** /api/crawler/external/crawler/mark-file-as-seen | Mark file as seen
 *CrawlerApi* | [**oidcCode**](docs/Api/CrawlerApi.md#oidccode) | **GET** /api/crawler/dropbox-oidc-code/{oidcKey} | OIDC code receiver
 *CrawlerApi* | [**processAllFiles**](docs/Api/CrawlerApi.md#processallfiles) | **POST** /api/crawler/process-all-files | Process all files of crawler/source
@@ -130,6 +132,7 @@ Class | Method | HTTP request | Description
 *CrawlerApi* | [**resetSourceDelta**](docs/Api/CrawlerApi.md#resetsourcedelta) | **POST** /api/crawler/crawler/reset-delta/{organisationId}/{kbId}/{sourceId} | Reset Source delta-token
 *CrawlerApi* | [**sdcSchema**](docs/Api/CrawlerApi.md#sdcschema) | **GET** /api/crawler/sdc_schema | 
 *CrawlerApi* | [**startCrawler**](docs/Api/CrawlerApi.md#startcrawler) | **POST** /api/crawler/start | Start crawler
+*CrawlerApi* | [**sync**](docs/Api/CrawlerApi.md#sync) | **POST** /api/crawler/syncgdrivegroups | 
 *CrawlerApi* | [**testCrawler**](docs/Api/CrawlerApi.md#testcrawler) | **GET** /api/crawler/crawler/test/{organisationId}/{kbId}/{sourceId} | Test Crawler
 *CrawlerApi* | [**updateCrawler**](docs/Api/CrawlerApi.md#updatecrawler) | **POST** /api/crawler/crawler | Update Source
 *CrawlerApi* | [**version6**](docs/Api/CrawlerApi.md#version6) | **GET** /api/crawler/version | Version
@@ -223,7 +226,6 @@ Class | Method | HTTP request | Description
 *DocumentApi* | [**removeParquetFile**](docs/Api/DocumentApi.md#removeparquetfile) | **DELETE** /api/document/parquet/{organisationId}/{kbId}/{dateTime} | Delete Parquet File
 *DocumentApi* | [**summarizeDocument**](docs/Api/DocumentApi.md#summarizedocument) | **POST** /api/document/summarize/document | Summarize a document
 *DocumentApi* | [**version4**](docs/Api/DocumentApi.md#version4) | **GET** /api/document/version | Version
-*DocumentApi* | [**zipSource**](docs/Api/DocumentApi.md#zipsource) | **POST** /api/document/zip/source | Zip source documents
 *KnowledgebaseApi* | [**exportKnowledgeBase**](docs/Api/KnowledgebaseApi.md#exportknowledgebase) | **POST** /api/knowledgebase/export | export Knowledge-base
 *KnowledgebaseApi* | [**getKnowledgeBase**](docs/Api/KnowledgebaseApi.md#getknowledgebase) | **GET** /api/knowledgebase/{organisationId}/{kbId} | Get Knowledge-base
 *KnowledgebaseApi* | [**getKnowledgeBases**](docs/Api/KnowledgebaseApi.md#getknowledgebases) | **GET** /api/knowledgebase/{organisationId} | Get Knowledge-bases
@@ -243,6 +245,7 @@ Class | Method | HTTP request | Description
 *LanguageApi* | [**getPaginated**](docs/Api/LanguageApi.md#getpaginated) | **PUT** /api/language/synonyms | get Synonyms Paginated
 *LanguageApi* | [**getSemanticsPaginated**](docs/Api/LanguageApi.md#getsemanticspaginated) | **PUT** /api/language/semantics | Semantics Paginated
 *LanguageApi* | [**optimizeIndexes**](docs/Api/LanguageApi.md#optimizeindexes) | **PUT** /api/language/optimize-indexes | Optimize Indexes
+*LanguageApi* | [**optimizeIndexesAbort**](docs/Api/LanguageApi.md#optimizeindexesabort) | **PUT** /api/language/optimize-indexes-abort | Abort Index Optimization
 *LanguageApi* | [**redactDocument**](docs/Api/LanguageApi.md#redactdocument) | **GET** /api/language/redact/{organisationId}/{kbId}/{url}/{entityCsv}/{wordCsv}/{allowWordsCsv} | Redact Document
 *LanguageApi* | [**saveCategorization**](docs/Api/LanguageApi.md#savecategorization) | **PUT** /api/language/categorization | save categorization
 *LanguageApi* | [**saveSemantic**](docs/Api/LanguageApi.md#savesemantic) | **PUT** /api/language/save-semantic/{organisationId}/{kbId} | Save Semantic
@@ -313,11 +316,13 @@ Class | Method | HTTP request | Description
 - [CMExternalCrawlerStart](docs/Model/CMExternalCrawlerStart.md)
 - [CMExternalCrawlerStop](docs/Model/CMExternalCrawlerStop.md)
 - [CMExternalLogEntry](docs/Model/CMExternalLogEntry.md)
+- [CMExternalMarkResetCrawl](docs/Model/CMExternalMarkResetCrawl.md)
 - [CMFailedSourceDocument](docs/Model/CMFailedSourceDocument.md)
 - [CMFilter](docs/Model/CMFilter.md)
 - [CMGdprSearchDetails](docs/Model/CMGdprSearchDetails.md)
 - [CMGetHtml](docs/Model/CMGetHtml.md)
 - [CMGroup](docs/Model/CMGroup.md)
+- [CMGroupEditInfo](docs/Model/CMGroupEditInfo.md)
 - [CMGroupList](docs/Model/CMGroupList.md)
 - [CMImportUsers](docs/Model/CMImportUsers.md)
 - [CMInfo](docs/Model/CMInfo.md)
@@ -393,6 +398,7 @@ Class | Method | HTTP request | Description
 - [CMSlicedDocumentRequest](docs/Model/CMSlicedDocumentRequest.md)
 - [CMSource](docs/Model/CMSource.md)
 - [CMSourceBaseInfo](docs/Model/CMSourceBaseInfo.md)
+- [CMSourceError](docs/Model/CMSourceError.md)
 - [CMStartCrawler](docs/Model/CMStartCrawler.md)
 - [CMStartProject](docs/Model/CMStartProject.md)
 - [CMStepConfig](docs/Model/CMStepConfig.md)
@@ -401,6 +407,7 @@ Class | Method | HTTP request | Description
 - [CMSynSet](docs/Model/CMSynSet.md)
 - [CMSynSetFind](docs/Model/CMSynSetFind.md)
 - [CMSynSetList](docs/Model/CMSynSetList.md)
+- [CMSyncGDrive](docs/Model/CMSyncGDrive.md)
 - [CMSynonym](docs/Model/CMSynonym.md)
 - [CMSynonymsPaginated](docs/Model/CMSynonymsPaginated.md)
 - [CMSynonymsPaginatedResult](docs/Model/CMSynonymsPaginatedResult.md)
@@ -424,7 +431,6 @@ Class | Method | HTTP request | Description
 - [CMUserWithExtras](docs/Model/CMUserWithExtras.md)
 - [CMVersion](docs/Model/CMVersion.md)
 - [CMWordFrequency](docs/Model/CMWordFrequency.md)
-- [CMZipSource](docs/Model/CMZipSource.md)
 - [ContextItem](docs/Model/ContextItem.md)
 - [DocumentBookmark](docs/Model/DocumentBookmark.md)
 - [DocumentDeleted](docs/Model/DocumentDeleted.md)
@@ -470,5 +476,5 @@ info@simsage.co.uk
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `7.13.31`
+- API version: `7.14.12`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

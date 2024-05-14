@@ -1,6 +1,6 @@
 # LanguageApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://training.simsage.ai*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -15,6 +15,7 @@ All URIs are relative to *https://test.simsage.ai*
 | [**getPaginated**](LanguageApi.md#getPaginated) | **PUT** /api/language/synonyms | get Synonyms Paginated |
 | [**getSemanticsPaginated**](LanguageApi.md#getSemanticsPaginated) | **PUT** /api/language/semantics | Semantics Paginated |
 | [**optimizeIndexes**](LanguageApi.md#optimizeIndexes) | **PUT** /api/language/optimize-indexes | Optimize Indexes |
+| [**optimizeIndexesAbort**](LanguageApi.md#optimizeIndexesAbort) | **PUT** /api/language/optimize-indexes-abort | Abort Index Optimization |
 | [**redactDocument**](LanguageApi.md#redactDocument) | **GET** /api/language/redact/{organisationId}/{kbId}/{url}/{entityCsv}/{wordCsv}/{allowWordsCsv} | Redact Document |
 | [**saveCategorization**](LanguageApi.md#saveCategorization) | **PUT** /api/language/categorization | save categorization |
 | [**saveSemantic**](LanguageApi.md#saveSemantic) | **PUT** /api/language/save-semantic/{organisationId}/{kbId} | Save Semantic |
@@ -44,7 +45,7 @@ import org.openapitools.client.api.LanguageApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     LanguageApi apiInstance = new LanguageApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -90,8 +91,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | fail response |  -  |
 | **200** | OK response |  -  |
+| **500** | fail response |  -  |
 
 <a id="deleteAllSynonyms"></a>
 # **deleteAllSynonyms**
@@ -113,7 +114,7 @@ import org.openapitools.client.api.LanguageApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     LanguageApi apiInstance = new LanguageApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -159,8 +160,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | fail response |  -  |
 | **200** | OK response |  -  |
+| **500** | fail response |  -  |
 
 <a id="deleteCategorization"></a>
 # **deleteCategorization**
@@ -182,7 +183,7 @@ import org.openapitools.client.api.LanguageApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     LanguageApi apiInstance = new LanguageApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -230,8 +231,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | fail response |  -  |
 | **200** | OK response |  -  |
+| **500** | fail response |  -  |
 
 <a id="deleteSemantic"></a>
 # **deleteSemantic**
@@ -253,7 +254,7 @@ import org.openapitools.client.api.LanguageApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     LanguageApi apiInstance = new LanguageApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -303,8 +304,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | fail response |  -  |
 | **200** | OK response |  -  |
+| **500** | fail response |  -  |
 
 <a id="deleteSynSet"></a>
 # **deleteSynSet**
@@ -326,7 +327,7 @@ import org.openapitools.client.api.LanguageApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     LanguageApi apiInstance = new LanguageApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -374,8 +375,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | fail response |  -  |
 | **200** | OK response |  -  |
+| **500** | fail response |  -  |
 
 <a id="deleteSynonym"></a>
 # **deleteSynonym**
@@ -397,7 +398,7 @@ import org.openapitools.client.api.LanguageApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     LanguageApi apiInstance = new LanguageApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -445,8 +446,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | fail response |  -  |
 | **200** | OK response |  -  |
+| **500** | fail response |  -  |
 
 <a id="findSynSets"></a>
 # **findSynSets**
@@ -468,7 +469,7 @@ import org.openapitools.client.api.LanguageApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     LanguageApi apiInstance = new LanguageApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -512,8 +513,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | response |  -  |
 | **500** | fail response |  -  |
+| **200** | response |  -  |
 
 <a id="getCategorizationList"></a>
 # **getCategorizationList**
@@ -535,7 +536,7 @@ import org.openapitools.client.api.LanguageApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     LanguageApi apiInstance = new LanguageApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -608,7 +609,7 @@ import org.openapitools.client.api.LanguageApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     LanguageApi apiInstance = new LanguageApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -652,8 +653,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | response |  -  |
 | **500** | fail response |  -  |
+| **200** | response |  -  |
 
 <a id="getSemanticsPaginated"></a>
 # **getSemanticsPaginated**
@@ -675,7 +676,7 @@ import org.openapitools.client.api.LanguageApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     LanguageApi apiInstance = new LanguageApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -742,7 +743,7 @@ import org.openapitools.client.api.LanguageApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     LanguageApi apiInstance = new LanguageApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -786,8 +787,75 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | fail response |  -  |
 | **200** | OK response |  -  |
+| **500** | fail response |  -  |
+
+<a id="optimizeIndexesAbort"></a>
+# **optimizeIndexesAbort**
+> JsonMessage optimizeIndexesAbort(sessionId, cmOptimizeIndex, apIVersion)
+
+Abort Index Optimization
+
+Force index optimizer to abort a job.
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.LanguageApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://training.simsage.ai");
+
+    LanguageApi apiInstance = new LanguageApi(defaultClient);
+    String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
+    CMOptimizeIndex cmOptimizeIndex = new CMOptimizeIndex(); // CMOptimizeIndex | 
+    String apIVersion = "1"; // String | 
+    try {
+      JsonMessage result = apiInstance.optimizeIndexesAbort(sessionId, cmOptimizeIndex, apIVersion);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling LanguageApi#optimizeIndexesAbort");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **sessionId** | **String**| a valid SimSage Session id. | |
+| **cmOptimizeIndex** | [**CMOptimizeIndex**](CMOptimizeIndex.md)|  | |
+| **apIVersion** | **String**|  | [optional] [enum: 1] |
+
+### Return type
+
+[**JsonMessage**](JsonMessage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK response |  -  |
+| **500** | fail response |  -  |
 
 <a id="redactDocument"></a>
 # **redactDocument**
@@ -809,7 +877,7 @@ import org.openapitools.client.api.LanguageApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     LanguageApi apiInstance = new LanguageApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -884,7 +952,7 @@ import org.openapitools.client.api.LanguageApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     LanguageApi apiInstance = new LanguageApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -928,8 +996,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | fail response |  -  |
 | **200** | OK response |  -  |
+| **500** | fail response |  -  |
 
 <a id="saveSemantic"></a>
 # **saveSemantic**
@@ -951,7 +1019,7 @@ import org.openapitools.client.api.LanguageApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     LanguageApi apiInstance = new LanguageApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -999,8 +1067,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | fail response |  -  |
 | **200** | OK response |  -  |
+| **500** | fail response |  -  |
 
 <a id="saveSynSet"></a>
 # **saveSynSet**
@@ -1022,7 +1090,7 @@ import org.openapitools.client.api.LanguageApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     LanguageApi apiInstance = new LanguageApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -1070,8 +1138,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | fail response |  -  |
 | **200** | OK response |  -  |
+| **500** | fail response |  -  |
 
 <a id="saveSynonym"></a>
 # **saveSynonym**
@@ -1093,7 +1161,7 @@ import org.openapitools.client.api.LanguageApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     LanguageApi apiInstance = new LanguageApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -1141,8 +1209,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | fail response |  -  |
 | **200** | OK response |  -  |
+| **500** | fail response |  -  |
 
 <a id="tuneLanguageGraph"></a>
 # **tuneLanguageGraph**
@@ -1164,7 +1232,7 @@ import org.openapitools.client.api.LanguageApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     LanguageApi apiInstance = new LanguageApi(defaultClient);
     String organisationId = "organisationId_example"; // String | the organisation (its guid id)
@@ -1210,8 +1278,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | fail response |  -  |
 | **200** | OK response |  -  |
+| **500** | fail response |  -  |
 
 <a id="version2"></a>
 # **version2**
@@ -1233,7 +1301,7 @@ import org.openapitools.client.api.LanguageApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     LanguageApi apiInstance = new LanguageApi(defaultClient);
     try {
@@ -1269,6 +1337,6 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | get the version response |  -  |
 | **500** | could not get version. |  -  |
+| **200** | get the version response |  -  |
 

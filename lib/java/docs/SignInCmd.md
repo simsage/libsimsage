@@ -7,6 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**organisationList** | [**List&lt;Organisation&gt;**](Organisation.md) |  |  |
 |**jobId** | **String** |  |  |
 |**returnAddress** | **String** |  |  |
 |**errorStr** | **String** |  |  |
@@ -20,7 +21,6 @@
 |**session** | [**Session**](Session.md) |  |  |
 |**user** | [**User**](User.md) |  |  |
 |**organisationId** | **String** |  |  |
-|**organisationList** | [**List&lt;Organisation&gt;**](Organisation.md) |  |  |
 |**returnResult** | **Boolean** |  |  [optional] |
 
 

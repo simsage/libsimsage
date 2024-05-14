@@ -1,6 +1,6 @@
 # Org.OpenAPITools.Api.DocumentApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://training.simsage.ai*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
@@ -18,7 +18,6 @@ All URIs are relative to *https://test.simsage.ai*
 | [**RemoveParquetFile**](DocumentApi.md#removeparquetfile) | **DELETE** /api/document/parquet/{organisationId}/{kbId}/{dateTime} | Delete Parquet File |
 | [**SummarizeDocument**](DocumentApi.md#summarizedocument) | **POST** /api/document/summarize/document | Summarize a document |
 | [**Version4**](DocumentApi.md#version4) | **GET** /api/document/version | Version |
-| [**ZipSource**](DocumentApi.md#zipsource) | **POST** /api/document/zip/source | Zip source documents |
 
 <a id="document"></a>
 # **Document**
@@ -43,7 +42,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DocumentApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
@@ -113,8 +112,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | document object response |  -  |
 | **500** | could not get document. |  -  |
+| **200** | document object response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -141,7 +140,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DocumentApi(config);
             var ott = "ott_example";  // string | a one-time token for downloading data.
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
@@ -205,14 +204,14 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/octet-stream, application/json
+ - **Accept**: application/json, application/octet-stream
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | parquet download response |  -  |
 | **500** | could not get parquet download. |  -  |
+| **200** | parquet download response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -239,7 +238,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DocumentApi(config);
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
             var kbId = "kbId_example";  // string | the knowledge-base (its guid id)
@@ -341,7 +340,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DocumentApi(config);
             var ott = "ott_example";  // string | a one-time token for downloading data.
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
@@ -439,7 +438,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DocumentApi(config);
             var ott = "ott_example";  // string | a one-time token for downloading data.
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
@@ -509,8 +508,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | document statistic response |  -  |
 | **500** | could not get document statistics. |  -  |
+| **200** | document statistic response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -537,7 +536,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DocumentApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMInventorizeParameters = new CMInventorizeParameters(); // CMInventorizeParameters | 
@@ -605,8 +604,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not start inventory process. |  -  |
 | **200** | document inventory process OK result |  -  |
+| **500** | could not start inventory process. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -633,7 +632,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DocumentApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMInventorizeParameters = new CMInventorizeParameters(); // CMInventorizeParameters | 
@@ -729,7 +728,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DocumentApi(config);
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
             var kbId = "kbId_example";  // string | the knowledge-base (its guid id)
@@ -797,14 +796,14 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: image/jpeg, image/svg+xml, application/json
+ - **Accept**: application/json, image/jpeg, image/svg+xml
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | image response |  -  |
 | **500** | could not get image. |  -  |
+| **200** | image response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -831,7 +830,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DocumentApi(config);
             var sessionId = "sessionId_example";  // string | a valid session-guid id or a anonymous user-id.
             var cMGetHtml = new CMGetHtml(); // CMGetHtml | 
@@ -897,8 +896,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not get preview HTML. |  -  |
 | **200** | get preview HTML response |  -  |
+| **500** | could not get preview HTML. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -925,7 +924,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DocumentApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMQueryFocussedSummarizationRequest = new CMQueryFocussedSummarizationRequest(); // CMQueryFocussedSummarizationRequest | 
@@ -1021,7 +1020,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DocumentApi(config);
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
             var kbId = "kbId_example";  // string | the knowledge-base (its guid id)
@@ -1123,7 +1122,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DocumentApi(config);
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
             var kbId = "kbId_example";  // string | the knowledge-base (its guid id)
@@ -1195,8 +1194,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | delete parquet OK response |  -  |
 | **500** | could not get delete parquet. |  -  |
+| **200** | delete parquet OK response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1223,7 +1222,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DocumentApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMSingleDocumentSummaryRequest = new CMSingleDocumentSummaryRequest(); // CMSingleDocumentSummaryRequest | 
@@ -1319,7 +1318,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new DocumentApi(config);
 
             try
@@ -1378,104 +1377,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | get the version response |  -  |
 | **500** | could not get version. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="zipsource"></a>
-# **ZipSource**
-> JsonMessage ZipSource (string sessionId, CMZipSource cMZipSource, string? aPIVersion = null)
-
-Zip source documents
-
-Zip all documents in a source on the local server.
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
-
-namespace Example
-{
-    public class ZipSourceExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
-            var apiInstance = new DocumentApi(config);
-            var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
-            var cMZipSource = new CMZipSource(); // CMZipSource | 
-            var aPIVersion = "1";  // string? |  (optional) 
-
-            try
-            {
-                // Zip source documents
-                JsonMessage result = apiInstance.ZipSource(sessionId, cMZipSource, aPIVersion);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling DocumentApi.ZipSource: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the ZipSourceWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Zip source documents
-    ApiResponse<JsonMessage> response = apiInstance.ZipSourceWithHttpInfo(sessionId, cMZipSource, aPIVersion);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling DocumentApi.ZipSourceWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **sessionId** | **string** | a valid SimSage Session id. |  |
-| **cMZipSource** | [**CMZipSource**](CMZipSource.md) |  |  |
-| **aPIVersion** | **string?** |  | [optional]  |
-
-### Return type
-
-[**JsonMessage**](JsonMessage.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | zip source documents OK response |  -  |
-| **500** | could not create source document zip. |  -  |
+| **200** | get the version response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

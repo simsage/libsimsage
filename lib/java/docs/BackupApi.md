@@ -1,6 +1,6 @@
 # BackupApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://training.simsage.ai*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -31,7 +31,7 @@ import org.openapitools.client.api.BackupApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     BackupApi apiInstance = new BackupApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -75,8 +75,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | create backup OK response |  -  |
 | **500** | could not create backup. |  -  |
+| **200** | create backup OK response |  -  |
 
 <a id="deleteBackup"></a>
 # **deleteBackup**
@@ -98,7 +98,7 @@ import org.openapitools.client.api.BackupApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     BackupApi apiInstance = new BackupApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -165,7 +165,7 @@ import org.openapitools.client.api.BackupApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     BackupApi apiInstance = new BackupApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -209,8 +209,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not get backup. |  -  |
 | **200** | get backup response. |  -  |
+| **500** | could not get backup. |  -  |
 
 <a id="getBackupList"></a>
 # **getBackupList**
@@ -232,7 +232,7 @@ import org.openapitools.client.api.BackupApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     BackupApi apiInstance = new BackupApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.
@@ -274,8 +274,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not get backup-list. |  -  |
 | **200** | get backup-list response |  -  |
+| **500** | could not get backup-list. |  -  |
 
 <a id="restoreFromText"></a>
 # **restoreFromText**
@@ -297,7 +297,7 @@ import org.openapitools.client.api.BackupApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     BackupApi apiInstance = new BackupApi(defaultClient);
     String sessionId = "sessionId_example"; // String | a valid SimSage Session id.

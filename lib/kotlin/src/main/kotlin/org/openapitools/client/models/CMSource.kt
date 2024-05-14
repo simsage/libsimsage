@@ -16,6 +16,7 @@
 package org.openapitools.client.models
 
 import org.openapitools.client.models.CMDocumentAcl
+import org.openapitools.client.models.CMSourceError
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -26,6 +27,7 @@ import com.squareup.moshi.JsonClass
  * @param sourceId the source-id, primary key of the source
  * @param organisationId the main organisation (its guid id) for this source/crawler
  * @param kbId the knowledge-base id (its guid id) for this source/crawler
+ * @param weight the importance of this source relative to others <0.0,1.0]
  * @param nodeId the system's node id of this source (what kubernetes-node to run on, starting with zero, set NODE_ID in env to manipulate this value).  Sources will only run on machines with a matching node-id
  * @param name the display-name (descriptive name) of this source.  The source's name must be unique within a knowledge-base.
  * @param crawlerType the type of this source
@@ -41,7 +43,6 @@ import com.squareup.moshi.JsonClass
  * @param maxBotItems Set a Question and Answer content limit for the maximum number of deep-learning Q&A items this source can contain.  A value of zero (0) indicates no limits.
  * @param customRender Does this source require custom render templates or use ordinary search-results?
  * @param edgeDeviceId The associated Edge device for this source (or empty string if not associated with one)
- * @param qaMatchStrength the default threshold for matching deep-learning vector matching results (value should be between 0.7 and 0.99)
  * @param numResults the default number of search results to return from the semantic-search system
  * @param numFragments the number of fragments to return per search-result from the semantic-search system.  Affects accuracy, a value of \"1\" will only look at the first match.  Higher values look for more matches inside a single document.  Too high a value will affect performance.  Default value \"3\".
  * @param numErrors the number of errors from the last source-run
@@ -60,7 +61,6 @@ import com.squareup.moshi.JsonClass
  * @param numTotalErroredDocuments the total number of documents for this source marked as errored in SimSage.
  * @param useDefaultRelationships \"true\" if this source is to use the default (built-in) SimSage relationships.  All user-defined relationships and language-entities will be used regardless of the value of this flag.
  * @param isBusy \"true\" if this source is currently being optimized / processed by the index-optimizer.
- * @param autoOptimize Do we run the index-optimizer automatically after this source finishes crawling?
  * @param storeBinary \"true\" if this source is to store all documents locally on the SimSage platform
  * @param versioned \"true\" if this source is to store all versions of documents locally on the SimSage platform
  * @param writeToCassandra \"true\" if this source is to write any changes direct to Cassandra, otherwise this source will collect indexes on disk first (for initial loading)
@@ -72,6 +72,7 @@ import com.squareup.moshi.JsonClass
  * @param useSTT enable Speech-to-text processing for files in this source?
  * @param deltaIndicator A saved value indicating last crawler state
  * @param transmitExternalLogs enabling sending of logs to SimSage for external crawlers
+ * @param sourceError 
  * @param `external` 
  * @param crawling 
  * @param busy 
@@ -91,6 +92,10 @@ data class CMSource (
     /* the knowledge-base id (its guid id) for this source/crawler */
     @Json(name = "kbId")
     val kbId: kotlin.String,
+
+    /* the importance of this source relative to others <0.0,1.0] */
+    @Json(name = "weight")
+    val weight: kotlin.Float,
 
     /* the system's node id of this source (what kubernetes-node to run on, starting with zero, set NODE_ID in env to manipulate this value).  Sources will only run on machines with a matching node-id */
     @Json(name = "nodeId")
@@ -151,10 +156,6 @@ data class CMSource (
     /* The associated Edge device for this source (or empty string if not associated with one) */
     @Json(name = "edgeDeviceId")
     val edgeDeviceId: kotlin.String,
-
-    /* the default threshold for matching deep-learning vector matching results (value should be between 0.7 and 0.99) */
-    @Json(name = "qaMatchStrength")
-    val qaMatchStrength: kotlin.Float,
 
     /* the default number of search results to return from the semantic-search system */
     @Json(name = "numResults")
@@ -228,10 +229,6 @@ data class CMSource (
     @Json(name = "isBusy")
     val isBusy: kotlin.Boolean,
 
-    /* Do we run the index-optimizer automatically after this source finishes crawling? */
-    @Json(name = "autoOptimize")
-    val autoOptimize: kotlin.Boolean,
-
     /* \"true\" if this source is to store all documents locally on the SimSage platform */
     @Json(name = "storeBinary")
     val storeBinary: kotlin.Boolean,
@@ -275,6 +272,9 @@ data class CMSource (
     /* enabling sending of logs to SimSage for external crawlers */
     @Json(name = "transmitExternalLogs")
     val transmitExternalLogs: kotlin.Boolean,
+
+    @Json(name = "sourceError")
+    val sourceError: CMSourceError,
 
     @Json(name = "external")
     val `external`: kotlin.Boolean? = null,

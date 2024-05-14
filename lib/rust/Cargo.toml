@@ -1,6 +1,6 @@
 [package]
 name = "openapi"
-version = "7.13.31"
+version = "7.14.12"
 authors = ["info@simsage.co.uk"]
 description = "SimSage REST API"
 license = "Custom License"

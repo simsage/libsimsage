@@ -49,11 +49,13 @@ docs/CMExternalCrawlerSetDeltaToken.md
 docs/CMExternalCrawlerStart.md
 docs/CMExternalCrawlerStop.md
 docs/CMExternalLogEntry.md
+docs/CMExternalMarkResetCrawl.md
 docs/CMFailedSourceDocument.md
 docs/CMFilter.md
 docs/CMGdprSearchDetails.md
 docs/CMGetHtml.md
 docs/CMGroup.md
+docs/CMGroupEditInfo.md
 docs/CMGroupList.md
 docs/CMImportUsers.md
 docs/CMInfo.md
@@ -129,6 +131,7 @@ docs/CMSlicedDocumentListAndTotals.md
 docs/CMSlicedDocumentRequest.md
 docs/CMSource.md
 docs/CMSourceBaseInfo.md
+docs/CMSourceError.md
 docs/CMStartCrawler.md
 docs/CMStartProject.md
 docs/CMStepConfig.md
@@ -137,6 +140,7 @@ docs/CMSubscriptions.md
 docs/CMSynSet.md
 docs/CMSynSetFind.md
 docs/CMSynSetList.md
+docs/CMSyncGDrive.md
 docs/CMSynonym.md
 docs/CMSynonymsPaginated.md
 docs/CMSynonymsPaginatedResult.md
@@ -160,7 +164,6 @@ docs/CMUserRole.md
 docs/CMUserWithExtras.md
 docs/CMVersion.md
 docs/CMWordFrequency.md
-docs/CMZipSource.md
 docs/ContextItem.md
 docs/ConversionApi.md
 docs/CrawlerApi.md
@@ -275,11 +278,13 @@ src/main/kotlin/org/openapitools/client/models/CMExternalCrawlerSetDeltaToken.kt
 src/main/kotlin/org/openapitools/client/models/CMExternalCrawlerStart.kt
 src/main/kotlin/org/openapitools/client/models/CMExternalCrawlerStop.kt
 src/main/kotlin/org/openapitools/client/models/CMExternalLogEntry.kt
+src/main/kotlin/org/openapitools/client/models/CMExternalMarkResetCrawl.kt
 src/main/kotlin/org/openapitools/client/models/CMFailedSourceDocument.kt
 src/main/kotlin/org/openapitools/client/models/CMFilter.kt
 src/main/kotlin/org/openapitools/client/models/CMGdprSearchDetails.kt
 src/main/kotlin/org/openapitools/client/models/CMGetHtml.kt
 src/main/kotlin/org/openapitools/client/models/CMGroup.kt
+src/main/kotlin/org/openapitools/client/models/CMGroupEditInfo.kt
 src/main/kotlin/org/openapitools/client/models/CMGroupList.kt
 src/main/kotlin/org/openapitools/client/models/CMImportUsers.kt
 src/main/kotlin/org/openapitools/client/models/CMInfo.kt
@@ -355,6 +360,7 @@ src/main/kotlin/org/openapitools/client/models/CMSlicedDocumentListAndTotals.kt
 src/main/kotlin/org/openapitools/client/models/CMSlicedDocumentRequest.kt
 src/main/kotlin/org/openapitools/client/models/CMSource.kt
 src/main/kotlin/org/openapitools/client/models/CMSourceBaseInfo.kt
+src/main/kotlin/org/openapitools/client/models/CMSourceError.kt
 src/main/kotlin/org/openapitools/client/models/CMStartCrawler.kt
 src/main/kotlin/org/openapitools/client/models/CMStartProject.kt
 src/main/kotlin/org/openapitools/client/models/CMStepConfig.kt
@@ -363,6 +369,7 @@ src/main/kotlin/org/openapitools/client/models/CMSubscriptions.kt
 src/main/kotlin/org/openapitools/client/models/CMSynSet.kt
 src/main/kotlin/org/openapitools/client/models/CMSynSetFind.kt
 src/main/kotlin/org/openapitools/client/models/CMSynSetList.kt
+src/main/kotlin/org/openapitools/client/models/CMSyncGDrive.kt
 src/main/kotlin/org/openapitools/client/models/CMSynonym.kt
 src/main/kotlin/org/openapitools/client/models/CMSynonymsPaginated.kt
 src/main/kotlin/org/openapitools/client/models/CMSynonymsPaginatedResult.kt
@@ -386,7 +393,6 @@ src/main/kotlin/org/openapitools/client/models/CMUserRole.kt
 src/main/kotlin/org/openapitools/client/models/CMUserWithExtras.kt
 src/main/kotlin/org/openapitools/client/models/CMVersion.kt
 src/main/kotlin/org/openapitools/client/models/CMWordFrequency.kt
-src/main/kotlin/org/openapitools/client/models/CMZipSource.kt
 src/main/kotlin/org/openapitools/client/models/ContextItem.kt
 src/main/kotlin/org/openapitools/client/models/DocumentBookmark.kt
 src/main/kotlin/org/openapitools/client/models/DocumentDeleted.kt

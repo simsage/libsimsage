@@ -21,6 +21,9 @@ A knowledge-base is SimSage's representation of a list of information silos belo
 |**capacityWarnings** | **Boolean** | All queries are given a 10% grace when daily-limits (maxQueriesPerDay) are enforced.  If this flag is true, the owner of this knowledge-base (email) is sent a warning at 100% daily utiliziation. |  |
 |**indexSchedule** | **String** | the time-schedule for index-optimization, when active. |  |
 |**lastIndexOptimizationTime** | **Long** | the last time this triggered and ran as a unix date-time (read only) |  |
+|**isOptimizing** | **Boolean** | is the index optimizer active? |  |
+|**optimizationProgress** | **Integer** | how far along is the optimizer if it is active (0% to 100%) |  |
+|**optimizing** | **Boolean** |  |  [optional] |
 
 
 

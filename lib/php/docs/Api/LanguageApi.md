@@ -1,6 +1,6 @@
 # OpenAPI\Client\LanguageApi
 
-All URIs are relative to https://test.simsage.ai, except if the operation defines another base path.
+All URIs are relative to https://training.simsage.ai, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -15,6 +15,7 @@ All URIs are relative to https://test.simsage.ai, except if the operation define
 | [**getPaginated()**](LanguageApi.md#getPaginated) | **PUT** /api/language/synonyms | get Synonyms Paginated |
 | [**getSemanticsPaginated()**](LanguageApi.md#getSemanticsPaginated) | **PUT** /api/language/semantics | Semantics Paginated |
 | [**optimizeIndexes()**](LanguageApi.md#optimizeIndexes) | **PUT** /api/language/optimize-indexes | Optimize Indexes |
+| [**optimizeIndexesAbort()**](LanguageApi.md#optimizeIndexesAbort) | **PUT** /api/language/optimize-indexes-abort | Abort Index Optimization |
 | [**redactDocument()**](LanguageApi.md#redactDocument) | **GET** /api/language/redact/{organisationId}/{kbId}/{url}/{entityCsv}/{wordCsv}/{allowWordsCsv} | Redact Document |
 | [**saveCategorization()**](LanguageApi.md#saveCategorization) | **PUT** /api/language/categorization | save categorization |
 | [**saveSemantic()**](LanguageApi.md#saveSemantic) | **PUT** /api/language/save-semantic/{organisationId}/{kbId} | Save Semantic |
@@ -684,6 +685,66 @@ try {
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LanguageApi->optimizeIndexes: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **session_id** | **string**| a valid SimSage Session id. | |
+| **cm_optimize_index** | [**\OpenAPI\Client\Model\CMOptimizeIndex**](../Model/CMOptimizeIndex.md)|  | |
+| **api_version** | **string**|  | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\JsonMessage**](../Model/JsonMessage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `optimizeIndexesAbort()`
+
+```php
+optimizeIndexesAbort($session_id, $cm_optimize_index, $api_version): \OpenAPI\Client\Model\JsonMessage
+```
+
+Abort Index Optimization
+
+Force index optimizer to abort a job.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\LanguageApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$session_id = 'session_id_example'; // string | a valid SimSage Session id.
+$cm_optimize_index = new \OpenAPI\Client\Model\CMOptimizeIndex(); // \OpenAPI\Client\Model\CMOptimizeIndex
+$api_version = 'api_version_example'; // string
+
+try {
+    $result = $apiInstance->optimizeIndexesAbort($session_id, $cm_optimize_index, $api_version);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling LanguageApi->optimizeIndexesAbort: ', $e->getMessage(), PHP_EOL;
 }
 ```
 

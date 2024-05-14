@@ -1,6 +1,6 @@
 # AuthApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://training.simsage.ai*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -10,6 +10,7 @@ All URIs are relative to *https://test.simsage.ai*
 | [**getOTT**](AuthApi.md#getOTT) | **PUT** /api/auth/ott/{organisationId} | Get a one-time token. |
 | [**getUserOrganisationList**](AuthApi.md#getUserOrganisationList) | **GET** /api/auth/user/organisations/{filter} | Get a list of Organisations |
 | [**getUsersPaginated**](AuthApi.md#getUsersPaginated) | **GET** /api/auth/users-paginated/{organisationId}/{page}/{pageSize}/{filter} | Get Users paginated |
+| [**groupEditInfo**](AuthApi.md#groupEditInfo) | **POST** /api/auth/group-edit-info/{organisationId} | Get Group edit information |
 | [**importUsersAndGroups**](AuthApi.md#importUsersAndGroups) | **PUT** /api/auth/user/import |  |
 | [**myRoles**](AuthApi.md#myRoles) | **GET** /api/auth/myroles/{organisationId} | Get users application roles |
 | [**removeUserFromOrganisation**](AuthApi.md#removeUserFromOrganisation) | **DELETE** /api/auth/organisation/user/{userId}/{organisationId} | Remove User from Organisation |
@@ -198,6 +199,35 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+<a name="groupEditInfo"></a>
+# **groupEditInfo**
+> CMGroupList groupEditInfo(organisationId, session-id, CMGroupEditInfo)
+
+Get Group edit information
+
+    Return the information needed for the admin UX editing a group
+
+### Parameters
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **organisationId** | **String**| the main organisation (its guid id) to get users for | [default to null] |
+| **session-id** | **String**| a valid SimSage Session id. | [default to null] |
+| **CMGroupEditInfo** | [**CMGroupEditInfo**](../Models/CMGroupEditInfo.md)|  | |
+
+### Return type
+
+[**CMGroupList**](../Models/CMGroupList.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 <a name="importUsersAndGroups"></a>

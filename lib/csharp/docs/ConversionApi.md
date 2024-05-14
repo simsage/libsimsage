@@ -1,6 +1,6 @@
 # Org.OpenAPITools.Api.ConversionApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://training.simsage.ai*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
@@ -31,7 +31,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new ConversionApi(config);
 
             try
@@ -118,7 +118,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new ConversionApi(config);
 
             try
@@ -205,7 +205,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new ConversionApi(config);
 
             try

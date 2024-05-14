@@ -60,7 +60,7 @@ class DmsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = A
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://test.simsage.ai")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://training.simsage.ai")
         }
     }
 
@@ -1056,7 +1056,7 @@ class DmsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = A
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         sessionId.apply { localVariableHeaders["session-id"] = this.toString() }
-        localVariableHeaders["Accept"] = "application/octet-stream, application/json"
+        localVariableHeaders["Accept"] = "application/json, application/octet-stream"
 
         return RequestConfig(
             method = RequestMethod.GET,
@@ -1140,7 +1140,7 @@ class DmsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = A
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         sessionId.apply { localVariableHeaders["session-id"] = this.toString() }
-        localVariableHeaders["Accept"] = "application/octet-stream, application/json"
+        localVariableHeaders["Accept"] = "application/json, application/octet-stream"
 
         return RequestConfig(
             method = RequestMethod.GET,

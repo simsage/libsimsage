@@ -12,6 +12,7 @@ the asset that was seen
 |**parentUrl** | **String** |  |  |
 |**mimeType** | **String** |  |  |
 |**acls** | [**List&lt;AssetACL&gt;**](AssetACL.md) |  |  |
+|**deltaRootId** | **String** |  |  |
 |**title** | **String** |  |  |
 |**author** | **String** |  |  |
 |**binarySize** | **Long** |  |  |

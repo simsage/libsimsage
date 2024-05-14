@@ -1,6 +1,6 @@
 # OpenAPI\Client\StatsApi
 
-All URIs are relative to https://test.simsage.ai, except if the operation defines another base path.
+All URIs are relative to https://training.simsage.ai, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |

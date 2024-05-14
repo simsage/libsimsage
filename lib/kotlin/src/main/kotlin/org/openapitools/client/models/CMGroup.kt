@@ -24,6 +24,7 @@ import com.squareup.moshi.JsonClass
  *
  * @param organisationId the organisation (its guid id) this group is associated with
  * @param name the name of this group
+ * @param originalName the original-name of this group to help rename the group
  * @param userIdList a list of user-ids (can be empty) part of this group
  */
 
@@ -37,6 +38,10 @@ data class CMGroup (
     /* the name of this group */
     @Json(name = "name")
     val name: kotlin.String,
+
+    /* the original-name of this group to help rename the group */
+    @Json(name = "originalName")
+    val originalName: kotlin.String,
 
     /* a list of user-ids (can be empty) part of this group */
     @Json(name = "userIdList")

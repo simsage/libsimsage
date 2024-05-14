@@ -6,6 +6,7 @@
 | **sourceId** | **Integer** | the source-id, primary key of the source | [default to null] |
 | **organisationId** | **String** | the main organisation (its guid id) for this source/crawler | [default to null] |
 | **kbId** | **String** | the knowledge-base id (its guid id) for this source/crawler | [default to null] |
+| **weight** | **Float** | the importance of this source relative to others &lt;0.0,1.0] | [default to null] |
 | **nodeId** | **Integer** | the system&#39;s node id of this source (what kubernetes-node to run on, starting with zero, set NODE_ID in env to manipulate this value).  Sources will only run on machines with a matching node-id | [default to null] |
 | **name** | **String** | the display-name (descriptive name) of this source.  The source&#39;s name must be unique within a knowledge-base. | [default to null] |
 | **crawlerType** | **String** | the type of this source | [default to null] |
@@ -21,7 +22,6 @@
 | **maxBotItems** | **Long** | Set a Question and Answer content limit for the maximum number of deep-learning Q&amp;A items this source can contain.  A value of zero (0) indicates no limits. | [default to null] |
 | **customRender** | **Boolean** | Does this source require custom render templates or use ordinary search-results? | [default to null] |
 | **edgeDeviceId** | **String** | The associated Edge device for this source (or empty string if not associated with one) | [default to null] |
-| **qaMatchStrength** | **Float** | the default threshold for matching deep-learning vector matching results (value should be between 0.7 and 0.99) | [default to null] |
 | **numResults** | **Integer** | the default number of search results to return from the semantic-search system | [default to null] |
 | **numFragments** | **Integer** | the number of fragments to return per search-result from the semantic-search system.  Affects accuracy, a value of \&quot;1\&quot; will only look at the first match.  Higher values look for more matches inside a single document.  Too high a value will affect performance.  Default value \&quot;3\&quot;. | [default to null] |
 | **numErrors** | **Integer** | the number of errors from the last source-run | [default to null] |
@@ -40,7 +40,6 @@
 | **numTotalErroredDocuments** | **Integer** | the total number of documents for this source marked as errored in SimSage. | [default to null] |
 | **useDefaultRelationships** | **Boolean** | \&quot;true\&quot; if this source is to use the default (built-in) SimSage relationships.  All user-defined relationships and language-entities will be used regardless of the value of this flag. | [default to null] |
 | **isBusy** | **Boolean** | \&quot;true\&quot; if this source is currently being optimized / processed by the index-optimizer. | [default to null] |
-| **autoOptimize** | **Boolean** | Do we run the index-optimizer automatically after this source finishes crawling? | [default to null] |
 | **storeBinary** | **Boolean** | \&quot;true\&quot; if this source is to store all documents locally on the SimSage platform | [default to null] |
 | **versioned** | **Boolean** | \&quot;true\&quot; if this source is to store all versions of documents locally on the SimSage platform | [default to null] |
 | **writeToCassandra** | **Boolean** | \&quot;true\&quot; if this source is to write any changes direct to Cassandra, otherwise this source will collect indexes on disk first (for initial loading) | [default to null] |
@@ -52,6 +51,7 @@
 | **useSTT** | **Boolean** | enable Speech-to-text processing for files in this source? | [default to null] |
 | **deltaIndicator** | **String** | A saved value indicating last crawler state | [default to null] |
 | **transmitExternalLogs** | **Boolean** | enabling sending of logs to SimSage for external crawlers | [default to null] |
+| **sourceError** | [**CMSourceError**](CMSourceError.md) |  | [default to null] |
 | **external** | **Boolean** |  | [optional] [default to null] |
 | **crawling** | **Boolean** |  | [optional] [default to null] |
 | **busy** | **Boolean** |  | [optional] [default to null] |

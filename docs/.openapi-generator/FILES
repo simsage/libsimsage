@@ -57,11 +57,13 @@ Models/CMExternalCrawlerSetDeltaToken.md
 Models/CMExternalCrawlerStart.md
 Models/CMExternalCrawlerStop.md
 Models/CMExternalLogEntry.md
+Models/CMExternalMarkResetCrawl.md
 Models/CMFailedSourceDocument.md
 Models/CMFilter.md
 Models/CMGdprSearchDetails.md
 Models/CMGetHtml.md
 Models/CMGroup.md
+Models/CMGroupEditInfo.md
 Models/CMGroupList.md
 Models/CMImportUsers.md
 Models/CMInfo.md
@@ -137,6 +139,7 @@ Models/CMSlicedDocumentListAndTotals.md
 Models/CMSlicedDocumentRequest.md
 Models/CMSource.md
 Models/CMSourceBaseInfo.md
+Models/CMSourceError.md
 Models/CMStartCrawler.md
 Models/CMStartProject.md
 Models/CMStepConfig.md
@@ -145,6 +148,7 @@ Models/CMSubscriptions.md
 Models/CMSynSet.md
 Models/CMSynSetFind.md
 Models/CMSynSetList.md
+Models/CMSyncGDrive.md
 Models/CMSynonym.md
 Models/CMSynonymsPaginated.md
 Models/CMSynonymsPaginatedResult.md
@@ -168,7 +172,6 @@ Models/CMUserRole.md
 Models/CMUserWithExtras.md
 Models/CMVersion.md
 Models/CMWordFrequency.md
-Models/CMZipSource.md
 Models/ContextItem.md
 Models/DocumentBookmark.md
 Models/DocumentDeleted.md

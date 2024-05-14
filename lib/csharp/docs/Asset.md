@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **ParentUrl** | **string** |  | 
 **MimeType** | **string** |  | 
 **Acls** | [**List&lt;AssetACL&gt;**](AssetACL.md) |  | 
+**DeltaRootId** | **string** |  | 
 **Title** | **string** |  | 
 **Author** | **string** |  | 
 **BinarySize** | **long** |  | 

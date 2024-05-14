@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **SourceId** | **int** | the source-id, primary key of the source | 
 **SourceSystemId** | **string** | the unique id of the document in the source system, mostly same as web url | 
 **WebUrl** | **string** | the web url to access the document, can be different from url | 
+**DeltaRootId** | **string** | For delta crawlers with multiple roots, the id of the document&#39;s delta root | 
 **RunId** | **long** | the timestamp of the crawler run adding the exception | 
 **ErrorMessage** | **string** | the error message added by the system | 
 **Encrypted** | **bool** | Do we need to add transport encryption | 

@@ -7,6 +7,7 @@
 | **parentUrl** | **String** |  | [default to null] |
 | **mimeType** | **String** |  | [default to null] |
 | **acls** | [**List**](AssetACL.md) |  | [default to null] |
+| **deltaRootId** | **String** |  | [default to null] |
 | **title** | **String** |  | [default to null] |
 | **author** | **String** |  | [default to null] |
 | **binarySize** | **Long** |  | [default to null] |

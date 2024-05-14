@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**organisation_list** | [**Vec<crate::models::Organisation>**](Organisation.md) |  | 
 **job_id** | **String** |  | 
 **return_address** | **String** |  | 
 **error_str** | **String** |  | 
@@ -17,7 +18,6 @@ Name | Type | Description | Notes
 **session** | [**crate::models::Session**](Session.md) |  | 
 **user** | [**crate::models::User**](User.md) |  | 
 **organisation_id** | **String** |  | 
-**organisation_list** | [**Vec<crate::models::Organisation>**](Organisation.md) |  | 
 **return_result** | Option<**bool**> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

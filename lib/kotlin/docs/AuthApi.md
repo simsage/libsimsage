@@ -1,6 +1,6 @@
 # AuthApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://training.simsage.ai*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**getOTT**](AuthApi.md#getOTT) | **PUT** /api/auth/ott/{organisationId} | Get a one-time token.
 [**getUserOrganisationList**](AuthApi.md#getUserOrganisationList) | **GET** /api/auth/user/organisations/{filter} | Get a list of Organisations
 [**getUsersPaginated**](AuthApi.md#getUsersPaginated) | **GET** /api/auth/users-paginated/{organisationId}/{page}/{pageSize}/{filter} | Get Users paginated
+[**groupEditInfo**](AuthApi.md#groupEditInfo) | **POST** /api/auth/group-edit-info/{organisationId} | Get Group edit information
 [**importUsersAndGroups**](AuthApi.md#importUsersAndGroups) | **PUT** /api/auth/user/import | 
 [**myRoles**](AuthApi.md#myRoles) | **GET** /api/auth/myroles/{organisationId} | Get users application roles
 [**removeUserFromOrganisation**](AuthApi.md#removeUserFromOrganisation) | **DELETE** /api/auth/organisation/user/{userId}/{organisationId} | Remove User from Organisation
@@ -328,6 +329,57 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a id="groupEditInfo"></a>
+# **groupEditInfo**
+> CMGroupList groupEditInfo(organisationId, sessionId, cmGroupEditInfo)
+
+Get Group edit information
+
+Return the information needed for the admin UX editing a group
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiInstance = AuthApi()
+val organisationId : kotlin.String = organisationId_example // kotlin.String | the main organisation (its guid id) to get users for
+val sessionId : kotlin.String = sessionId_example // kotlin.String | a valid SimSage Session id.
+val cmGroupEditInfo : CMGroupEditInfo =  // CMGroupEditInfo | 
+try {
+    val result : CMGroupList = apiInstance.groupEditInfo(organisationId, sessionId, cmGroupEditInfo)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling AuthApi#groupEditInfo")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling AuthApi#groupEditInfo")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organisationId** | **kotlin.String**| the main organisation (its guid id) to get users for |
+ **sessionId** | **kotlin.String**| a valid SimSage Session id. |
+ **cmGroupEditInfo** | [**CMGroupEditInfo**](CMGroupEditInfo.md)|  |
+
+### Return type
+
+[**CMGroupList**](CMGroupList.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a id="importUsersAndGroups"></a>

@@ -18,6 +18,9 @@ Name | Type | Description | Notes
 **index_schedule** | **String** |  | 
 **last_index_optimization_time** | **i64** |  | 
 **project_kb** | **bool** |  | 
+**is_optimizing** | **bool** |  | 
+**optimization_progress** | **i32** |  | 
+**optimizing** | Option<**bool**> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

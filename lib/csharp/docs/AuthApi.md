@@ -1,6 +1,6 @@
 # Org.OpenAPITools.Api.AuthApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://training.simsage.ai*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
@@ -10,6 +10,7 @@ All URIs are relative to *https://test.simsage.ai*
 | [**GetOTT**](AuthApi.md#getott) | **PUT** /api/auth/ott/{organisationId} | Get a one-time token. |
 | [**GetUserOrganisationList**](AuthApi.md#getuserorganisationlist) | **GET** /api/auth/user/organisations/{filter} | Get a list of Organisations |
 | [**GetUsersPaginated**](AuthApi.md#getuserspaginated) | **GET** /api/auth/users-paginated/{organisationId}/{page}/{pageSize}/{filter} | Get Users paginated |
+| [**GroupEditInfo**](AuthApi.md#groupeditinfo) | **POST** /api/auth/group-edit-info/{organisationId} | Get Group edit information |
 | [**ImportUsersAndGroups**](AuthApi.md#importusersandgroups) | **PUT** /api/auth/user/import |  |
 | [**MyRoles**](AuthApi.md#myroles) | **GET** /api/auth/myroles/{organisationId} | Get users application roles |
 | [**RemoveUserFromOrganisation**](AuthApi.md#removeuserfromorganisation) | **DELETE** /api/auth/organisation/user/{userId}/{organisationId} | Remove User from Organisation |
@@ -50,7 +51,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new AuthApi(config);
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
             var name = "name_example";  // string | the name of the group to remove.
@@ -118,8 +119,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not delete group |  -  |
 | **200** | delete group OK response |  -  |
+| **500** | could not delete group |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -146,7 +147,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new AuthApi(config);
             var organisationId = "organisationId_example";  // string | the organisation's id (a guid)
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
@@ -212,8 +213,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | remove organisation OK response |  -  |
 | **500** | could not remove organisation |  -  |
+| **200** | remove organisation OK response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -240,7 +241,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new AuthApi(config);
             var organisationId = "organisationId_example";  // string | the main organisation (its guid id) to get users for
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
@@ -306,8 +307,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | get a list of groups |  -  |
 | **500** | could not get group list |  -  |
+| **200** | get a list of groups |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -334,7 +335,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new AuthApi(config);
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
@@ -428,7 +429,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new AuthApi(config);
             var filter = "filter_example";  // string | a text filter for partial string matching organisations
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
@@ -494,8 +495,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | get a list of organisations |  -  |
 | **500** | could not get organisation list |  -  |
+| **200** | get a list of organisations |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -522,7 +523,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new AuthApi(config);
             var organisationId = "organisationId_example";  // string | the main organisation (its guid id) to get users for
             var page = 56;  // int | the starting page, starting at zero
@@ -594,8 +595,104 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not get users paginated |  -  |
 | **200** | get users paginated response |  -  |
+| **500** | could not get users paginated |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="groupeditinfo"></a>
+# **GroupEditInfo**
+> CMGroupList GroupEditInfo (string organisationId, string sessionId, CMGroupEditInfo cMGroupEditInfo)
+
+Get Group edit information
+
+Return the information needed for the admin UX editing a group
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
+
+namespace Example
+{
+    public class GroupEditInfoExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://training.simsage.ai";
+            var apiInstance = new AuthApi(config);
+            var organisationId = "organisationId_example";  // string | the main organisation (its guid id) to get users for
+            var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
+            var cMGroupEditInfo = new CMGroupEditInfo(); // CMGroupEditInfo | 
+
+            try
+            {
+                // Get Group edit information
+                CMGroupList result = apiInstance.GroupEditInfo(organisationId, sessionId, cMGroupEditInfo);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AuthApi.GroupEditInfo: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GroupEditInfoWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get Group edit information
+    ApiResponse<CMGroupList> response = apiInstance.GroupEditInfoWithHttpInfo(organisationId, sessionId, cMGroupEditInfo);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling AuthApi.GroupEditInfoWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organisationId** | **string** | the main organisation (its guid id) to get users for |  |
+| **sessionId** | **string** | a valid SimSage Session id. |  |
+| **cMGroupEditInfo** | [**CMGroupEditInfo**](CMGroupEditInfo.md) |  |  |
+
+### Return type
+
+[**CMGroupList**](CMGroupList.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **500** | could not return group edit information |  -  |
+| **200** | return group edit information |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -622,7 +719,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new AuthApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMImportUsers = new CMImportUsers(); // CMImportUsers | 
@@ -688,8 +785,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | import user OK response |  -  |
 | **500** | could not import users |  -  |
+| **200** | import user OK response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -716,7 +813,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new AuthApi(config);
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
@@ -810,7 +907,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new AuthApi(config);
             var userId = "userId_example";  // string | the user's id (a guid)
             var organisationId = "organisationId_example";  // string | the organisation's id (a guid)
@@ -878,8 +975,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | remove user from organisation OK response |  -  |
 | **500** | could not remove user from organisation |  -  |
+| **200** | remove user from organisation OK response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -906,7 +1003,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new AuthApi(config);
             var cMUserPasswordReset = new CMUserPasswordReset(); // CMUserPasswordReset | 
 
@@ -998,7 +1095,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new AuthApi(config);
             var cMPasswordResetRequest = new CMPasswordResetRequest(); // CMPasswordResetRequest | 
 
@@ -1090,7 +1187,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new AuthApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMGroup = new CMGroup(); // CMGroup | 
@@ -1156,8 +1253,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | save a group OK response |  -  |
 | **500** | could not save group |  -  |
+| **200** | save a group OK response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1184,7 +1281,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new AuthApi(config);
             var cMSignInParameters = new CMSignInParameters(); // CMSignInParameters | 
 
@@ -1276,7 +1373,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new AuthApi(config);
             var jwt = "jwt_example";  // string | a valid JWT token.
 
@@ -1368,7 +1465,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new AuthApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
 
@@ -1460,7 +1557,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new AuthApi(config);
             var jwt = "jwt_example";  // string | a valid JWT token.
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
@@ -1554,7 +1651,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new AuthApi(config);
             var jwt = "jwt_example";  // string | a valid JWT token.
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
@@ -1620,8 +1717,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | a sign-in Evolve response |  -  |
 | **500** | could not sign-in |  -  |
+| **200** | a sign-in Evolve response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1648,7 +1745,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new AuthApi(config);
             var jwt = "jwt_example";  // string | Schema valid JWT token.
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
@@ -1742,7 +1839,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new AuthApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var aPIVersion = "1";  // string? |  (optional) 
@@ -1836,7 +1933,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new AuthApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMOrganisation = new CMOrganisation(); // CMOrganisation | 
@@ -1902,8 +1999,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not save organisation |  -  |
 | **200** | save organisation response |  -  |
+| **500** | could not save organisation |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1930,7 +2027,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new AuthApi(config);
             var organisationId = "organisationId_example";  // string | the main organisation (its guid id) to update a user in.
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
@@ -1996,8 +2093,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | save user response |  -  |
 | **500** | could not save user |  -  |
+| **200** | save user response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2024,7 +2121,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new AuthApi(config);
 
             try

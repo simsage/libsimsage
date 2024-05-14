@@ -1,6 +1,6 @@
 # Org.OpenAPITools.Api.KnowledgebaseApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://training.simsage.ai*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
@@ -36,7 +36,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new KnowledgebaseApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMKnowledgeBaseExport = new CMKnowledgeBaseExport(); // CMKnowledgeBaseExport | 
@@ -132,7 +132,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new KnowledgebaseApi(config);
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
             var kbId = "kbId_example";  // string | the knowledge-base to get (its guid id)
@@ -202,8 +202,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not get knowledge-base. |  -  |
 | **200** | get knowledge-base response |  -  |
+| **500** | could not get knowledge-base. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -230,7 +230,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new KnowledgebaseApi(config);
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
@@ -296,8 +296,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not get knowledge-base list. |  -  |
 | **200** | get knowledge-base list response |  -  |
+| **500** | could not get knowledge-base list. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -324,7 +324,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new KnowledgebaseApi(config);
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
             var clientId = "clientId_example";  // string | the client's id (its guid id), pre-register this client as a known client.
@@ -420,7 +420,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new KnowledgebaseApi(config);
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
             var aPIVersion = "1";  // string? |  (optional) 
@@ -514,7 +514,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new KnowledgebaseApi(config);
             var organisationId = "organisationId_example";  // string | the organisation (its guid id)
             var kbId = "kbId_example";  // string | the knowledge-base to delete/remove (its guid id)
@@ -612,7 +612,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new KnowledgebaseApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMKnowledgeBase = new CMKnowledgeBase(); // CMKnowledgeBase | 
@@ -708,7 +708,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new KnowledgebaseApi(config);
 
             try
@@ -767,8 +767,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | get the version response |  -  |
 | **500** | could not get version. |  -  |
+| **200** | get the version response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

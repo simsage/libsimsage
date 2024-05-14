@@ -3,6 +3,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+| **organisationList** | [**List**](Organisation.md) |  | [default to null] |
+| **sharedSecretSalt** | **String** |  | [default to null] |
 | **jobId** | **String** |  | [default to null] |
 | **returnAddress** | **String** |  | [default to null] |
 | **errorStr** | **String** |  | [default to null] |
@@ -16,8 +18,6 @@
 | **session** | [**Session**](Session.md) |  | [default to null] |
 | **user** | [**User**](User.md) |  | [default to null] |
 | **organisationId** | **String** |  | [default to null] |
-| **organisationList** | [**List**](Organisation.md) |  | [default to null] |
-| **sharedSecretSalt** | **String** |  | [default to null] |
 | **returnResult** | **Boolean** |  | [optional] [default to null] |
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

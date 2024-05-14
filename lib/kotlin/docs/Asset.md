@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **parentUrl** | **kotlin.String** |  | 
 **mimeType** | **kotlin.String** |  | 
 **acls** | [**kotlin.collections.List&lt;AssetACL&gt;**](AssetACL.md) |  | 
+**deltaRootId** | **kotlin.String** |  | 
 **title** | **kotlin.String** |  | 
 **author** | **kotlin.String** |  | 
 **binarySize** | **kotlin.Long** |  | 

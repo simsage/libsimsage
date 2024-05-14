@@ -1,6 +1,6 @@
 # ConversionApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://training.simsage.ai*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -29,7 +29,7 @@ import org.openapitools.client.api.ConversionApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     ConversionApi apiInstance = new ConversionApi(defaultClient);
     try {
@@ -88,7 +88,7 @@ import org.openapitools.client.api.ConversionApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     ConversionApi apiInstance = new ConversionApi(defaultClient);
     try {
@@ -147,7 +147,7 @@ import org.openapitools.client.api.ConversionApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test.simsage.ai");
+    defaultClient.setBasePath("https://training.simsage.ai");
 
     ConversionApi apiInstance = new ConversionApi(defaultClient);
     try {

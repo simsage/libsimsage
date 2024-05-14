@@ -11,6 +11,7 @@ A SimSage source object used for updating and creating SimSage crawlers/connecti
 |**sourceId** | **Integer** | the source-id, primary key of the source |  |
 |**organisationId** | **String** | the main organisation (its guid id) for this source/crawler |  |
 |**kbId** | **String** | the knowledge-base id (its guid id) for this source/crawler |  |
+|**weight** | **Float** | the importance of this source relative to others &lt;0.0,1.0] |  |
 |**nodeId** | **Integer** | the system&#39;s node id of this source (what kubernetes-node to run on, starting with zero, set NODE_ID in env to manipulate this value).  Sources will only run on machines with a matching node-id |  |
 |**name** | **String** | the display-name (descriptive name) of this source.  The source&#39;s name must be unique within a knowledge-base. |  |
 |**crawlerType** | **String** | the type of this source |  |
@@ -26,7 +27,6 @@ A SimSage source object used for updating and creating SimSage crawlers/connecti
 |**maxBotItems** | **Long** | Set a Question and Answer content limit for the maximum number of deep-learning Q&amp;A items this source can contain.  A value of zero (0) indicates no limits. |  |
 |**customRender** | **Boolean** | Does this source require custom render templates or use ordinary search-results? |  |
 |**edgeDeviceId** | **String** | The associated Edge device for this source (or empty string if not associated with one) |  |
-|**qaMatchStrength** | **Float** | the default threshold for matching deep-learning vector matching results (value should be between 0.7 and 0.99) |  |
 |**numResults** | **Integer** | the default number of search results to return from the semantic-search system |  |
 |**numFragments** | **Integer** | the number of fragments to return per search-result from the semantic-search system.  Affects accuracy, a value of \&quot;1\&quot; will only look at the first match.  Higher values look for more matches inside a single document.  Too high a value will affect performance.  Default value \&quot;3\&quot;. |  |
 |**numErrors** | **Integer** | the number of errors from the last source-run |  |
@@ -45,7 +45,6 @@ A SimSage source object used for updating and creating SimSage crawlers/connecti
 |**numTotalErroredDocuments** | **Integer** | the total number of documents for this source marked as errored in SimSage. |  |
 |**useDefaultRelationships** | **Boolean** | \&quot;true\&quot; if this source is to use the default (built-in) SimSage relationships.  All user-defined relationships and language-entities will be used regardless of the value of this flag. |  |
 |**isBusy** | **Boolean** | \&quot;true\&quot; if this source is currently being optimized / processed by the index-optimizer. |  |
-|**autoOptimize** | **Boolean** | Do we run the index-optimizer automatically after this source finishes crawling? |  |
 |**storeBinary** | **Boolean** | \&quot;true\&quot; if this source is to store all documents locally on the SimSage platform |  |
 |**versioned** | **Boolean** | \&quot;true\&quot; if this source is to store all versions of documents locally on the SimSage platform |  |
 |**writeToCassandra** | **Boolean** | \&quot;true\&quot; if this source is to write any changes direct to Cassandra, otherwise this source will collect indexes on disk first (for initial loading) |  |
@@ -57,6 +56,7 @@ A SimSage source object used for updating and creating SimSage crawlers/connecti
 |**useSTT** | **Boolean** | enable Speech-to-text processing for files in this source? |  |
 |**deltaIndicator** | **String** | A saved value indicating last crawler state |  |
 |**transmitExternalLogs** | **Boolean** | enabling sending of logs to SimSage for external crawlers |  |
+|**sourceError** | [**CMSourceError**](CMSourceError.md) |  |  |
 |**external** | **Boolean** |  |  [optional] |
 |**crawling** | **Boolean** |  |  [optional] |
 |**busy** | **Boolean** |  |  [optional] |

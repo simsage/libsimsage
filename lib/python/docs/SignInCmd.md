@@ -4,6 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**organisation_list** | [**List[Organisation]**](Organisation.md) |  | 
 **job_id** | **str** |  | 
 **return_address** | **str** |  | 
 **error_str** | **str** |  | 
@@ -17,7 +18,6 @@ Name | Type | Description | Notes
 **session** | [**Session**](Session.md) |  | 
 **user** | [**User**](User.md) |  | 
 **organisation_id** | **str** |  | 
-**organisation_list** | [**List[Organisation]**](Organisation.md) |  | 
 **return_result** | **bool** |  | [optional] 
 
 ## Example

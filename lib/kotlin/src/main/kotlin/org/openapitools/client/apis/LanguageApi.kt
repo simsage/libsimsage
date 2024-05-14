@@ -54,7 +54,7 @@ class LanguageApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://test.simsage.ai")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://training.simsage.ai")
         }
     }
 
@@ -1043,6 +1043,93 @@ class LanguageApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
         return RequestConfig(
             method = RequestMethod.PUT,
             path = "/api/language/optimize-indexes",
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = false,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * enum for parameter apIVersion
+     */
+     enum class ApIVersionOptimizeIndexesAbort(val value: kotlin.String) {
+         @Json(name = "1") _1("1")
+     }
+
+    /**
+     * Abort Index Optimization
+     * Force index optimizer to abort a job.
+     * @param sessionId a valid SimSage Session id.
+     * @param cmOptimizeIndex 
+     * @param apIVersion  (optional)
+     * @return JsonMessage
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun optimizeIndexesAbort(sessionId: kotlin.String, cmOptimizeIndex: CMOptimizeIndex, apIVersion: ApIVersionOptimizeIndexesAbort? = null) : JsonMessage {
+        val localVarResponse = optimizeIndexesAbortWithHttpInfo(sessionId = sessionId, cmOptimizeIndex = cmOptimizeIndex, apIVersion = apIVersion)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as JsonMessage
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * Abort Index Optimization
+     * Force index optimizer to abort a job.
+     * @param sessionId a valid SimSage Session id.
+     * @param cmOptimizeIndex 
+     * @param apIVersion  (optional)
+     * @return ApiResponse<JsonMessage?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun optimizeIndexesAbortWithHttpInfo(sessionId: kotlin.String, cmOptimizeIndex: CMOptimizeIndex, apIVersion: ApIVersionOptimizeIndexesAbort?) : ApiResponse<JsonMessage?> {
+        val localVariableConfig = optimizeIndexesAbortRequestConfig(sessionId = sessionId, cmOptimizeIndex = cmOptimizeIndex, apIVersion = apIVersion)
+
+        return request<CMOptimizeIndex, JsonMessage>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation optimizeIndexesAbort
+     *
+     * @param sessionId a valid SimSage Session id.
+     * @param cmOptimizeIndex 
+     * @param apIVersion  (optional)
+     * @return RequestConfig
+     */
+    fun optimizeIndexesAbortRequestConfig(sessionId: kotlin.String, cmOptimizeIndex: CMOptimizeIndex, apIVersion: ApIVersionOptimizeIndexesAbort?) : RequestConfig<CMOptimizeIndex> {
+        val localVariableBody = cmOptimizeIndex
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        sessionId.apply { localVariableHeaders["session-id"] = this.toString() }
+        apIVersion?.apply { localVariableHeaders["API-Version"] = this.toString() }
+        localVariableHeaders["Content-Type"] = "application/json"
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.PUT,
+            path = "/api/language/optimize-indexes-abort",
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = false,

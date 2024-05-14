@@ -27,6 +27,7 @@ import com.squareup.moshi.JsonClass
  * @param parentUrl 
  * @param mimeType 
  * @param acls 
+ * @param deltaRootId 
  * @param title 
  * @param author 
  * @param binarySize 
@@ -52,6 +53,9 @@ data class Asset (
 
     @Json(name = "acls")
     val acls: kotlin.collections.List<AssetACL>,
+
+    @Json(name = "deltaRootId")
+    val deltaRootId: kotlin.String,
 
     @Json(name = "title")
     val title: kotlin.String,

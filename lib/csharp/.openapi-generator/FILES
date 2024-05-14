@@ -52,11 +52,13 @@ docs/CMExternalCrawlerSetDeltaToken.md
 docs/CMExternalCrawlerStart.md
 docs/CMExternalCrawlerStop.md
 docs/CMExternalLogEntry.md
+docs/CMExternalMarkResetCrawl.md
 docs/CMFailedSourceDocument.md
 docs/CMFilter.md
 docs/CMGdprSearchDetails.md
 docs/CMGetHtml.md
 docs/CMGroup.md
+docs/CMGroupEditInfo.md
 docs/CMGroupList.md
 docs/CMImportUsers.md
 docs/CMInfo.md
@@ -132,6 +134,7 @@ docs/CMSlicedDocumentListAndTotals.md
 docs/CMSlicedDocumentRequest.md
 docs/CMSource.md
 docs/CMSourceBaseInfo.md
+docs/CMSourceError.md
 docs/CMStartCrawler.md
 docs/CMStartProject.md
 docs/CMStepConfig.md
@@ -140,6 +143,7 @@ docs/CMSubscriptions.md
 docs/CMSynSet.md
 docs/CMSynSetFind.md
 docs/CMSynSetList.md
+docs/CMSyncGDrive.md
 docs/CMSynonym.md
 docs/CMSynonymsPaginated.md
 docs/CMSynonymsPaginatedResult.md
@@ -163,7 +167,6 @@ docs/CMUserRole.md
 docs/CMUserWithExtras.md
 docs/CMVersion.md
 docs/CMWordFrequency.md
-docs/CMZipSource.md
 docs/ContextItem.md
 docs/ConversionApi.md
 docs/CrawlerApi.md
@@ -257,10 +260,12 @@ src/Org.OpenAPITools.Test/Model/CMExternalCrawlerStartTests.cs
 src/Org.OpenAPITools.Test/Model/CMExternalCrawlerStopTests.cs
 src/Org.OpenAPITools.Test/Model/CMExternalCrawlerTests.cs
 src/Org.OpenAPITools.Test/Model/CMExternalLogEntryTests.cs
+src/Org.OpenAPITools.Test/Model/CMExternalMarkResetCrawlTests.cs
 src/Org.OpenAPITools.Test/Model/CMFailedSourceDocumentTests.cs
 src/Org.OpenAPITools.Test/Model/CMFilterTests.cs
 src/Org.OpenAPITools.Test/Model/CMGdprSearchDetailsTests.cs
 src/Org.OpenAPITools.Test/Model/CMGetHtmlTests.cs
+src/Org.OpenAPITools.Test/Model/CMGroupEditInfoTests.cs
 src/Org.OpenAPITools.Test/Model/CMGroupListTests.cs
 src/Org.OpenAPITools.Test/Model/CMGroupTests.cs
 src/Org.OpenAPITools.Test/Model/CMImportUsersTests.cs
@@ -336,6 +341,7 @@ src/Org.OpenAPITools.Test/Model/CMSlicedDocumentListAndTotalsTests.cs
 src/Org.OpenAPITools.Test/Model/CMSlicedDocumentRequestTests.cs
 src/Org.OpenAPITools.Test/Model/CMSlicedDocumentTests.cs
 src/Org.OpenAPITools.Test/Model/CMSourceBaseInfoTests.cs
+src/Org.OpenAPITools.Test/Model/CMSourceErrorTests.cs
 src/Org.OpenAPITools.Test/Model/CMSourceTests.cs
 src/Org.OpenAPITools.Test/Model/CMStartCrawlerTests.cs
 src/Org.OpenAPITools.Test/Model/CMStartProjectTests.cs
@@ -345,6 +351,7 @@ src/Org.OpenAPITools.Test/Model/CMSubscriptionsTests.cs
 src/Org.OpenAPITools.Test/Model/CMSynSetFindTests.cs
 src/Org.OpenAPITools.Test/Model/CMSynSetListTests.cs
 src/Org.OpenAPITools.Test/Model/CMSynSetTests.cs
+src/Org.OpenAPITools.Test/Model/CMSyncGDriveTests.cs
 src/Org.OpenAPITools.Test/Model/CMSynonymTests.cs
 src/Org.OpenAPITools.Test/Model/CMSynonymsPaginatedResultTests.cs
 src/Org.OpenAPITools.Test/Model/CMSynonymsPaginatedTests.cs
@@ -368,7 +375,6 @@ src/Org.OpenAPITools.Test/Model/CMUserTests.cs
 src/Org.OpenAPITools.Test/Model/CMUserWithExtrasTests.cs
 src/Org.OpenAPITools.Test/Model/CMVersionTests.cs
 src/Org.OpenAPITools.Test/Model/CMWordFrequencyTests.cs
-src/Org.OpenAPITools.Test/Model/CMZipSourceTests.cs
 src/Org.OpenAPITools.Test/Model/ContextItemTests.cs
 src/Org.OpenAPITools.Test/Model/DocumentBookmarkTests.cs
 src/Org.OpenAPITools.Test/Model/DocumentDeletedTests.cs
@@ -469,11 +475,13 @@ src/Org.OpenAPITools/Model/CMExternalCrawlerSetDeltaToken.cs
 src/Org.OpenAPITools/Model/CMExternalCrawlerStart.cs
 src/Org.OpenAPITools/Model/CMExternalCrawlerStop.cs
 src/Org.OpenAPITools/Model/CMExternalLogEntry.cs
+src/Org.OpenAPITools/Model/CMExternalMarkResetCrawl.cs
 src/Org.OpenAPITools/Model/CMFailedSourceDocument.cs
 src/Org.OpenAPITools/Model/CMFilter.cs
 src/Org.OpenAPITools/Model/CMGdprSearchDetails.cs
 src/Org.OpenAPITools/Model/CMGetHtml.cs
 src/Org.OpenAPITools/Model/CMGroup.cs
+src/Org.OpenAPITools/Model/CMGroupEditInfo.cs
 src/Org.OpenAPITools/Model/CMGroupList.cs
 src/Org.OpenAPITools/Model/CMImportUsers.cs
 src/Org.OpenAPITools/Model/CMInfo.cs
@@ -549,6 +557,7 @@ src/Org.OpenAPITools/Model/CMSlicedDocumentListAndTotals.cs
 src/Org.OpenAPITools/Model/CMSlicedDocumentRequest.cs
 src/Org.OpenAPITools/Model/CMSource.cs
 src/Org.OpenAPITools/Model/CMSourceBaseInfo.cs
+src/Org.OpenAPITools/Model/CMSourceError.cs
 src/Org.OpenAPITools/Model/CMStartCrawler.cs
 src/Org.OpenAPITools/Model/CMStartProject.cs
 src/Org.OpenAPITools/Model/CMStepConfig.cs
@@ -557,6 +566,7 @@ src/Org.OpenAPITools/Model/CMSubscriptions.cs
 src/Org.OpenAPITools/Model/CMSynSet.cs
 src/Org.OpenAPITools/Model/CMSynSetFind.cs
 src/Org.OpenAPITools/Model/CMSynSetList.cs
+src/Org.OpenAPITools/Model/CMSyncGDrive.cs
 src/Org.OpenAPITools/Model/CMSynonym.cs
 src/Org.OpenAPITools/Model/CMSynonymsPaginated.cs
 src/Org.OpenAPITools/Model/CMSynonymsPaginatedResult.cs
@@ -580,7 +590,6 @@ src/Org.OpenAPITools/Model/CMUserRole.cs
 src/Org.OpenAPITools/Model/CMUserWithExtras.cs
 src/Org.OpenAPITools/Model/CMVersion.cs
 src/Org.OpenAPITools/Model/CMWordFrequency.cs
-src/Org.OpenAPITools/Model/CMZipSource.cs
 src/Org.OpenAPITools/Model/ContextItem.cs
 src/Org.OpenAPITools/Model/DocumentBookmark.cs
 src/Org.OpenAPITools/Model/DocumentDeleted.cs

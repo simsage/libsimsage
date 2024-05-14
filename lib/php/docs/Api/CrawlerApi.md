@@ -1,6 +1,6 @@
 # OpenAPI\Client\CrawlerApi
 
-All URIs are relative to https://test.simsage.ai, except if the operation defines another base path.
+All URIs are relative to https://training.simsage.ai, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -21,6 +21,7 @@ All URIs are relative to https://test.simsage.ai, except if the operation define
 | [**getCrawler()**](CrawlerApi.md#getCrawler) | **GET** /api/crawler/crawler/{organisationId}/{kbId}/{sourceId} | Get source |
 | [**getFailedDocuments()**](CrawlerApi.md#getFailedDocuments) | **GET** /api/crawler/faileddocs/{organisationId}/{kbId}/{sourceId}/{page}/{pageSize} | Get source List |
 | [**getSourceList()**](CrawlerApi.md#getSourceList) | **GET** /api/crawler/crawlers/{organisationId}/{kbId} | Get source List |
+| [**markCrawlAsDeltaReset()**](CrawlerApi.md#markCrawlAsDeltaReset) | **POST** /api/crawler/external/crawler/mark-as-reset | Update delta token |
 | [**markFileAsSeen()**](CrawlerApi.md#markFileAsSeen) | **POST** /api/crawler/external/crawler/mark-file-as-seen | Mark file as seen |
 | [**oidcCode()**](CrawlerApi.md#oidcCode) | **GET** /api/crawler/dropbox-oidc-code/{oidcKey} | OIDC code receiver |
 | [**processAllFiles()**](CrawlerApi.md#processAllFiles) | **POST** /api/crawler/process-all-files | Process all files of crawler/source |
@@ -29,6 +30,7 @@ All URIs are relative to https://test.simsage.ai, except if the operation define
 | [**resetSourceDelta()**](CrawlerApi.md#resetSourceDelta) | **POST** /api/crawler/crawler/reset-delta/{organisationId}/{kbId}/{sourceId} | Reset Source delta-token |
 | [**sdcSchema()**](CrawlerApi.md#sdcSchema) | **GET** /api/crawler/sdc_schema |  |
 | [**startCrawler()**](CrawlerApi.md#startCrawler) | **POST** /api/crawler/start | Start crawler |
+| [**sync()**](CrawlerApi.md#sync) | **POST** /api/crawler/syncgdrivegroups |  |
 | [**testCrawler()**](CrawlerApi.md#testCrawler) | **GET** /api/crawler/crawler/test/{organisationId}/{kbId}/{sourceId} | Test Crawler |
 | [**updateCrawler()**](CrawlerApi.md#updateCrawler) | **POST** /api/crawler/crawler | Update Source |
 | [**version6()**](CrawlerApi.md#version6) | **GET** /api/crawler/version | Version |
@@ -1054,6 +1056,64 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `markCrawlAsDeltaReset()`
+
+```php
+markCrawlAsDeltaReset($cm_external_mark_reset_crawl, $api_version): \OpenAPI\Client\Model\JsonMessage
+```
+
+Update delta token
+
+An external crawler marks a source as delta reset required.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\CrawlerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$cm_external_mark_reset_crawl = new \OpenAPI\Client\Model\CMExternalMarkResetCrawl(); // \OpenAPI\Client\Model\CMExternalMarkResetCrawl
+$api_version = 'api_version_example'; // string
+
+try {
+    $result = $apiInstance->markCrawlAsDeltaReset($cm_external_mark_reset_crawl, $api_version);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CrawlerApi->markCrawlAsDeltaReset: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **cm_external_mark_reset_crawl** | [**\OpenAPI\Client\Model\CMExternalMarkResetCrawl**](../Model/CMExternalMarkResetCrawl.md)|  | |
+| **api_version** | **string**|  | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\JsonMessage**](../Model/JsonMessage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `markFileAsSeen()`
 
 ```php
@@ -1508,6 +1568,62 @@ No authorization required
 
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `sync()`
+
+```php
+sync($session_id, $cm_sync_g_drive): object
+```
+
+
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\CrawlerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$session_id = 'session_id_example'; // string | a valid SimSage Session id.
+$cm_sync_g_drive = new \OpenAPI\Client\Model\CMSyncGDrive(); // \OpenAPI\Client\Model\CMSyncGDrive
+
+try {
+    $result = $apiInstance->sync($session_id, $cm_sync_g_drive);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CrawlerApi->sync: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **session_id** | **string**| a valid SimSage Session id. | |
+| **cm_sync_g_drive** | [**\OpenAPI\Client\Model\CMSyncGDrive**](../Model/CMSyncGDrive.md)|  | |
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json;charset=UTF-8`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

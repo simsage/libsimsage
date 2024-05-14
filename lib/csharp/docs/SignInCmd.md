@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**OrganisationList** | [**List&lt;Organisation&gt;**](Organisation.md) |  | 
 **JobId** | **string** |  | 
 **ReturnAddress** | **string** |  | 
 **ErrorStr** | **string** |  | 
@@ -17,7 +18,6 @@ Name | Type | Description | Notes
 **Session** | [**Session**](Session.md) |  | 
 **User** | [**User**](User.md) |  | 
 **OrganisationId** | **string** |  | 
-**OrganisationList** | [**List&lt;Organisation&gt;**](Organisation.md) |  | 
 **ReturnResult** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

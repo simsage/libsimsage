@@ -1,6 +1,6 @@
 # LanguageApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://training.simsage.ai*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -15,6 +15,7 @@ All URIs are relative to *https://test.simsage.ai*
 | [**getPaginated**](LanguageApi.md#getPaginated) | **PUT** /api/language/synonyms | get Synonyms Paginated |
 | [**getSemanticsPaginated**](LanguageApi.md#getSemanticsPaginated) | **PUT** /api/language/semantics | Semantics Paginated |
 | [**optimizeIndexes**](LanguageApi.md#optimizeIndexes) | **PUT** /api/language/optimize-indexes | Optimize Indexes |
+| [**optimizeIndexesAbort**](LanguageApi.md#optimizeIndexesAbort) | **PUT** /api/language/optimize-indexes-abort | Abort Index Optimization |
 | [**redactDocument**](LanguageApi.md#redactDocument) | **GET** /api/language/redact/{organisationId}/{kbId}/{url}/{entityCsv}/{wordCsv}/{allowWordsCsv} | Redact Document |
 | [**saveCategorization**](LanguageApi.md#saveCategorization) | **PUT** /api/language/categorization | save categorization |
 | [**saveSemantic**](LanguageApi.md#saveSemantic) | **PUT** /api/language/save-semantic/{organisationId}/{kbId} | Save Semantic |
@@ -335,6 +336,35 @@ No authorization required
 Optimize Indexes
 
     Force index optimization for a the given knowledge-base, now.
+
+### Parameters
+
+|Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **session-id** | **String**| a valid SimSage Session id. | [default to null] |
+| **CMOptimizeIndex** | [**CMOptimizeIndex**](../Models/CMOptimizeIndex.md)|  | |
+| **API-Version** | **String**|  | [optional] [default to null] [enum: 1] |
+
+### Return type
+
+[**JsonMessage**](../Models/JsonMessage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+<a name="optimizeIndexesAbort"></a>
+# **optimizeIndexesAbort**
+> JsonMessage optimizeIndexesAbort(session-id, CMOptimizeIndex, API-Version)
+
+Abort Index Optimization
+
+    Force index optimizer to abort a job.
 
 ### Parameters
 

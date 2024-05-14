@@ -29,9 +29,11 @@ import org.openapitools.client.models.CMExternalCrawlerSetDeltaToken
 import org.openapitools.client.models.CMExternalCrawlerStart
 import org.openapitools.client.models.CMExternalCrawlerStop
 import org.openapitools.client.models.CMExternalLogEntry
+import org.openapitools.client.models.CMExternalMarkResetCrawl
 import org.openapitools.client.models.CMFailedSourceDocument
 import org.openapitools.client.models.CMSource
 import org.openapitools.client.models.CMStartCrawler
+import org.openapitools.client.models.CMSyncGDrive
 import org.openapitools.client.models.CMUploadDocument
 import org.openapitools.client.models.CMUploadImage
 import org.openapitools.client.models.CMVersion
@@ -57,7 +59,7 @@ class CrawlerApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://test.simsage.ai")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://training.simsage.ai")
         }
     }
 
@@ -1526,6 +1528,89 @@ class CrawlerApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
     /**
      * enum for parameter apIVersion
      */
+     enum class ApIVersionMarkCrawlAsDeltaReset(val value: kotlin.String) {
+         @Json(name = "1") _1("1")
+     }
+
+    /**
+     * Update delta token
+     * An external crawler marks a source as delta reset required.
+     * @param cmExternalMarkResetCrawl 
+     * @param apIVersion  (optional)
+     * @return JsonMessage
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun markCrawlAsDeltaReset(cmExternalMarkResetCrawl: CMExternalMarkResetCrawl, apIVersion: ApIVersionMarkCrawlAsDeltaReset? = null) : JsonMessage {
+        val localVarResponse = markCrawlAsDeltaResetWithHttpInfo(cmExternalMarkResetCrawl = cmExternalMarkResetCrawl, apIVersion = apIVersion)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as JsonMessage
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * Update delta token
+     * An external crawler marks a source as delta reset required.
+     * @param cmExternalMarkResetCrawl 
+     * @param apIVersion  (optional)
+     * @return ApiResponse<JsonMessage?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun markCrawlAsDeltaResetWithHttpInfo(cmExternalMarkResetCrawl: CMExternalMarkResetCrawl, apIVersion: ApIVersionMarkCrawlAsDeltaReset?) : ApiResponse<JsonMessage?> {
+        val localVariableConfig = markCrawlAsDeltaResetRequestConfig(cmExternalMarkResetCrawl = cmExternalMarkResetCrawl, apIVersion = apIVersion)
+
+        return request<CMExternalMarkResetCrawl, JsonMessage>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation markCrawlAsDeltaReset
+     *
+     * @param cmExternalMarkResetCrawl 
+     * @param apIVersion  (optional)
+     * @return RequestConfig
+     */
+    fun markCrawlAsDeltaResetRequestConfig(cmExternalMarkResetCrawl: CMExternalMarkResetCrawl, apIVersion: ApIVersionMarkCrawlAsDeltaReset?) : RequestConfig<CMExternalMarkResetCrawl> {
+        val localVariableBody = cmExternalMarkResetCrawl
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        apIVersion?.apply { localVariableHeaders["API-Version"] = this.toString() }
+        localVariableHeaders["Content-Type"] = "application/json"
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.POST,
+            path = "/api/crawler/external/crawler/mark-as-reset",
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = false,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * enum for parameter apIVersion
+     */
      enum class ApIVersionMarkFileAsSeen(val value: kotlin.String) {
          @Json(name = "1") _1("1")
      }
@@ -2158,6 +2243,82 @@ class CrawlerApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient
         return RequestConfig(
             method = RequestMethod.POST,
             path = "/api/crawler/start",
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = false,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * 
+     * 
+     * @param sessionId a valid SimSage Session id.
+     * @param cmSyncGDrive 
+     * @return kotlin.Any
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun sync(sessionId: kotlin.String, cmSyncGDrive: CMSyncGDrive) : kotlin.Any {
+        val localVarResponse = syncWithHttpInfo(sessionId = sessionId, cmSyncGDrive = cmSyncGDrive)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.Any
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * 
+     * 
+     * @param sessionId a valid SimSage Session id.
+     * @param cmSyncGDrive 
+     * @return ApiResponse<kotlin.Any?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun syncWithHttpInfo(sessionId: kotlin.String, cmSyncGDrive: CMSyncGDrive) : ApiResponse<kotlin.Any?> {
+        val localVariableConfig = syncRequestConfig(sessionId = sessionId, cmSyncGDrive = cmSyncGDrive)
+
+        return request<CMSyncGDrive, kotlin.Any>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation sync
+     *
+     * @param sessionId a valid SimSage Session id.
+     * @param cmSyncGDrive 
+     * @return RequestConfig
+     */
+    fun syncRequestConfig(sessionId: kotlin.String, cmSyncGDrive: CMSyncGDrive) : RequestConfig<CMSyncGDrive> {
+        val localVariableBody = cmSyncGDrive
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        sessionId.apply { localVariableHeaders["session-id"] = this.toString() }
+        localVariableHeaders["Content-Type"] = "application/json"
+        localVariableHeaders["Accept"] = "application/json;charset=UTF-8"
+
+        return RequestConfig(
+            method = RequestMethod.POST,
+            path = "/api/crawler/syncgdrivegroups",
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = false,

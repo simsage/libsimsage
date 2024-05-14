@@ -1,6 +1,6 @@
 # OpenAPI\Client\DocumentApi
 
-All URIs are relative to https://test.simsage.ai, except if the operation defines another base path.
+All URIs are relative to https://training.simsage.ai, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -18,7 +18,6 @@ All URIs are relative to https://test.simsage.ai, except if the operation define
 | [**removeParquetFile()**](DocumentApi.md#removeParquetFile) | **DELETE** /api/document/parquet/{organisationId}/{kbId}/{dateTime} | Delete Parquet File |
 | [**summarizeDocument()**](DocumentApi.md#summarizeDocument) | **POST** /api/document/summarize/document | Summarize a document |
 | [**version4()**](DocumentApi.md#version4) | **GET** /api/document/version | Version |
-| [**zipSource()**](DocumentApi.md#zipSource) | **POST** /api/document/zip/source | Zip source documents |
 
 
 ## `document()`
@@ -139,7 +138,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/octet-stream`, `application/json`
+- **Accept**: `application/json`, `application/octet-stream`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -515,7 +514,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `image/jpeg`, `image/svg+xml`, `application/json`
+- **Accept**: `application/json`, `image/jpeg`, `image/svg+xml`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -876,66 +875,6 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `zipSource()`
-
-```php
-zipSource($session_id, $cm_zip_source, $api_version): \OpenAPI\Client\Model\JsonMessage
-```
-
-Zip source documents
-
-Zip all documents in a source on the local server.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new OpenAPI\Client\Api\DocumentApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$session_id = 'session_id_example'; // string | a valid SimSage Session id.
-$cm_zip_source = new \OpenAPI\Client\Model\CMZipSource(); // \OpenAPI\Client\Model\CMZipSource
-$api_version = 'api_version_example'; // string
-
-try {
-    $result = $apiInstance->zipSource($session_id, $cm_zip_source, $api_version);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling DocumentApi->zipSource: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **session_id** | **string**| a valid SimSage Session id. | |
-| **cm_zip_source** | [**\OpenAPI\Client\Model\CMZipSource**](../Model/CMZipSource.md)|  | |
-| **api_version** | **string**|  | [optional] |
-
-### Return type
-
-[**\OpenAPI\Client\Model\JsonMessage**](../Model/JsonMessage.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

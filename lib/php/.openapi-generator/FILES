@@ -62,11 +62,13 @@ docs/Model/CMExternalCrawlerSetDeltaToken.md
 docs/Model/CMExternalCrawlerStart.md
 docs/Model/CMExternalCrawlerStop.md
 docs/Model/CMExternalLogEntry.md
+docs/Model/CMExternalMarkResetCrawl.md
 docs/Model/CMFailedSourceDocument.md
 docs/Model/CMFilter.md
 docs/Model/CMGdprSearchDetails.md
 docs/Model/CMGetHtml.md
 docs/Model/CMGroup.md
+docs/Model/CMGroupEditInfo.md
 docs/Model/CMGroupList.md
 docs/Model/CMImportUsers.md
 docs/Model/CMInfo.md
@@ -142,6 +144,7 @@ docs/Model/CMSlicedDocumentListAndTotals.md
 docs/Model/CMSlicedDocumentRequest.md
 docs/Model/CMSource.md
 docs/Model/CMSourceBaseInfo.md
+docs/Model/CMSourceError.md
 docs/Model/CMStartCrawler.md
 docs/Model/CMStartProject.md
 docs/Model/CMStepConfig.md
@@ -150,6 +153,7 @@ docs/Model/CMSubscriptions.md
 docs/Model/CMSynSet.md
 docs/Model/CMSynSetFind.md
 docs/Model/CMSynSetList.md
+docs/Model/CMSyncGDrive.md
 docs/Model/CMSynonym.md
 docs/Model/CMSynonymsPaginated.md
 docs/Model/CMSynonymsPaginatedResult.md
@@ -173,7 +177,6 @@ docs/Model/CMUserRole.md
 docs/Model/CMUserWithExtras.md
 docs/Model/CMVersion.md
 docs/Model/CMWordFrequency.md
-docs/Model/CMZipSource.md
 docs/Model/ContextItem.md
 docs/Model/DocumentBookmark.md
 docs/Model/DocumentDeleted.md
@@ -260,11 +263,13 @@ lib/Model/CMExternalCrawlerSetDeltaToken.php
 lib/Model/CMExternalCrawlerStart.php
 lib/Model/CMExternalCrawlerStop.php
 lib/Model/CMExternalLogEntry.php
+lib/Model/CMExternalMarkResetCrawl.php
 lib/Model/CMFailedSourceDocument.php
 lib/Model/CMFilter.php
 lib/Model/CMGdprSearchDetails.php
 lib/Model/CMGetHtml.php
 lib/Model/CMGroup.php
+lib/Model/CMGroupEditInfo.php
 lib/Model/CMGroupList.php
 lib/Model/CMImportUsers.php
 lib/Model/CMInfo.php
@@ -340,6 +345,7 @@ lib/Model/CMSlicedDocumentListAndTotals.php
 lib/Model/CMSlicedDocumentRequest.php
 lib/Model/CMSource.php
 lib/Model/CMSourceBaseInfo.php
+lib/Model/CMSourceError.php
 lib/Model/CMStartCrawler.php
 lib/Model/CMStartProject.php
 lib/Model/CMStepConfig.php
@@ -348,6 +354,7 @@ lib/Model/CMSubscriptions.php
 lib/Model/CMSynSet.php
 lib/Model/CMSynSetFind.php
 lib/Model/CMSynSetList.php
+lib/Model/CMSyncGDrive.php
 lib/Model/CMSynonym.php
 lib/Model/CMSynonymsPaginated.php
 lib/Model/CMSynonymsPaginatedResult.php
@@ -371,7 +378,6 @@ lib/Model/CMUserRole.php
 lib/Model/CMUserWithExtras.php
 lib/Model/CMVersion.php
 lib/Model/CMWordFrequency.php
-lib/Model/CMZipSource.php
 lib/Model/ContextItem.php
 lib/Model/DocumentBookmark.php
 lib/Model/DocumentDeleted.php
@@ -457,10 +463,12 @@ test/Model/CMExternalCrawlerStartTest.php
 test/Model/CMExternalCrawlerStopTest.php
 test/Model/CMExternalCrawlerTest.php
 test/Model/CMExternalLogEntryTest.php
+test/Model/CMExternalMarkResetCrawlTest.php
 test/Model/CMFailedSourceDocumentTest.php
 test/Model/CMFilterTest.php
 test/Model/CMGdprSearchDetailsTest.php
 test/Model/CMGetHtmlTest.php
+test/Model/CMGroupEditInfoTest.php
 test/Model/CMGroupListTest.php
 test/Model/CMGroupTest.php
 test/Model/CMImportUsersTest.php
@@ -536,6 +544,7 @@ test/Model/CMSlicedDocumentListAndTotalsTest.php
 test/Model/CMSlicedDocumentRequestTest.php
 test/Model/CMSlicedDocumentTest.php
 test/Model/CMSourceBaseInfoTest.php
+test/Model/CMSourceErrorTest.php
 test/Model/CMSourceTest.php
 test/Model/CMStartCrawlerTest.php
 test/Model/CMStartProjectTest.php
@@ -545,6 +554,7 @@ test/Model/CMSubscriptionsTest.php
 test/Model/CMSynSetFindTest.php
 test/Model/CMSynSetListTest.php
 test/Model/CMSynSetTest.php
+test/Model/CMSyncGDriveTest.php
 test/Model/CMSynonymTest.php
 test/Model/CMSynonymsPaginatedResultTest.php
 test/Model/CMSynonymsPaginatedTest.php
@@ -568,7 +578,6 @@ test/Model/CMUserTest.php
 test/Model/CMUserWithExtrasTest.php
 test/Model/CMVersionTest.php
 test/Model/CMWordFrequencyTest.php
-test/Model/CMZipSourceTest.php
 test/Model/ContextItemTest.php
 test/Model/DocumentBookmarkTest.php
 test/Model/DocumentDeletedTest.php

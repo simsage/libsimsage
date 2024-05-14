@@ -18,6 +18,9 @@ Name | Type | Description | Notes
 **indexSchedule** | **kotlin.String** |  | 
 **lastIndexOptimizationTime** | **kotlin.Long** |  | 
 **projectKb** | **kotlin.Boolean** |  | 
+**isOptimizing** | **kotlin.Boolean** |  | 
+**optimizationProgress** | **kotlin.Int** |  | 
+**optimizing** | **kotlin.Boolean** |  |  [optional]
 
 
 

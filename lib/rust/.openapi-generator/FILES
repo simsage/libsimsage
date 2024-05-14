@@ -49,11 +49,13 @@ docs/CmExternalCrawlerSetDeltaToken.md
 docs/CmExternalCrawlerStart.md
 docs/CmExternalCrawlerStop.md
 docs/CmExternalLogEntry.md
+docs/CmExternalMarkResetCrawl.md
 docs/CmFailedSourceDocument.md
 docs/CmFilter.md
 docs/CmGdprSearchDetails.md
 docs/CmGetHtml.md
 docs/CmGroup.md
+docs/CmGroupEditInfo.md
 docs/CmGroupList.md
 docs/CmImportUsers.md
 docs/CmInfo.md
@@ -129,6 +131,7 @@ docs/CmSlicedDocumentListAndTotals.md
 docs/CmSlicedDocumentRequest.md
 docs/CmSource.md
 docs/CmSourceBaseInfo.md
+docs/CmSourceError.md
 docs/CmStartCrawler.md
 docs/CmStartProject.md
 docs/CmStepConfig.md
@@ -137,6 +140,7 @@ docs/CmSubscriptions.md
 docs/CmSynSet.md
 docs/CmSynSetFind.md
 docs/CmSynSetList.md
+docs/CmSyncGDrive.md
 docs/CmSynonym.md
 docs/CmSynonymsPaginated.md
 docs/CmSynonymsPaginatedResult.md
@@ -160,7 +164,6 @@ docs/CmUserRole.md
 docs/CmUserWithExtras.md
 docs/CmVersion.md
 docs/CmWordFrequency.md
-docs/CmZipSource.md
 docs/CmdParagraphSummary.md
 docs/CmdUserDashboard.md
 docs/ContextItem.md
@@ -257,11 +260,13 @@ src/models/cm_external_crawler_set_delta_token.rs
 src/models/cm_external_crawler_start.rs
 src/models/cm_external_crawler_stop.rs
 src/models/cm_external_log_entry.rs
+src/models/cm_external_mark_reset_crawl.rs
 src/models/cm_failed_source_document.rs
 src/models/cm_filter.rs
 src/models/cm_gdpr_search_details.rs
 src/models/cm_get_html.rs
 src/models/cm_group.rs
+src/models/cm_group_edit_info.rs
 src/models/cm_group_list.rs
 src/models/cm_import_users.rs
 src/models/cm_info.rs
@@ -337,6 +342,7 @@ src/models/cm_sliced_document_list_and_totals.rs
 src/models/cm_sliced_document_request.rs
 src/models/cm_source.rs
 src/models/cm_source_base_info.rs
+src/models/cm_source_error.rs
 src/models/cm_start_crawler.rs
 src/models/cm_start_project.rs
 src/models/cm_step_config.rs
@@ -345,6 +351,7 @@ src/models/cm_subscriptions.rs
 src/models/cm_syn_set.rs
 src/models/cm_syn_set_find.rs
 src/models/cm_syn_set_list.rs
+src/models/cm_sync_g_drive.rs
 src/models/cm_synonym.rs
 src/models/cm_synonyms_paginated.rs
 src/models/cm_synonyms_paginated_result.rs
@@ -368,7 +375,6 @@ src/models/cm_user_role.rs
 src/models/cm_user_with_extras.rs
 src/models/cm_version.rs
 src/models/cm_word_frequency.rs
-src/models/cm_zip_source.rs
 src/models/cmd_paragraph_summary.rs
 src/models/cmd_user_dashboard.rs
 src/models/context_item.rs

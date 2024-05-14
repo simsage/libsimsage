@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **source_id** | **int** | the source-id, primary key of the source |
 **organisation_id** | **string** | the main organisation (its guid id) for this source/crawler |
 **kb_id** | **string** | the knowledge-base id (its guid id) for this source/crawler |
+**weight** | **float** | the importance of this source relative to others &lt;0.0,1.0] |
 **node_id** | **int** | the system&#39;s node id of this source (what kubernetes-node to run on, starting with zero, set NODE_ID in env to manipulate this value).  Sources will only run on machines with a matching node-id |
 **name** | **string** | the display-name (descriptive name) of this source.  The source&#39;s name must be unique within a knowledge-base. |
 **crawler_type** | **string** | the type of this source |
@@ -22,7 +23,6 @@ Name | Type | Description | Notes
 **max_bot_items** | **int** | Set a Question and Answer content limit for the maximum number of deep-learning Q&amp;A items this source can contain.  A value of zero (0) indicates no limits. |
 **custom_render** | **bool** | Does this source require custom render templates or use ordinary search-results? |
 **edge_device_id** | **string** | The associated Edge device for this source (or empty string if not associated with one) |
-**qa_match_strength** | **float** | the default threshold for matching deep-learning vector matching results (value should be between 0.7 and 0.99) |
 **num_results** | **int** | the default number of search results to return from the semantic-search system |
 **num_fragments** | **int** | the number of fragments to return per search-result from the semantic-search system.  Affects accuracy, a value of \&quot;1\&quot; will only look at the first match.  Higher values look for more matches inside a single document.  Too high a value will affect performance.  Default value \&quot;3\&quot;. |
 **num_errors** | **int** | the number of errors from the last source-run |
@@ -41,7 +41,6 @@ Name | Type | Description | Notes
 **num_total_errored_documents** | **int** | the total number of documents for this source marked as errored in SimSage. |
 **use_default_relationships** | **bool** | \&quot;true\&quot; if this source is to use the default (built-in) SimSage relationships.  All user-defined relationships and language-entities will be used regardless of the value of this flag. |
 **is_busy** | **bool** | \&quot;true\&quot; if this source is currently being optimized / processed by the index-optimizer. |
-**auto_optimize** | **bool** | Do we run the index-optimizer automatically after this source finishes crawling? |
 **store_binary** | **bool** | \&quot;true\&quot; if this source is to store all documents locally on the SimSage platform |
 **versioned** | **bool** | \&quot;true\&quot; if this source is to store all versions of documents locally on the SimSage platform |
 **write_to_cassandra** | **bool** | \&quot;true\&quot; if this source is to write any changes direct to Cassandra, otherwise this source will collect indexes on disk first (for initial loading) |
@@ -53,6 +52,7 @@ Name | Type | Description | Notes
 **use_stt** | **bool** | enable Speech-to-text processing for files in this source? |
 **delta_indicator** | **string** | A saved value indicating last crawler state |
 **transmit_external_logs** | **bool** | enabling sending of logs to SimSage for external crawlers |
+**source_error** | [**\OpenAPI\Client\Model\CMSourceError**](CMSourceError.md) |  |
 **external** | **bool** |  | [optional]
 **crawling** | **bool** |  | [optional]
 **busy** | **bool** |  | [optional]

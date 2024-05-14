@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **sourceId** | **kotlin.Int** | the source-id, primary key of the source | 
 **organisationId** | **kotlin.String** | the main organisation (its guid id) for this source/crawler | 
 **kbId** | **kotlin.String** | the knowledge-base id (its guid id) for this source/crawler | 
+**weight** | **kotlin.Float** | the importance of this source relative to others &lt;0.0,1.0] | 
 **nodeId** | **kotlin.Int** | the system&#39;s node id of this source (what kubernetes-node to run on, starting with zero, set NODE_ID in env to manipulate this value).  Sources will only run on machines with a matching node-id | 
 **name** | **kotlin.String** | the display-name (descriptive name) of this source.  The source&#39;s name must be unique within a knowledge-base. | 
 **crawlerType** | **kotlin.String** | the type of this source | 
@@ -22,7 +23,6 @@ Name | Type | Description | Notes
 **maxBotItems** | **kotlin.Long** | Set a Question and Answer content limit for the maximum number of deep-learning Q&amp;A items this source can contain.  A value of zero (0) indicates no limits. | 
 **customRender** | **kotlin.Boolean** | Does this source require custom render templates or use ordinary search-results? | 
 **edgeDeviceId** | **kotlin.String** | The associated Edge device for this source (or empty string if not associated with one) | 
-**qaMatchStrength** | **kotlin.Float** | the default threshold for matching deep-learning vector matching results (value should be between 0.7 and 0.99) | 
 **numResults** | **kotlin.Int** | the default number of search results to return from the semantic-search system | 
 **numFragments** | **kotlin.Int** | the number of fragments to return per search-result from the semantic-search system.  Affects accuracy, a value of \&quot;1\&quot; will only look at the first match.  Higher values look for more matches inside a single document.  Too high a value will affect performance.  Default value \&quot;3\&quot;. | 
 **numErrors** | **kotlin.Int** | the number of errors from the last source-run | 
@@ -41,7 +41,6 @@ Name | Type | Description | Notes
 **numTotalErroredDocuments** | **kotlin.Int** | the total number of documents for this source marked as errored in SimSage. | 
 **useDefaultRelationships** | **kotlin.Boolean** | \&quot;true\&quot; if this source is to use the default (built-in) SimSage relationships.  All user-defined relationships and language-entities will be used regardless of the value of this flag. | 
 **isBusy** | **kotlin.Boolean** | \&quot;true\&quot; if this source is currently being optimized / processed by the index-optimizer. | 
-**autoOptimize** | **kotlin.Boolean** | Do we run the index-optimizer automatically after this source finishes crawling? | 
 **storeBinary** | **kotlin.Boolean** | \&quot;true\&quot; if this source is to store all documents locally on the SimSage platform | 
 **versioned** | **kotlin.Boolean** | \&quot;true\&quot; if this source is to store all versions of documents locally on the SimSage platform | 
 **writeToCassandra** | **kotlin.Boolean** | \&quot;true\&quot; if this source is to write any changes direct to Cassandra, otherwise this source will collect indexes on disk first (for initial loading) | 
@@ -53,6 +52,7 @@ Name | Type | Description | Notes
 **useSTT** | **kotlin.Boolean** | enable Speech-to-text processing for files in this source? | 
 **deltaIndicator** | **kotlin.String** | A saved value indicating last crawler state | 
 **transmitExternalLogs** | **kotlin.Boolean** | enabling sending of logs to SimSage for external crawlers | 
+**sourceError** | [**CMSourceError**](CMSourceError.md) |  | 
 **&#x60;external&#x60;** | **kotlin.Boolean** |  |  [optional]
 **crawling** | **kotlin.Boolean** |  |  [optional]
 **busy** | **kotlin.Boolean** |  |  [optional]

@@ -1,6 +1,6 @@
 # \LanguageApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://training.simsage.ai*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**get_paginated**](LanguageApi.md#get_paginated) | **PUT** /api/language/synonyms | get Synonyms Paginated
 [**get_semantics_paginated**](LanguageApi.md#get_semantics_paginated) | **PUT** /api/language/semantics | Semantics Paginated
 [**optimize_indexes**](LanguageApi.md#optimize_indexes) | **PUT** /api/language/optimize-indexes | Optimize Indexes
+[**optimize_indexes_abort**](LanguageApi.md#optimize_indexes_abort) | **PUT** /api/language/optimize-indexes-abort | Abort Index Optimization
 [**redact_document**](LanguageApi.md#redact_document) | **GET** /api/language/redact/{organisationId}/{kbId}/{url}/{entityCsv}/{wordCsv}/{allowWordsCsv} | Redact Document
 [**save_categorization**](LanguageApi.md#save_categorization) | **PUT** /api/language/categorization | save categorization
 [**save_semantic**](LanguageApi.md#save_semantic) | **PUT** /api/language/save-semantic/{organisationId}/{kbId} | Save Semantic
@@ -365,6 +366,38 @@ No authorization required
 Optimize Indexes
 
 Force index optimization for a the given knowledge-base, now.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**session_id** | **String** | a valid SimSage Session id. | [required] |
+**cm_optimize_index** | [**CmOptimizeIndex**](CmOptimizeIndex.md) |  | [required] |
+**api_version** | Option<**String**> |  |  |
+
+### Return type
+
+[**crate::models::JsonMessage**](JsonMessage.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## optimize_indexes_abort
+
+> crate::models::JsonMessage optimize_indexes_abort(session_id, cm_optimize_index, api_version)
+Abort Index Optimization
+
+Force index optimizer to abort a job.
 
 ### Parameters
 

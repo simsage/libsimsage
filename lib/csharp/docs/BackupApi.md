@@ -1,6 +1,6 @@
 # Org.OpenAPITools.Api.BackupApi
 
-All URIs are relative to *https://test.simsage.ai*
+All URIs are relative to *https://training.simsage.ai*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
@@ -33,7 +33,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new BackupApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var organisationId = "organisationId_example";  // string | the organisation's id (a guid) to backup
@@ -101,8 +101,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | create backup OK response |  -  |
 | **500** | could not create backup. |  -  |
+| **200** | create backup OK response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -129,7 +129,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new BackupApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var organisationId = "organisationId_example";  // string | the organisation's id (a guid) to backup
@@ -225,7 +225,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new BackupApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var organisationId = "organisationId_example";  // string | the organisation's id (a guid) for access control
@@ -293,8 +293,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not get backup. |  -  |
 | **200** | get backup response. |  -  |
+| **500** | could not get backup. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -321,7 +321,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new BackupApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var organisationId = "organisationId_example";  // string | the organisation's id (a guid) to backup
@@ -387,8 +387,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **500** | could not get backup-list. |  -  |
 | **200** | get backup-list response |  -  |
+| **500** | could not get backup-list. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -415,7 +415,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://test.simsage.ai";
+            config.BasePath = "https://training.simsage.ai";
             var apiInstance = new BackupApi(config);
             var sessionId = "sessionId_example";  // string | a valid SimSage Session id.
             var cMRestoreFromText = new CMRestoreFromText(); // CMRestoreFromText | 

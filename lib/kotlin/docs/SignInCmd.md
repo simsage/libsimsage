@@ -4,6 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**organisationList** | [**kotlin.collections.List&lt;Organisation&gt;**](Organisation.md) |  | 
 **jobId** | **kotlin.String** |  | 
 **returnAddress** | **kotlin.String** |  | 
 **errorStr** | **kotlin.String** |  | 
@@ -17,7 +18,6 @@ Name | Type | Description | Notes
 **session** | [**Session**](Session.md) |  | 
 **user** | [**User**](User.md) |  | 
 **organisationId** | **kotlin.String** |  | 
-**organisationList** | [**kotlin.collections.List&lt;Organisation&gt;**](Organisation.md) |  | 
 **returnResult** | **kotlin.Boolean** |  |  [optional]
 
 
