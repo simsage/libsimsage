@@ -6,12 +6,13 @@ Here is a list of the utilities/examples by file:
 
 | file               | description                                                                                                                 |
 |--------------------|-------------------------------------------------|
-| create_user.py     | create a new user for the SimSage platform.     |
-| download.py        | download a document from SimSage by url.        |
-| logs.py            | view SimSage platform logs by service-name      |
-| search.py          | perform a search on the SimSage platform        |
-| source_list.py     | get a list of sources and their status.         |
-| upload_document.py | upload a document into SimSage.                 |
+| common.py          | Common values used by these utilities.          |
+| create_user.py     | Create a new user for the SimSage platform.     |
+| download.py        | Download a document from SimSage by url.        |
+| logs.py            | View SimSage platform logs by service-name.     |
+| search.py          | Search the SimSage platform.                    |
+| source_list.py     | Get a list of sources and their status.         |
+| upload_document.py | Upload a document into SimSage.                 |
 
 
 ## usage
