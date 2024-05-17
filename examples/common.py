@@ -13,6 +13,7 @@ password = ""
 
 # the security id of the knowledge base - view your knowledge-base in the admin UX
 # this is like the password for an external crawler
+# !! this sid and source_id value are only used by upload_document.py !!
 sid = "1282271b-6ffe-4435-a496-52d822442fb2"
 source_id = 1
 
