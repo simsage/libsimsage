@@ -3,23 +3,7 @@ import base64
 import requests
 import time
 import hashlib
-
-#
-# set these variables as you need to
-#
-api_base = "https://test.simsage.ai/api"
-
-# your SimSage organisation and knowledgebase id
-# careful - this could be different - these are the defaults
-organisation_id = "c276f883-e0c8-43ae-9119-df8b7df9c574"
-kb_id = "46ff0c75-7938-492c-ab50-442496f5de51"
-# the security id of the knowledge base - view your knowledge-base in the admin UX
-# this is like the password for an external crawler
-sid = "1282271b-6ffe-4435-a496-52d822442fb2"
-source_id = 1
-
-# a unique id grouping files together for an upload batch
-run_id = int(time.time() * 1000)
+from common import api_base, organisation_id, kb_id, sid, source_id
 
 
 #
@@ -64,6 +48,9 @@ def upload_document_to_external_source(url, mime_type, metadata_map, binary_data
                          "," + x.content.decode('utf-8'))
     return x.json()
 
+
+# a unique id grouping files together for an upload batch
+run_id = int(time.time() * 1000)
 
 # upload the README.md of this repository as an example
 with open('README.md', 'rb') as reader:
