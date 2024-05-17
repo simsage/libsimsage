@@ -1,5 +1,5 @@
 #
-# Example: download a documetn from SimSage by url
+# Example: download a document from SimSage by url
 #
 # - you must have an administrator or manager role associated with your account for this to work
 # - your session is refreshed automatically with each call until it expires
