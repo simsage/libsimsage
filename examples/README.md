@@ -5,13 +5,13 @@
 Here is a list of the utilities/examples by file:
 
 | file               | description                                                                                                                 |
-|--------------------|-----------------------------------------------------------------------------------------------------------------------------|
-| create_user.py     | an example showing how to create a new user for the SimSage platform.                                                       |
-| download.py        | an example showing how to download a document from SimSage by url.                                                          |
-| logs.py            | an example showing how to view SimSage platform logs by service-name                                                        |
-| search.py          | an example showing how to perform a search on the SimSage platform                                                          |
-| source_list.py     | an example showing how to get a list of sources and their status.                                                           |
-| upload_document.py | an example showing how to upload a document into SimSage.                                                                   |
+|--------------------|-------------------------------------------------|
+| create_user.py     | create a new user for the SimSage platform.     |
+| download.py        | download a document from SimSage by url.        |
+| logs.py            | view SimSage platform logs by service-name      |
+| search.py          | perform a search on the SimSage platform        |
+| source_list.py     | get a list of sources and their status.         |
+| upload_document.py | upload a document into SimSage.                 |
 
 
 ## usage
