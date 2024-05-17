@@ -1,3 +1,7 @@
+#
+# Common settings and utilities
+#
+
 import requests
 
 # the SimSage system to talk to

@@ -1,7 +1,8 @@
 #
 # Example: download a document from SimSage by url
 #
-# - you must have an administrator or manager role associated with your account for this to work
+# - you must have the right permissions (ACLs) with your account for this to work
+#
 # - your session is refreshed automatically with each call until it expires
 #   (1 hour default / configurable on the platform)
 #

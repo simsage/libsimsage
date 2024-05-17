@@ -2,6 +2,7 @@
 # Example: adding a user if he/she doesn't yet exist
 #
 # - you must have an administrator or manager role associated with your account for this to work
+#
 # - your session is refreshed automatically with each call until it expires
 #   (1 hour default / configurable on the platform)
 #

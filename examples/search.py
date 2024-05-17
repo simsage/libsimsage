@@ -1,3 +1,14 @@
+#
+# Example: search SimSage
+#
+# - you must have a search role and appropriate ACLs to view documents / results
+#     without the role you won't be able to search
+#     without the right ACLs you won't see a result
+#
+# - your session is refreshed automatically with each call until it expires
+#   (1 hour default / configurable on the platform)
+#
+
 import requests
 from common import api_base, organisation_id, kb_id
 from common import sign_in
