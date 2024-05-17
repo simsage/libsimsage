@@ -6,7 +6,7 @@ Here is a list of the utilities/examples by file:
 
 | file               | description                                                                                                                 |
 |--------------------|-------------------------------------------------|
-| common.py          | Common values used by these utilities.          |
+| common.py          | Common values shared by these utilities.        |
 | create_user.py     | Create a new user for the SimSage platform.     |
 | download.py        | Download a document from SimSage by url.        |
 | logs.py            | View SimSage platform logs by service-name.     |
