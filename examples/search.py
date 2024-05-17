@@ -35,7 +35,7 @@ if "resultList" in results:
     result_list = results["resultList"]
     print("got {} results".format(str(len(result_list))))
     for result in result_list:
-        print(result["textList"])
+        print([result["url"], result["textList"]])
 else:
     print("return result not understood")
     print(results)
