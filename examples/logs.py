@@ -1,5 +1,5 @@
 #
-# Example: view SimSage logs for a service or all services
+# Example: view SimSage logs for a given SimSage service
 #
 # - you must have an administrator or manager role associated with your account for this to work
 # - your session is refreshed automatically with each call until it expires
@@ -29,6 +29,7 @@ session_id = sign_in()
 result = get_logs(session_id, simsage_service='index', number_of_lines=10)
 
 if "logList" in result:
+    # pretty print
     header = [
         pad_string("type", 10),
         pad_string("service", 10),
