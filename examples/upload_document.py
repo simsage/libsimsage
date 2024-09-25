@@ -98,30 +98,36 @@ def finish_crawler(run_id):
 # a unique id grouping files together for an upload batch
 run_id = int(time.time() * 1000)
 
-# tell the system a crawler is starting
+# tell the system a crawler is starting a new upload cycle
 start_crawler(run_id)
 
-# upload the README.md of this repository as an example
-with open('README.md', 'rb') as reader:
-    data = reader.read()
+# put all the files you wish to upload in file_list
+file_list = ['README.md']
 
-# get a timestamp for created and last_modified
-now = int(time.time() * 1000)
+# upload each file from file_list
+for filename in file_list:
+    # upload the filename as an example
+    with open(filename, 'rb') as reader:
+        data = reader.read()
 
-# upload
-result = upload_document_to_external_source(url='/some/unique/id',
-                                            mime_type='text/plain',
-                                            metadata_map={},
-                                            binary_data=data,
-                                            created=now,
-                                            last_modified=now
-                                            )
+    # get a timestamp for created and last_modified
+    now = int(time.time() * 1000)
 
-# check the result
-if "error" in result and result["error"] != "":
-    print("error uploading document: {}".format(result["error"]))
-elif "information" in result:
-    print("upload complete")
+    # upload all files you require here - make sure to set the mime_type to something sensible
+    # we assume we're uploading text files in our example
+    result = upload_document_to_external_source(url=filename,
+                                                mime_type='text/plain',
+                                                metadata_map={},
+                                                binary_data=data,
+                                                created=now,
+                                                last_modified=now
+                                                )
 
-# tell the system a crawler has finished
+    # check the result is ok
+    if "error" in result and result["error"] != "":
+        print("error uploading document: {}".format(result["error"]))
+    elif "information" in result:
+        print("{} upload complete".format(filename))
+
+# tell the system a crawler has finished after all files are done
 finish_crawler(run_id)
