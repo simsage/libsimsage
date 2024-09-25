@@ -105,6 +105,7 @@ start_crawler(run_id)
 file_list = ['README.md']
 
 # upload each file from file_list
+has_errors = False
 for filename in file_list:
     # upload the filename as an example
     with open(filename, 'rb') as reader:
@@ -126,8 +127,10 @@ for filename in file_list:
     # check the result is ok
     if "error" in result and result["error"] != "":
         print("error uploading document: {}".format(result["error"]))
+        has_errors = True
     elif "information" in result:
         print("{} upload complete".format(filename))
 
-# tell the system a crawler has finished after all files are done
-finish_crawler(run_id)
+# tell the system a crawler has finished after all files are done if there were no errors
+if not has_errors:
+    finish_crawler(run_id)
