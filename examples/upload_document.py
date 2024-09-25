@@ -7,6 +7,29 @@ from common import api_base, organisation_id, kb_id, sid, source_id
 
 
 #
+# signal a crawler is about to start
+#
+# @return a status message on how we did
+def start_crawler(run_id):
+    url = api_base + "/crawler/external/crawler/start"
+    header = {"API-Version": "1", "Content-Type": "application/json"}
+    data = {
+        'organisationId': organisation_id,
+        'kbId': kb_id,
+        'sid': sid,
+        'sourceId': source_id,
+        'runId': run_id,
+        'encrypted': False,
+    }
+    x = requests.post(url, json=data, headers=header)
+    # check the response
+    if x.status_code not in range(200, 299):
+        raise ValueError("start_crawler: bad http status code " + str(x.status_code) +
+                         "," + x.content.decode('utf-8'))
+    return x.json()
+
+
+#
 # upload a document to a SimSage external source
 #
 # @param url a unique identifier of this item / document / record
@@ -49,8 +72,34 @@ def upload_document_to_external_source(url, mime_type, metadata_map, binary_data
     return x.json()
 
 
+#
+# signal a crawler has finished
+#
+# @return a status message on how we did
+def finish_crawler(run_id):
+    url = api_base + "/crawler/external/crawler/finish"
+    header = {"API-Version": "1", "Content-Type": "application/json"}
+    data = {
+        'organisationId': organisation_id,
+        'kbId': kb_id,
+        'sid': sid,
+        'sourceId': source_id,
+        'runId': run_id,
+        'encrypted': False,
+    }
+    x = requests.post(url, json=data, headers=header)
+    # check the response
+    if x.status_code not in range(200, 299):
+        raise ValueError("start_crawler: bad http status code " + str(x.status_code) +
+                         "," + x.content.decode('utf-8'))
+    return x.json()
+
+
 # a unique id grouping files together for an upload batch
 run_id = int(time.time() * 1000)
+
+# tell the system a crawler is starting
+start_crawler(run_id)
 
 # upload the README.md of this repository as an example
 with open('README.md', 'rb') as reader:
@@ -73,3 +122,6 @@ if "error" in result and result["error"] != "":
     print("error uploading document: {}".format(result["error"]))
 elif "information" in result:
     print("upload complete")
+
+# tell the system a crawler has finished
+finish_crawler(run_id)
