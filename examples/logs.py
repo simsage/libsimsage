@@ -9,13 +9,13 @@
 import requests
 from datetime import datetime
 from common import api_base, organisation_id
-from common import sign_in, pad_string
+from common import sign_in, pad_string, check_ssl_certificate
 
 
 def get_logs(session_id, simsage_service, number_of_lines):
     url = api_base + "/stats/system-logs/{}/{}/{}".format(organisation_id, simsage_service, number_of_lines)
     header = {"API-Version": "1", "Content-Type": "application/json", "session-id": session_id}
-    x = requests.get(url, headers=header)
+    x = requests.get(url, headers=header, verify=check_ssl_certificate)
     if x.status_code not in range(200, 299):
         raise ValueError("download: bad http status code " + str(x.status_code))
     return x.json()

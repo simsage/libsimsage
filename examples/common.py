@@ -7,6 +7,10 @@ import requests
 # the SimSage system to talk to
 api_base = "https://test.simsage.ai/api"
 
+# trust self-signed certificates?
+# set this value to True if you want the SSL certificate to be checked for strict validity
+check_ssl_certificate = False
+
 # default organisation and knowledgebase id
 organisation_id = "c276f883-e0c8-43ae-9119-df8b7df9c574"
 kb_id = "46ff0c75-7938-492c-ab50-442496f5de51"
@@ -27,7 +31,7 @@ def sign_in():
     data = {"email": email, "password": password}
     url = api_base + "/auth/sign-in"
     header = {"API-Version": "1", "Content-Type": "application/json"}
-    x = requests.post(url, json=data, headers=header)
+    x = requests.post(url, json=data, headers=header, verify=check_ssl_certificate)
     json_result = x.json()
     if "error" in json_result:
         raise ValueError("sign-in:" + json_result["error"])

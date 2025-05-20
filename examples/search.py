@@ -11,7 +11,7 @@
 
 import requests
 from common import api_base, organisation_id, kb_id
-from common import sign_in
+from common import sign_in, check_ssl_certificate
 
 
 # search SimSage using a session_id, and text to search for
@@ -31,7 +31,7 @@ def do_search(session_id, text):
     }
     url = api_base + "/semantic/query"
     header = {"API-Version": "1", "Content-Type": "application/json"}
-    x = requests.post(url, json=data, headers=header)
+    x = requests.post(url, json=data, headers=header, verify=check_ssl_certificate)
     if x.status_code not in range(200, 299):
         raise ValueError("search: bad http status code " + str(x.status_code))
     return x.json()

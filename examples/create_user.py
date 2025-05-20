@@ -9,7 +9,7 @@
 
 import requests
 from common import api_base, organisation_id
-from common import sign_in
+from common import sign_in, check_ssl_certificate
 
 
 # helper: convert a list of strings in role_list to a list of SimSage role objects
@@ -37,7 +37,7 @@ def create_groups(group_list):
 def get_user(session_id, email):
     url = api_base + "/auth/users-paginated/{}/0/10/{}".format(organisation_id, email)
     header = {"API-Version": "1", "Content-Type": "application/json", "session-id": session_id}
-    x = requests.get(url, headers=header)
+    x = requests.get(url, headers=header, verify=check_ssl_certificate)
     json_result = x.json()
     if "error" in json_result:
         raise ValueError("get_user:" + json_result["error"])
@@ -72,7 +72,7 @@ def create_or_update_user(session_id, user_id, email, password, first_name, surn
     }
     url = api_base + "/auth/user/{}".format(organisation_id)
     header = {"API-Version": "1", "Content-Type": "application/json", "session-id": session_id}
-    x = requests.put(url, json=user_data, headers=header)
+    x = requests.put(url, json=user_data, headers=header, verify=check_ssl_certificate)
     json_result = x.json()
     if "error" in json_result:
         raise ValueError("create/update user:" + json_result["error"])

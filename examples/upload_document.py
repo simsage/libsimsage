@@ -3,7 +3,7 @@ import base64
 import requests
 import time
 import hashlib
-from common import api_base, organisation_id, kb_id, sid, source_id
+from common import api_base, organisation_id, kb_id, sid, source_id, check_ssl_certificate
 
 
 #
@@ -21,7 +21,7 @@ def start_crawler(run_id):
         'runId': run_id,
         'encrypted': False,
     }
-    x = requests.post(url, json=data, headers=header)
+    x = requests.post(url, json=data, headers=header, verify=check_ssl_certificate)
     # check the response
     if x.status_code not in range(200, 299):
         raise ValueError("start_crawler: bad http status code " + str(x.status_code) +
@@ -64,7 +64,7 @@ def upload_document_to_external_source(url, mime_type, metadata_map, binary_data
     }
     url = api_base + "/crawler/external/document/upload"
     header = {"API-Version": "1", "Content-Type": "application/json"}
-    x = requests.post(url, json=data, headers=header)
+    x = requests.post(url, json=data, headers=header, verify=check_ssl_certificate)
     # check the response
     if x.status_code not in range(200, 299):
         raise ValueError("upload_external_document: bad http status code " + str(x.status_code) +
@@ -87,7 +87,7 @@ def finish_crawler(run_id):
         'runId': run_id,
         'encrypted': False,
     }
-    x = requests.post(url, json=data, headers=header)
+    x = requests.post(url, json=data, headers=header, verify=check_ssl_certificate)
     # check the response
     if x.status_code not in range(200, 299):
         raise ValueError("start_crawler: bad http status code " + str(x.status_code) +

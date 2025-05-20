@@ -10,7 +10,7 @@
 import requests
 import base64
 from common import api_base, organisation_id, kb_id
-from common import sign_in
+from common import sign_in, check_ssl_certificate
 
 
 def download(session_id, doc_url, output_file):
@@ -19,7 +19,7 @@ def download(session_id, doc_url, output_file):
     base64_string = base64_bytes.decode('utf-8')
     url = api_base + "/dms/binary/latest/{}/{}/{}".format(organisation_id, kb_id, base64_string)
     header = {"API-Version": "1", "Content-Type": "application/json", "session-id": session_id}
-    x = requests.get(url, headers=header)
+    x = requests.get(url, headers=header, verify=check_ssl_certificate)
     if x.status_code not in range(200, 299):
         raise ValueError("download: bad http status code " + str(x.status_code))
     with open(output_file, 'wb') as writer:

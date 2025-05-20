@@ -10,14 +10,14 @@
 import requests
 from datetime import datetime
 from common import api_base, organisation_id, kb_id
-from common import pad_string, sign_in
+from common import pad_string, sign_in, check_ssl_certificate
 
 
 # get a list of sources from SimSage
 def get_source_list(session_id):
     url = api_base + "/crawler/crawlers/" + organisation_id + "/" + kb_id
     header = {"API-Version": "1", "Content-Type": "application/json", "session-id": session_id}
-    x = requests.get(url, headers=header)
+    x = requests.get(url, headers=header, verify=check_ssl_certificate)
     if x.status_code not in range(200, 299):
         raise ValueError("search: bad http status code " + str(x.status_code))
     return x.json()
