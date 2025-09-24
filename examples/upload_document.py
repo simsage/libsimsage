@@ -1,6 +1,7 @@
 import base64
 
 import requests
+import uuid
 import time
 import hashlib
 from common import api_base, organisation_id, kb_id, sid, source_id, check_ssl_certificate
@@ -39,22 +40,26 @@ def start_crawler(run_id):
 # @param created a unix long (with milliseconds) representing the created date-time of this item
 # @param last_modified a unix long (with milliseconds) representing the created date-time of this item
 # @return a status message on how we did
-def upload_document_to_external_source(url, mime_type, metadata_map, binary_data, created, last_modified):
+def upload_document_to_external_source(url, mime_type, metadata_map, acls, binary_data, created, last_modified):
     base64_data = base64.b64encode(binary_data).decode("utf-8")
     data = {
         'organisationId': organisation_id,
         'kbId': kb_id,
         'sid': sid,
+        'jobId': str(uuid.uuid4()),
+        'partId': 0,
+        'totalParts': 1,
         'sourceId': source_id,
         'url': url,
         'mimeType': mime_type,
         'puid': '',
-        'acls': [],  # left blank here, which means 'no security' (apart from what the source already defines)
+        'acls': acls,
         'title': '',  # most binaries can get this information out of the document itself
         'author': '',
         'contentHash': hashlib.md5(binary_data).hexdigest(),
         'changeHash': hashlib.md5(binary_data).hexdigest(),
         'binarySize': len(binary_data),
+        'totalFileSize': len(binary_data),
         'categories': [],
         'data': ';base64,' + base64_data,
         'created': created,
@@ -104,6 +109,10 @@ start_crawler(run_id)
 # put all the files you wish to upload in file_list
 file_list = ['README.md']
 
+# example user ACL: {"name": "rock@simsage.ai", "displayName": "", "access": "R", "isUser": True, "membershipList": []}
+# example group ACL: {"name": "Group 1", "displayName": "Group 1", "access": "R", "isUser": False, "membershipList": ["rock@simsage.ai"]}
+acls = []
+
 # upload each file from file_list
 has_errors = False
 for filename in file_list:
@@ -119,6 +128,7 @@ for filename in file_list:
     result = upload_document_to_external_source(url=filename,
                                                 mime_type='text/plain',
                                                 metadata_map={},
+                                                acls=acls,
                                                 binary_data=data,
                                                 created=now,
                                                 last_modified=now
